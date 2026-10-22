@@ -1,0 +1,78 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"op\":\"status\",\"result\":{\"name\":\"same\",\"alive\":true,\"ready\":true,\"pid\":17008,\"port\":19999,\"uptimeMs\":611,\"idleMs\":0,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 19999, \\\"pid\\\": 17008, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE_NEXT\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"4.5.15 LTS\\\"}\\r\\n\",\"status\":{\"ok\":true,\"version\":2,\"pid\":17008,\"uptime_s\":0,\"calls\":3,\"errors\":0,\"objects\":1,\"file\":null,\"kernel_modules\":[\"dsh_audit_api\",\"dsh_geo_api\"],\"boot\":{\"ok\":true,\"skipped\":true},\"frame_dir\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\runtime\\\\final-core\",\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false}}}}"
+    }
+  ],
+  "structuredContent": {
+    "ok": true,
+    "op": "status",
+    "result": {
+      "name": "same",
+      "alive": true,
+      "ready": true,
+      "pid": 17008,
+      "port": 19999,
+      "uptimeMs": 611,
+      "idleMs": 0,
+      "inflight": 0,
+      "gpu": {
+        "engine_mode": "workbench",
+        "gpu_mode": "auto",
+        "backend": "n/a: GPU functions for drawing are not available in background mo",
+        "before": {
+          "engine": "BLENDER_EEVEE_NEXT"
+        },
+        "ok": true,
+        "skipped": false,
+        "configured": "workbench",
+        "after": {
+          "engine": "BLENDER_WORKBENCH"
+        },
+        "fell_back_to_cpu": false
+      },
+      "boot": {
+        "ok": true,
+        "skipped": true
+      },
+      "lastError": null,
+      "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 19999, \"pid\": 17008, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+      "status": {
+        "ok": true,
+        "version": 2,
+        "pid": 17008,
+        "uptime_s": 0,
+        "calls": 3,
+        "errors": 0,
+        "objects": 1,
+        "file": null,
+        "kernel_modules": [
+          "dsh_audit_api",
+          "dsh_geo_api"
+        ],
+        "boot": {
+          "ok": true,
+          "skipped": true
+        },
+        "frame_dir": "E:\\workplace\\blender-server\\tmp\\runtime\\final-core",
+        "gpu": {
+          "engine_mode": "workbench",
+          "gpu_mode": "auto",
+          "backend": "n/a: GPU functions for drawing are not available in background mo",
+          "before": {
+            "engine": "BLENDER_EEVEE_NEXT"
+          },
+          "ok": true,
+          "skipped": false,
+          "configured": "workbench",
+          "after": {
+            "engine": "BLENDER_WORKBENCH"
+          },
+          "fell_back_to_cpu": false
+        }
+      }
+    }
+  },
+  "isError": false
+}

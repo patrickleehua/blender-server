@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-23",
+  "timezone": "Asia/Singapore",
+  "sourceCommit": "5d9fd1925279ce3907438f64e3376cbc7851acb1",
+  "sourceDirtyAtPack": false,
+  "package": {
+    "name": "@blender-agent/bridge",
+    "version": "1.0.0",
+    "filename": "blender-agent-bridge-1.0.0.tgz",
+    "sha256": "8051116a63779d2b2b05701b51658b36113f84d54feb1bc805b89ffe8c3dce7e",
+    "assetFingerprint": "4c0226b037cc80f64a06019cafea5b77ee85ef8e36f3baf80669c642b104f3dc"
+  },
+  "hostTests": {
+    "claude": {
+      "host": "claude",
+      "requestedModel": "claude-opus-5-5",
+      "effort": "medium",
+      "package": "1.0.0",
+      "toolContractSha256": "0d1b4523f9a65fa0d05c8e46984907afd192fae4dc8f578e9ad169b91566d151",
+      "skillSha256": "d465c9226b414606de911e7b012e59b33bfdcae4d67e63d28e30e28580c7fd2d",
+      "cliSha256": "beb825b76fdf3a96a63e208ffab7034926ba43fe8e1a0c8b66cb507404401b06",
+      "assetFingerprint": "4c0226b037cc80f64a06019cafea5b77ee85ef8e36f3baf80669c642b104f3dc",
+      "project": "E:\\workplace\\blender-server\\tmp\\host-final\\claude 中文 空格",
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "durationMs": 75185
+      },
+      "independentRun": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "durationMs": 540
+      },
+      "independent": {
+        "ok": true,
+        "root": "E:\\workplace\\blender-server\\tmp\\host-final\\claude 中文 空格",
+        "blend": {
+          "ClaudeTop": {
+            "size_m": [
+              0.8999999761581421,
+              0.8999999761581421,
+              0.08000004291534424
+            ],
+            "center_m": [
+              0,
+              0,
+              0.7900000214576721
+            ],
+            "vertices": 128
+          },
+          "ClaudeLegA": {
+            "size_m": [
+              0.07999998331069946,
+              0.07999998331069946,
+              0.75
+            ],
+            "center_m": [
+              -0.2800000011920929,
+              -0.2199999988079071,
+              0.375
+            ],
+            "vertices": 8
+          },
+          "ClaudeLegB": {
+            "size_m": [
+              0.07999998331069946,
+              0.07999998331069946,
+              0.75
+            ],
+            "center_m": [
+              0.2800000011920929,
+              -0.2199999988079071,
+              0.375
+            ],
+            "vertices": 8
+          },
+          "ClaudeLegC": {
+            "size_m": [
+              0.07999999821186066,
+              0.07999998331069946,
+              0.75
+            ],
+            "center_m": [
+              0,
+              0.2800000011920929,
+              0.375
+            ],
+            "vertices": 8
+          }
+        },
+        "glb": {
+          "ClaudeTop": {
+            "size_m": [
+              0.8999999761581421,
+              0.8999999761581421,
+              0.08000004291534424
+            ],
+            "center_m": [
+              0,
+              0,
+              0.7900000214576721
+            ],
+            "vertices": 384
+          },
+          "ClaudeLegA": {
+            "size_m": [
+              0.07999998331069946,
+              0.07999998331069946,
+              0.75
+            ],
+            "center_m": [
+              -0.2800000011920929,
+              -0.2199999988079071,
+              0.375
+            ],
+            "vertices": 24
+          },
+          "ClaudeLegB": {
+            "size_m": [
+              0.07999998331069946,
+              0.07999998331069946,
+              0.75
+            ],
+            "center_m": [
+              0.2800000011920929,
+              -0.2199999988079071,
+              0.375
+            ],
+            "vertices": 24
+          },
+          "ClaudeLegC": {
+            "size_m": [
+              0.07999999821186066,
+              0.07999998331069946,
+              0.75
+            ],
+            "center_m": [
+              0,
+              0.2800000011920929,
+              0.375
+            ],
+            "vertices": 24
+          }
+        },
+        "files": {
+          "stool.blend": 468670,
+          "stool.glb": 15660
+        },
+        "blender_version": "4.5.15 LTS"
+      },
+      "transcriptSha256": "e74cb223e665cebb107baa4b8ec9881aeae64c4424270a0e2603d6571657a070"
+    },
+    "codex": {
+      "host": "codex",
+      "requestedModel": "gpt-6.1-sol",
+      "effort": "medium",
+      "package": "1.0.0",
+      "toolContractSha256": "0d1b4523f9a65fa0d05c8e46984907afd192fae4dc8f578e9ad169b91566d151",
+      "skillSha256": "d465c9226b414606de911e7b012e59b33bfdcae4d67e63d28e30e28580c7fd2d",
+      "cliSha256": "beb825b76fdf3a96a63e208ffab7034926ba43fe8e1a0c8b66cb507404401b06",
+      "assetFingerprint": "4c0226b037cc80f64a06019cafea5b77ee85ef8e36f3baf80669c642b104f3dc",
+      "project": "E:\\workplace\\blender-server\\tmp\\host-final\\codex 中文 空格",
+      "run": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "durationMs": 95599
+      },
+      "independentRun": {
+        "exitCode": 0,
+        "signal": null,
+        "timedOut": false,
+        "durationMs": 529
+      },
+      "independent": {
+        "ok": true,
+        "root": "E:\\workplace\\blender-server\\tmp\\host-final\\codex 中文 空格",
+        "blend": {
+          "CodexTop": {
+            "size_m": [
+              0.9000000357627869,
+              0.9000000357627869,
+              0.08000004291534424
+            ],
+            "center_m": [
+              0,
+              0,
+              0.7900000214576721
+            ],
+            "vertices": 192
+          },
+          "CodexLegA": {
+            "size_m": [
+              0.07999998331069946,
+              0.07999998331069946,
+              0.75
+            ],
+            "center_m": [
+              -0.2800000011920929,
+              -0.2199999988079071,
+              0.375
+            ],
+            "vertices": 8
+          },
+          "CodexLegB": {
+            "size_m": [
+              0.07999998331069946,
+              0.07999998331069946,
+              0.75
+            ],
+            "center_m": [
+              0.2800000011920929,
+              -0.2199999988079071,
+              0.375
+            ],
+            "vertices": 8
+          },
+          "CodexLegC": {
+            "size_m": [
+              0.07999999821186066,
+              0.07999998331069946,
+              0.75
+            ],
+            "center_m": [
+              0,
+              0.2800000011920929,
+              0.375
+            ],
+            "vertices": 8
+          }
+        },
+        "glb": {
+          "CodexTop": {
+            "size_m": [
+              0.9000000357627869,
+              0.9000000357627869,
+              0.08000004291534424
+            ],
+            "center_m": [
+              0,
+              0,
+              0.7900000214576721
+            ],
+            "vertices": 576
+          },
+          "CodexLegA": {
+            "size_m": [
+              0.07999998331069946,
+              0.07999998331069946,
+              0.75
+            ],
+            "center_m": [
+              -0.2800000011920929,
+              -0.2199999988079071,
+              0.375
+            ],
+            "vertices": 24
+          },
+          "CodexLegB": {
+            "size_m": [
+              0.07999998331069946,
+              0.07999998331069946,
+              0.75
+            ],
+            "center_m": [
+              0.2800000011920929,
+              -0.2199999988079071,
+              0.375
+            ],
+            "vertices": 24
+          },
+          "CodexLegC": {
+            "size_m": [
+              0.07999999821186066,
+              0.07999998331069946,
+              0.75
+            ],
+            "center_m": [
+              0,
+              0.2800000011920929,
+              0.375
+            ],
+            "vertices": 24
+          }
+        },
+        "files": {
+          "stool.blend": 508602,
+          "stool.glb": 26792
+        },
+        "blender_version": "4.5.15 LTS"
+      },
+      "transcriptSha256": "2f9559b5da68bfc967ea90e1f5f93f5a8cd37f278cabae4bfe2e3c83335cf793"
+    }
+  },
+  "artifactHashes": {
+    "hosts/claude/final.png": {
+      "bytes": 96291,
+      "sha256": "6c4f04e67a6ea898cc9da401a32797b8918ac543e317ee9d34394e90825d6f35"
+    },
+    "hosts/claude/independent-check.json": {
+      "bytes": 2274,
+      "sha256": "8277f0802c55e5c6fbad6142a44b827290da5a2638f9e1a8b4ff7c3419d4eaed"
+    },
+    "hosts/claude/initial.png": {
+      "bytes": 96119,
+      "sha256": "9ebcf8cbbdfba7c20f76dd82343bf7d6d6556616d085ee65369b1665c2b1a5e6"
+    },
+    "hosts/claude/stool.blend": {
+      "bytes": 468670,
+      "sha256": "74bdba2f60e7299dce13e70ddffe61e39ca3fab77c7c60cf47655f12cedfa7d8"
+    },
+    "hosts/claude/stool.glb": {
+      "bytes": 15660,
+      "sha256": "23c84ddb2ad3b8edf8744c71732fb8c27916cb86d51feb77b5510623f277ba95"
+    },
+    "hosts/claude/task.txt": {
+      "bytes": 2205,
+      "sha256": "f5b506903b7f6b713589f8525c1df4ac55b0b13cb05782a46e40d0beaba7afa3"
+    },
+    "hosts/codex/final.png": {
+      "bytes": 125786,
+      "sha256": "8e9e7cd5a0bcd0357fa800ae21a14cd5e3cf42c742ed93fdcdb07755ff2f7ea3"
+    },
+    "hosts/codex/independent-check.json": {
+      "bytes": 2265,
+      "sha256": "ab3102e6db90b702beb1e2c0a056a31bdff0aac286ce96cce9a3272406be70a6"
+    },
+    "hosts/codex/initial.png": {
+      "bytes": 125895,
+      "sha256": "e8ab43ef45a9cdee8a7f3e0b409c29cf3b75a1385e43bfd2040a5860c71679ce"
+    },
+    "hosts/codex/stool-evidence.json": {
+      "bytes": 3655,
+      "sha256": "c6325ccc3be56ca4e85c7bcf07db3e1e5e83fb250008b18b38c031531173ac41"
+    },
+    "hosts/codex/stool.blend": {
+      "bytes": 508602,
+      "sha256": "bb2d3aeefc6b4eb95df50f793cba2be9d76d474868a812c07e3e239f6783623e"
+    },
+    "hosts/codex/stool.glb": {
+      "bytes": 26792,
+      "sha256": "7810c42bab80429d01ca933a08f87e0cf86b57ea3f337276a4d22ef8056f0087"
+    },
+    "hosts/codex/task.txt": {
+      "bytes": 2198,
+      "sha256": "519704ef0d2e4e48a9f3f8f5ebda95a11ed22ad09b7374d54755c41fd415b2b6"
+    }
+  },
+  "checks": {
+    "typecheck": "passed",
+    "protocolGroups": {
+      "passed": 5,
+      "failed": 0
+    },
+    "realMcpGroups": {
+      "passed": 2,
+      "failed": 0
+    },
+    "installer": {
+      "passed": 10,
+      "failed": 0
+    },
+    "upstreamContract": {
+      "passed": 28,
+      "failed": 0,
+      "skippedEvidenceBlocks": 2
+    },
+    "upstreamPlan": {
+      "passed": 18,
+      "failed": 0
+    },
+    "upstreamIntegration": {
+      "passed": 128,
+      "failed": 0
+    }
+  },
+  "boundaries": {
+    "verifiedPlatform": "Windows",
+    "verifiedBlender": "4.5.15 LTS",
+    "notExecuted": [
+      "Linux host",
+      "macOS host",
+      "Blender 5 real host",
+      "all 217 operations exhaustively"
+    ]
+  }
+}

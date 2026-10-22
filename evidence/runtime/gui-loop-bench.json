@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "op": "bench",
+  "result": {
+    "iterations": 2,
+    "ms": 0,
+    "per_iter_us": 1.7
+  }
+}

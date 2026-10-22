@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-22T18:57:52.909Z",
+  "timezone": "Asia/Singapore",
+  "reviewDate": "2026-10-23",
+  "package": {
+    "name": "@blender-agent/bridge",
+    "version": "1.0.0",
+    "assetFingerprintAtRecordTime": "292beebdf8d6f7732bb86d9c588f568e45b8e433fbc819180e725c32b75b78da",
+    "fingerprintSource": "packages/blender-agent/assets/manifest.json",
+    "fingerprintCoverage": "Recorded after tests. Adapter cleanup was subsequently being finalized; the eight checks cover the listed contract and CLI fixes, not every final asset byte. The exact tested fingerprint was not captured in the final eight-check run."
+  },
+  "environment": {
+    "platform": "Windows",
+    "node": "v24.20.0",
+    "blender": {
+      "version": "4.5.15 LTS",
+      "buildHash": "5afeabba6097",
+      "exe": "E:/workplace/blender-server/.local/blender-4.5.15-windows-x64/blender.exe"
+    },
+    "ports": {
+      "http": 41877,
+      "addon": 41876,
+      "worker": 41879
+    },
+    "isolation": "Temporary workdirs per run. No visible GUI started, no global host configuration changed. Owned backends were stopped or disposed. Ports 19877/29877/30877 were not used.",
+    "finalWorkdir": "C:/Users/LIBING~1/AppData/Local/Temp/blender-agent-final-holder-Q44KME"
+  },
+  "evidenceOrigin": "Original failure outputs and final eight assertions were captured in this chat tool execution. Machine records below transcribe those inputs/results; they are not retroactively claimed to be untouched raw JSON transcripts. Preserved job files in artifacts are byte copies of actual outputs.",
+  "originalFindings": [
+    {
+      "id": "R-01",
+      "severity": "P1",
+      "title": "Existing worker ignores additional preload",
+      "locations": [
+        {
+          "path": "packages/blender-agent/src/core.ts",
+          "line": 85
+        },
+        {
+          "path": "bridge/runtime/engine.mjs",
+          "line": 2123
+        }
+      ],
+      "mode": "real-blender-worker",
+      "inputs": [
+        {
+          "tool": "blender_rt_do",
+          "args": {
+            "session": "review-preload",
+            "code": "print(\"REVIEW_CREATED\",len(bpy.data.objects))",
+            "see": false
+          }
+        },
+        {
+          "tool": "blender_rt_plan",
+          "args": {
+            "session": "review-preload",
+            "op": "audit_mesh",
+            "args": {
+              "summary_only": true
+            }
+          }
+        }
+      ],
+      "expected": "The same modeled session can load the required audit family without losing its scene.",
+      "observed": {
+        "firstCallIsError": false,
+        "firstStdout": "REVIEW_CREATED 3\n",
+        "secondCallIsError": true,
+        "error": "AttributeError: module 'dsh_rt_kernel' has no attribute 'dsh_audit_api'"
+      },
+      "workdir": "C:/Users/LIBING~1/AppData/Local/Temp/blender-agent-review-qOlLU7",
+      "fixReverification": "Assigned to runtime agent; not repeated in the final eight checks."
+    },
+    {
+      "id": "R-02",
+      "severity": "P1/P2",
+      "title": "PID-based cross-CLI lease self-lock",
+      "locations": [
+        {
+          "path": "packages/blender-agent/src/core.ts",
+          "line": 76
+        },
+        {
+          "path": "bridge/runtime/server.mjs",
+          "line": 115
+        }
+      ],
+      "mode": "real-cli-real-backend-no-blender-needed",
+      "inputs": [
+        {
+          "cli": "backend start"
+        },
+        {
+          "tool": "blender_viewport",
+          "args": {
+            "op": "lease"
+          }
+        },
+        {
+          "tool": "blender_rt_preset",
+          "args": {
+            "op": "save",
+            "name": "review-probe",
+            "data": "{\"x\":1}"
+          }
+        },
+        {
+          "tool": "blender_viewport",
+          "args": {
+            "op": "release"
+          }
+        }
+      ],
+      "expected": "One explicit CLI work session can lease, write, and release across separate processes; competing work sessions remain blocked.",
+      "observed": {
+        "leaseHolder": "blender-agent-47412",
+        "writeExit": 1,
+        "writeHttpStatus": 409,
+        "writeError": "leased",
+        "holderAlive": null,
+        "releaseReleased": null,
+        "leaseStillActive": true,
+        "ttlMs": 600000
+      },
+      "workdir": "C:/Users/LIBING~1/AppData/Local/Temp/blender-agent-review-lease-V9wKvd",
+      "fixReverification": "Covered by F-03 through F-08."
+    },
+    {
+      "id": "R-03",
+      "severity": "P2",
+      "title": "Unknown worker/job operations falsely succeed",
+      "locations": [
+        {
+          "path": "packages/blender-agent/src/core.ts",
+          "line": 148
+        },
+        {
+          "path": "bridge/runtime/server.mjs",
+          "line": 728
+        },
+        {
+          "path": "bridge/runtime/server.mjs",
+          "line": 807
+        }
+      ],
+      "mode": "real-cli-core-real-backend-no-blender-needed",
+      "inputs": [
+        {
+          "tool": "blender_rt_worker",
+          "args": {
+            "op": "this-operation-does-not-exist"
+          }
+        },
+        {
+          "tool": "blender_rt_job",
+          "args": {
+            "op": "this-operation-does-not-exist"
+          }
+        }
+      ],
+      "expected": "Reject unknown operations clearly before dispatch.",
+      "observed": {
+        "worker": {
+          "isError": false,
+          "ok": true,
+          "op": "status"
+        },
+        "job": {
+          "isError": false,
+          "ok": true,
+          "op": "list",
+          "jobs": []
+        }
+      },
+      "workdir": "C:/Users/LIBING~1/AppData/Local/Temp/blender-agent-review-invalid-sop103",
+      "fixReverification": "Covered by F-01 and F-02."
+    },
+    {
+      "id": "R-04",
+      "severity": "P2",
+      "title": "Worker file resolves against host CWD instead of current blend directory",
+      "locations": [
+        {
+          "path": "packages/blender-agent/src/core.ts",
+          "line": 175
+        }
+      ],
+      "mode": "real-blender-worker",
+      "inputs": [
+        {
+          "fixture": "Write relative-script.py next to saved.blend in the isolated workdir.",
+          "content": "print(\"BLEND_RELATIVE_SCRIPT_OK\")\n"
+        },
+        {
+          "tool": "blender_rt_do",
+          "args": {
+            "session": "file-review",
+            "see": false,
+            "code": "bpy.ops.wm.save_as_mainfile(filepath=<isolated workdir>/saved.blend)"
+          }
+        },
+        {
+          "tool": "blender_rt_do",
+          "args": {
+            "session": "file-review",
+            "see": false,
+            "file": "relative-script.py"
+          }
+        }
+      ],
+      "expected": "The documented blend-relative file path executes in the same worker.",
+      "observed": {
+        "saveIsError": false,
+        "fileIsError": true,
+        "code": "INTERNAL_ERROR",
+        "error": "ENOENT: no such file or directory, open 'E:\\workplace\\blender-server\\relative-script.py'"
+      },
+      "workdir": "C:/Users/LIBING~1/AppData/Local/Temp/blender-agent-review-file-LEyNAY",
+      "fixReverification": "Assigned to runtime agent; not repeated in the final eight checks."
+    }
+  ],
+  "finalChecks": [
+    {
+      "id": "F-01",
+      "finding": "R-03",
+      "mode": "real-built-core-with-transport-tripwire",
+      "input": {
+        "tool": "blender_rt_worker",
+        "args": {
+          "op": "this-operation-does-not-exist"
+        }
+      },
+      "testSeam": "Replace this isolated Bridge instance backend.request with a counter that throws NETWORK_MUST_NOT_BE_REACHED; no fake success response.",
+      "expected": {
+        "isError": true,
+        "code": "INVALID_ARGUMENTS",
+        "transportCalls": 0
+      },
+      "observed": {
+        "isError": true,
+        "code": "INVALID_ARGUMENTS",
+        "transportCalls": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "F-02",
+      "finding": "R-03",
+      "mode": "real-built-core-with-transport-tripwire",
+      "input": {
+        "tool": "blender_rt_job",
+        "args": {
+          "op": "this-operation-does-not-exist"
+        }
+      },
+      "expected": {
+        "isError": true,
+        "code": "INVALID_ARGUMENTS",
+        "transportCalls": 0
+      },
+      "observed": {
+        "isError": true,
+        "code": "INVALID_ARGUMENTS",
+        "transportCalls": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "F-03",
+      "finding": "R-02",
+      "mode": "real-cli-before-backend-start",
+      "input": {
+        "tool": "blender_viewport",
+        "args": {
+          "op": "lease"
+        },
+        "holder": null,
+        "environment": "BLENDER_AGENT_HOLDER and DSH_BLENDER_HOLDER removed from child env"
+      },
+      "expected": {
+        "exit": 1,
+        "code": "EXPLICIT_HOLDER_REQUIRED",
+        "backendStateFileExists": false
+      },
+      "observed": {
+        "exit": 1,
+        "code": "EXPLICIT_HOLDER_REQUIRED",
+        "backendStateFileExists": false
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "F-04",
+      "finding": "R-02",
+      "mode": "real-cli-real-persistent-backend",
+      "input": {
+        "setup": "backend start with the same ports/workdir/Blender executable",
+        "tool": "blender_viewport",
+        "args": {
+          "op": "lease"
+        },
+        "holder": "final-review-a"
+      },
+      "expected": {
+        "exit": 0,
+        "leaseHolder": "final-review-a"
+      },
+      "observed": {
+        "exit": 0,
+        "leaseHolder": "final-review-a"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "F-05",
+      "finding": "R-02",
+      "mode": "real-cli-real-persistent-backend",
+      "input": {
+        "tool": "blender_rt_job",
+        "args": {
+          "op": "start",
+          "script": "open(<isolated workdir>/holder-write.txt,\"w\").write(\"holder-write-ok\")"
+        },
+        "holder": "final-review-b",
+        "activeLeaseHolder": "final-review-a"
+      },
+      "expected": {
+        "exit": 1,
+        "httpStatus": 409,
+        "holder": "final-review-a"
+      },
+      "observed": {
+        "exit": 1,
+        "httpStatus": 409,
+        "holder": "final-review-a"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "F-06",
+      "finding": "R-02",
+      "mode": "real-cli-real-blender-headless-job",
+      "input": {
+        "tool": "blender_rt_job",
+        "args": {
+          "op": "start",
+          "script": "open(<isolated workdir>/holder-write.txt,\"w\").write(\"holder-write-ok\")"
+        },
+        "holder": "final-review-a",
+        "followup": {
+          "tool": "blender_rt_job",
+          "args": {
+            "op": "wait",
+            "id": "job-mvjwf34udw6",
+            "timeout_ms": 30000
+          }
+        }
+      },
+      "expected": {
+        "startExit": 0,
+        "waitExit": 0,
+        "fileContent": "holder-write-ok"
+      },
+      "observed": {
+        "startExit": 0,
+        "startIsError": false,
+        "waitExit": 0,
+        "jobId": "job-mvjwf34udw6",
+        "jobStatus": "done",
+        "jobExitCode": 0,
+        "fileContent": "holder-write-ok"
+      },
+      "artifacts": [
+        "artifacts/holder-write.txt",
+        "artifacts/job-summary.json",
+        "artifacts/job-stdout.log",
+        "artifacts/job-stderr.log"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "F-07",
+      "finding": "R-02",
+      "mode": "real-cli-real-persistent-backend",
+      "input": {
+        "tool": "blender_viewport",
+        "args": {
+          "op": "release"
+        },
+        "holder": "final-review-a",
+        "process": "Separate CLI process from lease and write"
+      },
+      "expected": {
+        "exit": 0,
+        "released": "final-review-a",
+        "leaseActive": false
+      },
+      "observed": {
+        "exit": 0,
+        "released": "final-review-a",
+        "leaseActive": false
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "F-08",
+      "finding": "R-02",
+      "mode": "real-cli-real-persistent-backend",
+      "input": {
+        "sequence": [
+          {
+            "tool": "blender_viewport",
+            "args": {
+              "op": "lease"
+            }
+          },
+          {
+            "tool": "blender_viewport",
+            "args": {
+              "op": "release"
+            }
+          }
+        ],
+        "environment": {
+          "BLENDER_AGENT_HOLDER": "final-review-env"
+        },
+        "holderFlag": null
+      },
+      "expected": {
+        "leaseExit": 0,
+        "leaseHolder": "final-review-env",
+        "releaseReleased": "final-review-env"
+      },
+      "observed": {
+        "leaseExit": 0,
+        "leaseHolder": "final-review-env",
+        "releaseReleased": "final-review-env"
+      },
+      "verdict": "pass"
+    }
+  ],
+  "finalSummary": {
+    "checks": 8,
+    "passed": 8,
+    "backendStopExit": 0,
+    "scope": "Targeted contract validation and CLI lease fixes only; no repeat of preload or blend-relative path fixes."
+  },
+  "additionalObservations": [
+    {
+      "kind": "preliminary-scope-probe",
+      "description": "A preliminary same-holder preset save was admitted by the lease gate but failed because preset requires a GUI addon at 41876. It was not counted as a successful write; F-06 replaced it with a real headless Blender job and actual output file."
+    },
+    {
+      "kind": "render-boundary",
+      "description": "The preserved F-06 stdout contains DSH_GPU ok=false: BLENDER_EEVEE enum missing in Blender 4.5 (actual engine BLENDER_EEVEE_NEXT). The file-writing script and job exited successfully; this test did not render and does not validate EEVEE/GPU initialization."
+    }
+  ],
+  "remainingBoundaries": [
+    "No visible GUI or GUI addon acceptance in this review run.",
+    "No Claude/Codex model task acceptance in the final eight checks.",
+    "F-01/F-02 are deterministic no-transport validation checks, not Blender or full MCP-host acceptance.",
+    "R-01/R-04 fix verification belongs to the separate runtime agent; this report does not claim they were re-executed here.",
+    "No claim that current recorded asset fingerprint is byte-identical to the snapshot used by all earlier checks.",
+    "No new validation was run while recording these results."
+  ],
+  "artifacts": [
+    {
+      "path": "artifacts/holder-write.txt",
+      "source": "C:\\Users\\LIBING~1\\AppData\\Local\\Temp\\blender-agent-final-holder-Q44KME\\holder-write.txt",
+      "bytes": 15,
+      "sha256": "2a578bd593252fa947ae895b327c76553f8dde90a6a3295f259d6a637cca51dc"
+    },
+    {
+      "path": "artifacts/job-summary.json",
+      "source": "C:\\Users\\LIBING~1\\AppData\\Local\\Temp\\blender-agent-final-holder-Q44KME\\jobs\\job-mvjwf34udw6\\summary.json",
+      "bytes": 601,
+      "sha256": "2038382e39887ab10ab5b4410d0f9bf1f826fe549e64539d75aa96edfda610a3"
+    },
+    {
+      "path": "artifacts/job-stdout.log",
+      "source": "C:\\Users\\LIBING~1\\AppData\\Local\\Temp\\blender-agent-final-holder-Q44KME\\jobs\\job-mvjwf34udw6\\stdout.log",
+      "bytes": 951,
+      "sha256": "13be3e05301208f3b39e376ec1f8a4efccf1a91b22bd7af5a42bc3bf180dab8a"
+    },
+    {
+      "path": "artifacts/job-stderr.log",
+      "source": "C:\\Users\\LIBING~1\\AppData\\Local\\Temp\\blender-agent-final-holder-Q44KME\\jobs\\job-mvjwf34udw6\\stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

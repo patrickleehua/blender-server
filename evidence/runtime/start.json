@@ -1,0 +1,80 @@
+{
+  "ok": true,
+  "op": "start",
+  "result": {
+    "name": "acceptance",
+    "alive": true,
+    "ready": true,
+    "pid": 3184,
+    "port": 19879,
+    "uptimeMs": 353,
+    "idleMs": 0,
+    "inflight": 0,
+    "gpu": {
+      "engine_mode": "workbench",
+      "gpu_mode": "auto",
+      "backend": "n/a: GPU functions for drawing are not available in background mo",
+      "before": {
+        "engine": "BLENDER_EEVEE_NEXT"
+      },
+      "ok": true,
+      "skipped": false,
+      "configured": "workbench",
+      "after": {
+        "engine": "BLENDER_WORKBENCH"
+      },
+      "fell_back_to_cpu": false
+    },
+    "boot": {
+      "ok": true,
+      "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\worker_boot_acceptance.py",
+      "stdout": "",
+      "stderr": "",
+      "error": null,
+      "traceback": "",
+      "kernel_modules": [
+        "dsh_audit_api",
+        "dsh_geo_api",
+        "dsh_txn_api"
+      ]
+    },
+    "lastError": null,
+    "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 19879, \"pid\": 3184, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"path\": \"E:\\\\workplace\\\\blender-server\\\\tmp\\\\runtime\\\\work\\\\worker_boot_acceptance.py\", \"stdout\": \"\", \"stderr\": \"\", \"error\": null, \"traceback\": \"\", \"kernel_modules\": [\"dsh_audit_api\", \"dsh_geo_api\", \"dsh_txn_api\"]}, \"blender\": \"4.5.15 LTS\"}\r\n",
+    "hello": {
+      "ready": true,
+      "port": 19879,
+      "pid": 3184,
+      "version": 2,
+      "gpu": {
+        "engine_mode": "workbench",
+        "gpu_mode": "auto",
+        "backend": "n/a: GPU functions for drawing are not available in background mo",
+        "before": {
+          "engine": "BLENDER_EEVEE_NEXT"
+        },
+        "ok": true,
+        "skipped": false,
+        "configured": "workbench",
+        "after": {
+          "engine": "BLENDER_WORKBENCH"
+        },
+        "fell_back_to_cpu": false
+      },
+      "boot": {
+        "ok": true,
+        "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\worker_boot_acceptance.py",
+        "stdout": "",
+        "stderr": "",
+        "error": null,
+        "traceback": "",
+        "kernel_modules": [
+          "dsh_audit_api",
+          "dsh_geo_api",
+          "dsh_txn_api"
+        ]
+      },
+      "blender": "4.5.15 LTS"
+    },
+    "warmup": null
+  }
+}

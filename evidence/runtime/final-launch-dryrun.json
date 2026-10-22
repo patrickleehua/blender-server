@@ -1,0 +1,29 @@
+{
+  "ok": true,
+  "result": {
+    "ok": true,
+    "ms": 8,
+    "launches": 1,
+    "exe": "E:/workplace/blender-server/.local/blender-4.5.15-windows-x64/blender.exe",
+    "addonPort": 19876,
+    "waitMs": 90000,
+    "statusFile": "E:\\workplace\\blender-server\\tmp\\runtime\\final-launch\\launch-status.json",
+    "statusFileWin": "E:\\workplace\\blender-server\\tmp\\runtime\\final-launch\\launch-status.json",
+    "configFrom": "config",
+    "dryRun": true,
+    "launched": false,
+    "already": false,
+    "args": [
+      "--python",
+      "E:\\workplace\\blender-server\\tmp\\runtime\\final-launch\\dsh_headless_mvjwn2ud.py"
+    ],
+    "bootScript": "E:\\workplace\\blender-server\\tmp\\runtime\\final-launch\\dsh_headless_mvjwn2ud.py",
+    "steps": [
+      "dryRun：只给出将要执行的命令"
+    ],
+    "hint": "去掉 dry_run 即真正启动",
+    "doctor": null
+  },
+  "bundledAddonExists": true,
+  "bootstrapPortAndConnect": true
+}

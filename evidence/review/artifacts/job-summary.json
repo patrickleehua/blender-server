@@ -1,0 +1,22 @@
+{
+ "id": "job-mvjwf34udw6",
+ "kind": "job",
+ "status": "done",
+ "exitCode": 0,
+ "signal": null,
+ "startedAt": 1792695171488,
+ "finishedAt": 1792695171995,
+ "ms": 507,
+ "outdir": "C:\\Users\\LIBING~1\\AppData\\Local\\Temp\\blender-agent-final-holder-Q44KME",
+ "script": "C:\\Users\\LIBING~1\\AppData\\Local\\Temp\\blender-agent-final-holder-Q44KME\\dsh_headless_mvjwf34v.py",
+ "engine": "eevee",
+ "runId": "run-mvjwf34vnua",
+ "stage": "done",
+ "artifacts": [
+  "holder-write.txt(15B)",
+  "dsh_headless_mvjwf34v.py(73728B)"
+ ],
+ "resultSummary": null,
+ "lastException": null,
+ "pluginVersion": "1.0.0"
+}

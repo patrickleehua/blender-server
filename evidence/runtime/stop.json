@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "op": "stop",
+  "result": {
+    "name": "acceptance",
+    "stopped": true,
+    "wasAlive": true,
+    "bye": {
+      "id": 715009992,
+      "ok": true,
+      "bye": true
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "ok": true,
+  "op": "status",
+  "result": {
+    "name": "acceptance",
+    "alive": true,
+    "ready": true,
+    "pid": 3184,
+    "port": 19879,
+    "uptimeMs": 1441,
+    "idleMs": 0,
+    "inflight": 0,
+    "gpu": {
+      "engine_mode": "workbench",
+      "gpu_mode": "auto",
+      "backend": "n/a: GPU functions for drawing are not available in background mo",
+      "before": {
+        "engine": "BLENDER_EEVEE_NEXT"
+      },
+      "ok": true,
+      "skipped": false,
+      "configured": "workbench",
+      "after": {
+        "engine": "BLENDER_WORKBENCH"
+      },
+      "fell_back_to_cpu": false
+    },
+    "boot": {
+      "ok": true,
+      "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\worker_boot_acceptance.py",
+      "stdout": "",
+      "stderr": "",
+      "error": null,
+      "traceback": "",
+      "kernel_modules": [
+        "dsh_audit_api",
+        "dsh_geo_api",
+        "dsh_txn_api"
+      ]
+    },
+    "lastError": null,
+    "stdoutTail": "id\": 3184, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"path\": \"E:\\\\workplace\\\\blender-server\\\\tmp\\\\runtime\\\\work\\\\worker_boot_acceptance.py\", \"stdout\": \"\", \"stderr\": \"\", \"error\": null, \"traceback\": \"\", \"kernel_modules\": [\"dsh_audit_api\", \"dsh_geo_api\", \"dsh_txn_api\"]}, \"blender\": \"4.5.15 LTS\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\nSaved: 'E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_see_3184_1.png'\nTime: 00:00.52 (Saving: 00:00.07)\n\nSaved: 'E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_see_3184_2.png'\nTime: 00:00.03 (Saving: 00:00.01)\n\nSaved: 'E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_see_3184_3.png'\nTime: 00:00.02 (Saving: 00:00.01)\n\nSaved: 'E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_see_3184_4.png'\nTime: 00:00.01 (Saving: 00:00.00)\n\nSaved: 'E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_see_3184_5.png'\nTime: 00:00.01 (Saving: 00:00.00)\n\n",
+    "status": {
+      "ok": true,
+      "version": 2,
+      "pid": 3184,
+      "uptime_s": 1,
+      "calls": 7,
+      "errors": 1,
+      "objects": 1,
+      "file": "E:\\workplace\\blender-server\\evidence\\runtime\\scene.blend",
+      "kernel_modules": [
+        "dsh_audit_api",
+        "dsh_geo_api",
+        "dsh_txn_api"
+      ],
+      "boot": {
+        "ok": true,
+        "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\worker_boot_acceptance.py",
+        "stdout": "",
+        "stderr": "",
+        "error": null,
+        "traceback": "",
+        "kernel_modules": [
+          "dsh_audit_api",
+          "dsh_geo_api",
+          "dsh_txn_api"
+        ]
+      },
+      "frame_dir": "E:\\workplace\\blender-server\\tmp\\runtime\\work",
+      "gpu": {
+        "engine_mode": "workbench",
+        "gpu_mode": "auto",
+        "backend": "n/a: GPU functions for drawing are not available in background mo",
+        "before": {
+          "engine": "BLENDER_EEVEE_NEXT"
+        },
+        "ok": true,
+        "skipped": false,
+        "configured": "workbench",
+        "after": {
+          "engine": "BLENDER_WORKBENCH"
+        },
+        "fell_back_to_cpu": false
+      }
+    }
+  }
+}

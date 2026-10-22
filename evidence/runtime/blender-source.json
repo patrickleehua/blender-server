@@ -1,0 +1,7 @@
+{
+  "bytes": 398649826,
+  "verifiedAt": "2026-10-23T02:26:49.1329772+08:00",
+  "sha256": "52dd02fd74877fa08e74b67d7854cf32468a232c02aaa19b6844c91285574f8d",
+  "checksumSource": "https://download.blender.org/release/Blender4.5/blender-4.5.15.sha256",
+  "source": "https://download.blender.org/release/Blender4.5/blender-4.5.15-windows-x64.zip"
+}

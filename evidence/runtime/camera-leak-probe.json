@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "op": "exec",
+  "result": {
+    "id": 345293947,
+    "ok": true,
+    "ms": 0,
+    "stdout": "HEADLESS {\"camera_count\": 0, \"objects\": 1}\n",
+    "stderr": "",
+    "result": {
+      "camera_count": 0,
+      "objects": 1
+    },
+    "error": null,
+    "traceback": null
+  },
+  "error": null,
+  "traceback": null
+}

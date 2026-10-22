@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "op": "restore",
+  "result": {
+    "ok": true,
+    "restored": {
+      "label": "gui-before",
+      "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\snapshots\\gui-before.blend",
+      "bytes": 437450,
+      "ms": 14,
+      "objects": 1,
+      "note": "",
+      "t": "2026-10-23 02:34:53",
+      "filepath": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\snapshots\\gui-before.blend",
+      "unsaved": false
+    },
+    "ms": 4,
+    "objects": 1,
+    "into": "snapshot",
+    "wrote_to_original": false,
+    "target": null,
+    "target_source": null,
+    "filepath_before": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\snapshots\\gui-before.blend",
+    "filepath": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\snapshots\\gui-before.blend",
+    "next_save_goes_to": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\snapshots\\gui-before.blend",
+    "backup": {
+      "label": "_pre_restore_gui-before_20261023_023454",
+      "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\snapshots\\_pre_restore_gui-before_20261023_023454.blend",
+      "bytes": 437450,
+      "ms": 12,
+      "objects": 1,
+      "note": "restore 'gui-before' 前自动备份（会话被替换前的状态）",
+      "t": "2026-10-23 02:34:54",
+      "auto": true,
+      "filepath": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\snapshots\\gui-before.blend"
+    },
+    "backup_error": null,
+    "on_disk_backup": null,
+    "on_disk_backup_error": null,
+    "warning": "快照已载入，但**没有**可回写的原文件 —— 当前会话挂在快照文件上，现在保存会写进快照目录（E:\\workplace\\blender-server\\tmp\\runtime\\work\\snapshots\\gui-before.blend）；要落到自己的工程请显式另存 restore 前的状态已备份为快照 _pre_restore_gui-before_20261023_023454"
+  }
+}

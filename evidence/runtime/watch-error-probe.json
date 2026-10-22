@@ -1,0 +1,24 @@
+{
+  "ok": false,
+  "op": "watch",
+  "result": {
+    "id": 811408059,
+    "ok": false,
+    "mode": "workbench-offscreen-watch",
+    "code": {
+      "ok": false,
+      "ms": 0,
+      "error": "ValueError: acceptance-watch-error",
+      "result": null,
+      "stdout": ""
+    },
+    "frames": [],
+    "picks": [],
+    "distinct": 0,
+    "changed": false,
+    "static_render": false,
+    "error": "ValueError: acceptance-watch-error",
+    "ms": 0
+  },
+  "error": "ValueError: acceptance-watch-error"
+}

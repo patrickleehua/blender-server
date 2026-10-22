@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "op": "exec",
+  "result": {
+    "id": 327933391,
+    "ok": true,
+    "ms": 97,
+    "stdout": "INFO Draco mesh compression is available, use library at E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\4.5\\scripts\\addons_core\\io_scene_gltf2\\extern_draco.dll\n02:34:53 | INFO: Starting glTF 2.0 export\n02:34:53 | INFO: Extracting primitive: Cube\n02:34:53 | INFO: Primitives created: 1\n02:34:53 | INFO: Finished glTF 2.0 export in 0.002620220184326172 s\n\nHEADLESS {\"verts\": 8, \"dimensions\": [2.0, 4.0, 3.0], \"file\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\runtime\\\\scene.blend\"}\n",
+    "stderr": "",
+    "result": {
+      "verts": 8,
+      "dimensions": [
+        2,
+        4,
+        3
+      ],
+      "file": "E:\\workplace\\blender-server\\evidence\\runtime\\scene.blend"
+    },
+    "error": null,
+    "traceback": null
+  },
+  "error": null,
+  "traceback": null
+}

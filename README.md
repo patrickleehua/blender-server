@@ -26,6 +26,7 @@ node scripts/portable-setup.mjs --project <项目绝对路径> --host both --ble
 - [完整使用指南](docs/portable/使用指南.md)：安装、配置、连续 CLI 操作、GUI/无头、卸载。
 - [独立重构设计](docs/adapter-design.md)：职责与兼容边界。
 - [验收场景](docs/acceptance-scenarios.md)：实际验收的独立判据。
+- [最终验收报告](docs/acceptance-report.md)：指定 Claude/Codex 真实运行与独立产物检查。
 - [通用 Skill](skills/blender-agent/SKILL.md)：能力选择与建模闭环。
 - [许可与来源](NOTICE.md)：固定上游版本和保留的许可证。
 

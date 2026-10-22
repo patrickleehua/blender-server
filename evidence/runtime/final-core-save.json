@@ -1,0 +1,25 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":235880074,\"ok\":true,\"ms\":1,\"stdout\":\"Info: Saved as \\\"same-session.blend\\\"\\n\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+    }
+  ],
+  "structuredContent": {
+    "ok": true,
+    "op": "exec",
+    "result": {
+      "id": 235880074,
+      "ok": true,
+      "ms": 1,
+      "stdout": "Info: Saved as \"same-session.blend\"\n",
+      "stderr": "",
+      "result": null,
+      "error": null,
+      "traceback": null
+    },
+    "error": null,
+    "traceback": null
+  },
+  "isError": false
+}

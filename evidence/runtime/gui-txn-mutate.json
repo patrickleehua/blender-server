@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "ms": 32,
+  "mainThreadMs": 32,
+  "executed": true,
+  "stdout": "",
+  "stderr": "",
+  "error": null,
+  "traceback": null,
+  "file": null,
+  "marker_missing": false,
+  "sceneEpoch": {
+    "objects": 1,
+    "meshes": 2,
+    "materials": 0,
+    "nameHash": 1496738877
+  },
+  "errorKind": null
+}

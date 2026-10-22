@@ -1,0 +1,267 @@
+{
+  "ok": true,
+  "doctor": {
+    "ok": true,
+    "addon": {
+      "kind": "ok",
+      "tcp": true,
+      "ping": true,
+      "ping_ms": 43,
+      "roundTripMs": 125,
+      "summary": "通道健康：TCP + ping + bpy 往返都通",
+      "protocol": "flat",
+      "protocol_label": "直连 addon · 扁平协议（无分帧；实测 v1.7/v1.8 都通 —— 活版本看 rt_cmd get_addon_info）",
+      "protocol_from": "config",
+      "fix": "无需处理",
+      "region": {
+        "window": [
+          1920,
+          1009
+        ],
+        "views": [
+          {
+            "region": [
+              0,
+              97,
+              1585,
+              886
+            ],
+            "area": [
+              0,
+              97,
+              1585,
+              886
+            ],
+            "shading": "SOLID"
+          }
+        ]
+      }
+    },
+    "metrics": {
+      "calls": 2,
+      "errors": 0,
+      "timeouts": 0,
+      "inflight": 0,
+      "lastCmd": "execute_code",
+      "lastCmdAt": 1792695064439,
+      "lastOkAt": 1792695064513,
+      "lastError": null,
+      "lastDiagnosis": null,
+      "views": 0,
+      "headlessRuns": 0,
+      "lastHeadlessMs": null,
+      "workerStarts": 0,
+      "workerExecs": 0,
+      "lastCmdAgeMs": 125
+    },
+    "config": {
+      "platform": "win32",
+      "distro": null,
+      "addon": "127.0.0.1:19876",
+      "http": "127.0.0.1:19977",
+      "workDir": {
+        "win": "E:\\workplace\\blender-server\\tmp\\runtime\\final-factory",
+        "wsl": "E:\\workplace\\blender-server\\tmp\\runtime\\final-factory",
+        "from": "config",
+        "fallback": null,
+        "shared": {
+          "shared": true,
+          "why": "windows"
+        }
+      },
+      "blenderExe": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+      "blenderFrom": "config",
+      "blenderUserConfig": null,
+      "blenderUserScripts": null,
+      "workerPort": 19989,
+      "configFile": null,
+      "holder": "plugin-pid-58580",
+      "leaseTtlMs": 600000,
+      "env": {
+        "DSH_BLENDER_WORKDIR": "E:\\workplace\\blender-server\\tmp\\runtime\\final-factory",
+        "DSH_BLENDER_EXE": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+        "DSH_BLENDER_HTTP_PORT": null,
+        "DSH_BLENDER_ADDON_PROTOCOL": null,
+        "DSH_BLENDER_CONFIG": null
+      }
+    },
+    "stats": {
+      "frames": 0,
+      "acts": 0,
+      "cmds": 0,
+      "loops": 0,
+      "views": 0,
+      "headless": 0,
+      "plan": 0,
+      "worker": 0,
+      "txn": 0,
+      "preset": 0,
+      "job": 0,
+      "selections": 0,
+      "lastSelectionMs": null,
+      "lastPlanMs": null,
+      "lastViewMs": null,
+      "lastHeadlessMs": null,
+      "lastFrameMs": null,
+      "lastActMs": null,
+      "lastError": null,
+      "startedAt": 1792695064418
+    }
+  },
+  "start": {
+    "ok": true,
+    "op": "start",
+    "result": {
+      "name": "factory",
+      "alive": true,
+      "ready": true,
+      "pid": 17440,
+      "port": 19989,
+      "uptimeMs": 285,
+      "idleMs": 0,
+      "inflight": 0,
+      "gpu": {
+        "engine_mode": "workbench",
+        "gpu_mode": "auto",
+        "backend": "n/a: GPU functions for drawing are not available in background mo",
+        "before": {
+          "engine": "BLENDER_EEVEE_NEXT"
+        },
+        "ok": true,
+        "skipped": false,
+        "configured": "workbench",
+        "after": {
+          "engine": "BLENDER_WORKBENCH"
+        },
+        "fell_back_to_cpu": false
+      },
+      "boot": {
+        "ok": true,
+        "skipped": true
+      },
+      "lastError": null,
+      "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 19989, \"pid\": 17440, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+      "hello": {
+        "ready": true,
+        "port": 19989,
+        "pid": 17440,
+        "version": 2,
+        "gpu": {
+          "engine_mode": "workbench",
+          "gpu_mode": "auto",
+          "backend": "n/a: GPU functions for drawing are not available in background mo",
+          "before": {
+            "engine": "BLENDER_EEVEE_NEXT"
+          },
+          "ok": true,
+          "skipped": false,
+          "configured": "workbench",
+          "after": {
+            "engine": "BLENDER_WORKBENCH"
+          },
+          "fell_back_to_cpu": false
+        },
+        "boot": {
+          "ok": true,
+          "skipped": true
+        },
+        "blender": "4.5.15 LTS"
+      },
+      "warmup": null
+    }
+  },
+  "exec": {
+    "ok": true,
+    "op": "exec",
+    "result": {
+      "id": 257634776,
+      "ok": true,
+      "ms": 1,
+      "stdout": "HEADLESS {\"ok\":true}\n",
+      "stderr": "",
+      "result": {
+        "ok": true
+      },
+      "error": null,
+      "traceback": null
+    },
+    "error": null,
+    "traceback": null
+  },
+  "see": {
+    "ok": true,
+    "op": "see",
+    "result": {
+      "id": 602459645,
+      "ok": true,
+      "mode": "workbench-offscreen",
+      "path": "E:\\workplace\\blender-server\\tmp\\runtime\\final-factory\\dsh_see_17440_1.png",
+      "width": 320,
+      "height": 180,
+      "bytes": 31853,
+      "coverage_estimate": 0.1866,
+      "pixel_hash": "184ddea8fa61",
+      "ms": 523,
+      "t": {
+        "render_ms": 514,
+        "read_ms": 9,
+        "total_ms": 523
+      },
+      "engine": "BLENDER_WORKBENCH"
+    },
+    "error": null
+  },
+  "fail": {
+    "ok": false,
+    "op": "watch",
+    "result": {
+      "id": 256954145,
+      "ok": false,
+      "mode": "workbench-offscreen-watch",
+      "code": {
+        "ok": false,
+        "ms": 0,
+        "error": "ValueError: final-negative",
+        "result": null,
+        "stdout": ""
+      },
+      "frames": [],
+      "picks": [],
+      "distinct": 0,
+      "changed": false,
+      "static_render": false,
+      "error": "ValueError: final-negative",
+      "ms": 0
+    },
+    "error": "ValueError: final-negative"
+  },
+  "provenance": {
+    "sourcePath": "E:\\workplace\\blender-server\\bridge\\runtime\\engine.mjs",
+    "pluginVersion": "1.0.0",
+    "hashAlgo": "sha256:12",
+    "loadedAt": "2026-10-22T18:51:04.416Z",
+    "loadedHash": "367501010559",
+    "loadedBytes": 208156,
+    "loadedReadError": null,
+    "currentHash": "367501010559",
+    "currentBytes": 208156,
+    "currentMtime": "2026-10-22T18:44:07.017Z",
+    "verdict": "current",
+    "stale": false,
+    "staleReason": null,
+    "catalogHash": "d65a6f61d561",
+    "families": 33,
+    "opsCount": 217,
+    "toolDetailKeys": 7,
+    "commandCatalogKeys": 39,
+    "note": "判定用内容哈希（sha256:12），不是 size/mtime；stale=true 表示磁盘已改、本进程还是旧一代 → 重启后端再问一次"
+  },
+  "ownedChildren": [
+    {
+      "pid": 17440,
+      "meta": {
+        "background": true
+      }
+    }
+  ]
+}

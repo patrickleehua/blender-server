@@ -1,0 +1,63 @@
+{
+  "ok": true,
+  "op": "exec",
+  "result": {
+    "id": 870556757,
+    "ok": true,
+    "ms": 8,
+    "stdout": "Info: Saved copy as \"_pre_restore_before_topology_20261023_023452.blend\"\nInfo: Saved as \"scene.blend\"\nHEADLESS {\"ok\": true, \"restored\": {\"label\": \"before_topology\", \"path\": \"E:/workplace/blender-server/evidence/runtime\\\\snapshots\\\\before_topology.blend\", \"bytes\": 379954, \"ms\": 1, \"objects\": 1, \"note\": \"\", \"t\": \"2026-10-23 02:34:52\", \"filepath\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\runtime\\\\scene.blend\", \"unsaved\": false}, \"ms\": 3, \"objects\": 1, \"into\": \"auto\", \"wrote_to_original\": true, \"target\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\runtime\\\\scene.blend\", \"target_source\": \"snapshot_filepath\", \"filepath_before\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\runtime\\\\scene.blend\", \"filepath\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\runtime\\\\scene.blend\", \"next_save_goes_to\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\runtime\\\\scene.blend\", \"backup\": {\"label\": \"_pre_restore_before_topology_20261023_023452\", \"path\": \"E:/workplace/blender-server/evidence/runtime\\\\snapshots\\\\_pre_restore_before_topology_20261023_023452.blend\", \"bytes\": 381772, \"ms\": 2, \"objects\": 1, \"note\": \"restore 'before_topology' 前自动备份（会话被替换前的状态）\", \"t\": \"2026-10-23 02:34:52\", \"auto\": true, \"filepath\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\runtime\\\\scene.blend\"}, \"backup_error\": null, \"on_disk_backup\": {\"label\": \"_pre_restore_file_before_topology_20261023_023452\", \"path\": \"E:/workplace/blender-server/evidence/runtime\\\\snapshots\\\\_pre_restore_file_before_topology_20261023_023452.blend\", \"bytes\": 377266, \"ms\": 0, \"objects\": 1, \"note\": \"原文件磁盘副本（restore 覆盖前）\", \"t\": \"2026-10-23 02:34:52\", \"auto\": true, \"filepath\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\runtime\\\\scene.blend\"}, \"on_disk_backup_error\": null, \"warning\": \"已用快照恢复并把会话放回原文件 E:\\\\workplace\\\\blender-server\\\\evidence\\\\runtime\\\\scene.blend（之后的保存落回这里，不再写进快照目录） restore 前的状态已备份为快照 _pre_restore_before_topology_20261023_023452（可 restore 回来） 原文件磁盘副本：_pre_restore_file_before_topology_20261023_023452\"}\n",
+    "stderr": "",
+    "result": {
+      "ok": true,
+      "restored": {
+        "label": "before_topology",
+        "path": "E:/workplace/blender-server/evidence/runtime\\snapshots\\before_topology.blend",
+        "bytes": 379954,
+        "ms": 1,
+        "objects": 1,
+        "note": "",
+        "t": "2026-10-23 02:34:52",
+        "filepath": "E:\\workplace\\blender-server\\evidence\\runtime\\scene.blend",
+        "unsaved": false
+      },
+      "ms": 3,
+      "objects": 1,
+      "into": "auto",
+      "wrote_to_original": true,
+      "target": "E:\\workplace\\blender-server\\evidence\\runtime\\scene.blend",
+      "target_source": "snapshot_filepath",
+      "filepath_before": "E:\\workplace\\blender-server\\evidence\\runtime\\scene.blend",
+      "filepath": "E:\\workplace\\blender-server\\evidence\\runtime\\scene.blend",
+      "next_save_goes_to": "E:\\workplace\\blender-server\\evidence\\runtime\\scene.blend",
+      "backup": {
+        "label": "_pre_restore_before_topology_20261023_023452",
+        "path": "E:/workplace/blender-server/evidence/runtime\\snapshots\\_pre_restore_before_topology_20261023_023452.blend",
+        "bytes": 381772,
+        "ms": 2,
+        "objects": 1,
+        "note": "restore 'before_topology' 前自动备份（会话被替换前的状态）",
+        "t": "2026-10-23 02:34:52",
+        "auto": true,
+        "filepath": "E:\\workplace\\blender-server\\evidence\\runtime\\scene.blend"
+      },
+      "backup_error": null,
+      "on_disk_backup": {
+        "label": "_pre_restore_file_before_topology_20261023_023452",
+        "path": "E:/workplace/blender-server/evidence/runtime\\snapshots\\_pre_restore_file_before_topology_20261023_023452.blend",
+        "bytes": 377266,
+        "ms": 0,
+        "objects": 1,
+        "note": "原文件磁盘副本（restore 覆盖前）",
+        "t": "2026-10-23 02:34:52",
+        "auto": true,
+        "filepath": "E:\\workplace\\blender-server\\evidence\\runtime\\scene.blend"
+      },
+      "on_disk_backup_error": null,
+      "warning": "已用快照恢复并把会话放回原文件 E:\\workplace\\blender-server\\evidence\\runtime\\scene.blend（之后的保存落回这里，不再写进快照目录） restore 前的状态已备份为快照 _pre_restore_before_topology_20261023_023452（可 restore 回来） 原文件磁盘副本：_pre_restore_file_before_topology_20261023_023452"
+    },
+    "error": null,
+    "traceback": null
+  },
+  "error": null,
+  "traceback": null
+}

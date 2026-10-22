@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "ms": 5,
+  "result": {
+    "name": "DSH Blender Bridge",
+    "addon_version": [
+      1,
+      10
+    ],
+    "protocol_version": 11,
+    "capabilities": [
+      "bpy_api_lookup",
+      "describe_node_type",
+      "drain_human_activity",
+      "execute_code",
+      "get_activity_state",
+      "get_addon_info",
+      "get_collections",
+      "get_object_info",
+      "get_scene_info",
+      "get_selection",
+      "get_telemetry_consent",
+      "get_viewport_screenshot",
+      "get_world_state_snapshot",
+      "send_collection_to_dsh",
+      "send_selection_to_dsh",
+      "set_telemetry_consent"
+    ],
+    "blender_version": "4.5.15 LTS"
+  }
+}

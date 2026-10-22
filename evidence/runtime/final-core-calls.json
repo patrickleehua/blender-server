@@ -1,0 +1,37 @@
+{
+  "ok": true,
+  "calls": [
+    {
+      "label": "final-core-do",
+      "isError": false
+    },
+    {
+      "label": "final-core-before",
+      "isError": false
+    },
+    {
+      "label": "final-core-plan",
+      "isError": false
+    },
+    {
+      "label": "final-core-after",
+      "isError": false
+    },
+    {
+      "label": "final-core-preserved",
+      "isError": false
+    },
+    {
+      "label": "final-core-save",
+      "isError": false
+    },
+    {
+      "label": "final-core-relative-file",
+      "isError": false
+    },
+    {
+      "label": "final-core-nested-failure",
+      "isError": true
+    }
+  ]
+}

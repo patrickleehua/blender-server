@@ -1,0 +1,42 @@
+{
+  "ok": true,
+  "op": "watch",
+  "result": {
+    "id": 56078677,
+    "ok": true,
+    "mode": "workbench-offscreen-watch",
+    "code": {
+      "ok": false,
+      "ms": 3,
+      "error": "ValueError: acceptance-watch-error",
+      "result": null,
+      "stdout": ""
+    },
+    "frames": [
+      {
+        "i": 0,
+        "frame": 1,
+        "ok": true,
+        "ms": 9,
+        "hash": "f1a4d723afd7",
+        "width": 64,
+        "height": 64,
+        "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_see_29920_6.png",
+        "coverage": 0.25
+      }
+    ],
+    "picks": [
+      {
+        "frame": 1,
+        "hash": "f1a4d723afd7",
+        "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_see_29920_6.png"
+      }
+    ],
+    "distinct": 1,
+    "changed": false,
+    "static_render": false,
+    "sampled": 1,
+    "requested": 1,
+    "ms": 14
+  }
+}

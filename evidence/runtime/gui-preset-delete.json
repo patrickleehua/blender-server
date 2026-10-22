@@ -1,0 +1,8 @@
+{
+  "ok": true,
+  "op": "delete",
+  "result": {
+    "ok": true,
+    "deleted": "acceptance"
+  }
+}

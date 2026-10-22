@@ -1,0 +1,28 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":689767079,\"ok\":true,\"ms\":3,\"stdout\":\"HEADLESS {\\\"relative_file\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\runtime\\\\\\\\relative-check.py\\\", \\\"objects\\\": 1}\\n\",\"stderr\":\"\",\"result\":{\"relative_file\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\runtime\\\\relative-check.py\",\"objects\":1},\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+    }
+  ],
+  "structuredContent": {
+    "ok": true,
+    "op": "exec",
+    "result": {
+      "id": 689767079,
+      "ok": true,
+      "ms": 3,
+      "stdout": "HEADLESS {\"relative_file\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\runtime\\\\relative-check.py\", \"objects\": 1}\n",
+      "stderr": "",
+      "result": {
+        "relative_file": "E:\\workplace\\blender-server\\evidence\\runtime\\relative-check.py",
+        "objects": 1
+      },
+      "error": null,
+      "traceback": null
+    },
+    "error": null,
+    "traceback": null
+  },
+  "isError": false
+}

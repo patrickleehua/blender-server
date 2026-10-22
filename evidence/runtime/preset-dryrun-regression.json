@@ -1,0 +1,112 @@
+{
+  "ok": true,
+  "before": {
+    "ok": true,
+    "ms": 41,
+    "mainThreadMs": 41,
+    "executed": true,
+    "stdout": "[1.0, 2.0, 3.0]\n",
+    "stderr": "",
+    "error": null,
+    "traceback": null,
+    "file": null,
+    "marker_missing": false,
+    "sceneEpoch": {
+      "objects": 1,
+      "meshes": 1,
+      "materials": 0,
+      "nameHash": 1496738877
+    },
+    "errorKind": null
+  },
+  "apply": {
+    "ok": true,
+    "op": "apply",
+    "result": {
+      "ok": true,
+      "preset": "dryrun-probe",
+      "dry_run": true,
+      "keys": [
+        "location"
+      ],
+      "targets": [
+        "OBJ:GuiAcceptanceCube"
+      ],
+      "report": {
+        "applied": [
+          {
+            "target": "OBJ:GuiAcceptanceCube",
+            "path": "location"
+          }
+        ],
+        "skipped": [],
+        "errors": []
+      },
+      "note": "未给 targets 时只预览；给了 targets 就实际写入（可用 dry_run=true 只校验路径）"
+    }
+  },
+  "after": {
+    "ok": true,
+    "ms": 34,
+    "mainThreadMs": 34,
+    "executed": true,
+    "stdout": "[1.0, 2.0, 3.0]\n",
+    "stderr": "",
+    "error": null,
+    "traceback": null,
+    "file": null,
+    "marker_missing": false,
+    "sceneEpoch": {
+      "objects": 1,
+      "meshes": 1,
+      "materials": 0,
+      "nameHash": 1496738877
+    },
+    "errorKind": null
+  },
+  "real": {
+    "ok": true,
+    "op": "apply",
+    "result": {
+      "ok": true,
+      "preset": "dryrun-probe",
+      "dry_run": false,
+      "keys": [
+        "location"
+      ],
+      "targets": [
+        "OBJ:GuiAcceptanceCube"
+      ],
+      "report": {
+        "applied": [
+          {
+            "target": "OBJ:GuiAcceptanceCube",
+            "path": "location"
+          }
+        ],
+        "skipped": [],
+        "errors": []
+      },
+      "note": "未给 targets 时只预览；给了 targets 就实际写入（可用 dry_run=true 只校验路径）"
+    }
+  },
+  "applied": {
+    "ok": true,
+    "ms": 50,
+    "mainThreadMs": 50,
+    "executed": true,
+    "stdout": "[9.0, 9.0, 9.0]\n",
+    "stderr": "",
+    "error": null,
+    "traceback": null,
+    "file": null,
+    "marker_missing": false,
+    "sceneEpoch": {
+      "objects": 1,
+      "meshes": 1,
+      "materials": 0,
+      "nameHash": 1496738877
+    },
+    "errorKind": null
+  }
+}

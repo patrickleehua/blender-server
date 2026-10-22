@@ -1,0 +1,100 @@
+{
+  "ok": true,
+  "ttlMs": "1",
+  "starts": [
+    {
+      "pid": 48732,
+      "port": 19979,
+      "ready": true
+    },
+    {
+      "pid": 48732,
+      "port": 19979,
+      "ready": true
+    }
+  ],
+  "during": {
+    "name": "parallel",
+    "alive": true,
+    "ready": true,
+    "pid": 48732,
+    "port": 19979,
+    "uptimeMs": 429,
+    "idleMs": 111,
+    "inflight": 1,
+    "gpu": {
+      "engine_mode": "workbench",
+      "gpu_mode": "auto",
+      "backend": "n/a: GPU functions for drawing are not available in background mo",
+      "before": {
+        "engine": "BLENDER_EEVEE_NEXT"
+      },
+      "ok": true,
+      "skipped": false,
+      "configured": "workbench",
+      "after": {
+        "engine": "BLENDER_WORKBENCH"
+      },
+      "fell_back_to_cpu": false
+    },
+    "boot": {
+      "ok": true,
+      "skipped": true
+    },
+    "lastError": null,
+    "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 19979, \"pid\": 48732, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n"
+  },
+  "done": {
+    "id": 85960503,
+    "ok": true,
+    "ms": 35001,
+    "stdout": "HEADLESS {\"complete\":true}\n",
+    "stderr": "",
+    "result": {
+      "complete": true
+    },
+    "error": null,
+    "traceback": null
+  },
+  "after": {
+    "name": "parallel",
+    "alive": true,
+    "ready": true,
+    "pid": 48732,
+    "port": 19979,
+    "uptimeMs": 35365,
+    "idleMs": 27,
+    "inflight": 0,
+    "gpu": {
+      "engine_mode": "workbench",
+      "gpu_mode": "auto",
+      "backend": "n/a: GPU functions for drawing are not available in background mo",
+      "before": {
+        "engine": "BLENDER_EEVEE_NEXT"
+      },
+      "ok": true,
+      "skipped": false,
+      "configured": "workbench",
+      "after": {
+        "engine": "BLENDER_WORKBENCH"
+      },
+      "fell_back_to_cpu": false
+    },
+    "boot": {
+      "ok": true,
+      "skipped": true
+    },
+    "lastError": null,
+    "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 19979, \"pid\": 48732, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n"
+  },
+  "stopped": {
+    "name": "parallel",
+    "stopped": true,
+    "wasAlive": true,
+    "bye": {
+      "id": 568958499,
+      "ok": true,
+      "bye": true
+    }
+  }
+}

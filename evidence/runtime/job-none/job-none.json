@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "inputEngine": "CYCLES",
+  "actualEngine": "CYCLES",
+  "gpuPreludeAbsent": true,
+  "jobId": "job-mvjwx54iau3",
+  "stdoutLog": "E:\\workplace\\blender-server\\evidence\\runtime\\job-none\\jobs\\job-mvjwx54iau3\\stdout.log",
+  "blender": "E:/workplace/blender-server/.local/blender-4.5.15-windows-x64/blender.exe"
+}

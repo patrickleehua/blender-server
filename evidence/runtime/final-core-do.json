@@ -1,0 +1,25 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":552685122,\"ok\":true,\"ms\":48,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+    }
+  ],
+  "structuredContent": {
+    "ok": true,
+    "op": "exec",
+    "result": {
+      "id": 552685122,
+      "ok": true,
+      "ms": 48,
+      "stdout": "",
+      "stderr": "",
+      "result": null,
+      "error": null,
+      "traceback": null
+    },
+    "error": null,
+    "traceback": null
+  },
+  "isError": false
+}

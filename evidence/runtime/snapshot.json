@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "op": "exec",
+  "result": {
+    "id": 607387885,
+    "ok": true,
+    "ms": 2,
+    "stdout": "Info: Saved copy as \"before_topology.blend\"\nHEADLESS {\"ok\": true, \"snapshot\": {\"label\": \"before_topology\", \"path\": \"E:/workplace/blender-server/evidence/runtime\\\\snapshots\\\\before_topology.blend\", \"bytes\": 379954, \"ms\": 1, \"objects\": 1, \"note\": \"\", \"t\": \"2026-10-23 02:34:52\", \"filepath\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\runtime\\\\scene.blend\", \"unsaved\": false}, \"total\": 1}\n",
+    "stderr": "",
+    "result": {
+      "ok": true,
+      "snapshot": {
+        "label": "before_topology",
+        "path": "E:/workplace/blender-server/evidence/runtime\\snapshots\\before_topology.blend",
+        "bytes": 379954,
+        "ms": 1,
+        "objects": 1,
+        "note": "",
+        "t": "2026-10-23 02:34:52",
+        "filepath": "E:\\workplace\\blender-server\\evidence\\runtime\\scene.blend",
+        "unsaved": false
+      },
+      "total": 1
+    },
+    "error": null,
+    "traceback": null
+  },
+  "error": null,
+  "traceback": null
+}

@@ -1,0 +1,40 @@
+{
+  "ok": true,
+  "op": "status",
+  "result": {
+    "version": 1,
+    "engine": "BLENDER_EEVEE_NEXT",
+    "device": "CPU",
+    "samples": 4096,
+    "adaptive": [
+      true,
+      0.01
+    ],
+    "persistent_data": false,
+    "denoiser": [
+      "OPENIMAGEDENOISE",
+      false
+    ],
+    "auto_tile": [
+      true,
+      2048
+    ],
+    "resolution": [
+      1920,
+      1080,
+      100
+    ],
+    "objects": 1,
+    "preset_applied": false,
+    "saved_snapshot": null,
+    "engine_mode": "eevee",
+    "eevee": {
+      "use_raytracing": false,
+      "ray_tracing_method": "SCREEN",
+      "taa_render_samples": 64,
+      "use_shadows": true,
+      "shadow_ray_count": 1,
+      "shadow_step_count": 6
+    }
+  }
+}

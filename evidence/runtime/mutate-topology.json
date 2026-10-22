@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "op": "exec",
+  "result": {
+    "id": 155311041,
+    "ok": true,
+    "ms": 1,
+    "stdout": "HEADLESS {\"verts\": 26}\n",
+    "stderr": "",
+    "result": {
+      "verts": 26
+    },
+    "error": null,
+    "traceback": null
+  },
+  "error": null,
+  "traceback": null
+}

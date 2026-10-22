@@ -1,0 +1,109 @@
+{
+  "ok": true,
+  "stats": {
+    "frames": 0,
+    "acts": 0,
+    "cmds": 0,
+    "loops": 0,
+    "views": 0,
+    "headless": 0,
+    "plan": 0,
+    "worker": 0,
+    "txn": 0,
+    "preset": 0,
+    "job": 0,
+    "selections": 0,
+    "lastSelectionMs": null,
+    "lastPlanMs": null,
+    "lastViewMs": null,
+    "lastHeadlessMs": null,
+    "lastFrameMs": null,
+    "lastActMs": null,
+    "lastError": null,
+    "startedAt": 1792694082044
+  },
+  "lease": {
+    "active": false,
+    "holder": null,
+    "expiresInMs": 0,
+    "ttlMs": 600000,
+    "since": null,
+    "renewals": 0,
+    "holderAlive": null,
+    "scope": null,
+    "staleReclaimed": 0
+  },
+  "requests": {
+    "/health": 1
+  },
+  "rtt": {
+    "frame": {
+      "last": null,
+      "p50": null,
+      "p95": null,
+      "n": 0
+    },
+    "act": {
+      "last": null,
+      "p50": null,
+      "p95": null,
+      "n": 0
+    },
+    "view": {
+      "last": null,
+      "p50": null,
+      "p95": null,
+      "n": 0
+    },
+    "headless": {
+      "last": null,
+      "p50": null,
+      "p95": null,
+      "n": 0
+    },
+    "plan": {
+      "last": null,
+      "p50": null,
+      "p95": null,
+      "n": 0
+    },
+    "worker": {
+      "last": null,
+      "p50": null,
+      "p95": null,
+      "n": 0
+    },
+    "job": {
+      "last": null,
+      "p50": null,
+      "p95": null,
+      "n": 0
+    }
+  },
+  "provenance": {
+    "sourcePath": "E:\\workplace\\blender-server\\bridge\\runtime\\engine.mjs",
+    "pluginVersion": "1.0.0",
+    "hashAlgo": "sha256:12",
+    "loadedAt": "2026-10-22T18:34:42.042Z",
+    "loadedHash": "dcb2e5e1b9a0",
+    "loadedBytes": 206922,
+    "loadedReadError": null,
+    "currentHash": "dcb2e5e1b9a0",
+    "currentBytes": 206922,
+    "currentMtime": "2026-10-22T18:34:22.978Z",
+    "verdict": "current",
+    "stale": false,
+    "staleReason": null,
+    "catalogHash": "d65a6f61d561",
+    "families": 33,
+    "opsCount": 217,
+    "toolDetailKeys": 7,
+    "commandCatalogKeys": 39,
+    "note": "判定用内容哈希（sha256:12），不是 size/mtime；stale=true 表示磁盘已改、本进程还是旧一代 → 重启后端再问一次"
+  },
+  "backend": {
+    "pid": 52724,
+    "rssMB": 58,
+    "uptimeMs": 9385
+  }
+}

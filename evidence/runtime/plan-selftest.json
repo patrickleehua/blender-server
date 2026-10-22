@@ -1,0 +1,143 @@
+{
+  "ok": true,
+  "ms": 462,
+  "result": {
+    "ok": true,
+    "kind": "headless",
+    "runId": "run-mvjvmqagi4a",
+    "pluginVersion": null,
+    "expect": null,
+    "warnings": [],
+    "progress": null,
+    "progressAt": null,
+    "heartbeat": null,
+    "progressHistory": [],
+    "stdoutTruncated": false,
+    "status": "finished",
+    "resumable": true,
+    "session": "plugin-pid-48968",
+    "failure_hint": null,
+    "how_to_recover": "客户端超时/断连不代表失败：这是独立子进程。用 blender_rt_job(op=\"status\"|\"collect\"|\"wait\", id=\"run-mvjvmqagi4a\") 按 runId 回收结果与产物（台账：E:\\workplace\\blender-server\\tmp\\runtime\\work\\jobs\\index.jsonl）",
+    "scriptFile": null,
+    "inputFile": null,
+    "outJson": null,
+    "outJsonWsl": null,
+    "resultBytes": 119,
+    "resultPath": null,
+    "resultPathWsl": null,
+    "resultTruncated": false,
+    "resultJson": {
+      "ok": true,
+      "passed": 18,
+      "failed": 0,
+      "failures": [],
+      "outdir": "E:/workplace/blender-server/evidence/runtime/selftests/plan"
+    },
+    "resultParseError": null,
+    "stdoutTail": "DSH_STAGE {\"name\": \"engine-prelude\", \"t\": 1792693848.797, \"run\": \"run-mvjvmqagi4a\"}\r\nDSH_STAGE {\"name\": \"preload-done\", \"t\": 1792693848.812, \"run\": \"run-mvjvmqagi4a\"}\r\nPLAN_SELFTEST version=1\r\n  ok   load 成功并出诊断\r\n  ok   未判别连接 → UnresolvedConnection\r\n  ok   status 汇总正常\r\n  ok   拓扑顺序：组件 → 连接 → 特征\r\n  ok   没有阻塞节点\r\n  ok   dry_run 只出计划\r\n  ok   编译出组件对象\r\n  ok   hidden_when(insert) → 榫存在\r\n  ok   特征展开 2 个\r\n  ok   连接偏移已应用（backrest y +0.01）\r\n  ok   连接判为 supported 后不再有 UnresolvedConnection\r\n  ok   hidden_when(attach) → 榫不生成\r\n  ok   超区间 → ParamOutOfRange\r\n  ok   硬错误会拦编译\r\n  ok   依赖成环 → Cycle\r\n  ok   mermaid 图包含连接与特征\r\n  ok   dot 图包含节点\r\n  ok   编译时按 plan.envelope 建包络（与契约层联动）\r\nHEADLESS {\"ok\": true, \"passed\": 18, \"failed\": 0, \"failures\": [], \"outdir\": \"E:/workplace/blender-server/evidence/runtime/selftests/plan\"}\r\nDSH_STAGE {\"name\": \"script-end\", \"t\": 1792693848.822, \"run\": \"run-mvjvmqagi4a\"}\r\nDSH_STAGE {\"name\": \"done\", \"t\": 1792693848.822, \"run\": \"run-mvjvmqagi4a\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\n\nBlender quit\n",
+    "stderrTail": "",
+    "stage": {
+      "name": "done",
+      "t": 1792693848.822,
+      "run": "run-mvjvmqagi4a"
+    },
+    "stageName": "done",
+    "stageAt": 1792693848822,
+    "lastOutputAt": 1792693848916,
+    "lines": 27,
+    "shots": null,
+    "pathWarnings": [],
+    "outdir": {
+      "win": "E:\\workplace\\blender-server\\evidence\\runtime\\selftests\\plan",
+      "wsl": "E:/workplace/blender-server/evidence/runtime/selftests/plan"
+    },
+    "childEnvKeys": [
+      "DSH_BLENDER_ADDON_PORT",
+      "DSH_BLENDER_EXE",
+      "DSH_BLENDER_HTTP_PORT",
+      "DSH_BLENDER_WORKDIR",
+      "DSH_BLENDER_WORKER_PORT",
+      "DSH_WORKER_TTL_MS",
+      "DSH_RUN_ID",
+      "DSH_OUTDIR",
+      "DSH_ARGS",
+      "DSH_SESSION",
+      "DSH_PLUGIN_VERSION"
+    ],
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "ms": 462,
+    "timeoutMs": 300000,
+    "blender": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+    "script": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_headless_mvjvmqag.py",
+    "args": [
+      "-b",
+      "--factory-startup",
+      "--python",
+      "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_headless_mvjvmqag.py",
+      "--",
+      "E:\\workplace\\blender-server\\evidence\\runtime\\selftests\\plan"
+    ],
+    "scriptStaging": {
+      "requested": "E:\\workplace\\blender-server\\tmp\\runtime\\work",
+      "requestedShared": true,
+      "requestedWhy": "windows",
+      "used": "E:\\workplace\\blender-server\\tmp\\runtime\\work",
+      "usedWin": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_headless_mvjvmqag.py",
+      "usedShared": true,
+      "usedWhy": "windows",
+      "label": "workDir",
+      "substituted": false,
+      "note": "workDir 共享性检查通过（windows）"
+    },
+    "preload": [
+      "contract",
+      "planner"
+    ],
+    "gpu": null,
+    "engine": null,
+    "engineMode": null,
+    "useUserConfig": false,
+    "logs": {
+      "stdout": "E:\\workplace\\blender-server\\evidence\\runtime\\selftests\\plan\\dsh_headless_2026-10-22T18-30-48-469Z.stdout.log",
+      "stderr": "E:\\workplace\\blender-server\\evidence\\runtime\\selftests\\plan\\dsh_headless_2026-10-22T18-30-48-469Z.stderr.log",
+      "stdoutWsl": "E:\\workplace\\blender-server\\evidence\\runtime\\selftests\\plan\\dsh_headless_2026-10-22T18-30-48-469Z.stdout.log",
+      "stderrWsl": "E:\\workplace\\blender-server\\evidence\\runtime\\selftests\\plan\\dsh_headless_2026-10-22T18-30-48-469Z.stderr.log"
+    },
+    "lastException": null,
+    "traceback": null,
+    "hint": null,
+    "noiseFiltered": 0,
+    "reason": null,
+    "result": {
+      "ok": true,
+      "passed": 18,
+      "failed": 0,
+      "failures": [],
+      "outdir": "E:/workplace/blender-server/evidence/runtime/selftests/plan"
+    },
+    "stdout": "DSH_STAGE {\"name\": \"engine-prelude\", \"t\": 1792693848.797, \"run\": \"run-mvjvmqagi4a\"}\r\nDSH_STAGE {\"name\": \"preload-done\", \"t\": 1792693848.812, \"run\": \"run-mvjvmqagi4a\"}\r\nPLAN_SELFTEST version=1\r\n  ok   load 成功并出诊断\r\n  ok   未判别连接 → UnresolvedConnection\r\n  ok   status 汇总正常\r\n  ok   拓扑顺序：组件 → 连接 → 特征\r\n  ok   没有阻塞节点\r\n  ok   dry_run 只出计划\r\n  ok   编译出组件对象\r\n  ok   hidden_when(insert) → 榫存在\r\n  ok   特征展开 2 个\r\n  ok   连接偏移已应用（backrest y +0.01）\r\n  ok   连接判为 supported 后不再有 UnresolvedConnection\r\n  ok   hidden_when(attach) → 榫不生成\r\n  ok   超区间 → ParamOutOfRange\r\n  ok   硬错误会拦编译\r\n  ok   依赖成环 → Cycle\r\n  ok   mermaid 图包含连接与特征\r\n  ok   dot 图包含节点\r\n  ok   编译时按 plan.envelope 建包络（与契约层联动）\r\nHEADLESS {\"ok\": true, \"passed\": 18, \"failed\": 0, \"failures\": [], \"outdir\": \"E:/workplace/blender-server/evidence/runtime/selftests/plan\"}\r\nDSH_STAGE {\"name\": \"script-end\", \"t\": 1792693848.822, \"run\": \"run-mvjvmqagi4a\"}\r\nDSH_STAGE {\"name\": \"done\", \"t\": 1792693848.822, \"run\": \"run-mvjvmqagi4a\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\n\nBlender quit\n",
+    "stderr": "",
+    "artifacts": [
+      {
+        "name": "dsh_headless_2026-10-22T18-30-48-469Z.stdout.log",
+        "bytes": 1282,
+        "mtimeMs": 1792693848916.475,
+        "fresh": true
+      },
+      {
+        "name": "plan_graph.mmd",
+        "bytes": 216,
+        "mtimeMs": 1792693848820.141,
+        "fresh": true
+      },
+      {
+        "name": "dsh_headless_2026-10-22T18-30-48-469Z.stderr.log",
+        "bytes": 0,
+        "mtimeMs": 1792693848481.047,
+        "fresh": true
+      }
+    ]
+  }
+}

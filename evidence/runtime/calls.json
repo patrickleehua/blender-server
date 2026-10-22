@@ -1,0 +1,98 @@
+[
+  {
+    "label": "health",
+    "http": 200,
+    "ms": 30,
+    "ok": true
+  },
+  {
+    "label": "doctor",
+    "http": 200,
+    "ms": 67,
+    "ok": true
+  },
+  {
+    "label": "launch-dry-run",
+    "http": 200,
+    "ms": 108,
+    "ok": true
+  },
+  {
+    "label": "start",
+    "http": 200,
+    "ms": 381,
+    "ok": true
+  },
+  {
+    "label": "create-save",
+    "http": 200,
+    "ms": 84,
+    "ok": true
+  },
+  {
+    "label": "see-0",
+    "http": 200,
+    "ms": 599,
+    "ok": true
+  },
+  {
+    "label": "see-1",
+    "http": 200,
+    "ms": 78,
+    "ok": true
+  },
+  {
+    "label": "see-2",
+    "http": 200,
+    "ms": 73,
+    "ok": true
+  },
+  {
+    "label": "camera-leak-probe",
+    "http": 200,
+    "ms": 5,
+    "ok": true
+  },
+  {
+    "label": "watch",
+    "http": 200,
+    "ms": 56,
+    "ok": true
+  },
+  {
+    "label": "watch-error-probe",
+    "http": 200,
+    "ms": 22,
+    "ok": false
+  },
+  {
+    "label": "snapshot",
+    "http": 200,
+    "ms": 15,
+    "ok": true
+  },
+  {
+    "label": "mutate-topology",
+    "http": 200,
+    "ms": 14,
+    "ok": true
+  },
+  {
+    "label": "restore",
+    "http": 200,
+    "ms": 14,
+    "ok": true
+  },
+  {
+    "label": "export",
+    "http": 200,
+    "ms": 113,
+    "ok": true
+  },
+  {
+    "label": "status",
+    "http": 200,
+    "ms": 10,
+    "ok": true
+  }
+]

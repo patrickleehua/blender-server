@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "op": "apply",
+  "result": {
+    "ok": true,
+    "preset": "acceptance",
+    "dry_run": false,
+    "keys": [
+      "location"
+    ],
+    "targets": [
+      "OBJ:GuiAcceptanceCube"
+    ],
+    "report": {
+      "applied": [
+        {
+          "target": "OBJ:GuiAcceptanceCube",
+          "path": "location"
+        }
+      ],
+      "skipped": [],
+      "errors": []
+    },
+    "note": "未给 targets 时只预览；给了 targets 就实际写入（可用 dry_run=true 只校验路径）"
+  }
+}

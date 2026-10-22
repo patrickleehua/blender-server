@@ -1,0 +1,28 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":163879522,\"ok\":true,\"ms\":0,\"stdout\":\"HEADLESS {\\\"preserved\\\": true, \\\"name\\\": \\\"SameSessionCube\\\"}\\n\",\"stderr\":\"\",\"result\":{\"preserved\":true,\"name\":\"SameSessionCube\"},\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+    }
+  ],
+  "structuredContent": {
+    "ok": true,
+    "op": "exec",
+    "result": {
+      "id": 163879522,
+      "ok": true,
+      "ms": 0,
+      "stdout": "HEADLESS {\"preserved\": true, \"name\": \"SameSessionCube\"}\n",
+      "stderr": "",
+      "result": {
+        "preserved": true,
+        "name": "SameSessionCube"
+      },
+      "error": null,
+      "traceback": null
+    },
+    "error": null,
+    "traceback": null
+  },
+  "isError": false
+}

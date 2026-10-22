@@ -1,0 +1,72 @@
+{
+  "ok": true,
+  "ms": 103,
+  "launches": 1,
+  "exe": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+  "addonPort": 19876,
+  "waitMs": 90000,
+  "statusFile": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\launch-status.json",
+  "statusFileWin": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\launch-status.json",
+  "configFrom": "config",
+  "already": true,
+  "launched": false,
+  "waitedMs": 2,
+  "steps": [],
+  "boot": null,
+  "hint": "addon 已在本机 19876 监听，无需启动（要重启先关掉那个 Blender，或用 force 另起一个）",
+  "doctor": {
+    "ok": true,
+    "addon": {
+      "kind": "ok",
+      "tcp": true,
+      "ping": true,
+      "ping_ms": 52,
+      "roundTripMs": 100,
+      "summary": "通道健康：TCP + ping + bpy 往返都通",
+      "protocol": "flat",
+      "protocol_label": "直连 addon · 扁平协议（无分帧；实测 v1.7/v1.8 都通 —— 活版本看 rt_cmd get_addon_info）",
+      "protocol_from": "config",
+      "fix": "无需处理",
+      "region": {
+        "window": [
+          1920,
+          1009
+        ],
+        "views": [
+          {
+            "region": [
+              0,
+              97,
+              1585,
+              886
+            ],
+            "area": [
+              0,
+              97,
+              1585,
+              886
+            ],
+            "shading": "SOLID"
+          }
+        ]
+      }
+    },
+    "metrics": {
+      "calls": 3,
+      "errors": 0,
+      "timeouts": 0,
+      "inflight": 0,
+      "lastCmd": "execute_code",
+      "lastCmdAt": 1792694091509,
+      "lastOkAt": 1792694091554,
+      "lastError": null,
+      "lastDiagnosis": null,
+      "views": 0,
+      "headlessRuns": 0,
+      "lastHeadlessMs": null,
+      "workerStarts": 0,
+      "workerExecs": 0,
+      "lastCmdAgeMs": 98
+    }
+  }
+}

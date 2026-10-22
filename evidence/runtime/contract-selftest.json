@@ -1,0 +1,142 @@
+{
+  "ok": true,
+  "ms": 547,
+  "result": {
+    "ok": true,
+    "kind": "headless",
+    "runId": "run-mvjvmput1zk",
+    "pluginVersion": null,
+    "expect": null,
+    "warnings": [],
+    "progress": null,
+    "progressAt": null,
+    "heartbeat": null,
+    "progressHistory": [],
+    "stdoutTruncated": false,
+    "status": "finished",
+    "resumable": true,
+    "session": "plugin-pid-48968",
+    "failure_hint": null,
+    "how_to_recover": "客户端超时/断连不代表失败：这是独立子进程。用 blender_rt_job(op=\"status\"|\"collect\"|\"wait\", id=\"run-mvjvmput1zk\") 按 runId 回收结果与产物（台账：E:\\workplace\\blender-server\\tmp\\runtime\\work\\jobs\\index.jsonl）",
+    "scriptFile": null,
+    "inputFile": null,
+    "outJson": null,
+    "outJsonWsl": null,
+    "resultBytes": 123,
+    "resultPath": null,
+    "resultPathWsl": null,
+    "resultTruncated": false,
+    "resultJson": {
+      "ok": true,
+      "passed": 28,
+      "failed": 0,
+      "failures": [],
+      "outdir": "E:/workplace/blender-server/evidence/runtime/selftests/contract"
+    },
+    "resultParseError": null,
+    "stdoutTail": "DSH_STAGE {\"name\": \"engine-prelude\", \"t\": 1792693848.234, \"run\": \"run-mvjvmput1zk\"}\r\nDSH_STAGE {\"name\": \"preload-done\", \"t\": 1792693848.245, \"run\": \"run-mvjvmput1zk\"}\r\nCONTRACT_SELFTEST version=3\r\n  ok   reset 清空契约\r\n  ok   注册组件 seat\r\n  ok   注册组件 backrest\r\n  ok   组件缺失对象会被标出\r\n  ok   注册连接 joint\r\n  ok   连接端点未注册时报错\r\n  ok   注册包络\r\n  ok   包络能抓出越界物件（Stray）\r\n  ok   干涉检查：AABB 候选 >= 1\r\n  ok   干涉检查：BVH 精查命中 >= 1（互相穿插的方块）\r\n  ok   干涉检查耗时被记录\r\n  ok   接口间隙可算\r\n  ok   未判别连接的 Boolean 被拦\r\n  ok   非破坏性操作不拦\r\n  skip 证据记账（没有 K.dsh_view_api；用 preload=view 可测）\r\n  ok   外部证据：tenon_len 不可辨识 → unresolved\r\n  ok   探针读数达标 → supported\r\n  ok   可手动回退状态\r\n  ok   翻转候选并记历史\r\n  ok   非法候选被拒\r\n  ok   指纹可取（对象/面数/bbox + 12 位 digest）\r\n  ok   verify 记录 bbox 快照\r\n  ok   无漂移时不降级\r\n  ok   几何漂移 → supported 自动降级 unresolved\r\n  ok   降级理由留在 verdict.demoted\r\n  ok   降级后 status 变 unresolved\r\n  skip 证据 staleness（没有 K.dsh_view_api；用 preload=view,contract 可测）\r\n  ok   报告落盘\r\n  ok   报告含连接与判定\r\n  ok   status 概览正常\r\nHEADLESS {\"ok\": true, \"passed\": 28, \"failed\": 0, \"failures\": [], \"outdir\": \"E:/workplace/blender-server/evidence/runtime/selftests/contract\"}\r\nDSH_STAGE {\"name\": \"script-end\", \"t\": 1792693848.335, \"run\": \"run-mvjvmput1zk\"}\r\nDSH_STAGE {\"name\": \"done\", \"t\": 1792693848.335, \"run\": \"run-mvjvmput1zk\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\n\nBlender quit\n",
+    "stderrTail": "",
+    "stage": {
+      "name": "done",
+      "t": 1792693848.335,
+      "run": "run-mvjvmput1zk"
+    },
+    "stageName": "done",
+    "stageAt": 1792693848335,
+    "lastOutputAt": 1792693848436,
+    "lines": 39,
+    "shots": null,
+    "pathWarnings": [],
+    "outdir": {
+      "win": "E:\\workplace\\blender-server\\evidence\\runtime\\selftests\\contract",
+      "wsl": "E:/workplace/blender-server/evidence/runtime/selftests/contract"
+    },
+    "childEnvKeys": [
+      "DSH_BLENDER_ADDON_PORT",
+      "DSH_BLENDER_EXE",
+      "DSH_BLENDER_HTTP_PORT",
+      "DSH_BLENDER_WORKDIR",
+      "DSH_BLENDER_WORKER_PORT",
+      "DSH_WORKER_TTL_MS",
+      "DSH_RUN_ID",
+      "DSH_OUTDIR",
+      "DSH_ARGS",
+      "DSH_SESSION",
+      "DSH_PLUGIN_VERSION"
+    ],
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "ms": 547,
+    "timeoutMs": 300000,
+    "blender": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+    "script": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_headless_mvjvmput.py",
+    "args": [
+      "-b",
+      "--factory-startup",
+      "--python",
+      "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_headless_mvjvmput.py",
+      "--",
+      "E:\\workplace\\blender-server\\evidence\\runtime\\selftests\\contract"
+    ],
+    "scriptStaging": {
+      "requested": "E:\\workplace\\blender-server\\tmp\\runtime\\work",
+      "requestedShared": true,
+      "requestedWhy": "windows",
+      "used": "E:\\workplace\\blender-server\\tmp\\runtime\\work",
+      "usedWin": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_headless_mvjvmput.py",
+      "usedShared": true,
+      "usedWhy": "windows",
+      "label": "workDir",
+      "substituted": false,
+      "note": "workDir 共享性检查通过（windows）"
+    },
+    "preload": [
+      "contract"
+    ],
+    "gpu": null,
+    "engine": null,
+    "engineMode": null,
+    "useUserConfig": false,
+    "logs": {
+      "stdout": "E:\\workplace\\blender-server\\evidence\\runtime\\selftests\\contract\\dsh_headless_2026-10-22T18-30-47-906Z.stdout.log",
+      "stderr": "E:\\workplace\\blender-server\\evidence\\runtime\\selftests\\contract\\dsh_headless_2026-10-22T18-30-47-906Z.stderr.log",
+      "stdoutWsl": "E:\\workplace\\blender-server\\evidence\\runtime\\selftests\\contract\\dsh_headless_2026-10-22T18-30-47-906Z.stdout.log",
+      "stderrWsl": "E:\\workplace\\blender-server\\evidence\\runtime\\selftests\\contract\\dsh_headless_2026-10-22T18-30-47-906Z.stderr.log"
+    },
+    "lastException": null,
+    "traceback": null,
+    "hint": null,
+    "noiseFiltered": 0,
+    "reason": null,
+    "result": {
+      "ok": true,
+      "passed": 28,
+      "failed": 0,
+      "failures": [],
+      "outdir": "E:/workplace/blender-server/evidence/runtime/selftests/contract"
+    },
+    "stdout": "DSH_STAGE {\"name\": \"engine-prelude\", \"t\": 1792693848.234, \"run\": \"run-mvjvmput1zk\"}\r\nDSH_STAGE {\"name\": \"preload-done\", \"t\": 1792693848.245, \"run\": \"run-mvjvmput1zk\"}\r\nCONTRACT_SELFTEST version=3\r\n  ok   reset 清空契约\r\n  ok   注册组件 seat\r\n  ok   注册组件 backrest\r\n  ok   组件缺失对象会被标出\r\n  ok   注册连接 joint\r\n  ok   连接端点未注册时报错\r\n  ok   注册包络\r\n  ok   包络能抓出越界物件（Stray）\r\n  ok   干涉检查：AABB 候选 >= 1\r\n  ok   干涉检查：BVH 精查命中 >= 1（互相穿插的方块）\r\n  ok   干涉检查耗时被记录\r\n  ok   接口间隙可算\r\n  ok   未判别连接的 Boolean 被拦\r\n  ok   非破坏性操作不拦\r\n  skip 证据记账（没有 K.dsh_view_api；用 preload=view 可测）\r\n  ok   外部证据：tenon_len 不可辨识 → unresolved\r\n  ok   探针读数达标 → supported\r\n  ok   可手动回退状态\r\n  ok   翻转候选并记历史\r\n  ok   非法候选被拒\r\n  ok   指纹可取（对象/面数/bbox + 12 位 digest）\r\n  ok   verify 记录 bbox 快照\r\n  ok   无漂移时不降级\r\n  ok   几何漂移 → supported 自动降级 unresolved\r\n  ok   降级理由留在 verdict.demoted\r\n  ok   降级后 status 变 unresolved\r\n  skip 证据 staleness（没有 K.dsh_view_api；用 preload=view,contract 可测）\r\n  ok   报告落盘\r\n  ok   报告含连接与判定\r\n  ok   status 概览正常\r\nHEADLESS {\"ok\": true, \"passed\": 28, \"failed\": 0, \"failures\": [], \"outdir\": \"E:/workplace/blender-server/evidence/runtime/selftests/contract\"}\r\nDSH_STAGE {\"name\": \"script-end\", \"t\": 1792693848.335, \"run\": \"run-mvjvmput1zk\"}\r\nDSH_STAGE {\"name\": \"done\", \"t\": 1792693848.335, \"run\": \"run-mvjvmput1zk\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\n\nBlender quit\n",
+    "stderr": "",
+    "artifacts": [
+      {
+        "name": "dsh_headless_2026-10-22T18-30-47-906Z.stdout.log",
+        "bytes": 1783,
+        "mtimeMs": 1792693848436.5828,
+        "fresh": true
+      },
+      {
+        "name": "contract_report.md",
+        "bytes": 2242,
+        "mtimeMs": 1792693848334.9673,
+        "fresh": true
+      },
+      {
+        "name": "dsh_headless_2026-10-22T18-30-47-906Z.stderr.log",
+        "bytes": 0,
+        "mtimeMs": 1792693847918.6814,
+        "fresh": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "ok": true,
+  "addon": {
+    "kind": "ok",
+    "tcp": true,
+    "ping": true,
+    "ping_ms": 37,
+    "roundTripMs": 62,
+    "summary": "通道健康：TCP + ping + bpy 往返都通",
+    "protocol": "flat",
+    "protocol_label": "直连 addon · 扁平协议（无分帧；实测 v1.7/v1.8 都通 —— 活版本看 rt_cmd get_addon_info）",
+    "protocol_from": "config",
+    "fix": "无需处理",
+    "region": {
+      "window": [
+        1920,
+        1009
+      ],
+      "views": [
+        {
+          "region": [
+            0,
+            97,
+            1585,
+            886
+          ],
+          "area": [
+            0,
+            97,
+            1585,
+            886
+          ],
+          "shading": "SOLID"
+        }
+      ]
+    }
+  },
+  "metrics": {
+    "calls": 2,
+    "errors": 0,
+    "timeouts": 0,
+    "inflight": 0,
+    "lastCmd": "execute_code",
+    "lastCmdAt": 1792694091439,
+    "lastOkAt": 1792694091445,
+    "lastError": null,
+    "lastDiagnosis": null,
+    "views": 0,
+    "headlessRuns": 0,
+    "lastHeadlessMs": null,
+    "workerStarts": 0,
+    "workerExecs": 0,
+    "lastCmdAgeMs": 61
+  },
+  "config": {
+    "platform": "win32",
+    "distro": null,
+    "addon": "127.0.0.1:19876",
+    "http": "127.0.0.1:19877",
+    "workDir": {
+      "win": "E:\\workplace\\blender-server\\tmp\\runtime\\work",
+      "wsl": "E:\\workplace\\blender-server\\tmp\\runtime\\work",
+      "from": "config",
+      "fallback": null,
+      "shared": {
+        "shared": true,
+        "why": "windows"
+      }
+    },
+    "blenderExe": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+    "blenderFrom": "config",
+    "blenderUserConfig": null,
+    "blenderUserScripts": null,
+    "workerPort": 19879,
+    "configFile": null,
+    "holder": "plugin-pid-52724",
+    "leaseTtlMs": 600000,
+    "env": {
+      "DSH_BLENDER_WORKDIR": "E:\\workplace\\blender-server\\tmp\\runtime\\work",
+      "DSH_BLENDER_EXE": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+      "DSH_BLENDER_HTTP_PORT": "19877",
+      "DSH_BLENDER_ADDON_PROTOCOL": null,
+      "DSH_BLENDER_CONFIG": null
+    }
+  },
+  "stats": {
+    "frames": 0,
+    "acts": 0,
+    "cmds": 0,
+    "loops": 0,
+    "views": 0,
+    "headless": 0,
+    "plan": 0,
+    "worker": 0,
+    "txn": 0,
+    "preset": 0,
+    "job": 0,
+    "selections": 0,
+    "lastSelectionMs": null,
+    "lastPlanMs": null,
+    "lastViewMs": null,
+    "lastHeadlessMs": null,
+    "lastFrameMs": null,
+    "lastActMs": null,
+    "lastError": null,
+    "startedAt": 1792694082044
+  }
+}

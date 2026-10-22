@@ -1,0 +1,12 @@
+{
+  "ok": true,
+  "op": "save",
+  "result": {
+    "ok": true,
+    "name": "acceptance",
+    "kind": "generic",
+    "keys": 1,
+    "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\presets\\acceptance.json",
+    "bytes": 204
+  }
+}

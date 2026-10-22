@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "checkedAt": "2026-10-22T19:16:30.285Z",
+  "listeners": [
+    {
+      "port": 29877,
+      "listening": false
+    },
+    {
+      "port": 29879,
+      "listening": false
+    },
+    {
+      "port": 30877,
+      "listening": false
+    },
+    {
+      "port": 30879,
+      "listening": false
+    }
+  ]
+}

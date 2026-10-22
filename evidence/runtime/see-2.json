@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "op": "see",
+  "result": {
+    "id": 804945976,
+    "ok": true,
+    "mode": "workbench-offscreen",
+    "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_see_3184_3.png",
+    "width": 640,
+    "height": 360,
+    "bytes": 151432,
+    "coverage_estimate": 0.3289,
+    "pixel_hash": "1fcfb783cf7b",
+    "ms": 51,
+    "t": {
+      "render_ms": 29,
+      "read_ms": 21,
+      "total_ms": 51
+    },
+    "engine": "BLENDER_WORKBENCH"
+  },
+  "error": null
+}

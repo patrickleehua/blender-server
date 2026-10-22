@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "ms": 52,
+  "mainThreadMs": 52,
+  "executed": true,
+  "stdout": "GUI_CHECK {\"objects\": 1}\n",
+  "stderr": "",
+  "error": null,
+  "traceback": null,
+  "file": null,
+  "marker_missing": false,
+  "sceneEpoch": {
+    "objects": 1,
+    "meshes": 2,
+    "materials": 0,
+    "nameHash": 1496738877
+  },
+  "errorKind": null
+}

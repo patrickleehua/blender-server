@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "blender": "4.5.15 LTS",
+  "camera_count_before": 0,
+  "camera_count_after": 0,
+  "static_distinct": 1,
+  "animated_distinct": 2,
+  "watch_code_failure": "ValueError: regression",
+  "preset_object_and_scene_dry_run_read_only": true
+}

@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "op": "snapshot",
+  "result": {
+    "ok": true,
+    "snapshot": {
+      "label": "gui-before",
+      "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\snapshots\\gui-before.blend",
+      "bytes": 437450,
+      "ms": 14,
+      "objects": 1,
+      "note": "",
+      "t": "2026-10-23 02:34:53",
+      "filepath": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\snapshots\\gui-before.blend",
+      "unsaved": false
+    },
+    "total": 3
+  }
+}

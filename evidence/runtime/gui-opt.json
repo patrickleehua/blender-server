@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "op": "opt_analyze",
+  "result": {
+    "ok": true,
+    "objects": 1,
+    "groups": 0,
+    "joinable": 0,
+    "objects_after": 1,
+    "est_sync_save_s": 0,
+    "top_groups": []
+  }
+}

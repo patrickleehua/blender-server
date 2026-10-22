@@ -1,0 +1,52 @@
+{
+  "ok": true,
+  "op": "watch",
+  "result": {
+    "id": 19906477,
+    "ok": true,
+    "mode": "workbench-offscreen-watch",
+    "code": null,
+    "frames": [
+      {
+        "i": 0,
+        "frame": 1,
+        "ok": true,
+        "ms": 20,
+        "hash": "f65d534f4864",
+        "width": 320,
+        "height": 180,
+        "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_see_29920_4.png",
+        "coverage": 0.4447
+      },
+      {
+        "i": 1,
+        "frame": 2,
+        "ok": true,
+        "ms": 18,
+        "hash": "5b88c676c093",
+        "width": 320,
+        "height": 180,
+        "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_see_29920_5.png",
+        "coverage": 0.4447
+      }
+    ],
+    "picks": [
+      {
+        "frame": 1,
+        "hash": "f65d534f4864",
+        "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_see_29920_4.png"
+      },
+      {
+        "frame": 2,
+        "hash": "5b88c676c093",
+        "path": "E:\\workplace\\blender-server\\tmp\\runtime\\work\\dsh_see_29920_5.png"
+      }
+    ],
+    "distinct": 2,
+    "changed": true,
+    "static_render": false,
+    "sampled": 2,
+    "requested": 2,
+    "ms": 40
+  }
+}

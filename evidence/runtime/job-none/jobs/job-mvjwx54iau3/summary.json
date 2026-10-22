@@ -1,0 +1,25 @@
+{
+ "id": "job-mvjwx54iau3",
+ "kind": "job",
+ "status": "done",
+ "exitCode": 0,
+ "signal": null,
+ "startedAt": 1792696014417,
+ "finishedAt": 1792696014836,
+ "ms": 419,
+ "outdir": "E:\\workplace\\blender-server\\evidence\\runtime\\job-none",
+ "script": "E:\\workplace\\blender-server\\evidence\\runtime\\job-none\\dsh_headless_mvjwx54k.py",
+ "engine": "none",
+ "runId": "run-mvjwx54jkjq",
+ "stage": "done",
+ "artifacts": [
+  "dsh_headless_mvjwx54k.py(69354B)",
+  "setup.stderr.log(0B)",
+  "setup.stdout.log(116B)",
+  "input-cycles.blend(434663B)",
+  "setup.py(173B)"
+ ],
+ "resultSummary": "{\"engine\":\"CYCLES\",\"preserved\":true}",
+ "lastException": null,
+ "pluginVersion": "1.0.0"
+}

@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "op": "exec",
+  "result": {
+    "id": 707443455,
+    "ok": true,
+    "ms": 48,
+    "stdout": "Info: Saved as \"scene.blend\"\nHEADLESS {\"name\": \"AcceptanceCube\", \"dimensions\": [2.0, 4.0, 3.0], \"verts\": 8, \"cameras\": 0}\n",
+    "stderr": "",
+    "result": {
+      "name": "AcceptanceCube",
+      "dimensions": [
+        2,
+        4,
+        3
+      ],
+      "verts": 8,
+      "cameras": 0
+    },
+    "error": null,
+    "traceback": null
+  },
+  "error": null,
+  "traceback": null
+}

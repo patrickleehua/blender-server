@@ -1,0 +1,31 @@
+{
+ "ok": true,
+ "background": false,
+ "enabled": [],
+ "loaded_by": "direct-import:dsh_blender_bridge.py",
+ "server_running": true,
+ "addon_file": "E:\\workplace\\blender-server\\bridge\\addon\\dsh_blender_bridge.py",
+ "errors": [],
+ "addon_modules_seen": [
+  "io_anim_bvh",
+  "bl_pkg",
+  "copy_global_transform",
+  "cycles",
+  "io_scene_fbx",
+  "io_scene_gltf2",
+  "hydra_storm",
+  "ui_translate",
+  "node_wrangler",
+  "pose_library",
+  "rigify",
+  "io_curve_svg",
+  "io_mesh_uv_layout",
+  "viewport_vr_preview"
+ ],
+ "env": {
+  "BLENDER_USER_SCRIPTS": "E:\\workplace\\blender-server\\tmp\\runtime\\gui-scripts",
+  "DSH_BLENDER_ADDON_FILE": "E:\\workplace\\blender-server\\bridge\\addon\\dsh_blender_bridge.py",
+  "DSH_BLENDER_ADDON_MODULE": ""
+ },
+ "addon_port": 19876
+}

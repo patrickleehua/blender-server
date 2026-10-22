@@ -1,0 +1,16 @@
+{
+  "engine_mode": "eevee",
+  "gpu_mode": "auto",
+  "backend": "n/a: GPU functions for drawing are not available in background mo",
+  "before": {
+    "engine": "BLENDER_EEVEE_NEXT"
+  },
+  "ok": false,
+  "error": "TypeError: bpy_struct: item.attr = val: enum \"BLENDER_EEVEE\" not found in ('BLENDER_EEVEE_NEXT', 'BLENDER_WORKBENCH', 'CYCLES')",
+  "after": {
+    "engine": "BLENDER_EEVEE_NEXT",
+    "rt": false,
+    "samples": 64
+  },
+  "fell_back_to_cpu": false
+}

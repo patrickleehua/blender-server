@@ -1,0 +1,31 @@
+{
+  "ok": true,
+  "mode": "glb",
+  "file": "",
+  "objects": [
+    {
+      "name": "AcceptanceCube",
+      "vertices": 24,
+      "dimensions": [
+        2.0,
+        4.0,
+        3.0
+      ],
+      "world_bounds": [
+        [
+          -1.0,
+          1.0
+        ],
+        [
+          -2.0,
+          2.0
+        ],
+        [
+          -0.5,
+          2.5
+        ]
+      ]
+    }
+  ],
+  "version": "4.5.15 LTS"
+}

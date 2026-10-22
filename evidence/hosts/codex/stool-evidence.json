@@ -1,0 +1,150 @@
+{
+  "session": "codex-stool",
+  "scale_length": 1.0,
+  "units": "meters",
+  "tolerance_m": 1e-06,
+  "world_vertex_checks": [
+    {
+      "name": "CodexTop",
+      "world_vertex_min": [
+        -0.45000001788139343,
+        -0.45000001788139343,
+        0.75
+      ],
+      "world_vertex_max": [
+        0.45000001788139343,
+        0.45000001788139343,
+        0.8300000429153442
+      ],
+      "world_dimensions": [
+        0.9000000357627869,
+        0.9000000357627869,
+        0.08000004291534424
+      ],
+      "world_center": [
+        0.0,
+        0.0,
+        0.7900000214576721
+      ],
+      "world_position": [
+        0.0,
+        0.0,
+        0.7900000214576721
+      ]
+    },
+    {
+      "name": "CodexLegA",
+      "world_vertex_min": [
+        -0.3199999928474426,
+        -0.25999999046325684,
+        0.0
+      ],
+      "world_vertex_max": [
+        -0.24000000953674316,
+        -0.18000000715255737,
+        0.75
+      ],
+      "world_dimensions": [
+        0.07999998331069946,
+        0.07999998331069946,
+        0.75
+      ],
+      "world_center": [
+        -0.2800000011920929,
+        -0.2199999988079071,
+        0.375
+      ],
+      "world_position": [
+        -0.2800000011920929,
+        -0.2199999988079071,
+        0.375
+      ]
+    },
+    {
+      "name": "CodexLegB",
+      "world_vertex_min": [
+        0.24000000953674316,
+        -0.25999999046325684,
+        0.0
+      ],
+      "world_vertex_max": [
+        0.3199999928474426,
+        -0.18000000715255737,
+        0.75
+      ],
+      "world_dimensions": [
+        0.07999998331069946,
+        0.07999998331069946,
+        0.75
+      ],
+      "world_center": [
+        0.2800000011920929,
+        -0.2199999988079071,
+        0.375
+      ],
+      "world_position": [
+        0.2800000011920929,
+        -0.2199999988079071,
+        0.375
+      ]
+    },
+    {
+      "name": "CodexLegC",
+      "world_vertex_min": [
+        -0.03999999910593033,
+        0.24000000953674316,
+        0.0
+      ],
+      "world_vertex_max": [
+        0.03999999910593033,
+        0.3199999928474426,
+        0.75
+      ],
+      "world_dimensions": [
+        0.07999999821186066,
+        0.07999998331069946,
+        0.75
+      ],
+      "world_center": [
+        0.0,
+        0.2800000011920929,
+        0.375
+      ],
+      "world_position": [
+        0.0,
+        0.2800000011920929,
+        0.375
+      ]
+    }
+  ],
+  "exporter": "Blender bundled bpy.ops.export_scene.gltf",
+  "export_selection": [
+    "CodexTop",
+    "CodexLegA",
+    "CodexLegB",
+    "CodexLegC"
+  ],
+  "files": [
+    {
+      "path": "E:/workplace/blender-server/tmp/host-final/codex 中文 空格/outputs/stool.blend",
+      "bytes": 508602,
+      "sha256": "bb2d3aeefc6b4eb95df50f793cba2be9d76d474868a812c07e3e239f6783623e"
+    },
+    {
+      "path": "E:/workplace/blender-server/tmp/host-final/codex 中文 空格/outputs/stool.glb",
+      "bytes": 26792,
+      "sha256": "7810c42bab80429d01ca933a08f87e0cf86b57ea3f337276a4d22ef8056f0087"
+    },
+    {
+      "path": "E:/workplace/blender-server/tmp/host-final/codex 中文 空格/outputs/stool-initial.png",
+      "bytes": 125895,
+      "sha256": "e8ab43ef45a9cdee8a7f3e0b409c29cf3b75a1385e43bfd2040a5860c71679ce"
+    },
+    {
+      "path": "E:/workplace/blender-server/tmp/host-final/codex 中文 空格/outputs/stool-final.png",
+      "bytes": 125786,
+      "sha256": "8e9e7cd5a0bcd0357fa800ae21a14cd5e3cf42c742ed93fdcdb07755ff2f7ea3"
+    }
+  ],
+  "independent_reopen": "reserved for separate acceptance process"
+}

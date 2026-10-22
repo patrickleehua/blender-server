@@ -1,0 +1,106 @@
+{
+  "ok": true,
+  "op": "audit_mesh",
+  "result": {
+    "ok": true,
+    "clean": true,
+    "state": "pass",
+    "verdict": "pass",
+    "reason": "",
+    "count": 1,
+    "missing": [],
+    "totals": {
+      "objects": 1,
+      "tris": 12,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0,
+      "loose_verts": 0,
+      "self_intersections": 0,
+      "normals_inverted": 0,
+      "out_of_bounds": 0,
+      "empty_objects": 0,
+      "loose_edges": 0,
+      "normals_unknown": 0,
+      "normals_checked": 1,
+      "normals_multi_shell": 0,
+      "analysis_incomplete": 0
+    },
+    "objects": [
+      {
+        "name": "GuiAcceptanceCube",
+        "verts": 8,
+        "polys": 6,
+        "tris": 12,
+        "loose_edges": 0,
+        "empty": false,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "degenerate_faces": 0,
+        "loose_verts": 0,
+        "signed_volume": 8,
+        "closed": true,
+        "normals_state": "pass",
+        "multi_shell": false,
+        "normals_outward": true,
+        "normals_shell_count": 1,
+        "normals_reason": "",
+        "normals_shells": [
+          {
+            "shell": 0,
+            "faces": 6,
+            "signed_volume": 8,
+            "closed": true,
+            "winding_consistent": true,
+            "nested": false,
+            "relation": "",
+            "state": "pass"
+          }
+        ],
+        "self_intersections": 0,
+        "self_intersection_pairs": [],
+        "self_intersections_analyzed": true,
+        "self_intersections_state": "pass",
+        "self_intersection_error": null,
+        "aabb": {
+          "min": [
+            0,
+            1,
+            2
+          ],
+          "max": [
+            2,
+            3,
+            4
+          ]
+        },
+        "dimensions": [
+          2,
+          2,
+          2
+        ],
+        "analysis_incomplete": false,
+        "state": "pass"
+      }
+    ],
+    "analysis": {
+      "self_intersections": "analyzed",
+      "normals": "checked",
+      "incomplete_objects": 0
+    },
+    "aabb": {
+      "min": [
+        0,
+        1,
+        2
+      ],
+      "max": [
+        2,
+        3,
+        4
+      ]
+    },
+    "envelope": null,
+    "note": "判据：boundary/nonmanifold/degenerate/loose_verts/loose_edges/self_intersections/normals_inverted/out_of_bounds/empty 任一非 0 → clean=false 且 state=fail；normals_outward 逐**连通壳**判（聚合有符号体积会被大正向壳+小反向壳抵消成正数），只对闭合网格有意义（closed=true 时才给），判不出来时给 normals_state=unknown；多壳但各壳朝向可确证时给 normals_state=pass_multi_shell（不算 degraded：碎块簇/布景多壳件是合法的）；自交检查被跳过（self_intersect=false）或抛异常 ⇒ state=degraded，clean=false —— 不假通过"
+  }
+}
