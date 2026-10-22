@@ -10,7 +10,7 @@
     "test": "npm --prefix packages/blender-agent test",
     "typecheck": "npm --prefix packages/blender-agent run typecheck",
     "setup": "node scripts/portable-setup.mjs",
-    "pack": "npm --prefix packages/blender-agent pack --pack-destination ../../tmp"
+    "pack": "node scripts/package.mjs"
   },
   "license": "BSD-3-Clause"
 }

@@ -1,0 +1,23 @@
+{
+  "name": "@blender-agent/bridge",
+  "version": "1.0.0",
+  "description": "Portable Blender CLI and MCP stdio bridge for Codex, Claude and other agents",
+  "type": "module",
+  "license": "BSD-3-Clause",
+  "engines": { "node": ">=22" },
+  "bin": { "blender-agent": "dist/cli.js" },
+  "main": "dist/core.js",
+  "types": "dist/core.d.ts",
+  "exports": { ".": "./dist/core.js", "./package.json": "./package.json" },
+  "files": ["dist", "assets", "scripts/portable-setup.mjs", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "node scripts/stage.mjs && tsc",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "test:live": "node --test test/live.mjs",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": { "@modelcontextprotocol/sdk": "1.32.1", "ajv": "8.20.0" },
+  "devDependencies": { "@types/node": "24.13.3", "typescript": "5.9.3" }
+}

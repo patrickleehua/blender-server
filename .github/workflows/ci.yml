@@ -1,0 +1,25 @@
+name: Portable toolkit
+on:
+  push:
+  pull_request:
+jobs:
+  contracts:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: packages/blender-agent/package-lock.json
+      - run: npm --prefix packages/blender-agent ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: node scripts/portable-setup-selftest.mjs
+      - run: npm run pack
+# Real Blender and authenticated model acceptance run separately with
+# scripts/verify-hosts.mjs; this workflow does not claim those results.

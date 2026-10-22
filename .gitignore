@@ -22,3 +22,4 @@ tmp/
 .blender-agent/
 dsh-blender.config.json
 evidence/hosts/raw/
+release/*.tgz
