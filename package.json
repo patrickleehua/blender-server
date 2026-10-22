@@ -1,0 +1,16 @@
+{
+  "name": "blender-agent-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent Blender toolkit for Claude, Codex and MCP hosts",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "npm --prefix packages/blender-agent run build",
+    "test": "npm --prefix packages/blender-agent test",
+    "typecheck": "npm --prefix packages/blender-agent run typecheck",
+    "setup": "node scripts/portable-setup.mjs",
+    "pack": "npm --prefix packages/blender-agent pack --pack-destination ../../tmp"
+  },
+  "license": "BSD-3-Clause"
+}

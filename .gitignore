@@ -1,0 +1,24 @@
+# Local references and portable applications are not product dependencies.
+.upstream/
+.local/
+node_modules/
+**/node_modules/
+**/dist/
+packages/blender-agent/assets/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+tmp/
+.scratch/
+*.tgz
+*.zip
+*.log
+# Generated host configuration and runtime state can contain machine paths.
+.claude/
+.agents/
+.codex/
+.mcp.json
+.blender-agent/
+dsh-blender.config.json
+evidence/hosts/raw/
