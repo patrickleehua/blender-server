@@ -1,0 +1,40 @@
+I built the stool in worker `claude-stool`, saved `stool.blend` and exported `stool.glb`, then stopped the worker. My numeric checks match the required sizes and positions. This isn't overall acceptance; that's for the separate Blender process that reopens both files.
+
+**Setup**
+- I read the Skill and its routing reference, then queried the catalog: 33 families / 217 ops.
+- GUI doctor returned `kind=blender-unreachable`, as you said it would. I didn't try to launch the GUI.
+- I started the worker with the `txn` preload, on Blender 4.5.15 LTS. It began with the factory Camera, Cube and Light, unit system METRIC and scale_length 1.0. I deleted the three default objects in that worker only and kept scale_length at 1.
+- The top was built as a 64-segment cylinder; the legs are boxes. The camera `ClaudeCam` is at (2,-2,1.6) looking at (0,0,0.4).
+
+**Images I opened and looked at** (all from (2,-2,1.6) toward (0,0,0.4)):
+1. `dsh_see_49084_2.png` (hash `51972b922272`): grey round top, radius 0.40, sitting flush on three square legs.
+2. `dsh_see_49084_3.png` (hash `29e3860f17ef`), after the change: the top clearly overhangs the legs more; the legs are unchanged. Still grey.
+3. `dsh_see_49084_4.png`: identical hash to image 2, so it showed nothing new.
+4. `dsh_see_49084_5.png` (hash `7b49128a3b14`): red top and three brown legs are visible.
+
+All four are in `.blender-agent\runtime\`.
+
+**Problem with the worker's view:** `blender_rt_worker op=see` draws grey solid shading and ignores the scene's colour setting. That's why image 4 didn't change. To see the materials I had to use `blender_rt_see` with `session=claude-stool`, `shading=MATERIAL`, `view_mode=render` and `auto=false`.
+
+**Size and position check** (min/max of the world-space vertices; object scale is 1 and rotation is 0 on all four):
+
+| Object | Size (m) | Centre (m) | Max error | Material |
+|---|---|---|---|---|
+| ClaudeTop | 0.90 × 0.90 × 0.08 | (0, 0, 0.79) | 4.3e-8 | ClaudeRed |
+| ClaudeLegA | 0.08 × 0.08 × 0.75 | (-0.28, -0.22, 0.375) | 1.7e-8 | ClaudeBrown |
+| ClaudeLegB | 0.08 × 0.08 × 0.75 | (0.28, -0.22, 0.375) | 1.7e-8 | ClaudeBrown |
+| ClaudeLegC | 0.08 × 0.08 × 0.75 | (0, 0.28, 0.375) | 1.7e-8 | ClaudeBrown |
+
+`obj.dimensions` on the top separately gave 0.9 × 0.9 × 0.08. Only these four meshes are in the scene.
+
+**Files**
+- `E:/workplace/blender-server/tmp/host-mvp-20261023/claude 中文 空格/outputs/stool.blend`: 468,670 bytes, md5 `420ec66903763c3bab74f30073d3f020`.
+- `E:/workplace/blender-server/tmp/host-mvp-20261023/claude 中文 空格/outputs/stool.glb`: 15,648 bytes, md5 `8e20d18153f5e2f07ee8537cf11b2f8a`. It was written by Blender's bundled exporter (Khronos glTF Blender I/O v4.5.51) with only the four meshes selected.
+- I parsed the GLB myself. It is a valid glTF version 2 file and the stated length matches the file size.
+- It has exactly four nodes. Their positions are in glTF's Y-up axes and convert correctly, e.g. the top is at (0, 0.79, 0) and LegC at (0, 0.375, -0.28).
+- Mesh extents are ±0.45/±0.04 for the top and ±0.04/±0.375 for the legs. Materials are `ClaudeRed` and `ClaudeBrown`.
+
+**Other notes**
+- Apart from the shading issue above, nothing failed.
+- After saving, Blender still marked the file as having unsaved changes. That's because I changed the object selection afterwards to export the four meshes; the saved geometry and materials are as shown above.
+- I didn't take a file-level snapshot. Nothing changed topology, UVs or modifiers; the only mesh edit was scaling the top's vertices outward.

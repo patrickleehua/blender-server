@@ -1,0 +1,291 @@
+[
+  {
+    "label": "doctor",
+    "name": "blender_viewport",
+    "args": {
+      "op": "doctor"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"addon\":{\"kind\":\"ok\",\"tcp\":true,\"ping\":true,\"ping_ms\":45,\"roundTripMs\":85,\"summary\":\"通道健康：TCP + ping + bpy 往返都通\",\"protocol\":\"flat\",\"protocol_label\":\"直连 addon · 扁平协议（无分帧；实测 v1.7/v1.8 都通 —— 活版本看 rt_cmd get_addon_info）\",\"protocol_from\":\"config\",\"fix\":\"无需处理\",\"region\":{\"window\":[1920,1009],\"views\":[{\"region\":[0,97,1585,886],\"area\":[0,97,1585,886],\"shading\":\"SOLID\"}]}},\"metrics\":{\"calls\":2,\"errors\":0,\"timeouts\":0,\"inflight\":0,\"lastCmd\":\"execute_code\",\"lastCmdAt\":1792713714944,\"lastOkAt\":1792713714977,\"lastError\":null,\"lastDiagnosis\":null,\"views\":0,\"headlessRuns\":0,\"lastHeadlessMs\":null,\"workerStarts\":0,\"workerExecs\":0,\"lastCmdAgeMs\":86},\"config\":{\"platform\":\"win32\",\"distro\":null,\"addon\":\"127.0.0.1:45876\",\"http\":\"127.0.0.1:45877\",\"workDir\":{\"win\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\",\"wsl\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\",\"from\":\"config\",\"fallback\":null,\"shared\":{\"shared\":true,\"why\":\"windows\"}},\"blenderExe\":\"E:\\\\workplace\\\\blender-server\\\\.local\\\\blender-4.5.15-windows-x64\\\\blender.exe\",\"blenderFrom\":\"config\",\"blenderUserConfig\":null,\"blenderUserScripts\":null,\"workerPort\":45879,\"configFile\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\\\\.blender-agent\\\\config-45877-4b850600-b342-43e5-a242-ce0e1f12fa46.json\",\"holder\":\"plugin-pid-40336\",\"leaseTtlMs\":600000,\"env\":{\"DSH_BLENDER_WORKDIR\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\",\"DSH_BLENDER_EXE\":\"E:\\\\workplace\\\\blender-server\\\\.local\\\\blender-4.5.15-windows-x64\\\\blender.exe\",\"DSH_BLENDER_HTTP_PORT\":\"45877\",\"DSH_BLENDER_ADDON_PROTOCOL\":null,\"DSH_BLENDER_CONFIG\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\\\\.blender-agent\\\\config-45877-4b850600-b342-43e5-a242-ce0e1f12fa46.json\"}},\"stats\":{\"frames\":0,\"acts\":0,\"cmds\":0,\"loops\":0,\"views\":0,\"headless\":0,\"plan\":0,\"worker\":0,\"txn\":0,\"preset\":0,\"job\":0,\"selections\":0,\"lastSelectionMs\":null,\"lastPlanMs\":null,\"lastViewMs\":null,\"lastHeadlessMs\":null,\"lastFrameMs\":null,\"lastActMs\":null,\"lastError\":null,\"startedAt\":1792713714853},\"kind\":\"ok\"}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "addon": {
+          "kind": "ok",
+          "tcp": true,
+          "ping": true,
+          "ping_ms": 45,
+          "roundTripMs": 85,
+          "summary": "通道健康：TCP + ping + bpy 往返都通",
+          "protocol": "flat",
+          "protocol_label": "直连 addon · 扁平协议（无分帧；实测 v1.7/v1.8 都通 —— 活版本看 rt_cmd get_addon_info）",
+          "protocol_from": "config",
+          "fix": "无需处理",
+          "region": {
+            "window": [
+              1920,
+              1009
+            ],
+            "views": [
+              {
+                "region": [
+                  0,
+                  97,
+                  1585,
+                  886
+                ],
+                "area": [
+                  0,
+                  97,
+                  1585,
+                  886
+                ],
+                "shading": "SOLID"
+              }
+            ]
+          }
+        },
+        "metrics": {
+          "calls": 2,
+          "errors": 0,
+          "timeouts": 0,
+          "inflight": 0,
+          "lastCmd": "execute_code",
+          "lastCmdAt": 1792713714944,
+          "lastOkAt": 1792713714977,
+          "lastError": null,
+          "lastDiagnosis": null,
+          "views": 0,
+          "headlessRuns": 0,
+          "lastHeadlessMs": null,
+          "workerStarts": 0,
+          "workerExecs": 0,
+          "lastCmdAgeMs": 86
+        },
+        "config": {
+          "platform": "win32",
+          "distro": null,
+          "addon": "127.0.0.1:45876",
+          "http": "127.0.0.1:45877",
+          "workDir": {
+            "win": "E:\\workplace\\blender-server\\tmp\\mvp-gui",
+            "wsl": "E:\\workplace\\blender-server\\tmp\\mvp-gui",
+            "from": "config",
+            "fallback": null,
+            "shared": {
+              "shared": true,
+              "why": "windows"
+            }
+          },
+          "blenderExe": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+          "blenderFrom": "config",
+          "blenderUserConfig": null,
+          "blenderUserScripts": null,
+          "workerPort": 45879,
+          "configFile": "E:\\workplace\\blender-server\\tmp\\mvp-gui\\.blender-agent\\config-45877-4b850600-b342-43e5-a242-ce0e1f12fa46.json",
+          "holder": "plugin-pid-40336",
+          "leaseTtlMs": 600000,
+          "env": {
+            "DSH_BLENDER_WORKDIR": "E:\\workplace\\blender-server\\tmp\\mvp-gui",
+            "DSH_BLENDER_EXE": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+            "DSH_BLENDER_HTTP_PORT": "45877",
+            "DSH_BLENDER_ADDON_PROTOCOL": null,
+            "DSH_BLENDER_CONFIG": "E:\\workplace\\blender-server\\tmp\\mvp-gui\\.blender-agent\\config-45877-4b850600-b342-43e5-a242-ce0e1f12fa46.json"
+          }
+        },
+        "stats": {
+          "frames": 0,
+          "acts": 0,
+          "cmds": 0,
+          "loops": 0,
+          "views": 0,
+          "headless": 0,
+          "plan": 0,
+          "worker": 0,
+          "txn": 0,
+          "preset": 0,
+          "job": 0,
+          "selections": 0,
+          "lastSelectionMs": null,
+          "lastPlanMs": null,
+          "lastViewMs": null,
+          "lastHeadlessMs": null,
+          "lastFrameMs": null,
+          "lastActMs": null,
+          "lastError": null,
+          "startedAt": 1792713714853
+        },
+        "kind": "ok"
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "create-two-cubes",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "import bpy,json,os\nassert not bpy.app.background\nassert bpy.utils.user_resource('CONFIG').replace('\\\\','/').startswith(\"E:/workplace/blender-server/tmp/mvp-gui/config\")\nbpy.ops.object.select_all(action='SELECT')\nbpy.ops.object.delete(use_global=False)\nfor name,x in [('GuiCubeA',-1.8),('GuiCubeB',1.8)]:\n    bpy.ops.mesh.primitive_cube_add(size=2,location=(x,0,0))\n    bpy.context.object.name=name\nK.out_dir=\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\"\nK.gui_marker='only-this-gui'\nbpy.ops.wm.save_as_mainfile(filepath=\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\\\\gui-scene.blend\")\nprint('GUI_PROOF '+json.dumps({'pid':os.getpid(),'version':bpy.app.version_string,'objects':[o.name for o in bpy.data.objects]}))"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"ms\":75,\"mainThreadMs\":75,\"executed\":true,\"stdout\":\"Info: Saved as \\\"gui-scene.blend\\\"\\nGUI_PROOF {\\\"pid\\\": 43976, \\\"version\\\": \\\"4.5.15 LTS\\\", \\\"objects\\\": [\\\"GuiCubeA\\\", \\\"GuiCubeB\\\"]}\\n\",\"stderr\":\"\",\"error\":null,\"traceback\":null,\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":2,\"meshes\":3,\"materials\":2,\"nameHash\":3781347727},\"errorKind\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "ms": 75,
+        "mainThreadMs": 75,
+        "executed": true,
+        "stdout": "Info: Saved as \"gui-scene.blend\"\nGUI_PROOF {\"pid\": 43976, \"version\": \"4.5.15 LTS\", \"objects\": [\"GuiCubeA\", \"GuiCubeB\"]}\n",
+        "stderr": "",
+        "error": null,
+        "traceback": null,
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 2,
+          "meshes": 3,
+          "materials": 2,
+          "nameHash": 3781347727
+        },
+        "errorKind": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "before",
+    "name": "blender_rt_see",
+    "args": {
+      "auto": false,
+      "view_size": "560x315",
+      "from": "9,-11,8",
+      "look_at": "0,0,0",
+      "ortho": true,
+      "ortho_scale": 10
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"mode\":\"view\",\"hash\":\"b5f7886522a90192667a21fb200acda6b7ff1d2d18a15b1afac94010dce886fc\",\"image\":{\"mimeType\":\"image/png\",\"contentIndex\":1},\"meta\":{\"mode\":\"viewport\",\"ms\":28,\"path\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\\\\dsh_view_capture.png\",\"width\":560,\"height\":315,\"coverage_estimate\":null,\"objects_in_frame\":null,\"min_margin_px\":null,\"scene_bbox\":null,\"warning\":null,\"fallback_from\":null,\"region\":[0,97,1585,886]}}"
+        },
+        {
+          "type": "image",
+          "mimeType": "image/png"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "mode": "view",
+        "hash": "b5f7886522a90192667a21fb200acda6b7ff1d2d18a15b1afac94010dce886fc",
+        "image": {
+          "mimeType": "image/png",
+          "contentIndex": 1
+        },
+        "meta": {
+          "mode": "viewport",
+          "ms": 28,
+          "path": "E:\\workplace\\blender-server\\tmp\\mvp-gui\\dsh_view_capture.png",
+          "width": 560,
+          "height": 315,
+          "coverage_estimate": null,
+          "objects_in_frame": null,
+          "min_margin_px": null,
+          "scene_bbox": null,
+          "warning": null,
+          "fallback_from": null,
+          "region": [
+            0,
+            97,
+            1585,
+            886
+          ]
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "gpu-buffer-type-probe",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "import gpu,json\noff=gpu.types.GPUOffScreen(16,8)\ntry:\n    with off.bind():\n        gpu.state.active_framebuffer_get().clear(color=(0.25,0.5,0.75,1.0))\n        buf=off.texture_color.read()\n        mv=memoryview(buf)\n        info={'format':mv.format,'itemsize':mv.itemsize,'nbytes':mv.nbytes,'expected_rgba8_bytes':16*8*4,'expected_float_bytes':16*8*4*4}\n        print('GPU_BUFFER '+json.dumps(info))\nfinally:\n    off.free()"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"ms\":27,\"mainThreadMs\":27,\"executed\":true,\"stdout\":\"GPU_BUFFER {\\\"format\\\": \\\"B\\\", \\\"itemsize\\\": 1, \\\"nbytes\\\": 512, \\\"expected_rgba8_bytes\\\": 512, \\\"expected_float_bytes\\\": 2048}\\n\",\"stderr\":\"\",\"error\":null,\"traceback\":null,\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":2,\"meshes\":3,\"materials\":2,\"nameHash\":3781347727},\"errorKind\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "ms": 27,
+        "mainThreadMs": 27,
+        "executed": true,
+        "stdout": "GPU_BUFFER {\"format\": \"B\", \"itemsize\": 1, \"nbytes\": 512, \"expected_rgba8_bytes\": 512, \"expected_float_bytes\": 2048}\n",
+        "stderr": "",
+        "error": null,
+        "traceback": null,
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 2,
+          "meshes": 3,
+          "materials": 2,
+          "nameHash": 3781347727
+        },
+        "errorKind": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "gpu-known-clear-selftest",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "import gpu,json\noff=gpu.types.GPUOffScreen(16,8)\ntry:\n    with off.bind():\n        fb=gpu.state.active_framebuffer_get()\n        fb.clear(color=(0.25,0.5,0.75,1.0))\n        raw=bytes(memoryview(fb.read_color(0,0,16,8,4,0,'UBYTE')))\n        assert len(raw)==16*8*4\n        expected=[64,128,191,255]\n        assert all(abs(int(raw[j])-expected[j%4])<=1 for j in range(len(raw))),list(raw[:16])\n        print('GPU_CLEAR '+json.dumps({'ok':True,'rgba':list(raw[:4]),'bytes':len(raw)}))\nfinally:\n    off.free()"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":false,\"ms\":64,\"mainThreadMs\":64,\"executed\":true,\"stdout\":\"\",\"stderr\":\"\",\"error\":\"AssertionError: [64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64]\",\"traceback\":\"Traceback (most recent call last):\\n  File \\\"<string>\\\", line 1441, in <module>\\n  File \\\"<rt_do>\\\", line 10, in <module>\\nAssertionError: [64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64]\\n\",\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":2,\"meshes\":3,\"materials\":2,\"nameHash\":3781347727},\"errorKind\":\"execution\"}"
+        }
+      ],
+      "structuredContent": {
+        "ok": false,
+        "ms": 64,
+        "mainThreadMs": 64,
+        "executed": true,
+        "stdout": "",
+        "stderr": "",
+        "error": "AssertionError: [64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64]",
+        "traceback": "Traceback (most recent call last):\n  File \"<string>\", line 1441, in <module>\n  File \"<rt_do>\", line 10, in <module>\nAssertionError: [64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64]\n",
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 2,
+          "meshes": 3,
+          "materials": 2,
+          "nameHash": 3781347727
+        },
+        "errorKind": "execution"
+      },
+      "isError": true
+    }
+  }
+]

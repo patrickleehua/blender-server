@@ -1,0 +1,21 @@
+{
+ "id": "job-a0fde96e-20f4-4a61-8430-899fef125cba",
+ "kind": "job",
+ "status": "done",
+ "exitCode": 0,
+ "signal": null,
+ "startedAt": 1792714612498,
+ "finishedAt": 1792714613010,
+ "ms": 512,
+ "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\contract",
+ "script": "E:\\workplace\\blender-server\\tmp\\mvp-upstream-final\\dsh_headless_mvk7zrwx.py",
+ "engine": "none",
+ "runId": "run-953d8901-fceb-4056-9094-a23e1295bed7",
+ "stage": "done",
+ "artifacts": [
+  "contract_report.md(2242B)"
+ ],
+ "resultSummary": "{\"ok\":true,\"passed\":28,\"failed\":0,\"failures\":[],\"outdir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\contract\"}",
+ "lastException": null,
+ "pluginVersion": "1.0.0"
+}

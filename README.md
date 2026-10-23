@@ -23,6 +23,8 @@ node scripts/portable-setup.mjs --project <项目绝对路径> --host both --ble
 
 宿主重新加载后，使用 `/blender-agent`（Claude）或 `$blender-agent`（Codex）。GUI 有现成场景时优先连接随包 addon；无 GUI 使用持久 worker，仍返回真实图片。
 
+CLI 场景操作先 `backend start`，跨调用保持同一组参数、稳定 `--holder` 和 worker 名；详见使用指南。MCP 共享自动后端在最后活跃客户端离开后清理，其他客户端的场景持续保留。本轮 Windows 已实测 Blender 4.5.15 / 5.0.1 无头及 4.5.15 GUI；其他系统 CI 尚未运行。
+
 - [完整使用指南](docs/portable/使用指南.md)：安装、配置、连续 CLI 操作、GUI/无头、卸载。
 - [独立重构设计](docs/adapter-design.md)：职责与兼容边界。
 - [验收场景](docs/acceptance-scenarios.md)：实际验收的独立判据。

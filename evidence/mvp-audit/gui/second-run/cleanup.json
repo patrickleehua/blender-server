@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "guiPid": 37724,
+  "backendPid": 34104,
+  "guiExited": true,
+  "backendExited": true,
+  "addonPortReleased": true,
+  "httpPortReleased": true,
+  "workerPortReleased": true
+}

@@ -1,0 +1,64 @@
+[
+  {
+    "host": "claude",
+    "requestedModel": "claude-opus-5-5",
+    "effort": "medium",
+    "toolCalls": 14,
+    "images": [
+      {
+        "file": "seen-01.png",
+        "sha256": "84dac5a9e8d18d334e706f1211bd8550d1f034af057ca3db0dc91c65de840cef",
+        "bytes": 96119
+      },
+      {
+        "file": "seen-02.png",
+        "sha256": "5093e7b36083ce54402aeda6e5f0a7a911a005bed51cae8368c9cbdf4b026877",
+        "bytes": 98203
+      },
+      {
+        "file": "seen-03.png",
+        "sha256": "6083d8b0a45572acae0b902edf2cdb25bcf657ad964a092e138716c9030027da",
+        "bytes": 98203
+      },
+      {
+        "file": "seen-04.png",
+        "sha256": "77324bc52ad5c4699136711636bb30ba044a8fb0d49f5409d6549adb165c934b",
+        "bytes": 96702
+      }
+    ],
+    "durationMs": 85314,
+    "processExit": 0,
+    "independent": true
+  },
+  {
+    "host": "codex",
+    "requestedModel": "gpt-6.1-sol",
+    "effort": "medium",
+    "toolCalls": 26,
+    "images": [
+      {
+        "file": "seen-01.png",
+        "sha256": "5b62474ccce796b202de407d10a62d56d71715051b0d95658f27d7d96856927f",
+        "bytes": 183320
+      },
+      {
+        "file": "seen-02.png",
+        "sha256": "8c0a97f01723a97f843cd26212940cea6771172509860ba8fc668941c1338bbe",
+        "bytes": 95751
+      },
+      {
+        "file": "seen-03.png",
+        "sha256": "af91d6605a01506a1b1b49b689f4b3ce0eff768277307c4c3a97f47b40542764",
+        "bytes": 97886
+      },
+      {
+        "file": "seen-04.png",
+        "sha256": "ddee91bc280ecad6ffe54c93b6633b63928e6899ba5330626426951479d59ea5",
+        "bytes": 94503
+      }
+    ],
+    "durationMs": 114549,
+    "processExit": 0,
+    "independent": true
+  }
+]

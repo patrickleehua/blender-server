@@ -1,0 +1,102 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"op\":\"wait\",\"job\":{\"kind\":\"job\",\"id\":\"job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca\",\"runId\":\"run-3b4bacaa-248c-41fa-9927-f66a93e953c0\",\"status\":\"done\",\"pid\":57924,\"pidAlive\":false,\"ms\":8883,\"timeoutMs\":300000,\"outdir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\upstream_integration\",\"outdirWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\upstream_integration\",\"logDir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\upstream_integration\\\\jobs\\\\job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca\",\"logDirWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\upstream_integration\\\\jobs\\\\job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca\",\"stdoutLog\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\upstream_integration\\\\jobs\\\\job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca\\\\stdout.log\",\"stderrLog\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\upstream_integration\\\\jobs\\\\job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca\\\\stderr.log\",\"stdoutLogWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\upstream_integration\\\\jobs\\\\job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca\\\\stdout.log\",\"stderrLogWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\upstream_integration\\\\jobs\\\\job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca\\\\stderr.log\",\"exitCode\":0,\"signal\":null,\"engine\":\"none\",\"stage\":{\"name\":\"done\",\"t\":1792714622.476,\"run\":\"run-3b4bacaa-248c-41fa-9927-f66a93e953c0\"},\"stageName\":\"done\",\"stageAt\":1792714622476,\"stageAgoMs\":502,\"lastOutputAt\":1792714622573,\"idleMs\":405,\"lines\":144,\"logBytes\":9061,\"resultJson\":{\"pass\":128,\"fail\":0,\"fails\":[],\"skipped\":[],\"objects_left\":[]},\"result\":{\"pass\":128,\"fail\":0,\"fails\":[],\"skipped\":[],\"objects_left\":[]},\"resultParseError\":null,\"resultPath\":null,\"resultPathWsl\":null,\"resultBytes\":63,\"resultTruncated\":false,\"stdoutTail\":\"   material_scan 报 procedural 与 needs_uv\\r\\nInfo: Baking map saved to internal image, save it externally or pack it\\r\\n  [OK]   material_bake 烘出 AO 贴图并落盘（bytes>0）\\r\\n  [OK]   未知 preset 要回允许列表\\r\\n  [OK]   bake_type 写错要回允许列表\\r\\n  [OK]   render_guard 安装 4 个 handler\\r\\n  [OK]   初始状态 idle（无标记）\\r\\n  [OK]   mark 后标记文件为 rendering\\r\\n  [OK]   clear 后标记消失且 state 归 idle\\r\\n  [OK]   瘦身后判定不变（clean 一致）\\r\\n  [OK]   瘦身后聚合不变（totals 一致）\\r\\n  [OK]   默认仍是全量（40 行）\\r\\n  [OK]   top_k 生效（5 / 2 行）\\r\\n  [OK]   场景瘦身 >=70% 字符（实测 13958 -> 2120）\\r\\n  [OK]   mesh 瘦身去掉明细字段（self_intersection_pairs）\\r\\n  [OK]   mesh 瘦身后判据字段仍在（nonmanifold/boundary/closed）\\r\\n  [OK]   audit_duplicates 的 top_k/limit 不再是静默参数（回 slim）\\r\\n  [OK]   gate_plan 只读地列出两个门并标出 pass_if 读取的字段\\r\\n  [OK]   gate_run 三态：有门挂 ⇒ verdict=fail 且 ok=false，且点名 failed\\r\\n  [OK]   过的门 state=pass、挂的门 state=fail（逐门三态）\\r\\n  [OK]   回执瘦身：只回 pass_if 用到的字段 key\\r\\n  [OK]   全过 ⇒ verdict=pass 且 ok=true\\r\\n  [OK]   preset 能整包跑起来（verdict 三态之一，不抛）\\r\\n  [OK]   未知 op ⇒ ok=false 且列出允许的 op（不静默）\\r\\n  [OK]   pass_if 引用不存在的字段 ⇒ 明确报错并提示可用字段\\r\\n  [OK]   gate_selftest 自证（含 degraded 判例）\\r\\n  [OK]   分岛：认出两个岛（宿主 + 铆钉）\\r\\n  [OK]   分岛：跨岛相交 > 0 且同岛 = 0\\r\\n  [OK]   小岛过滤：铆钉（8 顶点 < 106）相关的相交全被滤掉、kept=0\\r\\n  [OK]   小岛过滤开关默认关（不传 min_island_verts 时不过滤）\\r\\n  [OK]   单岛（一条边相连）⇒ 记成同岛自交\\r\\n  [OK]   连通门带 verdict 字段（三态显式化）\\r\\n  [OK]   正好相贴（gap=0.00 mm）算相接、不判浮块 ⇒ pass 且可见浮块=0\\r\\n  [OK]   留出大间隙的孤立块仍判浮块 ⇒ fail\\r\\n  [OK]   per_object：逐对象出 verdict，且点名哪件挂了\\r\\n  [OK]   per_object：每件都带 state/verdict/tris 与原因位\\r\\n  [OK]   超复核上限 ⇒ state=degraded 且 verdict=degraded（不是 pass）\\r\\n  [OK]   degraded 带醒目 warn：DEGRADED ≠ 通过\\r\\n  [OK]   human_base 高度误差 <0.5%\\r\\n  [OK]   human_base 几何头身比在目标 ±5%\\r\\n  [OK]   human_base 出关节标记 >=12 个\\r\\n  [OK]   human_base 顶点量在合理区间（2k–200k）\\r\\n  [OK]   human_measure 读得到头高与头身比\\r\\n  [OK]   human_head 出五官定位标记 >=5 个\\r\\n  [OK]   human_head 头高误差 <5%\\r\\n  [OK]   human_head 从 landmark 推出眼线位置（≈0.50）\\r\\n  [OK]   车辆比例门（真车标定的 WBR / 轴距比 / 高长比）该过\\r\\n  [OK]   轮径明显偏小 ⇒ 比例门点名 wheel_to_body_ratio\\r\\n  [OK]   vehicle_base 建壳（尺寸吻合车长 ±60mm）\\r\\n  [OK]   四个轮都建出来了\\r\\n  [OK]   轮与壳零互穿（布尔轮眉 ⇒ 构造保证）\\r\\n  [OK]   轮与壳间隙 ≈ arch_clear（默认 12mm 量到 6–14mm）\\r\\n  [OK]   clearance 自检（四类规则一次判完）\\r\\n  [OK]   站表放样成壳（车长吻合 ±80mm）\\r\\n  [OK]   腰线折痕生效（SubD 折痕环边 > 0）\\r\\n  [OK]   轮眉外扩落在轮拱站位（不是最低车唇）\\r\\n  [OK]   按缝切分件成 3 件\\r\\n  [OK]   缝是真几何（≈4mm 且零互穿）\\r\\n  [OK]   站表→IoU 拟合闭环跑通并给出 IoU\\r\\n  [OK]   拟合不劣于解析初值（iou >= iou_start）\\r\\n  [OK]   解析反推给的初值高于默认初值（>0.5）\\r\\n  [OK]   多区域装配成 3 个独立体量\\r\\n  [OK]   每个区域各自有尺寸（互不粘连）\\r\\n  [OK]   前视截面轮廓（section_shape）被放样采纳\\r\\n  [OK]   折线族（闭合剖面）拟合跑通\\r\\n  [OK]   控制点数越多 IoU 越高（K↔IoU 曲线单调）\\r\\n  [OK]   折线族天花板高于 cargen 族（0.67 → 0.72+）\\r\\n  [OK]   特征线（腰线 + 横向）都命中了环边\\r\\n  [OK]   横向特征线不在站位上时自动插站\\r\\n  [OK]   凹陷在指定高度带真的收窄（A/B 同带对比 ≥5mm）\\r\\n  [OK]   凹陷点数 > 0（记录在案）\\r\\n  [OK]   圆角特征线命中（bevel 权重边 > 0）\\r\\n  [OK]   圆角真的加了几何（顶点数 > 硬折线版）\\r\\n  [OK]   Bevel 修改器已落地（栈里不残留）\\r\\n  [OK]   半径/段数回执正确\\r\\n  [OK]   shape 自检（类别协议无缺项 + 旋转体）\\r\\n  [OK]   类别数 >= 8（vehicle/humanoid/furniture/hull/aircraft/rotational/weapon/generic…）\\r\\n  [OK]   协议 vehicle 给全视图/比例/算子/验收/坑\\r\\n  [OK]   协议 humanoid 给全视图/比例/算子/验收/坑\\r\\n  [OK]   协议 furniture 给全视图/比例/算子/验收/坑\\r\\n  [OK]   协议 rotational 给全视图/比例/算子/验收/坑\\r\\n  [OK]   每类都有截面通路条目（section_path 无缺项）\\r\\n  [OK]   截面通路决策规则 >= 4 条\\r\\n  [OK]   翼型类明确指向 section_outline（不是镜像对称那条路）\\r\\n  [OK]   轴对称类明确指向 shape_revolve（并提示不要放样）\\r\\n  [OK]   旋转体通路（瓶/罐/轮毂）出几何且高度吻合\\r\\n  [OK]   翼型/自定义截面被采纳（section_source=custom_outline）\\r\\n  [OK]   截面左右**不对称**（翼型有弯度 ⇒ |ymin| ≠ |ymax|）\\r\\n  [OK]   圆角剖面可控（profile 0.75 = 偏方/G2 近似）\\r\\n  [OK]   旋转体多体量装配（2 件独立对象 + 各自落点）\\r\\n  [OK]   落点写进对象（200mm → 0.2m）\\r\\n  [OK]   流水线自检（工件存取 / @引用含点路径 / 嵌套 / 失败即停）\\r\\n  [OK]   点路径取值（a.2 -> 3）\\r\\n  [OK]   四步链跑通且逐步都有回执\\r\\n  [OK]   产出按 out= 存成工件\\r\\n  [OK]   @引用传到真实调用里（value\\\"@n\\\" -> 7）\\r\\n  [OK]   引用不存在的工件 = 失败即停（不静默）\\r\\n  [OK]   单发 op 的 @引用被解析（stations=\\\"@zzsts\\\" 建出壳）\\r\\n  [OK]   单发 op 引用不存在 ⇒ 可读报错（列出已有工件）\\r\\n  [OK]   临时对象已清干净（场景对象数复原）\\r\\nHEADLESS {\\\"pass\\\":128,\\\"fail\\\":0,\\\"fails\\\":[],\\\"skipped\\\":[],\\\"objects_left\\\":[]}\\r\\nDSH_STAGE {\\\"name\\\": \\\"script-end\\\", \\\"t\\\": 1792714622.476, \\\"run\\\": \\\"run-3b4bacaa-248c-41fa-9927-f66a93e953c0\\\"}\\r\\nDSH_STAGE {\\\"name\\\": \\\"done\\\", \\\"t\\\": 1792714622.476, \\\"run\\\": \\\"run-3b4bacaa-248c-41fa-9927-f66a93e953c0\\\"}\\r\\n\\nBlender quit\\n\",\"stderrTail\":\"\",\"pathWarnings\":[],\"warnings\":[],\"shots\":null,\"progress\":null,\"progressAt\":null,\"progressAgeMs\":null,\"heartbeat\":{\"at\":1792714618731,\"elapsedMs\":5008,\"logBytes\":948,\"lines\":9,\"stage\":\"preload-done\",\"progressAt\":null,\"progressAgeMs\":null},\"progressHistory\":[],\"scriptStaging\":{\"requested\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-upstream-final\",\"requestedShared\":true,\"requestedWhy\":\"windows\",\"used\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-upstream-final\",\"usedWin\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-upstream-final\\\\dsh_headless_mvk7zsuv.py\",\"usedShared\":true,\"usedWhy\":\"windows\",\"label\":\"workDir\",\"substituted\":false,\"note\":\"workDir 共享性检查通过（windows）\"},\"inputFile\":null,\"scriptFile\":null,\"lastException\":null,\"artifacts\":[],\"waitedMs\":9201,\"waitTimedOut\":false},\"jobId\":\"job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca\"}"
+    }
+  ],
+  "structuredContent": {
+    "ok": true,
+    "op": "wait",
+    "job": {
+      "kind": "job",
+      "id": "job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca",
+      "runId": "run-3b4bacaa-248c-41fa-9927-f66a93e953c0",
+      "status": "done",
+      "pid": 57924,
+      "pidAlive": false,
+      "ms": 8883,
+      "timeoutMs": 300000,
+      "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\upstream_integration",
+      "outdirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\upstream_integration",
+      "logDir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\upstream_integration\\jobs\\job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca",
+      "logDirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\upstream_integration\\jobs\\job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca",
+      "stdoutLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\upstream_integration\\jobs\\job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca\\stdout.log",
+      "stderrLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\upstream_integration\\jobs\\job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca\\stderr.log",
+      "stdoutLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\upstream_integration\\jobs\\job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca\\stdout.log",
+      "stderrLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\upstream_integration\\jobs\\job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca\\stderr.log",
+      "exitCode": 0,
+      "signal": null,
+      "engine": "none",
+      "stage": {
+        "name": "done",
+        "t": 1792714622.476,
+        "run": "run-3b4bacaa-248c-41fa-9927-f66a93e953c0"
+      },
+      "stageName": "done",
+      "stageAt": 1792714622476,
+      "stageAgoMs": 502,
+      "lastOutputAt": 1792714622573,
+      "idleMs": 405,
+      "lines": 144,
+      "logBytes": 9061,
+      "resultJson": {
+        "pass": 128,
+        "fail": 0,
+        "fails": [],
+        "skipped": [],
+        "objects_left": []
+      },
+      "result": {
+        "pass": 128,
+        "fail": 0,
+        "fails": [],
+        "skipped": [],
+        "objects_left": []
+      },
+      "resultParseError": null,
+      "resultPath": null,
+      "resultPathWsl": null,
+      "resultBytes": 63,
+      "resultTruncated": false,
+      "stdoutTail": "   material_scan 报 procedural 与 needs_uv\r\nInfo: Baking map saved to internal image, save it externally or pack it\r\n  [OK]   material_bake 烘出 AO 贴图并落盘（bytes>0）\r\n  [OK]   未知 preset 要回允许列表\r\n  [OK]   bake_type 写错要回允许列表\r\n  [OK]   render_guard 安装 4 个 handler\r\n  [OK]   初始状态 idle（无标记）\r\n  [OK]   mark 后标记文件为 rendering\r\n  [OK]   clear 后标记消失且 state 归 idle\r\n  [OK]   瘦身后判定不变（clean 一致）\r\n  [OK]   瘦身后聚合不变（totals 一致）\r\n  [OK]   默认仍是全量（40 行）\r\n  [OK]   top_k 生效（5 / 2 行）\r\n  [OK]   场景瘦身 >=70% 字符（实测 13958 -> 2120）\r\n  [OK]   mesh 瘦身去掉明细字段（self_intersection_pairs）\r\n  [OK]   mesh 瘦身后判据字段仍在（nonmanifold/boundary/closed）\r\n  [OK]   audit_duplicates 的 top_k/limit 不再是静默参数（回 slim）\r\n  [OK]   gate_plan 只读地列出两个门并标出 pass_if 读取的字段\r\n  [OK]   gate_run 三态：有门挂 ⇒ verdict=fail 且 ok=false，且点名 failed\r\n  [OK]   过的门 state=pass、挂的门 state=fail（逐门三态）\r\n  [OK]   回执瘦身：只回 pass_if 用到的字段 key\r\n  [OK]   全过 ⇒ verdict=pass 且 ok=true\r\n  [OK]   preset 能整包跑起来（verdict 三态之一，不抛）\r\n  [OK]   未知 op ⇒ ok=false 且列出允许的 op（不静默）\r\n  [OK]   pass_if 引用不存在的字段 ⇒ 明确报错并提示可用字段\r\n  [OK]   gate_selftest 自证（含 degraded 判例）\r\n  [OK]   分岛：认出两个岛（宿主 + 铆钉）\r\n  [OK]   分岛：跨岛相交 > 0 且同岛 = 0\r\n  [OK]   小岛过滤：铆钉（8 顶点 < 106）相关的相交全被滤掉、kept=0\r\n  [OK]   小岛过滤开关默认关（不传 min_island_verts 时不过滤）\r\n  [OK]   单岛（一条边相连）⇒ 记成同岛自交\r\n  [OK]   连通门带 verdict 字段（三态显式化）\r\n  [OK]   正好相贴（gap=0.00 mm）算相接、不判浮块 ⇒ pass 且可见浮块=0\r\n  [OK]   留出大间隙的孤立块仍判浮块 ⇒ fail\r\n  [OK]   per_object：逐对象出 verdict，且点名哪件挂了\r\n  [OK]   per_object：每件都带 state/verdict/tris 与原因位\r\n  [OK]   超复核上限 ⇒ state=degraded 且 verdict=degraded（不是 pass）\r\n  [OK]   degraded 带醒目 warn：DEGRADED ≠ 通过\r\n  [OK]   human_base 高度误差 <0.5%\r\n  [OK]   human_base 几何头身比在目标 ±5%\r\n  [OK]   human_base 出关节标记 >=12 个\r\n  [OK]   human_base 顶点量在合理区间（2k–200k）\r\n  [OK]   human_measure 读得到头高与头身比\r\n  [OK]   human_head 出五官定位标记 >=5 个\r\n  [OK]   human_head 头高误差 <5%\r\n  [OK]   human_head 从 landmark 推出眼线位置（≈0.50）\r\n  [OK]   车辆比例门（真车标定的 WBR / 轴距比 / 高长比）该过\r\n  [OK]   轮径明显偏小 ⇒ 比例门点名 wheel_to_body_ratio\r\n  [OK]   vehicle_base 建壳（尺寸吻合车长 ±60mm）\r\n  [OK]   四个轮都建出来了\r\n  [OK]   轮与壳零互穿（布尔轮眉 ⇒ 构造保证）\r\n  [OK]   轮与壳间隙 ≈ arch_clear（默认 12mm 量到 6–14mm）\r\n  [OK]   clearance 自检（四类规则一次判完）\r\n  [OK]   站表放样成壳（车长吻合 ±80mm）\r\n  [OK]   腰线折痕生效（SubD 折痕环边 > 0）\r\n  [OK]   轮眉外扩落在轮拱站位（不是最低车唇）\r\n  [OK]   按缝切分件成 3 件\r\n  [OK]   缝是真几何（≈4mm 且零互穿）\r\n  [OK]   站表→IoU 拟合闭环跑通并给出 IoU\r\n  [OK]   拟合不劣于解析初值（iou >= iou_start）\r\n  [OK]   解析反推给的初值高于默认初值（>0.5）\r\n  [OK]   多区域装配成 3 个独立体量\r\n  [OK]   每个区域各自有尺寸（互不粘连）\r\n  [OK]   前视截面轮廓（section_shape）被放样采纳\r\n  [OK]   折线族（闭合剖面）拟合跑通\r\n  [OK]   控制点数越多 IoU 越高（K↔IoU 曲线单调）\r\n  [OK]   折线族天花板高于 cargen 族（0.67 → 0.72+）\r\n  [OK]   特征线（腰线 + 横向）都命中了环边\r\n  [OK]   横向特征线不在站位上时自动插站\r\n  [OK]   凹陷在指定高度带真的收窄（A/B 同带对比 ≥5mm）\r\n  [OK]   凹陷点数 > 0（记录在案）\r\n  [OK]   圆角特征线命中（bevel 权重边 > 0）\r\n  [OK]   圆角真的加了几何（顶点数 > 硬折线版）\r\n  [OK]   Bevel 修改器已落地（栈里不残留）\r\n  [OK]   半径/段数回执正确\r\n  [OK]   shape 自检（类别协议无缺项 + 旋转体）\r\n  [OK]   类别数 >= 8（vehicle/humanoid/furniture/hull/aircraft/rotational/weapon/generic…）\r\n  [OK]   协议 vehicle 给全视图/比例/算子/验收/坑\r\n  [OK]   协议 humanoid 给全视图/比例/算子/验收/坑\r\n  [OK]   协议 furniture 给全视图/比例/算子/验收/坑\r\n  [OK]   协议 rotational 给全视图/比例/算子/验收/坑\r\n  [OK]   每类都有截面通路条目（section_path 无缺项）\r\n  [OK]   截面通路决策规则 >= 4 条\r\n  [OK]   翼型类明确指向 section_outline（不是镜像对称那条路）\r\n  [OK]   轴对称类明确指向 shape_revolve（并提示不要放样）\r\n  [OK]   旋转体通路（瓶/罐/轮毂）出几何且高度吻合\r\n  [OK]   翼型/自定义截面被采纳（section_source=custom_outline）\r\n  [OK]   截面左右**不对称**（翼型有弯度 ⇒ |ymin| ≠ |ymax|）\r\n  [OK]   圆角剖面可控（profile 0.75 = 偏方/G2 近似）\r\n  [OK]   旋转体多体量装配（2 件独立对象 + 各自落点）\r\n  [OK]   落点写进对象（200mm → 0.2m）\r\n  [OK]   流水线自检（工件存取 / @引用含点路径 / 嵌套 / 失败即停）\r\n  [OK]   点路径取值（a.2 -> 3）\r\n  [OK]   四步链跑通且逐步都有回执\r\n  [OK]   产出按 out= 存成工件\r\n  [OK]   @引用传到真实调用里（value\"@n\" -> 7）\r\n  [OK]   引用不存在的工件 = 失败即停（不静默）\r\n  [OK]   单发 op 的 @引用被解析（stations=\"@zzsts\" 建出壳）\r\n  [OK]   单发 op 引用不存在 ⇒ 可读报错（列出已有工件）\r\n  [OK]   临时对象已清干净（场景对象数复原）\r\nHEADLESS {\"pass\":128,\"fail\":0,\"fails\":[],\"skipped\":[],\"objects_left\":[]}\r\nDSH_STAGE {\"name\": \"script-end\", \"t\": 1792714622.476, \"run\": \"run-3b4bacaa-248c-41fa-9927-f66a93e953c0\"}\r\nDSH_STAGE {\"name\": \"done\", \"t\": 1792714622.476, \"run\": \"run-3b4bacaa-248c-41fa-9927-f66a93e953c0\"}\r\n\nBlender quit\n",
+      "stderrTail": "",
+      "pathWarnings": [],
+      "warnings": [],
+      "shots": null,
+      "progress": null,
+      "progressAt": null,
+      "progressAgeMs": null,
+      "heartbeat": {
+        "at": 1792714618731,
+        "elapsedMs": 5008,
+        "logBytes": 948,
+        "lines": 9,
+        "stage": "preload-done",
+        "progressAt": null,
+        "progressAgeMs": null
+      },
+      "progressHistory": [],
+      "scriptStaging": {
+        "requested": "E:\\workplace\\blender-server\\tmp\\mvp-upstream-final",
+        "requestedShared": true,
+        "requestedWhy": "windows",
+        "used": "E:\\workplace\\blender-server\\tmp\\mvp-upstream-final",
+        "usedWin": "E:\\workplace\\blender-server\\tmp\\mvp-upstream-final\\dsh_headless_mvk7zsuv.py",
+        "usedShared": true,
+        "usedWhy": "windows",
+        "label": "workDir",
+        "substituted": false,
+        "note": "workDir 共享性检查通过（windows）"
+      },
+      "inputFile": null,
+      "scriptFile": null,
+      "lastException": null,
+      "artifacts": [],
+      "waitedMs": 9201,
+      "waitTimedOut": false
+    },
+    "jobId": "job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca"
+  },
+  "isError": false
+}

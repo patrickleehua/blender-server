@@ -1,0 +1,5 @@
+{
+  "session": "usage",
+  "see": false,
+  "code": "assert \"UsageAuditCube\" in bpy.data.objects\nassert K.usage_marker==\"continuous-cli\"\nbpy.data.objects[\"UsageAuditCube\"].location.x=3\nprint(\"SECOND\", bpy.data.objects[\"UsageAuditCube\"].location[:])"
+}

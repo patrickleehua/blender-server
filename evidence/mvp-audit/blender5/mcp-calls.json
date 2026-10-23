@@ -1,0 +1,895 @@
+[
+  {
+    "label": "headless-doctor",
+    "name": "blender_viewport",
+    "args": {
+      "op": "doctor"
+    },
+    "ms": 276,
+    "isError": true,
+    "structuredContent": {
+      "ok": false,
+      "addon": {
+        "kind": "blender-unreachable",
+        "tcp": false,
+        "ping": null,
+        "summary": "9876 端口没人监听 —— Blender 没在跑，或 addon 没连上",
+        "fix": "**agent 走这条路：blender_viewport(op=\"launch\") 一键拉起 GUI Blender 并自动 Connect addon**（v0.9.4 起，不必有人点面板）；人工流程是：启动 Blender → 3D 视图按 N → 「DSH Blender Bridge」面板 → Connect（服务监听 127.0.0.1:44876）",
+        "hint": "TCP 127.0.0.1:44876 不通：Blender 没在运行，或 addon 面板没连上。一键修：blender_viewport(op=\"launch\")（GUI + 自动 Connect，幂等）；人工修：N → 「DSH Blender Bridge」面板 → Connect"
+      },
+      "metrics": {
+        "calls": 0,
+        "errors": 0,
+        "timeouts": 0,
+        "inflight": 0,
+        "lastCmd": null,
+        "lastCmdAt": null,
+        "lastOkAt": null,
+        "lastError": null,
+        "lastDiagnosis": {
+          "kind": "blender-unreachable",
+          "tcp": false,
+          "ping": null,
+          "summary": "9876 端口没人监听 —— Blender 没在跑，或 addon 没连上",
+          "fix": "**agent 走这条路：blender_viewport(op=\"launch\") 一键拉起 GUI Blender 并自动 Connect addon**（v0.9.4 起，不必有人点面板）；人工流程是：启动 Blender → 3D 视图按 N → 「DSH Blender Bridge」面板 → Connect（服务监听 127.0.0.1:44876）",
+          "hint": "TCP 127.0.0.1:44876 不通：Blender 没在运行，或 addon 面板没连上。一键修：blender_viewport(op=\"launch\")（GUI + 自动 Connect，幂等）；人工修：N → 「DSH Blender Bridge」面板 → Connect"
+        },
+        "views": 0,
+        "headlessRuns": 0,
+        "lastHeadlessMs": null,
+        "workerStarts": 0,
+        "workerExecs": 0,
+        "lastCmdAgeMs": null
+      },
+      "config": {
+        "platform": "win32",
+        "distro": null,
+        "addon": "127.0.0.1:44876",
+        "http": "127.0.0.1:44877",
+        "workDir": {
+          "win": "E:\\workplace\\blender-server\\tmp\\mvp-blender5\\MCP 中文 空格",
+          "wsl": "E:\\workplace\\blender-server\\tmp\\mvp-blender5\\MCP 中文 空格",
+          "from": "config",
+          "fallback": null,
+          "shared": {
+            "shared": true,
+            "why": "windows"
+          }
+        },
+        "blenderExe": "E:\\workplace\\blender-server\\.local\\blender-5.0.1-windows-x64\\blender.exe",
+        "blenderFrom": "config",
+        "blenderUserConfig": null,
+        "blenderUserScripts": null,
+        "workerPort": 44879,
+        "configFile": "E:\\workplace\\blender-server\\tmp\\mvp-blender5\\MCP 中文 空格\\.blender-agent\\config-44877-50f61b94-36f6-45ce-98f7-b44c8e6e76d8.json",
+        "holder": "plugin-pid-53988",
+        "leaseTtlMs": 600000,
+        "env": {
+          "DSH_BLENDER_WORKDIR": "E:\\workplace\\blender-server\\tmp\\mvp-blender5\\MCP 中文 空格",
+          "DSH_BLENDER_EXE": "E:\\workplace\\blender-server\\.local\\blender-5.0.1-windows-x64\\blender.exe",
+          "DSH_BLENDER_HTTP_PORT": "44877",
+          "DSH_BLENDER_ADDON_PROTOCOL": null,
+          "DSH_BLENDER_CONFIG": "E:\\workplace\\blender-server\\tmp\\mvp-blender5\\MCP 中文 空格\\.blender-agent\\config-44877-50f61b94-36f6-45ce-98f7-b44c8e6e76d8.json"
+        }
+      },
+      "stats": {
+        "frames": 0,
+        "acts": 0,
+        "cmds": 0,
+        "loops": 0,
+        "views": 0,
+        "headless": 0,
+        "plan": 0,
+        "worker": 0,
+        "txn": 0,
+        "preset": 0,
+        "job": 0,
+        "selections": 0,
+        "lastSelectionMs": null,
+        "lastPlanMs": null,
+        "lastViewMs": null,
+        "lastHeadlessMs": null,
+        "lastFrameMs": null,
+        "lastActMs": null,
+        "lastError": null,
+        "startedAt": 1792697021903
+      },
+      "kind": "blender-unreachable"
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":false,\"addon\":{\"kind\":\"blender-unreachable\",\"tcp\":false,\"ping\":null,\"summary\":\"9876 端口没人监听 —— Blender 没在跑，或 addon 没连上\",\"fix\":\"**agent 走这条路：blender_viewport(op=\\\"launch\\\") 一键拉起 GUI Blender 并自动 Connect addon**（v0.9.4 起，不必有人点面板）；人工流程是：启动 Blender → 3D 视图按 N → 「DSH Blender Bridge」面板 → Connect（服务监听 127.0.0.1:44876）\",\"hint\":\"TCP 127.0.0.1:44876 不通：Blender 没在运行，或 addon 面板没连上。一键修：blender_viewport(op=\\\"launch\\\")（GUI + 自动 Connect，幂等）；人工修：N → 「DSH Blender Bridge」面板 → Connect\"},\"metrics\":{\"calls\":0,\"errors\":0,\"timeouts\":0,\"inflight\":0,\"lastCmd\":null,\"lastCmdAt\":null,\"lastOkAt\":null,\"lastError\":null,\"lastDiagnosis\":{\"kind\":\"blender-unreachable\",\"tcp\":false,\"ping\":null,\"summary\":\"9876 端口没人监听 —— Blender 没在跑，或 addon 没连上\",\"fix\":\"**agent 走这条路：blender_viewport(op=\\\"launch\\\") 一键拉起 GUI Blender 并自动 Connect addon**（v0.9.4 起，不必有人点面板）；人工流程是：启动 Blender → 3D 视图按 N → 「DSH Blender Bridge」面板 → Connect（服务监听 127.0.0.1:44876）\",\"hint\":\"TCP 127.0.0.1:44876 不通：Blender 没在运行，或 addon 面板没连上。一键修：blender_viewport(op=\\\"launch\\\")（GUI + 自动 Connect，幂等）；人工修：N → 「DSH Blender Bridge」面板 → Connect\"},\"views\":0,\"headlessRuns\":0,\"lastHeadlessMs\":null,\"workerStarts\":0,\"workerExecs\":0,\"lastCmdAgeMs\":null},\"config\":{\"platform\":\"win32\",\"distro\":null,\"addon\":\"127.0.0.1:44876\",\"http\":\"127.0.0.1:44877\",\"workDir\":{\"win\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-blender5\\\\MCP 中文 空格\",\"wsl\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-blender5\\\\MCP 中文 空格\",\"from\":\"config\",\"fallback\":null,\"shared\":{\"shared\":true,\"why\":\"windows\"}},\"blenderExe\":\"E:\\\\workplace\\\\blender-server\\\\.local\\\\blender-5.0.1-windows-x64\\\\blender.exe\",\"blenderFrom\":\"config\",\"blenderUserConfig\":null,\"blenderUserScripts\":null,\"workerPort\":44879,\"configFile\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-blender5\\\\MCP 中文 空格\\\\.blender-agent\\\\config-44877-50f61b94-36f6-45ce-98f7-b44c8e6e76d8.json\",\"holder\":\"plugin-pid-53988\",\"leaseTtlMs\":600000,\"env\":{\"DSH_BLENDER_WORKDIR\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-blender5\\\\MCP 中文 空格\",\"DSH_BLENDER_EXE\":\"E:\\\\workplace\\\\blender-server\\\\.local\\\\blender-5.0.1-windows-x64\\\\blender.exe\",\"DSH_BLENDER_HTTP_PORT\":\"44877\",\"DSH_BLENDER_ADDON_PROTOCOL\":null,\"DSH_BLENDER_CONFIG\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-blender5\\\\MCP 中文 空格\\\\.blender-agent\\\\config-44877-50f61b94-36f6-45ce-98f7-b44c8e6e76d8.json\"}},\"stats\":{\"frames\":0,\"acts\":0,\"cmds\":0,\"loops\":0,\"views\":0,\"headless\":0,\"plan\":0,\"worker\":0,\"txn\":0,\"preset\":0,\"job\":0,\"selections\":0,\"lastSelectionMs\":null,\"lastPlanMs\":null,\"lastViewMs\":null,\"lastHeadlessMs\":null,\"lastFrameMs\":null,\"lastActMs\":null,\"lastError\":null,\"startedAt\":1792697021903},\"kind\":\"blender-unreachable\"}"
+      }
+    ]
+  },
+  {
+    "label": "scene-create",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "proof5",
+      "see": false,
+      "code": "import bpy\nbpy.ops.wm.read_factory_settings(use_empty=True)\nbpy.ops.mesh.primitive_cube_add(size=2, location=(1,2,1.5))\no=bpy.context.object\no.name='Blender5Proof'\no.dimensions=(2,4,3)\nK.marker='persists'\nprint('HEADLESS {\"created\":true}')"
+    },
+    "ms": 467,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "exec",
+      "result": {
+        "id": 960022978,
+        "ok": true,
+        "ms": 44,
+        "stdout": "HEADLESS {\"created\":true}\n",
+        "stderr": "",
+        "result": {
+          "created": true
+        },
+        "error": null,
+        "traceback": null
+      },
+      "error": null,
+      "traceback": null
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":960022978,\"ok\":true,\"ms\":44,\"stdout\":\"HEADLESS {\\\"created\\\":true}\\n\",\"stderr\":\"\",\"result\":{\"created\":true},\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+      }
+    ]
+  },
+  {
+    "label": "worker-status",
+    "name": "blender_rt_worker",
+    "args": {
+      "op": "status",
+      "name": "proof5"
+    },
+    "ms": 52,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "status",
+      "result": {
+        "name": "proof5",
+        "alive": true,
+        "ready": true,
+        "pid": 25060,
+        "port": 44879,
+        "uptimeMs": 471,
+        "idleMs": 0,
+        "inflight": 0,
+        "gpu": {
+          "engine_mode": "workbench",
+          "gpu_mode": "auto",
+          "backend": "n/a: GPU functions for drawing are not available in background mo",
+          "before": {
+            "engine": "BLENDER_EEVEE"
+          },
+          "ok": true,
+          "skipped": false,
+          "configured": "workbench",
+          "after": {
+            "engine": "BLENDER_WORKBENCH"
+          },
+          "fell_back_to_cpu": false
+        },
+        "boot": {
+          "ok": true,
+          "skipped": true
+        },
+        "lastError": null,
+        "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 44879, \"pid\": 25060, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"5.0.1\"}\r\n",
+        "status": {
+          "ok": true,
+          "version": 2,
+          "pid": 25060,
+          "uptime_s": 0,
+          "calls": 1,
+          "errors": 0,
+          "objects": 1,
+          "file": null,
+          "kernel_modules": [],
+          "boot": {
+            "ok": true,
+            "skipped": true
+          },
+          "frame_dir": "E:\\workplace\\blender-server\\tmp\\mvp-blender5\\MCP 中文 空格",
+          "gpu": {
+            "engine_mode": "workbench",
+            "gpu_mode": "auto",
+            "backend": "n/a: GPU functions for drawing are not available in background mo",
+            "before": {
+              "engine": "BLENDER_EEVEE"
+            },
+            "ok": true,
+            "skipped": false,
+            "configured": "workbench",
+            "after": {
+              "engine": "BLENDER_WORKBENCH"
+            },
+            "fell_back_to_cpu": false
+          }
+        }
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"status\",\"result\":{\"name\":\"proof5\",\"alive\":true,\"ready\":true,\"pid\":25060,\"port\":44879,\"uptimeMs\":471,\"idleMs\":0,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 44879, \\\"pid\\\": 25060, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"5.0.1\\\"}\\r\\n\",\"status\":{\"ok\":true,\"version\":2,\"pid\":25060,\"uptime_s\":0,\"calls\":1,\"errors\":0,\"objects\":1,\"file\":null,\"kernel_modules\":[],\"boot\":{\"ok\":true,\"skipped\":true},\"frame_dir\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-blender5\\\\MCP 中文 空格\",\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false}}}}"
+      }
+    ]
+  },
+  {
+    "label": "audit-preload",
+    "name": "blender_rt_plan",
+    "args": {
+      "session": "proof5",
+      "op": "audit_mesh",
+      "args": {
+        "objects": [
+          "Blender5Proof"
+        ]
+      }
+    },
+    "ms": 141,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "audit_mesh",
+      "via": "worker:proof5",
+      "result": {
+        "ok": true,
+        "clean": true,
+        "state": "pass",
+        "verdict": "pass",
+        "reason": "",
+        "count": 1,
+        "missing": [],
+        "totals": {
+          "objects": 1,
+          "tris": 12,
+          "boundary_edges": 0,
+          "nonmanifold_edges": 0,
+          "degenerate_faces": 0,
+          "loose_verts": 0,
+          "self_intersections": 0,
+          "normals_inverted": 0,
+          "out_of_bounds": 0,
+          "empty_objects": 0,
+          "loose_edges": 0,
+          "normals_unknown": 0,
+          "normals_checked": 1,
+          "normals_multi_shell": 0,
+          "analysis_incomplete": 0
+        },
+        "objects": [
+          {
+            "name": "Blender5Proof",
+            "verts": 8,
+            "polys": 6,
+            "tris": 12,
+            "loose_edges": 0,
+            "empty": false,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "degenerate_faces": 0,
+            "loose_verts": 0,
+            "signed_volume": 8,
+            "closed": true,
+            "normals_state": "pass",
+            "multi_shell": false,
+            "normals_outward": true,
+            "normals_shell_count": 1,
+            "normals_reason": "",
+            "normals_shells": [
+              {
+                "shell": 0,
+                "faces": 6,
+                "signed_volume": 8,
+                "closed": true,
+                "winding_consistent": true,
+                "nested": false,
+                "relation": "",
+                "state": "pass"
+              }
+            ],
+            "self_intersections": 0,
+            "self_intersection_pairs": [],
+            "self_intersections_analyzed": true,
+            "self_intersections_state": "pass",
+            "self_intersection_error": null,
+            "aabb": {
+              "min": [
+                0,
+                1,
+                0.5
+              ],
+              "max": [
+                2,
+                3,
+                2.5
+              ]
+            },
+            "dimensions": [
+              2,
+              2,
+              2
+            ],
+            "analysis_incomplete": false,
+            "state": "pass"
+          }
+        ],
+        "analysis": {
+          "self_intersections": "analyzed",
+          "normals": "checked",
+          "incomplete_objects": 0
+        },
+        "aabb": {
+          "min": [
+            0,
+            1,
+            0.5
+          ],
+          "max": [
+            2,
+            3,
+            2.5
+          ]
+        },
+        "envelope": null,
+        "note": "判据：boundary/nonmanifold/degenerate/loose_verts/loose_edges/self_intersections/normals_inverted/out_of_bounds/empty 任一非 0 → clean=false 且 state=fail；normals_outward 逐**连通壳**判（聚合有符号体积会被大正向壳+小反向壳抵消成正数），只对闭合网格有意义（closed=true 时才给），判不出来时给 normals_state=unknown；多壳但各壳朝向可确证时给 normals_state=pass_multi_shell（不算 degraded：碎块簇/布景多壳件是合法的）；自交检查被跳过（self_intersect=false）或抛异常 ⇒ state=degraded，clean=false —— 不假通过"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"audit_mesh\",\"via\":\"worker:proof5\",\"result\":{\"ok\":true,\"clean\":true,\"state\":\"pass\",\"verdict\":\"pass\",\"reason\":\"\",\"count\":1,\"missing\":[],\"totals\":{\"objects\":1,\"tris\":12,\"boundary_edges\":0,\"nonmanifold_edges\":0,\"degenerate_faces\":0,\"loose_verts\":0,\"self_intersections\":0,\"normals_inverted\":0,\"out_of_bounds\":0,\"empty_objects\":0,\"loose_edges\":0,\"normals_unknown\":0,\"normals_checked\":1,\"normals_multi_shell\":0,\"analysis_incomplete\":0},\"objects\":[{\"name\":\"Blender5Proof\",\"verts\":8,\"polys\":6,\"tris\":12,\"loose_edges\":0,\"empty\":false,\"boundary_edges\":0,\"nonmanifold_edges\":0,\"degenerate_faces\":0,\"loose_verts\":0,\"signed_volume\":8,\"closed\":true,\"normals_state\":\"pass\",\"multi_shell\":false,\"normals_outward\":true,\"normals_shell_count\":1,\"normals_reason\":\"\",\"normals_shells\":[{\"shell\":0,\"faces\":6,\"signed_volume\":8,\"closed\":true,\"winding_consistent\":true,\"nested\":false,\"relation\":\"\",\"state\":\"pass\"}],\"self_intersections\":0,\"self_intersection_pairs\":[],\"self_intersections_analyzed\":true,\"self_intersections_state\":\"pass\",\"self_intersection_error\":null,\"aabb\":{\"min\":[0,1,0.5],\"max\":[2,3,2.5]},\"dimensions\":[2,2,2],\"analysis_incomplete\":false,\"state\":\"pass\"}],\"analysis\":{\"self_intersections\":\"analyzed\",\"normals\":\"checked\",\"incomplete_objects\":0},\"aabb\":{\"min\":[0,1,0.5],\"max\":[2,3,2.5]},\"envelope\":null,\"note\":\"判据：boundary/nonmanifold/degenerate/loose_verts/loose_edges/self_intersections/normals_inverted/out_of_bounds/empty 任一非 0 → clean=false 且 state=fail；normals_outward 逐**连通壳**判（聚合有符号体积会被大正向壳+小反向壳抵消成正数），只对闭合网格有意义（closed=true 时才给），判不出来时给 normals_state=unknown；多壳但各壳朝向可确证时给 normals_state=pass_multi_shell（不算 degraded：碎块簇/布景多壳件是合法的）；自交检查被跳过（self_intersect=false）或抛异常 ⇒ state=degraded，clean=false —— 不假通过\"}}"
+      }
+    ]
+  },
+  {
+    "label": "worker-status-after-audit",
+    "name": "blender_rt_worker",
+    "args": {
+      "op": "status",
+      "name": "proof5"
+    },
+    "ms": 27,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "status",
+      "result": {
+        "name": "proof5",
+        "alive": true,
+        "ready": true,
+        "pid": 25060,
+        "port": 44879,
+        "uptimeMs": 640,
+        "idleMs": 0,
+        "inflight": 0,
+        "gpu": {
+          "engine_mode": "workbench",
+          "gpu_mode": "auto",
+          "backend": "n/a: GPU functions for drawing are not available in background mo",
+          "before": {
+            "engine": "BLENDER_EEVEE"
+          },
+          "ok": true,
+          "skipped": false,
+          "configured": "workbench",
+          "after": {
+            "engine": "BLENDER_WORKBENCH"
+          },
+          "fell_back_to_cpu": false
+        },
+        "boot": {
+          "ok": true,
+          "skipped": true
+        },
+        "lastError": null,
+        "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 44879, \"pid\": 25060, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"5.0.1\"}\r\n",
+        "status": {
+          "ok": true,
+          "version": 2,
+          "pid": 25060,
+          "uptime_s": 0,
+          "calls": 3,
+          "errors": 0,
+          "objects": 1,
+          "file": null,
+          "kernel_modules": [
+            "dsh_audit_api",
+            "dsh_geo_api"
+          ],
+          "boot": {
+            "ok": true,
+            "skipped": true
+          },
+          "frame_dir": "E:\\workplace\\blender-server\\tmp\\mvp-blender5\\MCP 中文 空格",
+          "gpu": {
+            "engine_mode": "workbench",
+            "gpu_mode": "auto",
+            "backend": "n/a: GPU functions for drawing are not available in background mo",
+            "before": {
+              "engine": "BLENDER_EEVEE"
+            },
+            "ok": true,
+            "skipped": false,
+            "configured": "workbench",
+            "after": {
+              "engine": "BLENDER_WORKBENCH"
+            },
+            "fell_back_to_cpu": false
+          }
+        }
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"status\",\"result\":{\"name\":\"proof5\",\"alive\":true,\"ready\":true,\"pid\":25060,\"port\":44879,\"uptimeMs\":640,\"idleMs\":0,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 44879, \\\"pid\\\": 25060, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"5.0.1\\\"}\\r\\n\",\"status\":{\"ok\":true,\"version\":2,\"pid\":25060,\"uptime_s\":0,\"calls\":3,\"errors\":0,\"objects\":1,\"file\":null,\"kernel_modules\":[\"dsh_audit_api\",\"dsh_geo_api\"],\"boot\":{\"ok\":true,\"skipped\":true},\"frame_dir\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-blender5\\\\MCP 中文 空格\",\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false}}}}"
+      }
+    ]
+  },
+  {
+    "label": "preload-preserves-save",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "proof5",
+      "see": false,
+      "code": "import bpy\nassert K.marker=='persists'\nassert 'Blender5Proof' in bpy.data.objects\nbpy.ops.wm.save_as_mainfile(filepath=\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\")"
+    },
+    "ms": 99,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "exec",
+      "result": {
+        "id": 494912773,
+        "ok": true,
+        "ms": 6,
+        "stdout": "Info: Saved as \"scene.blend\"\n",
+        "stderr": "",
+        "result": null,
+        "error": null,
+        "traceback": null
+      },
+      "error": null,
+      "traceback": null
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":494912773,\"ok\":true,\"ms\":6,\"stdout\":\"Info: Saved as \\\"scene.blend\\\"\\n\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+      }
+    ]
+  },
+  {
+    "label": "blend-relative-file",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "proof5",
+      "see": false,
+      "file": "relative-script.py"
+    },
+    "ms": 89,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "exec",
+      "result": {
+        "id": 260835528,
+        "ok": true,
+        "ms": 5,
+        "stdout": "",
+        "stderr": "",
+        "result": null,
+        "error": null,
+        "traceback": null
+      },
+      "error": null,
+      "traceback": null
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":260835528,\"ok\":true,\"ms\":5,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+      }
+    ]
+  },
+  {
+    "label": "relative-proof",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "proof5",
+      "see": false,
+      "code": "assert K.relative_ok"
+    },
+    "ms": 85,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "exec",
+      "result": {
+        "id": 889993652,
+        "ok": true,
+        "ms": 0,
+        "stdout": "",
+        "stderr": "",
+        "result": null,
+        "error": null,
+        "traceback": null
+      },
+      "error": null,
+      "traceback": null
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":889993652,\"ok\":true,\"ms\":0,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+      }
+    ]
+  },
+  {
+    "label": "native-image",
+    "name": "blender_rt_see",
+    "args": {
+      "session": "proof5",
+      "view_size": "560x315",
+      "from": "8,-9,8",
+      "look_at": "1,2,1.5",
+      "ortho": true,
+      "ortho_scale": 12
+    },
+    "ms": 694,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "see",
+      "result": {
+        "id": 977424067,
+        "ok": true,
+        "mode": "workbench-offscreen",
+        "path": "E:\\workplace\\blender-server\\tmp\\mvp-blender5\\MCP 中文 空格\\dsh_see_25060_1.png",
+        "image": {
+          "mimeType": "image/png",
+          "contentIndex": 1
+        },
+        "width": 560,
+        "height": 315,
+        "bytes": 90573,
+        "coverage_estimate": 0.1705,
+        "pixel_hash": "441291b0dd8d",
+        "ms": 582,
+        "t": {
+          "render_ms": 565,
+          "read_ms": 17,
+          "total_ms": 582
+        },
+        "engine": "BLENDER_WORKBENCH"
+      },
+      "error": null
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"see\",\"result\":{\"id\":977424067,\"ok\":true,\"mode\":\"workbench-offscreen\",\"path\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-blender5\\\\MCP 中文 空格\\\\dsh_see_25060_1.png\",\"image\":{\"mimeType\":\"image/png\",\"contentIndex\":1},\"width\":560,\"height\":315,\"bytes\":90573,\"coverage_estimate\":0.1705,\"pixel_hash\":\"441291b0dd8d\",\"ms\":582,\"t\":{\"render_ms\":565,\"read_ms\":17,\"total_ms\":582},\"engine\":\"BLENDER_WORKBENCH\"},\"error\":null}"
+      }
+    ]
+  },
+  {
+    "label": "expected-error",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "proof5",
+      "see": false,
+      "code": "raise RuntimeError(\"expected Blender5 regression failure\")"
+    },
+    "ms": 91,
+    "isError": true,
+    "structuredContent": {
+      "ok": false,
+      "op": "exec",
+      "result": {
+        "id": 850722879,
+        "ok": false,
+        "ms": 1,
+        "stdout": "",
+        "stderr": "",
+        "result": null,
+        "error": "RuntimeError: expected Blender5 regression failure",
+        "traceback": "Traceback (most recent call last):\n  File \"E:\\workplace\\blender-server\\packages\\blender-agent\\assets\\runtime\\worker.py\", line 485, in _exec\n    exec(compile(code, \"<dsh_worker>\", \"exec\"), ns)\n  File \"<dsh_worker>\", line 1, in <module>\nRuntimeError: expected Blender5 regression failure\n"
+      },
+      "error": "RuntimeError: expected Blender5 regression failure",
+      "traceback": "Traceback (most recent call last):\n  File \"E:\\workplace\\blender-server\\packages\\blender-agent\\assets\\runtime\\worker.py\", line 485, in _exec\n    exec(compile(code, \"<dsh_worker>\", \"exec\"), ns)\n  File \"<dsh_worker>\", line 1, in <module>\nRuntimeError: expected Blender5 regression failure\n"
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":false,\"op\":\"exec\",\"result\":{\"id\":850722879,\"ok\":false,\"ms\":1,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":\"RuntimeError: expected Blender5 regression failure\",\"traceback\":\"Traceback (most recent call last):\\n  File \\\"E:\\\\workplace\\\\blender-server\\\\packages\\\\blender-agent\\\\assets\\\\runtime\\\\worker.py\\\", line 485, in _exec\\n    exec(compile(code, \\\"<dsh_worker>\\\", \\\"exec\\\"), ns)\\n  File \\\"<dsh_worker>\\\", line 1, in <module>\\nRuntimeError: expected Blender5 regression failure\\n\"},\"error\":\"RuntimeError: expected Blender5 regression failure\",\"traceback\":\"Traceback (most recent call last):\\n  File \\\"E:\\\\workplace\\\\blender-server\\\\packages\\\\blender-agent\\\\assets\\\\runtime\\\\worker.py\\\", line 485, in _exec\\n    exec(compile(code, \\\"<dsh_worker>\\\", \\\"exec\\\"), ns)\\n  File \\\"<dsh_worker>\\\", line 1, in <module>\\nRuntimeError: expected Blender5 regression failure\\n\"}"
+      }
+    ]
+  },
+  {
+    "label": "error-recovery",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "proof5",
+      "see": false,
+      "code": "assert \"Blender5Proof\" in bpy.data.objects and K.marker==\"persists\""
+    },
+    "ms": 93,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "exec",
+      "result": {
+        "id": 248054756,
+        "ok": true,
+        "ms": 0,
+        "stdout": "",
+        "stderr": "",
+        "result": null,
+        "error": null,
+        "traceback": null
+      },
+      "error": null,
+      "traceback": null
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":248054756,\"ok\":true,\"ms\":0,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+      }
+    ]
+  },
+  {
+    "label": "txn-preload",
+    "name": "blender_rt_worker",
+    "args": {
+      "op": "start",
+      "name": "proof5",
+      "engine": "workbench",
+      "warmup": false,
+      "preload": "txn"
+    },
+    "ms": 60,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "start",
+      "result": {
+        "name": "proof5",
+        "alive": true,
+        "ready": true,
+        "pid": 25060,
+        "port": 44879,
+        "uptimeMs": 1856,
+        "idleMs": 0,
+        "inflight": 0,
+        "gpu": {
+          "engine_mode": "workbench",
+          "gpu_mode": "auto",
+          "backend": "n/a: GPU functions for drawing are not available in background mo",
+          "before": {
+            "engine": "BLENDER_EEVEE"
+          },
+          "ok": true,
+          "skipped": false,
+          "configured": "workbench",
+          "after": {
+            "engine": "BLENDER_WORKBENCH"
+          },
+          "fell_back_to_cpu": false
+        },
+        "boot": {
+          "ok": true,
+          "skipped": true
+        },
+        "lastError": null,
+        "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 44879, \"pid\": 25060, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"5.0.1\"}\r\n00:01.515  render           | Saved: 'E:\\workplace\\blender-server\\tmp\\mvp-blender5\\MCP 中文 空格\\dsh_see_25060_1.png'\n"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"start\",\"result\":{\"name\":\"proof5\",\"alive\":true,\"ready\":true,\"pid\":25060,\"port\":44879,\"uptimeMs\":1856,\"idleMs\":0,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 44879, \\\"pid\\\": 25060, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"5.0.1\\\"}\\r\\n00:01.515  render           | Saved: 'E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-blender5\\\\MCP 中文 空格\\\\dsh_see_25060_1.png'\\n\"}}"
+      }
+    ]
+  },
+  {
+    "label": "txn-snapshot",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "proof5",
+      "see": false,
+      "code": "import json\nK.out_dir=\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\"\nr=json.loads(K.dsh_txn_api['snapshot']('blender5-before'))\nassert r['ok'], r\nprint('HEADLESS '+json.dumps(r))"
+    },
+    "ms": 98,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "exec",
+      "result": {
+        "id": 516663968,
+        "ok": true,
+        "ms": 5,
+        "stdout": "Info: Saved copy as \"blender5-before.blend\"\nHEADLESS {\"ok\": true, \"snapshot\": {\"label\": \"blender5-before\", \"path\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\snapshots\\\\blender5-before.blend\", \"bytes\": 83940, \"ms\": 4, \"objects\": 1, \"note\": \"\", \"t\": \"2026-10-23 03:23:43\", \"filepath\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\", \"unsaved\": false}, \"total\": 1}\n",
+        "stderr": "",
+        "result": {
+          "ok": true,
+          "snapshot": {
+            "label": "blender5-before",
+            "path": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\snapshots\\blender5-before.blend",
+            "bytes": 83940,
+            "ms": 4,
+            "objects": 1,
+            "note": "",
+            "t": "2026-10-23 03:23:43",
+            "filepath": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\scene.blend",
+            "unsaved": false
+          },
+          "total": 1
+        },
+        "error": null,
+        "traceback": null
+      },
+      "error": null,
+      "traceback": null
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":516663968,\"ok\":true,\"ms\":5,\"stdout\":\"Info: Saved copy as \\\"blender5-before.blend\\\"\\nHEADLESS {\\\"ok\\\": true, \\\"snapshot\\\": {\\\"label\\\": \\\"blender5-before\\\", \\\"path\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\snapshots\\\\\\\\blender5-before.blend\\\", \\\"bytes\\\": 83940, \\\"ms\\\": 4, \\\"objects\\\": 1, \\\"note\\\": \\\"\\\", \\\"t\\\": \\\"2026-10-23 03:23:43\\\", \\\"filepath\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\scene.blend\\\", \\\"unsaved\\\": false}, \\\"total\\\": 1}\\n\",\"stderr\":\"\",\"result\":{\"ok\":true,\"snapshot\":{\"label\":\"blender5-before\",\"path\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\snapshots\\\\blender5-before.blend\",\"bytes\":83940,\"ms\":4,\"objects\":1,\"note\":\"\",\"t\":\"2026-10-23 03:23:43\",\"filepath\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\",\"unsaved\":false},\"total\":1},\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+      }
+    ]
+  },
+  {
+    "label": "txn-mutation",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "proof5",
+      "see": false,
+      "code": "bpy.data.objects['Blender5Proof'].location.x=99"
+    },
+    "ms": 85,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "exec",
+      "result": {
+        "id": 486829786,
+        "ok": true,
+        "ms": 0,
+        "stdout": "",
+        "stderr": "",
+        "result": null,
+        "error": null,
+        "traceback": null
+      },
+      "error": null,
+      "traceback": null
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":486829786,\"ok\":true,\"ms\":0,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+      }
+    ]
+  },
+  {
+    "label": "txn-restore",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "proof5",
+      "see": false,
+      "code": "import json\nr=json.loads(K.dsh_txn_api['restore']('blender5-before'))\nassert r['ok'], r\nassert abs(bpy.data.objects['Blender5Proof'].location.x-1)<1e-5\nprint('HEADLESS '+json.dumps(r))"
+    },
+    "ms": 105,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "exec",
+      "result": {
+        "id": 218186713,
+        "ok": true,
+        "ms": 13,
+        "stdout": "Info: Saved copy as \"_pre_restore_blender5-before_20261023_032344.blend\"\nInfo: Saved as \"scene.blend\"\nHEADLESS {\"ok\": true, \"restored\": {\"label\": \"blender5-before\", \"path\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\snapshots\\\\blender5-before.blend\", \"bytes\": 83940, \"ms\": 4, \"objects\": 1, \"note\": \"\", \"t\": \"2026-10-23 03:23:43\", \"filepath\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\", \"unsaved\": false}, \"ms\": 3, \"objects\": 1, \"into\": \"auto\", \"wrote_to_original\": true, \"target\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\", \"target_source\": \"snapshot_filepath\", \"filepath_before\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\", \"filepath\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\", \"next_save_goes_to\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\", \"backup\": {\"label\": \"_pre_restore_blender5-before_20261023_032344\", \"path\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\snapshots\\\\_pre_restore_blender5-before_20261023_032344.blend\", \"bytes\": 83946, \"ms\": 4, \"objects\": 1, \"note\": \"restore 'blender5-before' \\u524d\\u81ea\\u52a8\\u5907\\u4efd\\uff08\\u4f1a\\u8bdd\\u88ab\\u66ff\\u6362\\u524d\\u7684\\u72b6\\u6001\\uff09\", \"t\": \"2026-10-23 03:23:44\", \"auto\": true, \"filepath\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\"}, \"backup_error\": null, \"on_disk_backup\": {\"label\": \"_pre_restore_file_blender5-before_20261023_032344\", \"path\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\snapshots\\\\_pre_restore_file_blender5-before_20261023_032344.blend\", \"bytes\": 83631, \"ms\": 0, \"objects\": 1, \"note\": \"\\u539f\\u6587\\u4ef6\\u78c1\\u76d8\\u526f\\u672c\\uff08restore \\u8986\\u76d6\\u524d\\uff09\", \"t\": \"2026-10-23 03:23:44\", \"auto\": true, \"filepath\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\"}, \"on_disk_backup_error\": null, \"warning\": \"\\u5df2\\u7528\\u5feb\\u7167\\u6062\\u590d\\u5e76\\u628a\\u4f1a\\u8bdd\\u653e\\u56de\\u539f\\u6587\\u4ef6 E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\\uff08\\u4e4b\\u540e\\u7684\\u4fdd\\u5b58\\u843d\\u56de\\u8fd9\\u91cc\\uff0c\\u4e0d\\u518d\\u5199\\u8fdb\\u5feb\\u7167\\u76ee\\u5f55\\uff09 restore \\u524d\\u7684\\u72b6\\u6001\\u5df2\\u5907\\u4efd\\u4e3a\\u5feb\\u7167 _pre_restore_blender5-before_20261023_032344\\uff08\\u53ef restore \\u56de\\u6765\\uff09 \\u539f\\u6587\\u4ef6\\u78c1\\u76d8\\u526f\\u672c\\uff1a_pre_restore_file_blender5-before_20261023_032344\"}\n",
+        "stderr": "",
+        "result": {
+          "ok": true,
+          "restored": {
+            "label": "blender5-before",
+            "path": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\snapshots\\blender5-before.blend",
+            "bytes": 83940,
+            "ms": 4,
+            "objects": 1,
+            "note": "",
+            "t": "2026-10-23 03:23:43",
+            "filepath": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\scene.blend",
+            "unsaved": false
+          },
+          "ms": 3,
+          "objects": 1,
+          "into": "auto",
+          "wrote_to_original": true,
+          "target": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\scene.blend",
+          "target_source": "snapshot_filepath",
+          "filepath_before": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\scene.blend",
+          "filepath": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\scene.blend",
+          "next_save_goes_to": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\scene.blend",
+          "backup": {
+            "label": "_pre_restore_blender5-before_20261023_032344",
+            "path": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\snapshots\\_pre_restore_blender5-before_20261023_032344.blend",
+            "bytes": 83946,
+            "ms": 4,
+            "objects": 1,
+            "note": "restore 'blender5-before' 前自动备份（会话被替换前的状态）",
+            "t": "2026-10-23 03:23:44",
+            "auto": true,
+            "filepath": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\scene.blend"
+          },
+          "backup_error": null,
+          "on_disk_backup": {
+            "label": "_pre_restore_file_blender5-before_20261023_032344",
+            "path": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\snapshots\\_pre_restore_file_blender5-before_20261023_032344.blend",
+            "bytes": 83631,
+            "ms": 0,
+            "objects": 1,
+            "note": "原文件磁盘副本（restore 覆盖前）",
+            "t": "2026-10-23 03:23:44",
+            "auto": true,
+            "filepath": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\scene.blend"
+          },
+          "on_disk_backup_error": null,
+          "warning": "已用快照恢复并把会话放回原文件 E:\\workplace\\blender-server\\evidence\\mvp-audit\\blender5\\scene.blend（之后的保存落回这里，不再写进快照目录） restore 前的状态已备份为快照 _pre_restore_blender5-before_20261023_032344（可 restore 回来） 原文件磁盘副本：_pre_restore_file_blender5-before_20261023_032344"
+        },
+        "error": null,
+        "traceback": null
+      },
+      "error": null,
+      "traceback": null
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":218186713,\"ok\":true,\"ms\":13,\"stdout\":\"Info: Saved copy as \\\"_pre_restore_blender5-before_20261023_032344.blend\\\"\\nInfo: Saved as \\\"scene.blend\\\"\\nHEADLESS {\\\"ok\\\": true, \\\"restored\\\": {\\\"label\\\": \\\"blender5-before\\\", \\\"path\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\snapshots\\\\\\\\blender5-before.blend\\\", \\\"bytes\\\": 83940, \\\"ms\\\": 4, \\\"objects\\\": 1, \\\"note\\\": \\\"\\\", \\\"t\\\": \\\"2026-10-23 03:23:43\\\", \\\"filepath\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\scene.blend\\\", \\\"unsaved\\\": false}, \\\"ms\\\": 3, \\\"objects\\\": 1, \\\"into\\\": \\\"auto\\\", \\\"wrote_to_original\\\": true, \\\"target\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\scene.blend\\\", \\\"target_source\\\": \\\"snapshot_filepath\\\", \\\"filepath_before\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\scene.blend\\\", \\\"filepath\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\scene.blend\\\", \\\"next_save_goes_to\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\scene.blend\\\", \\\"backup\\\": {\\\"label\\\": \\\"_pre_restore_blender5-before_20261023_032344\\\", \\\"path\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\snapshots\\\\\\\\_pre_restore_blender5-before_20261023_032344.blend\\\", \\\"bytes\\\": 83946, \\\"ms\\\": 4, \\\"objects\\\": 1, \\\"note\\\": \\\"restore 'blender5-before' \\\\u524d\\\\u81ea\\\\u52a8\\\\u5907\\\\u4efd\\\\uff08\\\\u4f1a\\\\u8bdd\\\\u88ab\\\\u66ff\\\\u6362\\\\u524d\\\\u7684\\\\u72b6\\\\u6001\\\\uff09\\\", \\\"t\\\": \\\"2026-10-23 03:23:44\\\", \\\"auto\\\": true, \\\"filepath\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\scene.blend\\\"}, \\\"backup_error\\\": null, \\\"on_disk_backup\\\": {\\\"label\\\": \\\"_pre_restore_file_blender5-before_20261023_032344\\\", \\\"path\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\snapshots\\\\\\\\_pre_restore_file_blender5-before_20261023_032344.blend\\\", \\\"bytes\\\": 83631, \\\"ms\\\": 0, \\\"objects\\\": 1, \\\"note\\\": \\\"\\\\u539f\\\\u6587\\\\u4ef6\\\\u78c1\\\\u76d8\\\\u526f\\\\u672c\\\\uff08restore \\\\u8986\\\\u76d6\\\\u524d\\\\uff09\\\", \\\"t\\\": \\\"2026-10-23 03:23:44\\\", \\\"auto\\\": true, \\\"filepath\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\scene.blend\\\"}, \\\"on_disk_backup_error\\\": null, \\\"warning\\\": \\\"\\\\u5df2\\\\u7528\\\\u5feb\\\\u7167\\\\u6062\\\\u590d\\\\u5e76\\\\u628a\\\\u4f1a\\\\u8bdd\\\\u653e\\\\u56de\\\\u539f\\\\u6587\\\\u4ef6 E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\blender5\\\\\\\\scene.blend\\\\uff08\\\\u4e4b\\\\u540e\\\\u7684\\\\u4fdd\\\\u5b58\\\\u843d\\\\u56de\\\\u8fd9\\\\u91cc\\\\uff0c\\\\u4e0d\\\\u518d\\\\u5199\\\\u8fdb\\\\u5feb\\\\u7167\\\\u76ee\\\\u5f55\\\\uff09 restore \\\\u524d\\\\u7684\\\\u72b6\\\\u6001\\\\u5df2\\\\u5907\\\\u4efd\\\\u4e3a\\\\u5feb\\\\u7167 _pre_restore_blender5-before_20261023_032344\\\\uff08\\\\u53ef restore \\\\u56de\\\\u6765\\\\uff09 \\\\u539f\\\\u6587\\\\u4ef6\\\\u78c1\\\\u76d8\\\\u526f\\\\u672c\\\\uff1a_pre_restore_file_blender5-before_20261023_032344\\\"}\\n\",\"stderr\":\"\",\"result\":{\"ok\":true,\"restored\":{\"label\":\"blender5-before\",\"path\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\snapshots\\\\blender5-before.blend\",\"bytes\":83940,\"ms\":4,\"objects\":1,\"note\":\"\",\"t\":\"2026-10-23 03:23:43\",\"filepath\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\",\"unsaved\":false},\"ms\":3,\"objects\":1,\"into\":\"auto\",\"wrote_to_original\":true,\"target\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\",\"target_source\":\"snapshot_filepath\",\"filepath_before\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\",\"filepath\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\",\"next_save_goes_to\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\",\"backup\":{\"label\":\"_pre_restore_blender5-before_20261023_032344\",\"path\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\snapshots\\\\_pre_restore_blender5-before_20261023_032344.blend\",\"bytes\":83946,\"ms\":4,\"objects\":1,\"note\":\"restore 'blender5-before' 前自动备份（会话被替换前的状态）\",\"t\":\"2026-10-23 03:23:44\",\"auto\":true,\"filepath\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\"},\"backup_error\":null,\"on_disk_backup\":{\"label\":\"_pre_restore_file_blender5-before_20261023_032344\",\"path\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\snapshots\\\\_pre_restore_file_blender5-before_20261023_032344.blend\",\"bytes\":83631,\"ms\":0,\"objects\":1,\"note\":\"原文件磁盘副本（restore 覆盖前）\",\"t\":\"2026-10-23 03:23:44\",\"auto\":true,\"filepath\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\"},\"on_disk_backup_error\":null,\"warning\":\"已用快照恢复并把会话放回原文件 E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend（之后的保存落回这里，不再写进快照目录） restore 前的状态已备份为快照 _pre_restore_blender5-before_20261023_032344（可 restore 回来） 原文件磁盘副本：_pre_restore_file_blender5-before_20261023_032344\"},\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+      }
+    ]
+  },
+  {
+    "label": "save-export",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "proof5",
+      "see": false,
+      "code": "import bpy\nbpy.ops.wm.save_as_mainfile(filepath=\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.blend\")\nbpy.ops.export_scene.gltf(filepath=\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\blender5\\\\scene.glb\",export_format='GLB')"
+    },
+    "ms": 492,
+    "isError": false,
+    "structuredContent": {
+      "ok": true,
+      "op": "exec",
+      "result": {
+        "id": 85992022,
+        "ok": true,
+        "ms": 399,
+        "stdout": "Info: Saved as \"scene.blend\"\nINFO Draco mesh compression is available, use library at E:\\workplace\\blender-server\\.local\\blender-5.0.1-windows-x64\\5.0\\scripts\\addons_core\\io_scene_gltf2\\extern_draco.dll\n03:23:44 | INFO: Starting glTF 2.0 export\n03:23:44 | INFO: Extracting primitive: Cube\n03:23:44 | INFO: Primitives created: 1\n03:23:44 | INFO: Finished glTF 2.0 export in 0.03399467468261719 s\n\n",
+        "stderr": "",
+        "result": null,
+        "error": null,
+        "traceback": null
+      },
+      "error": null,
+      "traceback": null
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":85992022,\"ok\":true,\"ms\":399,\"stdout\":\"Info: Saved as \\\"scene.blend\\\"\\nINFO Draco mesh compression is available, use library at E:\\\\workplace\\\\blender-server\\\\.local\\\\blender-5.0.1-windows-x64\\\\5.0\\\\scripts\\\\addons_core\\\\io_scene_gltf2\\\\extern_draco.dll\\n03:23:44 | INFO: Starting glTF 2.0 export\\n03:23:44 | INFO: Extracting primitive: Cube\\n03:23:44 | INFO: Primitives created: 1\\n03:23:44 | INFO: Finished glTF 2.0 export in 0.03399467468261719 s\\n\\n\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+      }
+    ]
+  }
+]

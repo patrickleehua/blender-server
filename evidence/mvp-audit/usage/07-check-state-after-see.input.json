@@ -1,0 +1,5 @@
+{
+  "session": "usage",
+  "see": false,
+  "code": "assert K.usage_marker==\"continuous-cli\"\nassert bpy.data.objects[\"UsageAuditCube\"].location.x==3\nprint(\"PERSISTENCE_CONFIRMED\")"
+}

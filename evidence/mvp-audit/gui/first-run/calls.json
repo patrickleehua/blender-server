@@ -1,0 +1,1108 @@
+[
+  {
+    "label": "doctor",
+    "name": "blender_viewport",
+    "args": {
+      "op": "doctor"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"addon\":{\"kind\":\"ok\",\"tcp\":true,\"ping\":true,\"ping_ms\":44,\"roundTripMs\":102,\"summary\":\"通道健康：TCP + ping + bpy 往返都通\",\"protocol\":\"flat\",\"protocol_label\":\"直连 addon · 扁平协议（无分帧；实测 v1.7/v1.8 都通 —— 活版本看 rt_cmd get_addon_info）\",\"protocol_from\":\"config\",\"fix\":\"无需处理\",\"region\":{\"window\":[1920,1009],\"views\":[{\"region\":[0,97,1585,886],\"area\":[0,97,1585,886],\"shading\":\"SOLID\"}]}},\"metrics\":{\"calls\":2,\"errors\":0,\"timeouts\":0,\"inflight\":0,\"lastCmd\":\"execute_code\",\"lastCmdAt\":1792713482404,\"lastOkAt\":1792713482452,\"lastError\":null,\"lastDiagnosis\":null,\"views\":0,\"headlessRuns\":0,\"lastHeadlessMs\":null,\"workerStarts\":0,\"workerExecs\":0,\"lastCmdAgeMs\":100},\"config\":{\"platform\":\"win32\",\"distro\":null,\"addon\":\"127.0.0.1:45876\",\"http\":\"127.0.0.1:45877\",\"workDir\":{\"win\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\",\"wsl\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\",\"from\":\"config\",\"fallback\":null,\"shared\":{\"shared\":true,\"why\":\"windows\"}},\"blenderExe\":\"E:\\\\workplace\\\\blender-server\\\\.local\\\\blender-4.5.15-windows-x64\\\\blender.exe\",\"blenderFrom\":\"config\",\"blenderUserConfig\":null,\"blenderUserScripts\":null,\"workerPort\":45879,\"configFile\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\\\\.blender-agent\\\\config-45877-dff30146-532c-4c91-9335-5051abc2c1cd.json\",\"holder\":\"plugin-pid-4888\",\"leaseTtlMs\":600000,\"env\":{\"DSH_BLENDER_WORKDIR\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\",\"DSH_BLENDER_EXE\":\"E:\\\\workplace\\\\blender-server\\\\.local\\\\blender-4.5.15-windows-x64\\\\blender.exe\",\"DSH_BLENDER_HTTP_PORT\":\"45877\",\"DSH_BLENDER_ADDON_PROTOCOL\":null,\"DSH_BLENDER_CONFIG\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\\\\.blender-agent\\\\config-45877-dff30146-532c-4c91-9335-5051abc2c1cd.json\"}},\"stats\":{\"frames\":0,\"acts\":0,\"cmds\":0,\"loops\":0,\"views\":0,\"headless\":0,\"plan\":0,\"worker\":0,\"txn\":0,\"preset\":0,\"job\":0,\"selections\":0,\"lastSelectionMs\":null,\"lastPlanMs\":null,\"lastViewMs\":null,\"lastHeadlessMs\":null,\"lastFrameMs\":null,\"lastActMs\":null,\"lastError\":null,\"startedAt\":1792713482310},\"kind\":\"ok\"}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "addon": {
+          "kind": "ok",
+          "tcp": true,
+          "ping": true,
+          "ping_ms": 44,
+          "roundTripMs": 102,
+          "summary": "通道健康：TCP + ping + bpy 往返都通",
+          "protocol": "flat",
+          "protocol_label": "直连 addon · 扁平协议（无分帧；实测 v1.7/v1.8 都通 —— 活版本看 rt_cmd get_addon_info）",
+          "protocol_from": "config",
+          "fix": "无需处理",
+          "region": {
+            "window": [
+              1920,
+              1009
+            ],
+            "views": [
+              {
+                "region": [
+                  0,
+                  97,
+                  1585,
+                  886
+                ],
+                "area": [
+                  0,
+                  97,
+                  1585,
+                  886
+                ],
+                "shading": "SOLID"
+              }
+            ]
+          }
+        },
+        "metrics": {
+          "calls": 2,
+          "errors": 0,
+          "timeouts": 0,
+          "inflight": 0,
+          "lastCmd": "execute_code",
+          "lastCmdAt": 1792713482404,
+          "lastOkAt": 1792713482452,
+          "lastError": null,
+          "lastDiagnosis": null,
+          "views": 0,
+          "headlessRuns": 0,
+          "lastHeadlessMs": null,
+          "workerStarts": 0,
+          "workerExecs": 0,
+          "lastCmdAgeMs": 100
+        },
+        "config": {
+          "platform": "win32",
+          "distro": null,
+          "addon": "127.0.0.1:45876",
+          "http": "127.0.0.1:45877",
+          "workDir": {
+            "win": "E:\\workplace\\blender-server\\tmp\\mvp-gui",
+            "wsl": "E:\\workplace\\blender-server\\tmp\\mvp-gui",
+            "from": "config",
+            "fallback": null,
+            "shared": {
+              "shared": true,
+              "why": "windows"
+            }
+          },
+          "blenderExe": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+          "blenderFrom": "config",
+          "blenderUserConfig": null,
+          "blenderUserScripts": null,
+          "workerPort": 45879,
+          "configFile": "E:\\workplace\\blender-server\\tmp\\mvp-gui\\.blender-agent\\config-45877-dff30146-532c-4c91-9335-5051abc2c1cd.json",
+          "holder": "plugin-pid-4888",
+          "leaseTtlMs": 600000,
+          "env": {
+            "DSH_BLENDER_WORKDIR": "E:\\workplace\\blender-server\\tmp\\mvp-gui",
+            "DSH_BLENDER_EXE": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+            "DSH_BLENDER_HTTP_PORT": "45877",
+            "DSH_BLENDER_ADDON_PROTOCOL": null,
+            "DSH_BLENDER_CONFIG": "E:\\workplace\\blender-server\\tmp\\mvp-gui\\.blender-agent\\config-45877-dff30146-532c-4c91-9335-5051abc2c1cd.json"
+          }
+        },
+        "stats": {
+          "frames": 0,
+          "acts": 0,
+          "cmds": 0,
+          "loops": 0,
+          "views": 0,
+          "headless": 0,
+          "plan": 0,
+          "worker": 0,
+          "txn": 0,
+          "preset": 0,
+          "job": 0,
+          "selections": 0,
+          "lastSelectionMs": null,
+          "lastPlanMs": null,
+          "lastViewMs": null,
+          "lastHeadlessMs": null,
+          "lastFrameMs": null,
+          "lastActMs": null,
+          "lastError": null,
+          "startedAt": 1792713482310
+        },
+        "kind": "ok"
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "create-two-cubes",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "import bpy,json,os\nassert not bpy.app.background\nassert bpy.utils.user_resource('CONFIG').replace('\\\\','/').startswith(\"E:/workplace/blender-server/tmp/mvp-gui/config\")\nbpy.ops.object.select_all(action='SELECT')\nbpy.ops.object.delete(use_global=False)\nfor name,x in [('GuiCubeA',-1.8),('GuiCubeB',1.8)]:\n    bpy.ops.mesh.primitive_cube_add(size=2,location=(x,0,0))\n    bpy.context.object.name=name\nK.out_dir=\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\"\nK.gui_marker='only-this-gui'\nbpy.ops.wm.save_as_mainfile(filepath=\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\\\\gui-scene.blend\")\nprint('GUI_PROOF '+json.dumps({'pid':os.getpid(),'version':bpy.app.version_string,'objects':[o.name for o in bpy.data.objects]}))"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"ms\":76,\"mainThreadMs\":76,\"executed\":true,\"stdout\":\"Info: Saved as \\\"gui-scene.blend\\\"\\nGUI_PROOF {\\\"pid\\\": 47144, \\\"version\\\": \\\"4.5.15 LTS\\\", \\\"objects\\\": [\\\"GuiCubeA\\\", \\\"GuiCubeB\\\"]}\\n\",\"stderr\":\"\",\"error\":null,\"traceback\":null,\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":2,\"meshes\":3,\"materials\":2,\"nameHash\":3781347727},\"errorKind\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "ms": 76,
+        "mainThreadMs": 76,
+        "executed": true,
+        "stdout": "Info: Saved as \"gui-scene.blend\"\nGUI_PROOF {\"pid\": 47144, \"version\": \"4.5.15 LTS\", \"objects\": [\"GuiCubeA\", \"GuiCubeB\"]}\n",
+        "stderr": "",
+        "error": null,
+        "traceback": null,
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 2,
+          "meshes": 3,
+          "materials": 2,
+          "nameHash": 3781347727
+        },
+        "errorKind": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "before",
+    "name": "blender_rt_see",
+    "args": {
+      "auto": false,
+      "view_size": "560x315",
+      "from": "9,-11,8",
+      "look_at": "0,0,0",
+      "ortho": true,
+      "ortho_scale": 10
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"mode\":\"view\",\"hash\":\"b5f7886522a90192667a21fb200acda6b7ff1d2d18a15b1afac94010dce886fc\",\"image\":{\"mimeType\":\"image/png\",\"contentIndex\":1},\"meta\":{\"mode\":\"viewport\",\"ms\":28,\"path\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\\\\dsh_view_capture.png\",\"width\":560,\"height\":315,\"coverage_estimate\":null,\"objects_in_frame\":null,\"min_margin_px\":null,\"scene_bbox\":null,\"warning\":null,\"fallback_from\":null,\"region\":[0,97,1585,886]}}"
+        },
+        {
+          "type": "image",
+          "mimeType": "image/png"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "mode": "view",
+        "hash": "b5f7886522a90192667a21fb200acda6b7ff1d2d18a15b1afac94010dce886fc",
+        "image": {
+          "mimeType": "image/png",
+          "contentIndex": 1
+        },
+        "meta": {
+          "mode": "viewport",
+          "ms": 28,
+          "path": "E:\\workplace\\blender-server\\tmp\\mvp-gui\\dsh_view_capture.png",
+          "width": 560,
+          "height": 315,
+          "coverage_estimate": null,
+          "objects_in_frame": null,
+          "min_margin_px": null,
+          "scene_bbox": null,
+          "warning": null,
+          "fallback_from": null,
+          "region": [
+            0,
+            97,
+            1585,
+            886
+          ]
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "gui-mutate",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "assert K.gui_marker==\"only-this-gui\"\nbpy.data.objects[\"GuiCubeB\"].scale.z=2"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"ms\":23,\"mainThreadMs\":23,\"executed\":true,\"stdout\":\"\",\"stderr\":\"\",\"error\":null,\"traceback\":null,\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":2,\"meshes\":3,\"materials\":2,\"nameHash\":3781347727},\"errorKind\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "ms": 23,
+        "mainThreadMs": 23,
+        "executed": true,
+        "stdout": "",
+        "stderr": "",
+        "error": null,
+        "traceback": null,
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 2,
+          "meshes": 3,
+          "materials": 2,
+          "nameHash": 3781347727
+        },
+        "errorKind": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "after",
+    "name": "blender_rt_see",
+    "args": {
+      "auto": false,
+      "view_size": "560x315",
+      "from": "9,-11,8",
+      "look_at": "0,0,0",
+      "ortho": true,
+      "ortho_scale": 10
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"mode\":\"view\",\"hash\":\"be56d67b82477661b6ec2daa830caf602aec7533156a2fe91f96023e432917cf\",\"image\":{\"mimeType\":\"image/png\",\"contentIndex\":1},\"meta\":{\"mode\":\"viewport\",\"ms\":27,\"path\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\\\\dsh_view_capture.png\",\"width\":560,\"height\":315,\"coverage_estimate\":null,\"objects_in_frame\":null,\"min_margin_px\":null,\"scene_bbox\":null,\"warning\":null,\"fallback_from\":null,\"region\":[0,97,1585,886]}}"
+        },
+        {
+          "type": "image",
+          "mimeType": "image/png"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "mode": "view",
+        "hash": "be56d67b82477661b6ec2daa830caf602aec7533156a2fe91f96023e432917cf",
+        "image": {
+          "mimeType": "image/png",
+          "contentIndex": 1
+        },
+        "meta": {
+          "mode": "viewport",
+          "ms": 27,
+          "path": "E:\\workplace\\blender-server\\tmp\\mvp-gui\\dsh_view_capture.png",
+          "width": 560,
+          "height": 315,
+          "coverage_estimate": null,
+          "objects_in_frame": null,
+          "min_margin_px": null,
+          "scene_bbox": null,
+          "warning": null,
+          "fallback_from": null,
+          "region": [
+            0,
+            97,
+            1585,
+            886
+          ]
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "reset-for-join",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "bpy.data.objects[\"GuiCubeB\"].scale.z=1"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"ms\":35,\"mainThreadMs\":35,\"executed\":true,\"stdout\":\"\",\"stderr\":\"\",\"error\":null,\"traceback\":null,\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":2,\"meshes\":3,\"materials\":2,\"nameHash\":3781347727},\"errorKind\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "ms": 35,
+        "mainThreadMs": 35,
+        "executed": true,
+        "stdout": "",
+        "stderr": "",
+        "error": null,
+        "traceback": null,
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 2,
+          "meshes": 3,
+          "materials": 2,
+          "nameHash": 3781347727
+        },
+        "errorKind": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "opt-analyze",
+    "name": "blender_rt_opt",
+    "args": {
+      "op": "analyze"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"analyze\",\"result\":{\"ok\":true,\"objects\":2,\"groups\":1,\"joinable\":2,\"objects_after\":1,\"est_sync_save_s\":0.001,\"top_groups\":[[2,\"Collection\",\"\",\"GuiCubeA\"]]}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "analyze",
+        "result": {
+          "ok": true,
+          "objects": 2,
+          "groups": 1,
+          "joinable": 2,
+          "objects_after": 1,
+          "est_sync_save_s": 0.001,
+          "top_groups": [
+            [
+              2,
+              "Collection",
+              "",
+              "GuiCubeA"
+            ]
+          ]
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "opt-join-dry-run",
+    "name": "blender_rt_opt",
+    "args": {
+      "op": "join",
+      "args": {
+        "dry_run": true
+      }
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"join\",\"result\":{\"ok\":true,\"dry_run\":true,\"objects_before\":2,\"groups\":1,\"joinable\":2}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "join",
+        "result": {
+          "ok": true,
+          "dry_run": true,
+          "objects_before": 2,
+          "groups": 1,
+          "joinable": 2
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "dry-run-unchanged",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "assert len([o for o in bpy.data.objects if o.type==\"MESH\"])==2\nassert sum(len(o.data.polygons) for o in bpy.data.objects if o.type==\"MESH\")==12"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"ms\":9,\"mainThreadMs\":9,\"executed\":true,\"stdout\":\"\",\"stderr\":\"\",\"error\":null,\"traceback\":null,\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":2,\"meshes\":3,\"materials\":2,\"nameHash\":3781347727},\"errorKind\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "ms": 9,
+        "mainThreadMs": 9,
+        "executed": true,
+        "stdout": "",
+        "stderr": "",
+        "error": null,
+        "traceback": null,
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 2,
+          "meshes": 3,
+          "materials": 2,
+          "nameHash": 3781347727
+        },
+        "errorKind": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "opt-join-real",
+    "name": "blender_rt_opt",
+    "args": {
+      "op": "join",
+      "args": {
+        "dry_run": false,
+        "save_before": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\gui\\before-join.blend"
+      }
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"join\",\"result\":{\"ok\":true,\"dry_run\":false,\"saved_before\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\\\\before-join.blend\",\"objects\":[2,1],\"faces\":[12,12],\"verts\":[16,16],\"materials\":[2,2],\"groups_joined\":1,\"failures\":[],\"sample\":[[\"GuiCubeA_MERGED_nom\",2]]}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "join",
+        "result": {
+          "ok": true,
+          "dry_run": false,
+          "saved_before": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\gui\\before-join.blend",
+          "objects": [
+            2,
+            1
+          ],
+          "faces": [
+            12,
+            12
+          ],
+          "verts": [
+            16,
+            16
+          ],
+          "materials": [
+            2,
+            2
+          ],
+          "groups_joined": 1,
+          "failures": [],
+          "sample": [
+            [
+              "GuiCubeA_MERGED_nom",
+              2
+            ]
+          ]
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "independent-join-check",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "meshes=[o for o in bpy.data.objects if o.type==\"MESH\"]\nassert len(meshes)==1\nassert len(meshes[0].data.polygons)==12 and len(meshes[0].data.vertices)==16\nmeshes[0].name=\"GuiJoined\""
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"ms\":15,\"mainThreadMs\":15,\"executed\":true,\"stdout\":\"\",\"stderr\":\"\",\"error\":null,\"traceback\":null,\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":1,\"meshes\":3,\"materials\":2,\"nameHash\":3122455232},\"errorKind\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "ms": 15,
+        "mainThreadMs": 15,
+        "executed": true,
+        "stdout": "",
+        "stderr": "",
+        "error": null,
+        "traceback": null,
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 1,
+          "meshes": 3,
+          "materials": 2,
+          "nameHash": 3122455232
+        },
+        "errorKind": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "cmd-explicit-error",
+    "name": "blender_rt_cmd",
+    "args": {
+      "name": "__gui_live_unknown_command__"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":false,\"ms\":50,\"error\":\"Unknown command type: __gui_live_unknown_command__\",\"diagnosis\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": false,
+        "ms": 50,
+        "error": "Unknown command type: __gui_live_unknown_command__",
+        "diagnosis": null
+      },
+      "isError": true
+    }
+  },
+  {
+    "label": "save-before-snapshot",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "bpy.ops.wm.save_as_mainfile(filepath=\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\\\\gui-scene.blend\")"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"ms\":49,\"mainThreadMs\":49,\"executed\":true,\"stdout\":\"Info: Saved as \\\"gui-scene.blend\\\"\\n\",\"stderr\":\"\",\"error\":null,\"traceback\":null,\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":1,\"meshes\":3,\"materials\":2,\"nameHash\":3122455232},\"errorKind\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "ms": 49,
+        "mainThreadMs": 49,
+        "executed": true,
+        "stdout": "Info: Saved as \"gui-scene.blend\"\n",
+        "stderr": "",
+        "error": null,
+        "traceback": null,
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 1,
+          "meshes": 3,
+          "materials": 2,
+          "nameHash": 3122455232
+        },
+        "errorKind": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "txn-snapshot",
+    "name": "blender_rt_txn",
+    "args": {
+      "op": "snapshot",
+      "label": "gui-baseline"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"snapshot\",\"result\":{\"ok\":true,\"snapshot\":{\"label\":\"gui-baseline\",\"path\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\\\\snapshots\\\\gui-baseline.blend\",\"bytes\":466797,\"ms\":11,\"objects\":1,\"note\":\"\",\"t\":\"2026-10-23 07:58:04\",\"filepath\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\\\\gui-scene.blend\",\"unsaved\":false},\"total\":1}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "snapshot",
+        "result": {
+          "ok": true,
+          "snapshot": {
+            "label": "gui-baseline",
+            "path": "E:\\workplace\\blender-server\\tmp\\mvp-gui\\snapshots\\gui-baseline.blend",
+            "bytes": 466797,
+            "ms": 11,
+            "objects": 1,
+            "note": "",
+            "t": "2026-10-23 07:58:04",
+            "filepath": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\gui\\gui-scene.blend",
+            "unsaved": false
+          },
+          "total": 1
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "txn-mutate",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "bpy.data.objects[\"GuiJoined\"].location.z=19"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"ms\":56,\"mainThreadMs\":56,\"executed\":true,\"stdout\":\"\",\"stderr\":\"\",\"error\":null,\"traceback\":null,\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":1,\"meshes\":3,\"materials\":2,\"nameHash\":3122455232},\"errorKind\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "ms": 56,
+        "mainThreadMs": 56,
+        "executed": true,
+        "stdout": "",
+        "stderr": "",
+        "error": null,
+        "traceback": null,
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 1,
+          "meshes": 3,
+          "materials": 2,
+          "nameHash": 3122455232
+        },
+        "errorKind": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "txn-restore",
+    "name": "blender_rt_txn",
+    "args": {
+      "op": "restore",
+      "label": "gui-baseline"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"restore\",\"result\":{\"ok\":true,\"restored\":{\"label\":\"gui-baseline\",\"path\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\\\\snapshots\\\\gui-baseline.blend\",\"bytes\":466797,\"ms\":11,\"objects\":1,\"note\":\"\",\"t\":\"2026-10-23 07:58:04\",\"filepath\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\\\\gui-scene.blend\",\"unsaved\":false},\"ms\":4,\"objects\":1,\"into\":\"auto\",\"wrote_to_original\":true,\"target\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\\\\gui-scene.blend\",\"target_source\":\"snapshot_filepath\",\"filepath_before\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\\\\gui-scene.blend\",\"filepath\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\\\\gui-scene.blend\",\"next_save_goes_to\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\\\\gui-scene.blend\",\"backup\":{\"label\":\"_pre_restore_gui-baseline_20261023_075804\",\"path\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\\\\snapshots\\\\_pre_restore_gui-baseline_20261023_075804.blend\",\"bytes\":466797,\"ms\":12,\"objects\":1,\"note\":\"restore 'gui-baseline' 前自动备份（会话被替换前的状态）\",\"t\":\"2026-10-23 07:58:04\",\"auto\":true,\"filepath\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\\\\gui-scene.blend\"},\"backup_error\":null,\"on_disk_backup\":null,\"on_disk_backup_error\":null,\"warning\":\"已用快照恢复并把会话放回原文件 E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\gui\\\\gui-scene.blend（之后的保存落回这里，不再写进快照目录） restore 前的状态已备份为快照 _pre_restore_gui-baseline_20261023_075804（可 restore 回来）\"}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "restore",
+        "result": {
+          "ok": true,
+          "restored": {
+            "label": "gui-baseline",
+            "path": "E:\\workplace\\blender-server\\tmp\\mvp-gui\\snapshots\\gui-baseline.blend",
+            "bytes": 466797,
+            "ms": 11,
+            "objects": 1,
+            "note": "",
+            "t": "2026-10-23 07:58:04",
+            "filepath": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\gui\\gui-scene.blend",
+            "unsaved": false
+          },
+          "ms": 4,
+          "objects": 1,
+          "into": "auto",
+          "wrote_to_original": true,
+          "target": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\gui\\gui-scene.blend",
+          "target_source": "snapshot_filepath",
+          "filepath_before": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\gui\\gui-scene.blend",
+          "filepath": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\gui\\gui-scene.blend",
+          "next_save_goes_to": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\gui\\gui-scene.blend",
+          "backup": {
+            "label": "_pre_restore_gui-baseline_20261023_075804",
+            "path": "E:\\workplace\\blender-server\\tmp\\mvp-gui\\snapshots\\_pre_restore_gui-baseline_20261023_075804.blend",
+            "bytes": 466797,
+            "ms": 12,
+            "objects": 1,
+            "note": "restore 'gui-baseline' 前自动备份（会话被替换前的状态）",
+            "t": "2026-10-23 07:58:04",
+            "auto": true,
+            "filepath": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\gui\\gui-scene.blend"
+          },
+          "backup_error": null,
+          "on_disk_backup": null,
+          "on_disk_backup_error": null,
+          "warning": "已用快照恢复并把会话放回原文件 E:\\workplace\\blender-server\\evidence\\mvp-audit\\gui\\gui-scene.blend（之后的保存落回这里，不再写进快照目录） restore 前的状态已备份为快照 _pre_restore_gui-baseline_20261023_075804（可 restore 回来）"
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "txn-assert",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "assert abs(bpy.data.objects[\"GuiJoined\"].location.z)<1e-6\nassert len(bpy.data.objects[\"GuiJoined\"].data.polygons)==12"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"ms\":49,\"mainThreadMs\":49,\"executed\":true,\"stdout\":\"\",\"stderr\":\"\",\"error\":null,\"traceback\":null,\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":1,\"meshes\":1,\"materials\":1,\"nameHash\":3122455232},\"errorKind\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "ms": 49,
+        "mainThreadMs": 49,
+        "executed": true,
+        "stdout": "",
+        "stderr": "",
+        "error": null,
+        "traceback": null,
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 1,
+          "meshes": 1,
+          "materials": 1,
+          "nameHash": 3122455232
+        },
+        "errorKind": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "preset-save",
+    "name": "blender_rt_preset",
+    "args": {
+      "op": "save",
+      "name": "gui-live",
+      "data": "{\"location\":[1,2,3]}"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"save\",\"result\":{\"ok\":true,\"name\":\"gui-live\",\"kind\":\"generic\",\"keys\":1,\"path\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-gui\\\\presets\\\\gui-live.json\",\"bytes\":202}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "save",
+        "result": {
+          "ok": true,
+          "name": "gui-live",
+          "kind": "generic",
+          "keys": 1,
+          "path": "E:\\workplace\\blender-server\\tmp\\mvp-gui\\presets\\gui-live.json",
+          "bytes": 202
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "preset-preview",
+    "name": "blender_rt_preset",
+    "args": {
+      "op": "apply",
+      "name": "gui-live"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"apply\",\"result\":{\"ok\":true,\"preset\":\"gui-live\",\"dry_run\":true,\"keys\":[\"location\"],\"targets\":[],\"report\":{\"applied\":[],\"skipped\":[],\"errors\":[]},\"note\":\"未给 targets 时只预览；给了 targets 就实际写入（可用 dry_run=true 只校验路径）\"}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "apply",
+        "result": {
+          "ok": true,
+          "preset": "gui-live",
+          "dry_run": true,
+          "keys": [
+            "location"
+          ],
+          "targets": [],
+          "report": {
+            "applied": [],
+            "skipped": [],
+            "errors": []
+          },
+          "note": "未给 targets 时只预览；给了 targets 就实际写入（可用 dry_run=true 只校验路径）"
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "preset-preview-readonly",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "assert abs(bpy.data.objects[\"GuiJoined\"].location.z)<1e-6\nK.dsh_preset_api(\"apply\", {\"name\":\"gui-live\",\"targets\":[\"OBJ:GuiJoined\"],\"dry_run\":True})\nassert abs(bpy.data.objects[\"GuiJoined\"].location.z)<1e-6"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"ms\":30,\"mainThreadMs\":30,\"executed\":true,\"stdout\":\"\",\"stderr\":\"\",\"error\":null,\"traceback\":null,\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":1,\"meshes\":1,\"materials\":1,\"nameHash\":3122455232},\"errorKind\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "ms": 30,
+        "mainThreadMs": 30,
+        "executed": true,
+        "stdout": "",
+        "stderr": "",
+        "error": null,
+        "traceback": null,
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 1,
+          "meshes": 1,
+          "materials": 1,
+          "nameHash": 3122455232
+        },
+        "errorKind": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "preset-apply",
+    "name": "blender_rt_preset",
+    "args": {
+      "op": "apply",
+      "name": "gui-live",
+      "targets": "OBJ:GuiJoined"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"apply\",\"result\":{\"ok\":true,\"preset\":\"gui-live\",\"dry_run\":false,\"keys\":[\"location\"],\"targets\":[\"OBJ:GuiJoined\"],\"report\":{\"applied\":[{\"target\":\"OBJ:GuiJoined\",\"path\":\"location\"}],\"skipped\":[],\"errors\":[]},\"note\":\"未给 targets 时只预览；给了 targets 就实际写入（可用 dry_run=true 只校验路径）\"}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "apply",
+        "result": {
+          "ok": true,
+          "preset": "gui-live",
+          "dry_run": false,
+          "keys": [
+            "location"
+          ],
+          "targets": [
+            "OBJ:GuiJoined"
+          ],
+          "report": {
+            "applied": [
+              {
+                "target": "OBJ:GuiJoined",
+                "path": "location"
+              }
+            ],
+            "skipped": [],
+            "errors": []
+          },
+          "note": "未给 targets 时只预览；给了 targets 就实际写入（可用 dry_run=true 只校验路径）"
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "preset-real-assert",
+    "name": "blender_rt_do",
+    "args": {
+      "auto": false,
+      "see": false,
+      "code": "assert list(bpy.data.objects[\"GuiJoined\"].location)==[1,2,3]"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"ms\":64,\"mainThreadMs\":64,\"executed\":true,\"stdout\":\"\",\"stderr\":\"\",\"error\":null,\"traceback\":null,\"file\":null,\"marker_missing\":false,\"sceneEpoch\":{\"objects\":1,\"meshes\":1,\"materials\":1,\"nameHash\":3122455232},\"errorKind\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "ms": 64,
+        "mainThreadMs": 64,
+        "executed": true,
+        "stdout": "",
+        "stderr": "",
+        "error": null,
+        "traceback": null,
+        "file": null,
+        "marker_missing": false,
+        "sceneEpoch": {
+          "objects": 1,
+          "meshes": 1,
+          "materials": 1,
+          "nameHash": 3122455232
+        },
+        "errorKind": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "preset-delete",
+    "name": "blender_rt_preset",
+    "args": {
+      "op": "delete",
+      "name": "gui-live"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"delete\",\"result\":{\"ok\":true,\"deleted\":\"gui-live\"}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "delete",
+        "result": {
+          "ok": true,
+          "deleted": "gui-live"
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "perf-status",
+    "name": "blender_rt_perf",
+    "args": {
+      "op": "status"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"status\",\"result\":{\"version\":1,\"engine\":\"BLENDER_EEVEE_NEXT\",\"device\":\"CPU\",\"samples\":4096,\"adaptive\":[true,0.01],\"persistent_data\":false,\"denoiser\":[\"OPENIMAGEDENOISE\",false],\"auto_tile\":[true,2048],\"resolution\":[1920,1080,100],\"objects\":1,\"preset_applied\":false,\"saved_snapshot\":null,\"engine_mode\":\"eevee\",\"eevee\":{\"use_raytracing\":false,\"ray_tracing_method\":\"SCREEN\",\"taa_render_samples\":64,\"use_shadows\":true,\"shadow_ray_count\":1,\"shadow_step_count\":6}}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "status",
+        "result": {
+          "version": 1,
+          "engine": "BLENDER_EEVEE_NEXT",
+          "device": "CPU",
+          "samples": 4096,
+          "adaptive": [
+            true,
+            0.01
+          ],
+          "persistent_data": false,
+          "denoiser": [
+            "OPENIMAGEDENOISE",
+            false
+          ],
+          "auto_tile": [
+            true,
+            2048
+          ],
+          "resolution": [
+            1920,
+            1080,
+            100
+          ],
+          "objects": 1,
+          "preset_applied": false,
+          "saved_snapshot": null,
+          "engine_mode": "eevee",
+          "eevee": {
+            "use_raytracing": false,
+            "ray_tracing_method": "SCREEN",
+            "taa_render_samples": 64,
+            "use_shadows": true,
+            "shadow_ray_count": 1,
+            "shadow_step_count": 6
+          }
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "perf-apply",
+    "name": "blender_rt_perf",
+    "args": {
+      "op": "apply",
+      "args": {
+        "samples": 64
+      }
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"apply\",\"result\":{\"ok\":true,\"preset\":\"eevee-rt\",\"engine\":\"BLENDER_EEVEE_NEXT\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\",\"rt\":false,\"samples\":64},\"after\":{\"engine\":\"BLENDER_EEVEE_NEXT\",\"rt\":true,\"ray_tracing_method\":\"SCREEN\",\"samples\":64,\"use_shadows\":true},\"applied\":[\"use_raytracing=True\",\"ray_tracing_method=SCREEN\",\"use_shadows=True\",\"shadow_ray_count=2\",\"shadow_step_count=8\"],\"skipped_cycles_only\":[\"persistent_data\",\"denoising_use_gpu(OptiX)\",\"auto_tile off\",\"samples cap\"],\"note\":\"当前引擎是 EEVEE：Cycles 专属项不适用，已显式跳过\"}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "apply",
+        "result": {
+          "ok": true,
+          "preset": "eevee-rt",
+          "engine": "BLENDER_EEVEE_NEXT",
+          "before": {
+            "engine": "BLENDER_EEVEE_NEXT",
+            "rt": false,
+            "samples": 64
+          },
+          "after": {
+            "engine": "BLENDER_EEVEE_NEXT",
+            "rt": true,
+            "ray_tracing_method": "SCREEN",
+            "samples": 64,
+            "use_shadows": true
+          },
+          "applied": [
+            "use_raytracing=True",
+            "ray_tracing_method=SCREEN",
+            "use_shadows=True",
+            "shadow_ray_count=2",
+            "shadow_step_count=8"
+          ],
+          "skipped_cycles_only": [
+            "persistent_data",
+            "denoising_use_gpu(OptiX)",
+            "auto_tile off",
+            "samples cap"
+          ],
+          "note": "当前引擎是 EEVEE：Cycles 专属项不适用，已显式跳过"
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "perf-revert",
+    "name": "blender_rt_perf",
+    "args": {
+      "op": "revert"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"revert\",\"result\":{\"ok\":false,\"err\":\"没有保存过的快照（未 apply 过）\"}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "revert",
+        "result": {
+          "ok": false,
+          "err": "没有保存过的快照（未 apply 过）"
+        }
+      },
+      "isError": true
+    }
+  }
+]

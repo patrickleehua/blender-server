@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "version": "5.0.1",
+  "calls": 16,
+  "nativeImage": true,
+  "independentBlend": true,
+  "independentGlb": true,
+  "txnRestore": true,
+  "errorRecovery": true,
+  "incrementalPreloadSamePid": true
+}

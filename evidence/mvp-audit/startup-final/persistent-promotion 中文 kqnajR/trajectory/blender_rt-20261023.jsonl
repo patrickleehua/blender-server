@@ -1,0 +1,2 @@
+{"t":"2026-10-23T00:14:58.865Z","route":"start","op":null,"ms":4,"ok":false,"err":"connect ECONNREFUSED 127.0.0.1:49961","args_bytes":0,"args_digest":"00000000","args_head":null,"family":null,"args_keys":null,"hint_shown":false}
+{"t":"2026-10-23T00:15:00.845Z","route":"stop","op":null,"ms":0,"ok":true,"err":null,"args_bytes":0,"args_digest":"00000000","args_head":null,"family":null,"args_keys":null,"hint_shown":false}

@@ -1,0 +1,11 @@
+✔ real two-client MCP survives creator close and last-client exit clears both named Blender workers (2480.5047ms)
+✔ real two-client MCP survives creator SIGKILL without losing the other worker (3626.6576ms)
+✔ real CLI rejects ephemeral sessions and missing holder before dispatch, while persistent same-holder state survives calls and errors (6342.8359ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12646.7765

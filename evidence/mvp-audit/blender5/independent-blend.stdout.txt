@@ -1,0 +1,5 @@
+00:00.219  blend            | Read blend: "E:\workplace\blender-server\evidence\mvp-audit\blender5\scene.blend"
+INDEPENDENT {"ok": true, "blender": "5.0.1", "type": "blend", "object": "Blender5Proof", "bounds": [[0.0, 2.0], [0.0, 4.0], [0.0, 3.0]], "vertices": 8}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

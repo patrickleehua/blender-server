@@ -1,0 +1,5 @@
+{
+  "session": "implicit",
+  "code": "K.implicit_cli=\"retained\"\nprint(\"SCENE_CREATED\")",
+  "see": false
+}

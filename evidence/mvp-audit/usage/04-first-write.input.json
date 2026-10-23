@@ -1,0 +1,5 @@
+{
+  "session": "usage",
+  "see": false,
+  "code": "import bpy\nbpy.ops.wm.read_factory_settings(use_empty=True)\nbpy.ops.mesh.primitive_cube_add(size=2)\nbpy.context.object.name=\"UsageAuditCube\"\nK.usage_marker=\"continuous-cli\"\nprint(\"FIRST\", bpy.data.objects[\"UsageAuditCube\"].dimensions[:])"
+}

@@ -1,0 +1,12 @@
+{
+ "name": "scene-regression",
+ "kind": "generic",
+ "tags": [],
+ "note": "",
+ "data": {
+  "render.resolution_x": 128
+ },
+ "mapping": {},
+ "version": 1,
+ "created": "2026-10-23 03:21:23"
+}

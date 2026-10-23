@@ -1,0 +1,25 @@
+{
+  "tarballSha256": "4fc5cecf3172224577015252ef7e355e9b4e1965fca470aa09fe59ce650ac8ef",
+  "sourceCommit": "792017712e587ebee196fb000bf29e79c43c3f12",
+  "sourceDirty": false,
+  "assetFingerprint": "bbc1ac1d3c1b1aa78226ba226256591c58e42d9b1fe2809f1f8e436ad412b2eb",
+  "engineAssets": true,
+  "contractSame": true,
+  "skillSame": true,
+  "singleSkill": [
+    "assets/skill/SKILL.md"
+  ],
+  "noLocalDirectories": true,
+  "distSame": true,
+  "hostVerifiedPackage": "E:\\workplace\\blender-server\\tmp\\独立成品 20261023\\node_modules\\@blender-agent\\bridge",
+  "hostPackageComparison": {
+    "differingProductFiles": [],
+    "excludedMetadata": [
+      "assets/manifest.json"
+    ],
+    "note": "Final staging omits .npmignore, which npm already omitted from the installed package. All 86 other shipped files are byte-identical to the host-run package."
+  },
+  "node": "v24.20.0",
+  "installedPackage": "E:\\workplace\\blender-server\\tmp\\独立发行 最终成品\\node_modules\\@blender-agent\\bridge",
+  "ok": true
+}

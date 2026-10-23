@@ -1,0 +1,574 @@
+{
+  "toolCount": 15,
+  "records": [
+    {
+      "name": "blender_rt_see",
+      "args": {
+        "session": "audit",
+        "from": "1,2,3",
+        "look_at": "0,0,0",
+        "view_size": "320x240"
+      },
+      "calls": [
+        {
+          "route": "/worker",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "start",
+            "name": "audit",
+            "engine": "workbench",
+            "warmup": false,
+            "isolated": true
+          }
+        },
+        {
+          "route": "/worker",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "see",
+            "name": "audit",
+            "spec": {
+              "from": [
+                1,
+                2,
+                3
+              ],
+              "look_at": [
+                0,
+                0,
+                0
+              ],
+              "width": 320,
+              "height": 240
+            },
+            "isolated": true
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "result": {
+          "ok": true,
+          "result": {
+            "ok": true
+          }
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_do",
+      "args": {
+        "session": "audit",
+        "code": "pass",
+        "see": false
+      },
+      "calls": [
+        {
+          "route": "/worker",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "start",
+            "name": "audit",
+            "engine": "workbench",
+            "warmup": false,
+            "isolated": true
+          }
+        },
+        {
+          "route": "/worker",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "exec",
+            "name": "audit",
+            "code": "pass",
+            "isolated": true
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "result": {
+          "ok": true,
+          "result": {
+            "ok": true
+          }
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_watch",
+      "args": {
+        "session": "audit",
+        "seconds": 0.2,
+        "fps": 1,
+        "max_size": 120
+      },
+      "calls": [
+        {
+          "route": "/worker",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "start",
+            "name": "audit",
+            "engine": "workbench",
+            "warmup": false,
+            "isolated": true
+          }
+        },
+        {
+          "route": "/worker",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "watch",
+            "name": "audit",
+            "spec": {
+              "from": [
+                7,
+                -7,
+                5
+              ],
+              "look_at": [
+                0,
+                0,
+                1
+              ],
+              "width": 120,
+              "height": 120,
+              "seconds": 0.2,
+              "fps": 1
+            },
+            "isolated": true
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "result": {
+          "ok": true,
+          "result": {
+            "ok": true
+          }
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_cmd",
+      "args": {
+        "name": "get_world_state_snapshot",
+        "params": {
+          "objects": true
+        },
+        "timeout_ms": 1000
+      },
+      "calls": [
+        {
+          "route": "/cmd",
+          "body": {
+            "holder": "blender-agent-58676",
+            "name": "get_world_state_snapshot",
+            "params": {
+              "objects": true
+            },
+            "timeoutMs": 1000
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "result": {
+          "ok": true
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_commands",
+      "args": {},
+      "calls": [
+        {
+          "route": "/commands"
+        }
+      ],
+      "result": {
+        "ok": true,
+        "result": {
+          "ok": true
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_loop",
+      "args": {
+        "op": "export",
+        "path": "中文 spaced.py",
+        "top": 2,
+        "include_variants": true
+      },
+      "calls": [
+        {
+          "route": "/loop",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "export",
+            "path": "中文 spaced.py",
+            "top": 2,
+            "include_variants": true,
+            "spec": {}
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "result": {
+          "ok": true
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_perf",
+      "args": {
+        "op": "apply",
+        "args": {
+          "samples": 32
+        }
+      },
+      "calls": [
+        {
+          "route": "/perf",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "apply",
+            "args": {
+              "samples": 32
+            }
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "result": {
+          "ok": true
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_opt",
+      "args": {
+        "op": "join",
+        "args": {
+          "dry_run": true
+        }
+      },
+      "calls": [
+        {
+          "route": "/opt",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "join",
+            "args": {
+              "dry_run": true
+            }
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "result": {
+          "ok": true
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_headless",
+      "args": {
+        "script": "pass",
+        "args": "\"中文 spaced\" \"x y\"",
+        "as_job": true,
+        "env": {
+          "AUDIT": "yes"
+        },
+        "shots": [
+          {
+            "name": "front"
+          }
+        ],
+        "timeout_ms": 2000,
+        "include_noise": true,
+        "out_json": "中文 spaced.json"
+      },
+      "calls": [
+        {
+          "route": "/job",
+          "body": {
+            "holder": "blender-agent-58676",
+            "script": "pass",
+            "args": [
+              "中文 spaced",
+              "x y"
+            ],
+            "env": {
+              "AUDIT": "yes"
+            },
+            "shots": [
+              {
+                "name": "front"
+              }
+            ],
+            "timeoutMs": 2000,
+            "includeNoise": true,
+            "outJson": "中文 spaced.json",
+            "runId": "run-93a9cd58-f842-4af4-89d7-f2ebfefadd8e",
+            "op": "start"
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "job": {
+          "id": "job-fixture",
+          "status": "running",
+          "result": {
+            "ok": true
+          }
+        },
+        "kind": "promoted",
+        "jobId": "job-fixture",
+        "hint": "Use blender_rt_job wait/collect; backend start is required for cross-CLI persistence."
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_plan",
+      "args": {
+        "op": "audit_measure",
+        "session": "audit",
+        "args": {
+          "objects": [
+            "Cube"
+          ]
+        }
+      },
+      "calls": [
+        {
+          "route": "/worker",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "start",
+            "name": "audit",
+            "preload": "audit",
+            "engine": "workbench",
+            "warmup": false,
+            "isolated": true
+          }
+        },
+        {
+          "route": "/worker",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "exec",
+            "name": "audit",
+            "code": "import json as _json\n_s = _json.dumps(_json.loads(\"{\\\"objects\\\":[\\\"Cube\\\"]}\"))\n_r = K.dsh_audit_api[\"dispatch\"](\"measure\", _s)\nprint(\"HEADLESS \" + (_r if isinstance(_r, str) else _json.dumps(_r, ensure_ascii=False)))",
+            "timeoutMs": 180000,
+            "isolated": true
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "op": "audit_measure",
+        "via": "worker:audit",
+        "result": {
+          "ok": true
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_worker",
+      "args": {
+        "op": "watch",
+        "name": "audit",
+        "view_size": "120x80"
+      },
+      "calls": [
+        {
+          "route": "/worker",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "watch",
+            "name": "audit",
+            "view_size": "120x80",
+            "spec": {
+              "op": "watch",
+              "name": "audit",
+              "view_size": "120x80"
+            },
+            "isolated": true
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "result": {
+          "ok": true,
+          "result": {
+            "ok": true
+          }
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_txn",
+      "args": {
+        "op": "mark",
+        "label": "before",
+        "objects": "one,two"
+      },
+      "calls": [
+        {
+          "route": "/txn",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "mark",
+            "args": {
+              "label": "before",
+              "objects": [
+                "one",
+                "two"
+              ]
+            }
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "result": {
+          "ok": true
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_preset",
+      "args": {
+        "op": "save",
+        "name": "audit",
+        "tags": "one,two",
+        "data": "{\"location\":[0,0,1]}"
+      },
+      "calls": [
+        {
+          "route": "/preset",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "save",
+            "args": {
+              "name": "audit",
+              "tags": [
+                "one",
+                "two"
+              ],
+              "data": {
+                "location": [
+                  0,
+                  0,
+                  1
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "result": {
+          "ok": true
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_rt_job",
+      "args": {
+        "op": "start",
+        "script": "pass",
+        "args": "\"中文 spaced\"",
+        "env": {
+          "AUDIT": "yes"
+        },
+        "timeout_ms": 2000,
+        "include_noise": true,
+        "out_json": "中文 spaced.json"
+      },
+      "calls": [
+        {
+          "route": "/job",
+          "body": {
+            "holder": "blender-agent-58676",
+            "op": "start",
+            "script": "pass",
+            "args": [
+              "中文 spaced"
+            ],
+            "env": {
+              "AUDIT": "yes"
+            },
+            "timeoutMs": 2000,
+            "includeNoise": true,
+            "outJson": "中文 spaced.json"
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "job": {
+          "id": "job-fixture",
+          "status": "running",
+          "result": {
+            "ok": true
+          }
+        }
+      },
+      "isError": false
+    },
+    {
+      "name": "blender_viewport",
+      "args": {
+        "op": "lease",
+        "holder": "audit",
+        "scope": "collection:Objects,prefix:audit-",
+        "ttl_ms": 5000
+      },
+      "calls": [
+        {
+          "route": "/lease",
+          "body": {
+            "holder": "audit",
+            "op": "lease",
+            "scope": [
+              "collection:Objects",
+              "prefix:audit-"
+            ],
+            "ttl_ms": 5000,
+            "ttlMs": 5000
+          }
+        }
+      ],
+      "result": {
+        "ok": true,
+        "result": {
+          "ok": true
+        }
+      },
+      "isError": false
+    }
+  ]
+}

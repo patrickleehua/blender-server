@@ -1,0 +1,111 @@
+{
+  "source": "fe3bc3ef3c9422a53a62596bb27c6d464fe6806f",
+  "scenario": "GUI busy; frame/view return HTTP 503; doctor main-thread-busy",
+  "see": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"session\":\"interactive\",\"source\":\"NEW_UNRELATED_WORKER_SCENE\",\"result\":{\"ok\":true,\"image\":{\"mimeType\":\"image/png\",\"contentIndex\":1}}}"
+      },
+      {
+        "type": "image",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jRZkAAAAASUVORK5CYII=",
+        "mimeType": "image/png"
+      }
+    ],
+    "structuredContent": {
+      "ok": true,
+      "session": "interactive",
+      "source": "NEW_UNRELATED_WORKER_SCENE",
+      "result": {
+        "ok": true,
+        "image": {
+          "mimeType": "image/png",
+          "contentIndex": 1
+        }
+      }
+    },
+    "isError": false
+  },
+  "execution": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":false,\"code\":\"GUI_NOT_READY\",\"error\":\"GUI state is ambiguous or busy; choose an explicit session or inspect doctor before executing code\",\"details\":{\"ok\":false,\"kind\":\"main-thread-busy\"}}"
+      }
+    ],
+    "structuredContent": {
+      "ok": false,
+      "code": "GUI_NOT_READY",
+      "error": "GUI state is ambiguous or busy; choose an explicit session or inspect doctor before executing code",
+      "details": {
+        "ok": false,
+        "kind": "main-thread-busy"
+      }
+    },
+    "isError": true
+  },
+  "watch": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":false,\"code\":\"GUI_NOT_READY\",\"error\":\"GUI state is ambiguous or busy; choose an explicit session or inspect doctor before executing code\",\"details\":{\"ok\":false,\"kind\":\"main-thread-busy\"}}"
+      }
+    ],
+    "structuredContent": {
+      "ok": false,
+      "code": "GUI_NOT_READY",
+      "error": "GUI state is ambiguous or busy; choose an explicit session or inspect doctor before executing code",
+      "details": {
+        "ok": false,
+        "kind": "main-thread-busy"
+      }
+    },
+    "isError": true
+  },
+  "trace": [
+    {
+      "route": "/frame.png?size=560&full=0&area=0"
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "holder": "blender-agent-36304",
+        "op": "start",
+        "name": "interactive",
+        "engine": "workbench",
+        "warmup": false,
+        "isolated": true
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "holder": "blender-agent-36304",
+        "op": "see",
+        "name": "interactive",
+        "spec": {
+          "from": [
+            7,
+            -7,
+            5
+          ],
+          "look_at": [
+            0,
+            0,
+            1
+          ],
+          "width": 560,
+          "height": 315
+        },
+        "isolated": true
+      }
+    },
+    {
+      "route": "/doctor"
+    },
+    {
+      "route": "/doctor"
+    }
+  ]
+}

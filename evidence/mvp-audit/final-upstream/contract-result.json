@@ -1,0 +1,100 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"op\":\"wait\",\"job\":{\"kind\":\"job\",\"id\":\"job-a0fde96e-20f4-4a61-8430-899fef125cba\",\"runId\":\"run-953d8901-fceb-4056-9094-a23e1295bed7\",\"status\":\"done\",\"pid\":40856,\"pidAlive\":false,\"ms\":511,\"timeoutMs\":300000,\"outdir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\contract\",\"outdirWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\contract\",\"logDir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\contract\\\\jobs\\\\job-a0fde96e-20f4-4a61-8430-899fef125cba\",\"logDirWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\contract\\\\jobs\\\\job-a0fde96e-20f4-4a61-8430-899fef125cba\",\"stdoutLog\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\contract\\\\jobs\\\\job-a0fde96e-20f4-4a61-8430-899fef125cba\\\\stdout.log\",\"stderrLog\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\contract\\\\jobs\\\\job-a0fde96e-20f4-4a61-8430-899fef125cba\\\\stderr.log\",\"stdoutLogWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\contract\\\\jobs\\\\job-a0fde96e-20f4-4a61-8430-899fef125cba\\\\stdout.log\",\"stderrLogWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\contract\\\\jobs\\\\job-a0fde96e-20f4-4a61-8430-899fef125cba\\\\stderr.log\",\"exitCode\":0,\"signal\":null,\"engine\":\"none\",\"stage\":{\"name\":\"done\",\"t\":1792714612.895,\"run\":\"run-953d8901-fceb-4056-9094-a23e1295bed7\"},\"stageName\":\"done\",\"stageAt\":1792714612894,\"stageAgoMs\":154,\"lastOutputAt\":1792714612988,\"idleMs\":60,\"lines\":40,\"logBytes\":1996,\"resultJson\":{\"ok\":true,\"passed\":28,\"failed\":0,\"failures\":[],\"outdir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\contract\"},\"result\":{\"ok\":true,\"passed\":28,\"failed\":0,\"failures\":[],\"outdir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\contract\"},\"resultParseError\":null,\"resultPath\":null,\"resultPathWsl\":null,\"resultBytes\":136,\"resultTruncated\":false,\"stdoutTail\":\"DSH_STAGE {\\\"name\\\": \\\"boot\\\", \\\"t\\\": 1792714612.801, \\\"run\\\": \\\"run-953d8901-fceb-4056-9094-a23e1295bed7\\\"}\\r\\nDSH_STAGE {\\\"name\\\": \\\"engine-prelude\\\", \\\"t\\\": 1792714612.801, \\\"run\\\": \\\"run-953d8901-fceb-4056-9094-a23e1295bed7\\\"}\\r\\nDSH_STAGE {\\\"name\\\": \\\"preload-done\\\", \\\"t\\\": 1792714612.812, \\\"run\\\": \\\"run-953d8901-fceb-4056-9094-a23e1295bed7\\\"}\\r\\nCONTRACT_SELFTEST version=3\\r\\n  ok   reset 清空契约\\r\\n  ok   注册组件 seat\\r\\n  ok   注册组件 backrest\\r\\n  ok   组件缺失对象会被标出\\r\\n  ok   注册连接 joint\\r\\n  ok   连接端点未注册时报错\\r\\n  ok   注册包络\\r\\n  ok   包络能抓出越界物件（Stray）\\r\\n  ok   干涉检查：AABB 候选 >= 1\\r\\n  ok   干涉检查：BVH 精查命中 >= 1（互相穿插的方块）\\r\\n  ok   干涉检查耗时被记录\\r\\n  ok   接口间隙可算\\r\\n  ok   未判别连接的 Boolean 被拦\\r\\n  ok   非破坏性操作不拦\\r\\n  skip 证据记账（没有 K.dsh_view_api；用 preload=view 可测）\\r\\n  ok   外部证据：tenon_len 不可辨识 → unresolved\\r\\n  ok   探针读数达标 → supported\\r\\n  ok   可手动回退状态\\r\\n  ok   翻转候选并记历史\\r\\n  ok   非法候选被拒\\r\\n  ok   指纹可取（对象/面数/bbox + 12 位 digest）\\r\\n  ok   verify 记录 bbox 快照\\r\\n  ok   无漂移时不降级\\r\\n  ok   几何漂移 → supported 自动降级 unresolved\\r\\n  ok   降级理由留在 verdict.demoted\\r\\n  ok   降级后 status 变 unresolved\\r\\n  skip 证据 staleness（没有 K.dsh_view_api；用 preload=view,contract 可测）\\r\\n  ok   报告落盘\\r\\n  ok   报告含连接与判定\\r\\n  ok   status 概览正常\\r\\nHEADLESS {\\\"ok\\\": true, \\\"passed\\\": 28, \\\"failed\\\": 0, \\\"failures\\\": [], \\\"outdir\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\final-upstream\\\\\\\\contract\\\"}\\r\\nDSH_STAGE {\\\"name\\\": \\\"script-end\\\", \\\"t\\\": 1792714612.895, \\\"run\\\": \\\"run-953d8901-fceb-4056-9094-a23e1295bed7\\\"}\\r\\nDSH_STAGE {\\\"name\\\": \\\"done\\\", \\\"t\\\": 1792714612.895, \\\"run\\\": \\\"run-953d8901-fceb-4056-9094-a23e1295bed7\\\"}\\r\\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\\n\\nBlender quit\\n\",\"stderrTail\":\"\",\"pathWarnings\":[],\"warnings\":[],\"shots\":null,\"progress\":null,\"progressAt\":null,\"progressAgeMs\":null,\"heartbeat\":null,\"progressHistory\":[],\"scriptStaging\":{\"requested\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-upstream-final\",\"requestedShared\":true,\"requestedWhy\":\"windows\",\"used\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-upstream-final\",\"usedWin\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-upstream-final\\\\dsh_headless_mvk7zrwx.py\",\"usedShared\":true,\"usedWhy\":\"windows\",\"label\":\"workDir\",\"substituted\":false,\"note\":\"workDir 共享性检查通过（windows）\"},\"inputFile\":null,\"scriptFile\":null,\"lastException\":null,\"artifacts\":[{\"name\":\"contract_report.md\",\"bytes\":2242,\"mtimeMs\":1792714612893.6106}],\"waitedMs\":512,\"waitTimedOut\":false},\"jobId\":\"job-a0fde96e-20f4-4a61-8430-899fef125cba\"}"
+    }
+  ],
+  "structuredContent": {
+    "ok": true,
+    "op": "wait",
+    "job": {
+      "kind": "job",
+      "id": "job-a0fde96e-20f4-4a61-8430-899fef125cba",
+      "runId": "run-953d8901-fceb-4056-9094-a23e1295bed7",
+      "status": "done",
+      "pid": 40856,
+      "pidAlive": false,
+      "ms": 511,
+      "timeoutMs": 300000,
+      "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\contract",
+      "outdirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\contract",
+      "logDir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\contract\\jobs\\job-a0fde96e-20f4-4a61-8430-899fef125cba",
+      "logDirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\contract\\jobs\\job-a0fde96e-20f4-4a61-8430-899fef125cba",
+      "stdoutLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\contract\\jobs\\job-a0fde96e-20f4-4a61-8430-899fef125cba\\stdout.log",
+      "stderrLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\contract\\jobs\\job-a0fde96e-20f4-4a61-8430-899fef125cba\\stderr.log",
+      "stdoutLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\contract\\jobs\\job-a0fde96e-20f4-4a61-8430-899fef125cba\\stdout.log",
+      "stderrLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\contract\\jobs\\job-a0fde96e-20f4-4a61-8430-899fef125cba\\stderr.log",
+      "exitCode": 0,
+      "signal": null,
+      "engine": "none",
+      "stage": {
+        "name": "done",
+        "t": 1792714612.895,
+        "run": "run-953d8901-fceb-4056-9094-a23e1295bed7"
+      },
+      "stageName": "done",
+      "stageAt": 1792714612894,
+      "stageAgoMs": 154,
+      "lastOutputAt": 1792714612988,
+      "idleMs": 60,
+      "lines": 40,
+      "logBytes": 1996,
+      "resultJson": {
+        "ok": true,
+        "passed": 28,
+        "failed": 0,
+        "failures": [],
+        "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\contract"
+      },
+      "result": {
+        "ok": true,
+        "passed": 28,
+        "failed": 0,
+        "failures": [],
+        "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\contract"
+      },
+      "resultParseError": null,
+      "resultPath": null,
+      "resultPathWsl": null,
+      "resultBytes": 136,
+      "resultTruncated": false,
+      "stdoutTail": "DSH_STAGE {\"name\": \"boot\", \"t\": 1792714612.801, \"run\": \"run-953d8901-fceb-4056-9094-a23e1295bed7\"}\r\nDSH_STAGE {\"name\": \"engine-prelude\", \"t\": 1792714612.801, \"run\": \"run-953d8901-fceb-4056-9094-a23e1295bed7\"}\r\nDSH_STAGE {\"name\": \"preload-done\", \"t\": 1792714612.812, \"run\": \"run-953d8901-fceb-4056-9094-a23e1295bed7\"}\r\nCONTRACT_SELFTEST version=3\r\n  ok   reset 清空契约\r\n  ok   注册组件 seat\r\n  ok   注册组件 backrest\r\n  ok   组件缺失对象会被标出\r\n  ok   注册连接 joint\r\n  ok   连接端点未注册时报错\r\n  ok   注册包络\r\n  ok   包络能抓出越界物件（Stray）\r\n  ok   干涉检查：AABB 候选 >= 1\r\n  ok   干涉检查：BVH 精查命中 >= 1（互相穿插的方块）\r\n  ok   干涉检查耗时被记录\r\n  ok   接口间隙可算\r\n  ok   未判别连接的 Boolean 被拦\r\n  ok   非破坏性操作不拦\r\n  skip 证据记账（没有 K.dsh_view_api；用 preload=view 可测）\r\n  ok   外部证据：tenon_len 不可辨识 → unresolved\r\n  ok   探针读数达标 → supported\r\n  ok   可手动回退状态\r\n  ok   翻转候选并记历史\r\n  ok   非法候选被拒\r\n  ok   指纹可取（对象/面数/bbox + 12 位 digest）\r\n  ok   verify 记录 bbox 快照\r\n  ok   无漂移时不降级\r\n  ok   几何漂移 → supported 自动降级 unresolved\r\n  ok   降级理由留在 verdict.demoted\r\n  ok   降级后 status 变 unresolved\r\n  skip 证据 staleness（没有 K.dsh_view_api；用 preload=view,contract 可测）\r\n  ok   报告落盘\r\n  ok   报告含连接与判定\r\n  ok   status 概览正常\r\nHEADLESS {\"ok\": true, \"passed\": 28, \"failed\": 0, \"failures\": [], \"outdir\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\contract\"}\r\nDSH_STAGE {\"name\": \"script-end\", \"t\": 1792714612.895, \"run\": \"run-953d8901-fceb-4056-9094-a23e1295bed7\"}\r\nDSH_STAGE {\"name\": \"done\", \"t\": 1792714612.895, \"run\": \"run-953d8901-fceb-4056-9094-a23e1295bed7\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\n\nBlender quit\n",
+      "stderrTail": "",
+      "pathWarnings": [],
+      "warnings": [],
+      "shots": null,
+      "progress": null,
+      "progressAt": null,
+      "progressAgeMs": null,
+      "heartbeat": null,
+      "progressHistory": [],
+      "scriptStaging": {
+        "requested": "E:\\workplace\\blender-server\\tmp\\mvp-upstream-final",
+        "requestedShared": true,
+        "requestedWhy": "windows",
+        "used": "E:\\workplace\\blender-server\\tmp\\mvp-upstream-final",
+        "usedWin": "E:\\workplace\\blender-server\\tmp\\mvp-upstream-final\\dsh_headless_mvk7zrwx.py",
+        "usedShared": true,
+        "usedWhy": "windows",
+        "label": "workDir",
+        "substituted": false,
+        "note": "workDir 共享性检查通过（windows）"
+      },
+      "inputFile": null,
+      "scriptFile": null,
+      "lastException": null,
+      "artifacts": [
+        {
+          "name": "contract_report.md",
+          "bytes": 2242,
+          "mtimeMs": 1792714612893.6106
+        }
+      ],
+      "waitedMs": 512,
+      "waitTimedOut": false
+    },
+    "jobId": "job-a0fde96e-20f4-4a61-8430-899fef125cba"
+  },
+  "isError": false
+}

@@ -1,0 +1,19 @@
+{
+ "id": "job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca",
+ "kind": "job",
+ "status": "done",
+ "exitCode": 0,
+ "signal": null,
+ "startedAt": 1792714613723,
+ "finishedAt": 1792714622607,
+ "ms": 8884,
+ "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\upstream_integration",
+ "script": "E:\\workplace\\blender-server\\tmp\\mvp-upstream-final\\dsh_headless_mvk7zsuv.py",
+ "engine": "none",
+ "runId": "run-3b4bacaa-248c-41fa-9927-f66a93e953c0",
+ "stage": "done",
+ "artifacts": [],
+ "resultSummary": "{\"pass\":128,\"fail\":0,\"fails\":[],\"skipped\":[],\"objects_left\":[]}",
+ "lastException": null,
+ "pluginVersion": "1.0.0"
+}

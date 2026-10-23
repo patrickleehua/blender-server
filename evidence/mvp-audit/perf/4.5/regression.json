@@ -1,0 +1,86 @@
+{
+  "ok": true,
+  "blender": "4.5.15 LTS",
+  "camera_count_before": 0,
+  "camera_count_after": 0,
+  "static_distinct": 1,
+  "animated_distinct": 2,
+  "watch_code_failure": "ValueError: regression",
+  "preset_object_and_scene_dry_run_read_only": true,
+  "perf_eevee_and_cycles_apply_revert": true,
+  "eevee": {
+    "worker": {
+      "engine_mode": "eevee",
+      "gpu_mode": "auto",
+      "backend": "OPENGL",
+      "renderer": "Intel(R) Graphics",
+      "before": {
+        "engine": "BLENDER_EEVEE_NEXT"
+      },
+      "configured": "eevee-rt",
+      "ok": true,
+      "after": {
+        "engine": "BLENDER_EEVEE_NEXT",
+        "rt": true,
+        "samples": 64
+      },
+      "fell_back_to_cpu": false
+    },
+    "perf": {
+      "ok": true,
+      "preset": "eevee-rt",
+      "engine": "BLENDER_EEVEE_NEXT",
+      "preset_applied": true,
+      "before": {
+        "engine": "BLENDER_EEVEE_NEXT",
+        "rt": false,
+        "samples": 16
+      },
+      "after": {
+        "engine": "BLENDER_EEVEE_NEXT",
+        "rt": true,
+        "ray_tracing_method": "SCREEN",
+        "samples": 64,
+        "use_shadows": true
+      },
+      "applied": [
+        "use_raytracing=True",
+        "ray_tracing_method=SCREEN",
+        "use_shadows=True",
+        "shadow_ray_count=2",
+        "shadow_step_count=8",
+        "taa_render_samples=64"
+      ],
+      "skipped_cycles_only": [
+        "persistent_data",
+        "denoising_use_gpu(OptiX)",
+        "auto_tile off",
+        "samples cap"
+      ],
+      "note": "\u5f53\u524d\u5f15\u64ce\u662f EEVEE\uff1aCycles \u4e13\u5c5e\u9879\u4e0d\u9002\u7528\uff0c\u5df2\u663e\u5f0f\u8df3\u8fc7"
+    },
+    "headless_prelude": {
+      "mode": "eevee",
+      "manual": false,
+      "backend": "OPENGL",
+      "renderer": "Intel(R) Graphics",
+      "before": {
+        "engine": "BLENDER_EEVEE_NEXT",
+        "rt": false,
+        "samples": 24
+      },
+      "configured": "eevee-rt",
+      "after": {
+        "engine": "BLENDER_EEVEE_NEXT",
+        "rt": true,
+        "ray_method": "SCREEN",
+        "samples": 64
+      },
+      "fell_back_to_cpu": false,
+      "ok": true
+    },
+    "png": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\perf\\4.5\\eevee.png",
+    "width": 128,
+    "height": 72
+  }
+}

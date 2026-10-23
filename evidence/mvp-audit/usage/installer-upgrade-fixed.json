@@ -1,0 +1,782 @@
+{
+  "source": "scripts/portable-setup.mjs copied unchanged into isolated package layout",
+  "pkg": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\installer-fixed\\独立 包",
+  "project": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\installer-fixed\\已有 配置 项目",
+  "existingConfigPreserved": true,
+  "traces": [
+    {
+      "label": "dry-run",
+      "exit": 0,
+      "args": [
+        "--dry-run"
+      ],
+      "result": {
+        "mode": "dry-run",
+        "operation": "install",
+        "project": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\installer-fixed\\已有 配置 项目",
+        "plan": [
+          {
+            "path": ".agents/skills/blender-agent/agents/openai.yaml",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/LICENSE",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/NOTICE.md",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/acceptance.md",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/safety.md",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/tools.md",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/workflows.md",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/SKILL.md",
+            "action": "create"
+          },
+          {
+            "path": ".blender-agent/config-candidates/codex.toml",
+            "action": "create"
+          },
+          {
+            "path": ".codex/config.toml",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/agents/openai.yaml",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/LICENSE",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/NOTICE.md",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/acceptance.md",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/safety.md",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/tools.md",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/workflows.md",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/SKILL.md",
+            "action": "create"
+          },
+          {
+            "path": ".blender-agent/config-candidates/claude.json",
+            "action": "create"
+          },
+          {
+            "path": ".mcp.json",
+            "action": "preserve-existing",
+            "mergeFrom": ".blender-agent/config-candidates/claude.json"
+          }
+        ],
+        "cli": "E:/workplace/blender-server/tmp/mvp-usage-audit/installer-fixed/独立 包/dist/cli.js",
+        "note": "Project-local files only. Existing host configs require manual review/merge. Restart/reload the host, then run real acceptance."
+      },
+      "before": {
+        ".mcp.json": "41049d2f4bb9863ab5b79df13f3fc53744b5bf8b5fb8798c55c68e45b54d58e6"
+      },
+      "after": {
+        ".mcp.json": "41049d2f4bb9863ab5b79df13f3fc53744b5bf8b5fb8798c55c68e45b54d58e6"
+      }
+    },
+    {
+      "label": "install",
+      "exit": 0,
+      "args": [
+        "--apply"
+      ],
+      "result": {
+        "mode": "applied",
+        "operation": "install",
+        "project": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\installer-fixed\\已有 配置 项目",
+        "plan": [
+          {
+            "path": ".agents/skills/blender-agent/agents/openai.yaml",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/LICENSE",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/NOTICE.md",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/acceptance.md",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/safety.md",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/tools.md",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/workflows.md",
+            "action": "create"
+          },
+          {
+            "path": ".agents/skills/blender-agent/SKILL.md",
+            "action": "create"
+          },
+          {
+            "path": ".blender-agent/config-candidates/codex.toml",
+            "action": "create"
+          },
+          {
+            "path": ".codex/config.toml",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/agents/openai.yaml",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/LICENSE",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/NOTICE.md",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/acceptance.md",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/safety.md",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/tools.md",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/workflows.md",
+            "action": "create"
+          },
+          {
+            "path": ".claude/skills/blender-agent/SKILL.md",
+            "action": "create"
+          },
+          {
+            "path": ".blender-agent/config-candidates/claude.json",
+            "action": "create"
+          },
+          {
+            "path": ".mcp.json",
+            "action": "preserve-existing",
+            "mergeFrom": ".blender-agent/config-candidates/claude.json"
+          }
+        ],
+        "cli": "E:/workplace/blender-server/tmp/mvp-usage-audit/installer-fixed/独立 包/dist/cli.js",
+        "note": "Project-local files only. Existing host configs require manual review/merge. Restart/reload the host, then run real acceptance."
+      },
+      "before": {
+        ".mcp.json": "41049d2f4bb9863ab5b79df13f3fc53744b5bf8b5fb8798c55c68e45b54d58e6"
+      },
+      "after": {
+        ".agents/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".agents/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".agents/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".agents/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".agents/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".agents/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".agents/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".agents/skills/blender-agent/SKILL.md": "d465c9226b414606de911e7b012e59b33bfdcae4d67e63d28e30e28580c7fd2d",
+        ".blender-agent/config-candidates/claude.json": "5759306f55119743153bce9b750687eb5770ddd25fa0e6d835414c5e63f92e14",
+        ".blender-agent/config-candidates/codex.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".blender-agent/install-manifest.json": "2c1f9fbf5b4594e38c9d2044195e7168c2b6df96553500ad5f735a4021b1fed6",
+        ".claude/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".claude/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".claude/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".claude/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".claude/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".claude/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".claude/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".claude/skills/blender-agent/SKILL.md": "d465c9226b414606de911e7b012e59b33bfdcae4d67e63d28e30e28580c7fd2d",
+        ".codex/config.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".mcp.json": "41049d2f4bb9863ab5b79df13f3fc53744b5bf8b5fb8798c55c68e45b54d58e6"
+      }
+    },
+    {
+      "label": "repeat-install",
+      "exit": 0,
+      "args": [
+        "--apply"
+      ],
+      "result": {
+        "mode": "applied",
+        "operation": "install",
+        "project": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\installer-fixed\\已有 配置 项目",
+        "plan": [
+          {
+            "path": ".agents/skills/blender-agent/agents/openai.yaml",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/LICENSE",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/NOTICE.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/acceptance.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/safety.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/tools.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/workflows.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/SKILL.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".blender-agent/config-candidates/codex.toml",
+            "action": "unchanged"
+          },
+          {
+            "path": ".codex/config.toml",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/agents/openai.yaml",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/LICENSE",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/NOTICE.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/acceptance.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/safety.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/tools.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/workflows.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/SKILL.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".blender-agent/config-candidates/claude.json",
+            "action": "unchanged"
+          },
+          {
+            "path": ".mcp.json",
+            "action": "preserve-existing",
+            "mergeFrom": ".blender-agent/config-candidates/claude.json"
+          }
+        ],
+        "cli": "E:/workplace/blender-server/tmp/mvp-usage-audit/installer-fixed/独立 包/dist/cli.js",
+        "note": "Project-local files only. Existing host configs require manual review/merge. Restart/reload the host, then run real acceptance."
+      },
+      "before": {
+        ".agents/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".agents/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".agents/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".agents/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".agents/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".agents/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".agents/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".agents/skills/blender-agent/SKILL.md": "d465c9226b414606de911e7b012e59b33bfdcae4d67e63d28e30e28580c7fd2d",
+        ".blender-agent/config-candidates/claude.json": "5759306f55119743153bce9b750687eb5770ddd25fa0e6d835414c5e63f92e14",
+        ".blender-agent/config-candidates/codex.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".blender-agent/install-manifest.json": "2c1f9fbf5b4594e38c9d2044195e7168c2b6df96553500ad5f735a4021b1fed6",
+        ".claude/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".claude/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".claude/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".claude/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".claude/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".claude/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".claude/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".claude/skills/blender-agent/SKILL.md": "d465c9226b414606de911e7b012e59b33bfdcae4d67e63d28e30e28580c7fd2d",
+        ".codex/config.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".mcp.json": "41049d2f4bb9863ab5b79df13f3fc53744b5bf8b5fb8798c55c68e45b54d58e6"
+      },
+      "after": {
+        ".agents/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".agents/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".agents/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".agents/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".agents/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".agents/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".agents/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".agents/skills/blender-agent/SKILL.md": "d465c9226b414606de911e7b012e59b33bfdcae4d67e63d28e30e28580c7fd2d",
+        ".blender-agent/config-candidates/claude.json": "5759306f55119743153bce9b750687eb5770ddd25fa0e6d835414c5e63f92e14",
+        ".blender-agent/config-candidates/codex.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".blender-agent/install-manifest.json": "2c1f9fbf5b4594e38c9d2044195e7168c2b6df96553500ad5f735a4021b1fed6",
+        ".claude/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".claude/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".claude/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".claude/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".claude/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".claude/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".claude/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".claude/skills/blender-agent/SKILL.md": "d465c9226b414606de911e7b012e59b33bfdcae4d67e63d28e30e28580c7fd2d",
+        ".codex/config.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".mcp.json": "41049d2f4bb9863ab5b79df13f3fc53744b5bf8b5fb8798c55c68e45b54d58e6"
+      }
+    },
+    {
+      "label": "upgrade-unmodified-installer-owned-skill",
+      "exit": 0,
+      "args": [
+        "--apply"
+      ],
+      "result": {
+        "mode": "applied",
+        "operation": "install",
+        "project": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\installer-fixed\\已有 配置 项目",
+        "plan": [
+          {
+            "path": ".agents/skills/blender-agent/agents/openai.yaml",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/LICENSE",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/NOTICE.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/acceptance.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/safety.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/tools.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/workflows.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".agents/skills/blender-agent/SKILL.md",
+            "action": "update"
+          },
+          {
+            "path": ".blender-agent/config-candidates/codex.toml",
+            "action": "unchanged"
+          },
+          {
+            "path": ".codex/config.toml",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/agents/openai.yaml",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/LICENSE",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/NOTICE.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/acceptance.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/safety.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/tools.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/workflows.md",
+            "action": "unchanged"
+          },
+          {
+            "path": ".claude/skills/blender-agent/SKILL.md",
+            "action": "update"
+          },
+          {
+            "path": ".blender-agent/config-candidates/claude.json",
+            "action": "unchanged"
+          },
+          {
+            "path": ".mcp.json",
+            "action": "preserve-existing",
+            "mergeFrom": ".blender-agent/config-candidates/claude.json"
+          }
+        ],
+        "cli": "E:/workplace/blender-server/tmp/mvp-usage-audit/installer-fixed/独立 包/dist/cli.js",
+        "note": "Project-local files only. Existing host configs require manual review/merge. Restart/reload the host, then run real acceptance."
+      },
+      "before": {
+        ".agents/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".agents/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".agents/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".agents/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".agents/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".agents/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".agents/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".agents/skills/blender-agent/SKILL.md": "d465c9226b414606de911e7b012e59b33bfdcae4d67e63d28e30e28580c7fd2d",
+        ".blender-agent/config-candidates/claude.json": "5759306f55119743153bce9b750687eb5770ddd25fa0e6d835414c5e63f92e14",
+        ".blender-agent/config-candidates/codex.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".blender-agent/install-manifest.json": "2c1f9fbf5b4594e38c9d2044195e7168c2b6df96553500ad5f735a4021b1fed6",
+        ".claude/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".claude/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".claude/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".claude/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".claude/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".claude/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".claude/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".claude/skills/blender-agent/SKILL.md": "d465c9226b414606de911e7b012e59b33bfdcae4d67e63d28e30e28580c7fd2d",
+        ".codex/config.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".mcp.json": "41049d2f4bb9863ab5b79df13f3fc53744b5bf8b5fb8798c55c68e45b54d58e6"
+      },
+      "after": {
+        ".agents/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".agents/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".agents/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".agents/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".agents/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".agents/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".agents/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".agents/skills/blender-agent/SKILL.md": "4426660c8d1e16255542acf7606dda9967b75581286e492e8f12e3d5717a4390",
+        ".blender-agent/config-candidates/claude.json": "5759306f55119743153bce9b750687eb5770ddd25fa0e6d835414c5e63f92e14",
+        ".blender-agent/config-candidates/codex.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".blender-agent/install-manifest.json": "73f2f20d244eac58c3a83fb68f4aa4c693eb94ba5876475a36c0456825876e5f",
+        ".claude/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".claude/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".claude/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".claude/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".claude/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".claude/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".claude/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".claude/skills/blender-agent/SKILL.md": "4426660c8d1e16255542acf7606dda9967b75581286e492e8f12e3d5717a4390",
+        ".codex/config.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".mcp.json": "41049d2f4bb9863ab5b79df13f3fc53744b5bf8b5fb8798c55c68e45b54d58e6"
+      }
+    },
+    {
+      "label": "uninstall-after-user-edit-preview",
+      "exit": 0,
+      "args": [
+        "--uninstall",
+        "--dry-run"
+      ],
+      "result": {
+        "mode": "dry-run",
+        "operation": "uninstall",
+        "project": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\installer-fixed\\已有 配置 项目",
+        "plan": [
+          {
+            "path": ".agents/skills/blender-agent/agents/openai.yaml",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/LICENSE",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/NOTICE.md",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/acceptance.md",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/safety.md",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/tools.md",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/workflows.md",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/SKILL.md",
+            "action": "preserve-modified"
+          },
+          {
+            "path": ".blender-agent/config-candidates/codex.toml",
+            "action": "remove"
+          },
+          {
+            "path": ".codex/config.toml",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/agents/openai.yaml",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/LICENSE",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/NOTICE.md",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/acceptance.md",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/safety.md",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/tools.md",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/workflows.md",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/SKILL.md",
+            "action": "remove"
+          },
+          {
+            "path": ".blender-agent/config-candidates/claude.json",
+            "action": "remove"
+          }
+        ],
+        "note": "Only unchanged installer-owned files are removed. Directories and runtime/output files remain."
+      },
+      "before": {
+        ".agents/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".agents/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".agents/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".agents/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".agents/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".agents/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".agents/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".agents/skills/blender-agent/SKILL.md": "d1dac237fa769a6495145ae87ee1bc4e0e1566496fe98d5fa9cf606203dd535a",
+        ".blender-agent/config-candidates/claude.json": "5759306f55119743153bce9b750687eb5770ddd25fa0e6d835414c5e63f92e14",
+        ".blender-agent/config-candidates/codex.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".blender-agent/install-manifest.json": "73f2f20d244eac58c3a83fb68f4aa4c693eb94ba5876475a36c0456825876e5f",
+        ".blender-agent/runtime/keep.blend": "90b4a03dba2bdf94727324614668ec8d47097cef806ad5f489ddadbc5c654fed",
+        ".claude/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".claude/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".claude/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".claude/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".claude/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".claude/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".claude/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".claude/skills/blender-agent/SKILL.md": "4426660c8d1e16255542acf7606dda9967b75581286e492e8f12e3d5717a4390",
+        ".codex/config.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".mcp.json": "41049d2f4bb9863ab5b79df13f3fc53744b5bf8b5fb8798c55c68e45b54d58e6"
+      },
+      "after": {
+        ".agents/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".agents/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".agents/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".agents/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".agents/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".agents/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".agents/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".agents/skills/blender-agent/SKILL.md": "d1dac237fa769a6495145ae87ee1bc4e0e1566496fe98d5fa9cf606203dd535a",
+        ".blender-agent/config-candidates/claude.json": "5759306f55119743153bce9b750687eb5770ddd25fa0e6d835414c5e63f92e14",
+        ".blender-agent/config-candidates/codex.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".blender-agent/install-manifest.json": "73f2f20d244eac58c3a83fb68f4aa4c693eb94ba5876475a36c0456825876e5f",
+        ".blender-agent/runtime/keep.blend": "90b4a03dba2bdf94727324614668ec8d47097cef806ad5f489ddadbc5c654fed",
+        ".claude/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".claude/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".claude/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".claude/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".claude/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".claude/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".claude/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".claude/skills/blender-agent/SKILL.md": "4426660c8d1e16255542acf7606dda9967b75581286e492e8f12e3d5717a4390",
+        ".codex/config.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".mcp.json": "41049d2f4bb9863ab5b79df13f3fc53744b5bf8b5fb8798c55c68e45b54d58e6"
+      }
+    },
+    {
+      "label": "uninstall-after-user-edit",
+      "exit": 0,
+      "args": [
+        "--uninstall",
+        "--apply"
+      ],
+      "result": {
+        "mode": "applied",
+        "operation": "uninstall",
+        "project": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\installer-fixed\\已有 配置 项目",
+        "plan": [
+          {
+            "path": ".agents/skills/blender-agent/agents/openai.yaml",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/LICENSE",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/NOTICE.md",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/acceptance.md",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/safety.md",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/tools.md",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/references/workflows.md",
+            "action": "remove"
+          },
+          {
+            "path": ".agents/skills/blender-agent/SKILL.md",
+            "action": "preserve-modified"
+          },
+          {
+            "path": ".blender-agent/config-candidates/codex.toml",
+            "action": "remove"
+          },
+          {
+            "path": ".codex/config.toml",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/agents/openai.yaml",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/LICENSE",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/NOTICE.md",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/acceptance.md",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/safety.md",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/tools.md",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/references/workflows.md",
+            "action": "remove"
+          },
+          {
+            "path": ".claude/skills/blender-agent/SKILL.md",
+            "action": "remove"
+          },
+          {
+            "path": ".blender-agent/config-candidates/claude.json",
+            "action": "remove"
+          }
+        ],
+        "note": "Only unchanged installer-owned files are removed. Directories and runtime/output files remain."
+      },
+      "before": {
+        ".agents/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".agents/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".agents/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".agents/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".agents/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".agents/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".agents/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".agents/skills/blender-agent/SKILL.md": "d1dac237fa769a6495145ae87ee1bc4e0e1566496fe98d5fa9cf606203dd535a",
+        ".blender-agent/config-candidates/claude.json": "5759306f55119743153bce9b750687eb5770ddd25fa0e6d835414c5e63f92e14",
+        ".blender-agent/config-candidates/codex.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".blender-agent/install-manifest.json": "73f2f20d244eac58c3a83fb68f4aa4c693eb94ba5876475a36c0456825876e5f",
+        ".blender-agent/runtime/keep.blend": "90b4a03dba2bdf94727324614668ec8d47097cef806ad5f489ddadbc5c654fed",
+        ".claude/skills/blender-agent/agents/openai.yaml": "c5754d4b77fe72b47b4f4eb88502e766a3d30129c7081e5cb46da3aab600940f",
+        ".claude/skills/blender-agent/LICENSE": "1271b600869c0a1a942be929a3382f0816799707aeedbdca1086d0b8ae240c5e",
+        ".claude/skills/blender-agent/NOTICE.md": "801fd6b7755fc122cf20f7bdcf2ed79804c496068252a60cb685e94078d47606",
+        ".claude/skills/blender-agent/references/acceptance.md": "168df7f27ffa444fa5ed271276e2a7028458222499c4ddd3d1f41fd9f91c7b5f",
+        ".claude/skills/blender-agent/references/safety.md": "08f50182a86f27decd60d7db06994eb9b2f14213c11394fa1bed2fe059f5d43c",
+        ".claude/skills/blender-agent/references/tools.md": "5446686cda6fdd284ed0d5e782f235cf319075fb6163be2c8476b29838ed5345",
+        ".claude/skills/blender-agent/references/workflows.md": "a4f32abe9519fb551f7a5aa3383635663dede43ffcf7b09e8b48ffcc897ce3ee",
+        ".claude/skills/blender-agent/SKILL.md": "4426660c8d1e16255542acf7606dda9967b75581286e492e8f12e3d5717a4390",
+        ".codex/config.toml": "e216cd40138f3e507d7b52f4a9f346d6aa1b6d4ab865f15d6c92c865da40fdeb",
+        ".mcp.json": "41049d2f4bb9863ab5b79df13f3fc53744b5bf8b5fb8798c55c68e45b54d58e6"
+      },
+      "after": {
+        ".agents/skills/blender-agent/SKILL.md": "d1dac237fa769a6495145ae87ee1bc4e0e1566496fe98d5fa9cf606203dd535a",
+        ".blender-agent/install-manifest.json": "d02849db507a3a6aecf98d96744a22ee72799c9c1a003d1e915492ba60cb0713",
+        ".blender-agent/runtime/keep.blend": "90b4a03dba2bdf94727324614668ec8d47097cef806ad5f489ddadbc5c654fed",
+        ".mcp.json": "41049d2f4bb9863ab5b79df13f3fc53744b5bf8b5fb8798c55c68e45b54d58e6"
+      }
+    }
+  ]
+}

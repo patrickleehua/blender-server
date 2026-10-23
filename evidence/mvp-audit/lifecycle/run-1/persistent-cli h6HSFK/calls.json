@@ -1,0 +1,233 @@
+[
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_do",
+      "--json",
+      "{\"session\":\"cli-kept\",\"see\":false,\"code\":\"raise RuntimeError(\\\"must-not-run\\\")\"}",
+      "--holder",
+      "lifecycle-stable-holder"
+    ],
+    "status": 1,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":false,\\\"code\\\":\\\"PERSISTENT_BACKEND_REQUIRED\\\",\\\"error\\\":\\\"Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\\\"}\"}],\"structuredContent\":{\"ok\":false,\"code\":\"PERSISTENT_BACKEND_REQUIRED\",\"error\":\"Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\"},\"isError\":true}\n",
+    "stderr": "[blender-agent] Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\n"
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_do",
+      "--json",
+      "{\"see\":false,\"code\":\"raise RuntimeError(\\\"implicit-must-not-run\\\")\"}",
+      "--holder",
+      "lifecycle-stable-holder"
+    ],
+    "status": 1,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":false,\\\"code\\\":\\\"PERSISTENT_BACKEND_REQUIRED\\\",\\\"error\\\":\\\"Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\\\"}\"}],\"structuredContent\":{\"ok\":false,\"code\":\"PERSISTENT_BACKEND_REQUIRED\",\"error\":\"Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\"},\"isError\":true}\n",
+    "stderr": "[blender-agent] Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\n"
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_see",
+      "--json",
+      "{\"session\":\"cli-kept\",\"view_size\":\"120x120\"}",
+      "--holder",
+      "lifecycle-stable-holder"
+    ],
+    "status": 1,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":false,\\\"code\\\":\\\"PERSISTENT_BACKEND_REQUIRED\\\",\\\"error\\\":\\\"Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\\\"}\"}],\"structuredContent\":{\"ok\":false,\"code\":\"PERSISTENT_BACKEND_REQUIRED\",\"error\":\"Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\"},\"isError\":true}\n",
+    "stderr": "[blender-agent] Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\n"
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_watch",
+      "--json",
+      "{\"session\":\"cli-kept\",\"seconds\":0.2,\"fps\":1}",
+      "--holder",
+      "lifecycle-stable-holder"
+    ],
+    "status": 1,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":false,\\\"code\\\":\\\"PERSISTENT_BACKEND_REQUIRED\\\",\\\"error\\\":\\\"Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\\\"}\"}],\"structuredContent\":{\"ok\":false,\"code\":\"PERSISTENT_BACKEND_REQUIRED\",\"error\":\"Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\"},\"isError\":true}\n",
+    "stderr": "[blender-agent] Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\n"
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_plan",
+      "--json",
+      "{\"session\":\"cli-kept\",\"op\":\"audit_mesh\",\"args\":{\"objects\":[\"Cube\"]}}",
+      "--holder",
+      "lifecycle-stable-holder"
+    ],
+    "status": 1,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":false,\\\"code\\\":\\\"PERSISTENT_BACKEND_REQUIRED\\\",\\\"error\\\":\\\"Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\\\"}\"}],\"structuredContent\":{\"ok\":false,\"code\":\"PERSISTENT_BACKEND_REQUIRED\",\"error\":\"Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\"},\"isError\":true}\n",
+    "stderr": "[blender-agent] Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.\n"
+  },
+  {
+    "label": "cli",
+    "args": [
+      "backend",
+      "start"
+    ],
+    "status": 0,
+    "stdout": "{\"ok\":true,\"pid\":4628,\"instance\":\"5c4346c2-7f69-4ac8-ac6e-ac0808f06e09\",\"fingerprint\":\"9dcb840637e8f20683d568a2d2b7fc1ee396460225c05366089c1046d39611b0\",\"port\":51881,\"startedAt\":\"2026-10-22T19:29:01.928Z\",\"workdir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\lifecycle\\\\run-1\\\\persistent-cli h6HSFK\\\\work 中文 空格\",\"blender\":\"E:\\\\workplace\\\\blender-server\\\\.local\\\\blender-5.0.1-windows-x64\\\\blender.exe\",\"addonPort\":51882,\"workerPort\":51883,\"persistent\":true}\n",
+    "stderr": ""
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_do",
+      "--json",
+      "{\"session\":\"cli-kept\",\"see\":false,\"code\":\"K.marker=\\\"wrong-holder\\\"\"}"
+    ],
+    "status": 1,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":false,\\\"code\\\":\\\"EXPLICIT_HOLDER_REQUIRED\\\",\\\"error\\\":\\\"Use --holder <session-id> (or BLENDER_AGENT_HOLDER) consistently for scene calls across CLI processes. Different agents use different holders and worker names.\\\"}\"}],\"structuredContent\":{\"ok\":false,\"code\":\"EXPLICIT_HOLDER_REQUIRED\",\"error\":\"Use --holder <session-id> (or BLENDER_AGENT_HOLDER) consistently for scene calls across CLI processes. Different agents use different holders and worker names.\"},\"isError\":true}\n",
+    "stderr": "[blender-agent] Use --holder <session-id> (or BLENDER_AGENT_HOLDER) consistently for scene calls across CLI processes. Different agents use different holders and worker names.\n"
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_do",
+      "--json",
+      "{\"session\":\"cli-kept\",\"see\":false,\"code\":\"import bpy\\nbpy.ops.mesh.primitive_cube_add()\\nbpy.context.object.name=\\\"CliPersistentCube\\\"\\nK.marker=\\\"stable-across-cli\\\"\"}",
+      "--holder",
+      "lifecycle-stable-holder"
+    ],
+    "status": 0,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":true,\\\"op\\\":\\\"exec\\\",\\\"result\\\":{\\\"id\\\":731484670,\\\"ok\\\":true,\\\"ms\\\":1,\\\"stdout\\\":\\\"\\\",\\\"stderr\\\":\\\"\\\",\\\"result\\\":null,\\\"error\\\":null,\\\"traceback\\\":null},\\\"error\\\":null,\\\"traceback\\\":null}\"}],\"structuredContent\":{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":731484670,\"ok\":true,\"ms\":1,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null},\"isError\":false}\n",
+    "stderr": ""
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_worker",
+      "--json",
+      "{\"op\":\"status\",\"name\":\"cli-kept\"}",
+      "--holder",
+      "lifecycle-stable-holder"
+    ],
+    "status": 0,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":true,\\\"op\\\":\\\"status\\\",\\\"result\\\":{\\\"name\\\":\\\"cli-kept\\\",\\\"holder\\\":\\\"lifecycle-stable-holder\\\",\\\"alive\\\":true,\\\"ready\\\":true,\\\"pid\\\":45716,\\\"port\\\":51883,\\\"uptimeMs\\\":716,\\\"idleMs\\\":0,\\\"inflight\\\":0,\\\"gpu\\\":{\\\"engine_mode\\\":\\\"workbench\\\",\\\"gpu_mode\\\":\\\"auto\\\",\\\"backend\\\":\\\"n/a: GPU functions for drawing are not available in background mo\\\",\\\"before\\\":{\\\"engine\\\":\\\"BLENDER_EEVEE\\\"},\\\"ok\\\":true,\\\"skipped\\\":false,\\\"configured\\\":\\\"workbench\\\",\\\"after\\\":{\\\"engine\\\":\\\"BLENDER_WORKBENCH\\\"},\\\"fell_back_to_cpu\\\":false},\\\"boot\\\":{\\\"ok\\\":true,\\\"skipped\\\":true},\\\"lastError\\\":null,\\\"stdoutTail\\\":\\\"DSH_WORKER {\\\\\\\"ready\\\\\\\": true, \\\\\\\"port\\\\\\\": 51883, \\\\\\\"pid\\\\\\\": 45716, \\\\\\\"version\\\\\\\": 2, \\\\\\\"gpu\\\\\\\": {\\\\\\\"engine_mode\\\\\\\": \\\\\\\"workbench\\\\\\\", \\\\\\\"gpu_mode\\\\\\\": \\\\\\\"auto\\\\\\\", \\\\\\\"backend\\\\\\\": \\\\\\\"n/a: GPU functions for drawing are not available in background mo\\\\\\\", \\\\\\\"before\\\\\\\": {\\\\\\\"engine\\\\\\\": \\\\\\\"BLENDER_EEVEE\\\\\\\"}, \\\\\\\"ok\\\\\\\": true, \\\\\\\"skipped\\\\\\\": false, \\\\\\\"configured\\\\\\\": \\\\\\\"workbench\\\\\\\", \\\\\\\"after\\\\\\\": {\\\\\\\"engine\\\\\\\": \\\\\\\"BLENDER_WORKBENCH\\\\\\\"}, \\\\\\\"fell_back_to_cpu\\\\\\\": false}, \\\\\\\"boot\\\\\\\": {\\\\\\\"ok\\\\\\\": true, \\\\\\\"skipped\\\\\\\": true}, \\\\\\\"blender\\\\\\\": \\\\\\\"5.0.1\\\\\\\"}\\\\r\\\\n\\\",\\\"status\\\":{\\\"ok\\\":true,\\\"version\\\":2,\\\"pid\\\":45716,\\\"uptime_s\\\":0,\\\"calls\\\":1,\\\"errors\\\":0,\\\"objects\\\":4,\\\"file\\\":null,\\\"kernel_modules\\\":[],\\\"boot\\\":{\\\"ok\\\":true,\\\"skipped\\\":true},\\\"frame_dir\\\":\\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\lifecycle\\\\\\\\run-1\\\\\\\\persistent-cli h6HSFK\\\\\\\\work 中文 空格\\\",\\\"gpu\\\":{\\\"engine_mode\\\":\\\"workbench\\\",\\\"gpu_mode\\\":\\\"auto\\\",\\\"backend\\\":\\\"n/a: GPU functions for drawing are not available in background mo\\\",\\\"before\\\":{\\\"engine\\\":\\\"BLENDER_EEVEE\\\"},\\\"ok\\\":true,\\\"skipped\\\":false,\\\"configured\\\":\\\"workbench\\\",\\\"after\\\":{\\\"engine\\\":\\\"BLENDER_WORKBENCH\\\"},\\\"fell_back_to_cpu\\\":false}}}}\"}],\"structuredContent\":{\"ok\":true,\"op\":\"status\",\"result\":{\"name\":\"cli-kept\",\"holder\":\"lifecycle-stable-holder\",\"alive\":true,\"ready\":true,\"pid\":45716,\"port\":51883,\"uptimeMs\":716,\"idleMs\":0,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 51883, \\\"pid\\\": 45716, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"5.0.1\\\"}\\r\\n\",\"status\":{\"ok\":true,\"version\":2,\"pid\":45716,\"uptime_s\":0,\"calls\":1,\"errors\":0,\"objects\":4,\"file\":null,\"kernel_modules\":[],\"boot\":{\"ok\":true,\"skipped\":true},\"frame_dir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\lifecycle\\\\run-1\\\\persistent-cli h6HSFK\\\\work 中文 空格\",\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false}}}},\"isError\":false}\n",
+    "stderr": ""
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_do",
+      "--json",
+      "{\"session\":\"cli-kept\",\"see\":false,\"code\":\"assert K.marker==\\\"stable-across-cli\\\" and \\\"CliPersistentCube\\\" in bpy.data.objects\"}",
+      "--holder",
+      "lifecycle-stable-holder"
+    ],
+    "status": 0,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":true,\\\"op\\\":\\\"exec\\\",\\\"result\\\":{\\\"id\\\":338445529,\\\"ok\\\":true,\\\"ms\\\":0,\\\"stdout\\\":\\\"\\\",\\\"stderr\\\":\\\"\\\",\\\"result\\\":null,\\\"error\\\":null,\\\"traceback\\\":null},\\\"error\\\":null,\\\"traceback\\\":null}\"}],\"structuredContent\":{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":338445529,\"ok\":true,\"ms\":0,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null},\"isError\":false}\n",
+    "stderr": ""
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_do",
+      "--json",
+      "{\"session\":\"cli-kept\",\"see\":false,\"code\":\"K.marker=\\\"must-not-change\\\"\"}"
+    ],
+    "status": 1,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":false,\\\"code\\\":\\\"EXPLICIT_HOLDER_REQUIRED\\\",\\\"error\\\":\\\"Use --holder <session-id> (or BLENDER_AGENT_HOLDER) consistently for scene calls across CLI processes. Different agents use different holders and worker names.\\\"}\"}],\"structuredContent\":{\"ok\":false,\"code\":\"EXPLICIT_HOLDER_REQUIRED\",\"error\":\"Use --holder <session-id> (or BLENDER_AGENT_HOLDER) consistently for scene calls across CLI processes. Different agents use different holders and worker names.\"},\"isError\":true}\n",
+    "stderr": "[blender-agent] Use --holder <session-id> (or BLENDER_AGENT_HOLDER) consistently for scene calls across CLI processes. Different agents use different holders and worker names.\n"
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_worker",
+      "--json",
+      "{\"op\":\"stop\",\"name\":\"cli-kept\"}"
+    ],
+    "status": 1,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":false,\\\"code\\\":\\\"EXPLICIT_HOLDER_REQUIRED\\\",\\\"error\\\":\\\"Use --holder <session-id> (or BLENDER_AGENT_HOLDER) consistently for scene calls across CLI processes. Different agents use different holders and worker names.\\\"}\"}],\"structuredContent\":{\"ok\":false,\"code\":\"EXPLICIT_HOLDER_REQUIRED\",\"error\":\"Use --holder <session-id> (or BLENDER_AGENT_HOLDER) consistently for scene calls across CLI processes. Different agents use different holders and worker names.\"},\"isError\":true}\n",
+    "stderr": "[blender-agent] Use --holder <session-id> (or BLENDER_AGENT_HOLDER) consistently for scene calls across CLI processes. Different agents use different holders and worker names.\n"
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_do",
+      "--json",
+      "{\"session\":\"cli-kept\",\"see\":false,\"code\":\"raise RuntimeError(\\\"expected CLI lifecycle error\\\")\"}",
+      "--holder",
+      "lifecycle-stable-holder"
+    ],
+    "status": 1,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":false,\\\"op\\\":\\\"exec\\\",\\\"result\\\":{\\\"id\\\":933355892,\\\"ok\\\":false,\\\"ms\\\":0,\\\"stdout\\\":\\\"\\\",\\\"stderr\\\":\\\"\\\",\\\"result\\\":null,\\\"error\\\":\\\"RuntimeError: expected CLI lifecycle error\\\",\\\"traceback\\\":\\\"Traceback (most recent call last):\\\\n  File \\\\\\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\packages\\\\\\\\blender-agent\\\\\\\\assets\\\\\\\\runtime\\\\\\\\worker.py\\\\\\\", line 485, in _exec\\\\n    exec(compile(code, \\\\\\\"<dsh_worker>\\\\\\\", \\\\\\\"exec\\\\\\\"), ns)\\\\n  File \\\\\\\"<dsh_worker>\\\\\\\", line 1, in <module>\\\\nRuntimeError: expected CLI lifecycle error\\\\n\\\"},\\\"error\\\":\\\"RuntimeError: expected CLI lifecycle error\\\",\\\"traceback\\\":\\\"Traceback (most recent call last):\\\\n  File \\\\\\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\packages\\\\\\\\blender-agent\\\\\\\\assets\\\\\\\\runtime\\\\\\\\worker.py\\\\\\\", line 485, in _exec\\\\n    exec(compile(code, \\\\\\\"<dsh_worker>\\\\\\\", \\\\\\\"exec\\\\\\\"), ns)\\\\n  File \\\\\\\"<dsh_worker>\\\\\\\", line 1, in <module>\\\\nRuntimeError: expected CLI lifecycle error\\\\n\\\"}\"}],\"structuredContent\":{\"ok\":false,\"op\":\"exec\",\"result\":{\"id\":933355892,\"ok\":false,\"ms\":0,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":\"RuntimeError: expected CLI lifecycle error\",\"traceback\":\"Traceback (most recent call last):\\n  File \\\"E:\\\\workplace\\\\blender-server\\\\packages\\\\blender-agent\\\\assets\\\\runtime\\\\worker.py\\\", line 485, in _exec\\n    exec(compile(code, \\\"<dsh_worker>\\\", \\\"exec\\\"), ns)\\n  File \\\"<dsh_worker>\\\", line 1, in <module>\\nRuntimeError: expected CLI lifecycle error\\n\"},\"error\":\"RuntimeError: expected CLI lifecycle error\",\"traceback\":\"Traceback (most recent call last):\\n  File \\\"E:\\\\workplace\\\\blender-server\\\\packages\\\\blender-agent\\\\assets\\\\runtime\\\\worker.py\\\", line 485, in _exec\\n    exec(compile(code, \\\"<dsh_worker>\\\", \\\"exec\\\"), ns)\\n  File \\\"<dsh_worker>\\\", line 1, in <module>\\nRuntimeError: expected CLI lifecycle error\\n\"},\"isError\":true}\n",
+    "stderr": ""
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_do",
+      "--json",
+      "{\"session\":\"cli-kept\",\"see\":false,\"code\":\"assert K.marker==\\\"stable-across-cli\\\" and \\\"CliPersistentCube\\\" in bpy.data.objects\"}",
+      "--holder",
+      "lifecycle-stable-holder"
+    ],
+    "status": 0,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":true,\\\"op\\\":\\\"exec\\\",\\\"result\\\":{\\\"id\\\":755424555,\\\"ok\\\":true,\\\"ms\\\":0,\\\"stdout\\\":\\\"\\\",\\\"stderr\\\":\\\"\\\",\\\"result\\\":null,\\\"error\\\":null,\\\"traceback\\\":null},\\\"error\\\":null,\\\"traceback\\\":null}\"}],\"structuredContent\":{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":755424555,\"ok\":true,\"ms\":0,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null},\"isError\":false}\n",
+    "stderr": ""
+  },
+  {
+    "label": "cli",
+    "args": [
+      "call",
+      "blender_rt_worker",
+      "--json",
+      "{\"op\":\"status\",\"name\":\"cli-kept\"}",
+      "--holder",
+      "lifecycle-stable-holder"
+    ],
+    "status": 0,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":true,\\\"op\\\":\\\"status\\\",\\\"result\\\":{\\\"name\\\":\\\"cli-kept\\\",\\\"holder\\\":\\\"lifecycle-stable-holder\\\",\\\"alive\\\":true,\\\"ready\\\":true,\\\"pid\\\":45716,\\\"port\\\":51883,\\\"uptimeMs\\\":2512,\\\"idleMs\\\":0,\\\"inflight\\\":0,\\\"gpu\\\":{\\\"engine_mode\\\":\\\"workbench\\\",\\\"gpu_mode\\\":\\\"auto\\\",\\\"backend\\\":\\\"n/a: GPU functions for drawing are not available in background mo\\\",\\\"before\\\":{\\\"engine\\\":\\\"BLENDER_EEVEE\\\"},\\\"ok\\\":true,\\\"skipped\\\":false,\\\"configured\\\":\\\"workbench\\\",\\\"after\\\":{\\\"engine\\\":\\\"BLENDER_WORKBENCH\\\"},\\\"fell_back_to_cpu\\\":false},\\\"boot\\\":{\\\"ok\\\":true,\\\"skipped\\\":true},\\\"lastError\\\":null,\\\"stdoutTail\\\":\\\"DSH_WORKER {\\\\\\\"ready\\\\\\\": true, \\\\\\\"port\\\\\\\": 51883, \\\\\\\"pid\\\\\\\": 45716, \\\\\\\"version\\\\\\\": 2, \\\\\\\"gpu\\\\\\\": {\\\\\\\"engine_mode\\\\\\\": \\\\\\\"workbench\\\\\\\", \\\\\\\"gpu_mode\\\\\\\": \\\\\\\"auto\\\\\\\", \\\\\\\"backend\\\\\\\": \\\\\\\"n/a: GPU functions for drawing are not available in background mo\\\\\\\", \\\\\\\"before\\\\\\\": {\\\\\\\"engine\\\\\\\": \\\\\\\"BLENDER_EEVEE\\\\\\\"}, \\\\\\\"ok\\\\\\\": true, \\\\\\\"skipped\\\\\\\": false, \\\\\\\"configured\\\\\\\": \\\\\\\"workbench\\\\\\\", \\\\\\\"after\\\\\\\": {\\\\\\\"engine\\\\\\\": \\\\\\\"BLENDER_WORKBENCH\\\\\\\"}, \\\\\\\"fell_back_to_cpu\\\\\\\": false}, \\\\\\\"boot\\\\\\\": {\\\\\\\"ok\\\\\\\": true, \\\\\\\"skipped\\\\\\\": true}, \\\\\\\"blender\\\\\\\": \\\\\\\"5.0.1\\\\\\\"}\\\\r\\\\n\\\",\\\"status\\\":{\\\"ok\\\":true,\\\"version\\\":2,\\\"pid\\\":45716,\\\"uptime_s\\\":2,\\\"calls\\\":4,\\\"errors\\\":1,\\\"objects\\\":4,\\\"file\\\":null,\\\"kernel_modules\\\":[],\\\"boot\\\":{\\\"ok\\\":true,\\\"skipped\\\":true},\\\"frame_dir\\\":\\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\lifecycle\\\\\\\\run-1\\\\\\\\persistent-cli h6HSFK\\\\\\\\work 中文 空格\\\",\\\"gpu\\\":{\\\"engine_mode\\\":\\\"workbench\\\",\\\"gpu_mode\\\":\\\"auto\\\",\\\"backend\\\":\\\"n/a: GPU functions for drawing are not available in background mo\\\",\\\"before\\\":{\\\"engine\\\":\\\"BLENDER_EEVEE\\\"},\\\"ok\\\":true,\\\"skipped\\\":false,\\\"configured\\\":\\\"workbench\\\",\\\"after\\\":{\\\"engine\\\":\\\"BLENDER_WORKBENCH\\\"},\\\"fell_back_to_cpu\\\":false}}}}\"}],\"structuredContent\":{\"ok\":true,\"op\":\"status\",\"result\":{\"name\":\"cli-kept\",\"holder\":\"lifecycle-stable-holder\",\"alive\":true,\"ready\":true,\"pid\":45716,\"port\":51883,\"uptimeMs\":2512,\"idleMs\":0,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 51883, \\\"pid\\\": 45716, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"5.0.1\\\"}\\r\\n\",\"status\":{\"ok\":true,\"version\":2,\"pid\":45716,\"uptime_s\":2,\"calls\":4,\"errors\":1,\"objects\":4,\"file\":null,\"kernel_modules\":[],\"boot\":{\"ok\":true,\"skipped\":true},\"frame_dir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\lifecycle\\\\run-1\\\\persistent-cli h6HSFK\\\\work 中文 空格\",\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false}}}},\"isError\":false}\n",
+    "stderr": ""
+  },
+  {
+    "label": "cli",
+    "args": [
+      "backend",
+      "stop"
+    ],
+    "status": 0,
+    "stdout": "{\"ok\":true,\"stopped\":true}\n",
+    "stderr": ""
+  },
+  {
+    "label": "cleanup",
+    "ok": true,
+    "ports": {
+      "http": 51881,
+      "addon": 51882,
+      "worker": 51883
+    },
+    "exitedPids": [
+      4628,
+      45716
+    ]
+  },
+  {
+    "label": "result",
+    "ok": true,
+    "persistentBackendPid": 4628,
+    "workerPid": 45716,
+    "holderRequired": true,
+    "rejectedImplicitCalls": 5
+  }
+]

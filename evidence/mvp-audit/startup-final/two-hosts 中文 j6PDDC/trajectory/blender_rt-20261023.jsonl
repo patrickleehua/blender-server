@@ -1,0 +1,4 @@
+{"t":"2026-10-23T00:14:58.059Z","route":"start","op":null,"ms":4,"ok":false,"err":"connect ECONNREFUSED 127.0.0.1:51702","args_bytes":0,"args_digest":"00000000","args_head":null,"family":null,"args_keys":null,"hint_shown":false}
+{"t":"2026-10-23T00:14:58.092Z","route":"start","op":null,"ms":4,"ok":false,"err":"connect ECONNREFUSED 127.0.0.1:51702","args_bytes":0,"args_digest":"00000000","args_head":null,"family":null,"args_keys":null,"hint_shown":false}
+{"t":"2026-10-23T00:14:58.104Z","route":"stop","op":null,"ms":0,"ok":true,"err":null,"args_bytes":0,"args_digest":"00000000","args_head":null,"family":null,"args_keys":null,"hint_shown":false}
+{"t":"2026-10-23T00:14:58.175Z","route":"stop","op":null,"ms":0,"ok":true,"err":null,"args_bytes":0,"args_digest":"00000000","args_head":null,"family":null,"args_keys":null,"hint_shown":false}

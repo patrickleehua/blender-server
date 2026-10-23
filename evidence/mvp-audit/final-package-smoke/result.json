@@ -1,0 +1,412 @@
+{
+  "ok": true,
+  "installedPackage": "E:\\workplace\\blender-server\\tmp\\独立发行 最终成品\\node_modules\\@blender-agent\\bridge",
+  "assetFingerprint": "bbc1ac1d3c1b1aa78226ba226256591c58e42d9b1fe2809f1f8e436ad412b2eb",
+  "calls": [
+    {
+      "name": "blender_viewport",
+      "args": {
+        "op": "doctor"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":false,\"addon\":{\"kind\":\"blender-unreachable\",\"tcp\":false,\"ping\":null,\"summary\":\"9876 端口没人监听 —— Blender 没在跑，或 addon 没连上\",\"fix\":\"**agent 走这条路：blender_viewport(op=\\\"launch\\\") 一键拉起 GUI Blender 并自动 Connect addon**（v0.9.4 起，不必有人点面板）；人工流程是：启动 Blender → 3D 视图按 N → 「DSH Blender Bridge」面板 → Connect（服务监听 127.0.0.1:46876）\",\"hint\":\"TCP 127.0.0.1:46876 不通：Blender 没在运行，或 addon 面板没连上。一键修：blender_viewport(op=\\\"launch\\\")（GUI + 自动 Connect，幂等）；人工修：N → 「DSH Blender Bridge」面板 → Connect\"},\"metrics\":{\"calls\":0,\"errors\":0,\"timeouts\":0,\"inflight\":0,\"lastCmd\":null,\"lastCmdAt\":null,\"lastOkAt\":null,\"lastError\":null,\"lastDiagnosis\":{\"kind\":\"blender-unreachable\",\"tcp\":false,\"ping\":null,\"summary\":\"9876 端口没人监听 —— Blender 没在跑，或 addon 没连上\",\"fix\":\"**agent 走这条路：blender_viewport(op=\\\"launch\\\") 一键拉起 GUI Blender 并自动 Connect addon**（v0.9.4 起，不必有人点面板）；人工流程是：启动 Blender → 3D 视图按 N → 「DSH Blender Bridge」面板 → Connect（服务监听 127.0.0.1:46876）\",\"hint\":\"TCP 127.0.0.1:46876 不通：Blender 没在运行，或 addon 面板没连上。一键修：blender_viewport(op=\\\"launch\\\")（GUI + 自动 Connect，幂等）；人工修：N → 「DSH Blender Bridge」面板 → Connect\"},\"views\":0,\"headlessRuns\":0,\"lastHeadlessMs\":null,\"workerStarts\":0,\"workerExecs\":0,\"lastCmdAgeMs\":null},\"config\":{\"platform\":\"win32\",\"distro\":null,\"addon\":\"127.0.0.1:46876\",\"http\":\"127.0.0.1:46877\",\"workDir\":{\"win\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\",\"wsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\",\"from\":\"config\",\"fallback\":null,\"shared\":{\"shared\":true,\"why\":\"windows\"}},\"blenderExe\":\"E:\\\\workplace\\\\blender-server\\\\.local\\\\blender-4.5.15-windows-x64\\\\blender.exe\",\"blenderFrom\":\"config\",\"blenderUserConfig\":null,\"blenderUserScripts\":null,\"workerPort\":46879,\"configFile\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\.blender-agent\\\\config-46877-635dcd8c-4df6-4d93-a87d-434e86dcc122.json\",\"holder\":\"plugin-pid-38136\",\"leaseTtlMs\":600000,\"env\":{\"DSH_BLENDER_WORKDIR\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\",\"DSH_BLENDER_EXE\":\"E:\\\\workplace\\\\blender-server\\\\.local\\\\blender-4.5.15-windows-x64\\\\blender.exe\",\"DSH_BLENDER_HTTP_PORT\":\"46877\",\"DSH_BLENDER_ADDON_PROTOCOL\":null,\"DSH_BLENDER_CONFIG\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\.blender-agent\\\\config-46877-635dcd8c-4df6-4d93-a87d-434e86dcc122.json\"}},\"stats\":{\"frames\":0,\"acts\":0,\"cmds\":0,\"loops\":0,\"views\":0,\"headless\":0,\"plan\":0,\"worker\":0,\"txn\":0,\"preset\":0,\"job\":0,\"selections\":0,\"lastSelectionMs\":null,\"lastPlanMs\":null,\"lastViewMs\":null,\"lastHeadlessMs\":null,\"lastFrameMs\":null,\"lastActMs\":null,\"lastError\":null,\"startedAt\":1792714454981},\"kind\":\"blender-unreachable\"}"
+          }
+        ],
+        "structuredContent": {
+          "ok": false,
+          "addon": {
+            "kind": "blender-unreachable",
+            "tcp": false,
+            "ping": null,
+            "summary": "9876 端口没人监听 —— Blender 没在跑，或 addon 没连上",
+            "fix": "**agent 走这条路：blender_viewport(op=\"launch\") 一键拉起 GUI Blender 并自动 Connect addon**（v0.9.4 起，不必有人点面板）；人工流程是：启动 Blender → 3D 视图按 N → 「DSH Blender Bridge」面板 → Connect（服务监听 127.0.0.1:46876）",
+            "hint": "TCP 127.0.0.1:46876 不通：Blender 没在运行，或 addon 面板没连上。一键修：blender_viewport(op=\"launch\")（GUI + 自动 Connect，幂等）；人工修：N → 「DSH Blender Bridge」面板 → Connect"
+          },
+          "metrics": {
+            "calls": 0,
+            "errors": 0,
+            "timeouts": 0,
+            "inflight": 0,
+            "lastCmd": null,
+            "lastCmdAt": null,
+            "lastOkAt": null,
+            "lastError": null,
+            "lastDiagnosis": {
+              "kind": "blender-unreachable",
+              "tcp": false,
+              "ping": null,
+              "summary": "9876 端口没人监听 —— Blender 没在跑，或 addon 没连上",
+              "fix": "**agent 走这条路：blender_viewport(op=\"launch\") 一键拉起 GUI Blender 并自动 Connect addon**（v0.9.4 起，不必有人点面板）；人工流程是：启动 Blender → 3D 视图按 N → 「DSH Blender Bridge」面板 → Connect（服务监听 127.0.0.1:46876）",
+              "hint": "TCP 127.0.0.1:46876 不通：Blender 没在运行，或 addon 面板没连上。一键修：blender_viewport(op=\"launch\")（GUI + 自动 Connect，幂等）；人工修：N → 「DSH Blender Bridge」面板 → Connect"
+            },
+            "views": 0,
+            "headlessRuns": 0,
+            "lastHeadlessMs": null,
+            "workerStarts": 0,
+            "workerExecs": 0,
+            "lastCmdAgeMs": null
+          },
+          "config": {
+            "platform": "win32",
+            "distro": null,
+            "addon": "127.0.0.1:46876",
+            "http": "127.0.0.1:46877",
+            "workDir": {
+              "win": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime",
+              "wsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime",
+              "from": "config",
+              "fallback": null,
+              "shared": {
+                "shared": true,
+                "why": "windows"
+              }
+            },
+            "blenderExe": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+            "blenderFrom": "config",
+            "blenderUserConfig": null,
+            "blenderUserScripts": null,
+            "workerPort": 46879,
+            "configFile": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\.blender-agent\\config-46877-635dcd8c-4df6-4d93-a87d-434e86dcc122.json",
+            "holder": "plugin-pid-38136",
+            "leaseTtlMs": 600000,
+            "env": {
+              "DSH_BLENDER_WORKDIR": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime",
+              "DSH_BLENDER_EXE": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+              "DSH_BLENDER_HTTP_PORT": "46877",
+              "DSH_BLENDER_ADDON_PROTOCOL": null,
+              "DSH_BLENDER_CONFIG": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\.blender-agent\\config-46877-635dcd8c-4df6-4d93-a87d-434e86dcc122.json"
+            }
+          },
+          "stats": {
+            "frames": 0,
+            "acts": 0,
+            "cmds": 0,
+            "loops": 0,
+            "views": 0,
+            "headless": 0,
+            "plan": 0,
+            "worker": 0,
+            "txn": 0,
+            "preset": 0,
+            "job": 0,
+            "selections": 0,
+            "lastSelectionMs": null,
+            "lastPlanMs": null,
+            "lastViewMs": null,
+            "lastHeadlessMs": null,
+            "lastFrameMs": null,
+            "lastActMs": null,
+            "lastError": null,
+            "startedAt": 1792714454981
+          },
+          "kind": "blender-unreachable"
+        },
+        "isError": true
+      }
+    },
+    {
+      "name": "blender_rt_do",
+      "args": {
+        "session": "final-package",
+        "see": false,
+        "code": "bpy.ops.wm.read_factory_settings(use_empty=True)\nbpy.ops.mesh.primitive_cube_add(size=2)\nbpy.context.object.name='FinalPackageCube'\nK.marker='final-package'\nbpy.ops.wm.save_as_mainfile(filepath=\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\final.blend\")"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":226916754,\"ok\":true,\"ms\":48,\"stdout\":\"Info: Saved as \\\"final.blend\\\"\\n\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "exec",
+          "result": {
+            "id": 226916754,
+            "ok": true,
+            "ms": 48,
+            "stdout": "Info: Saved as \"final.blend\"\n",
+            "stderr": "",
+            "result": null,
+            "error": null,
+            "traceback": null
+          },
+          "error": null,
+          "traceback": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "name": "blender_rt_worker",
+      "args": {
+        "op": "status",
+        "name": "final-package"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"status\",\"result\":{\"name\":\"final-package\",\"holder\":\"blender-agent-47220\",\"alive\":true,\"ready\":true,\"pid\":53452,\"port\":46879,\"uptimeMs\":464,\"idleMs\":1,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 46879, \\\"pid\\\": 53452, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE_NEXT\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"4.5.15 LTS\\\"}\\r\\n\",\"status\":{\"ok\":true,\"version\":2,\"pid\":53452,\"uptime_s\":0,\"calls\":1,\"errors\":0,\"objects\":1,\"file\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\final.blend\",\"kernel_modules\":[],\"boot\":{\"ok\":true,\"skipped\":true},\"frame_dir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\",\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false}}}}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "status",
+          "result": {
+            "name": "final-package",
+            "holder": "blender-agent-47220",
+            "alive": true,
+            "ready": true,
+            "pid": 53452,
+            "port": 46879,
+            "uptimeMs": 464,
+            "idleMs": 1,
+            "inflight": 0,
+            "gpu": {
+              "engine_mode": "workbench",
+              "gpu_mode": "auto",
+              "backend": "n/a: GPU functions for drawing are not available in background mo",
+              "before": {
+                "engine": "BLENDER_EEVEE_NEXT"
+              },
+              "ok": true,
+              "skipped": false,
+              "configured": "workbench",
+              "after": {
+                "engine": "BLENDER_WORKBENCH"
+              },
+              "fell_back_to_cpu": false
+            },
+            "boot": {
+              "ok": true,
+              "skipped": true
+            },
+            "lastError": null,
+            "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 46879, \"pid\": 53452, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+            "status": {
+              "ok": true,
+              "version": 2,
+              "pid": 53452,
+              "uptime_s": 0,
+              "calls": 1,
+              "errors": 0,
+              "objects": 1,
+              "file": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\final.blend",
+              "kernel_modules": [],
+              "boot": {
+                "ok": true,
+                "skipped": true
+              },
+              "frame_dir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime",
+              "gpu": {
+                "engine_mode": "workbench",
+                "gpu_mode": "auto",
+                "backend": "n/a: GPU functions for drawing are not available in background mo",
+                "before": {
+                  "engine": "BLENDER_EEVEE_NEXT"
+                },
+                "ok": true,
+                "skipped": false,
+                "configured": "workbench",
+                "after": {
+                  "engine": "BLENDER_WORKBENCH"
+                },
+                "fell_back_to_cpu": false
+              }
+            }
+          }
+        },
+        "isError": false
+      }
+    },
+    {
+      "name": "blender_rt_see",
+      "args": {
+        "session": "final-package",
+        "view_size": "320x180"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"see\",\"result\":{\"id\":454763515,\"ok\":true,\"mode\":\"workbench-offscreen\",\"path\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\dsh_see_53452_1.png\",\"image\":{\"mimeType\":\"image/png\",\"contentIndex\":1},\"width\":320,\"height\":180,\"bytes\":31919,\"coverage_estimate\":0.1866,\"pixel_hash\":\"4032ad654e78\",\"ms\":566,\"t\":{\"render_ms\":559,\"read_ms\":6,\"total_ms\":566},\"engine\":\"BLENDER_WORKBENCH\"},\"error\":null}"
+          },
+          {
+            "type": "image",
+            "mimeType": "image/png"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "see",
+          "result": {
+            "id": 454763515,
+            "ok": true,
+            "mode": "workbench-offscreen",
+            "path": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\dsh_see_53452_1.png",
+            "image": {
+              "mimeType": "image/png",
+              "contentIndex": 1
+            },
+            "width": 320,
+            "height": 180,
+            "bytes": 31919,
+            "coverage_estimate": 0.1866,
+            "pixel_hash": "4032ad654e78",
+            "ms": 566,
+            "t": {
+              "render_ms": 559,
+              "read_ms": 6,
+              "total_ms": 566
+            },
+            "engine": "BLENDER_WORKBENCH"
+          },
+          "error": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "name": "blender_rt_do",
+      "args": {
+        "session": "final-package",
+        "see": false,
+        "code": "assert K.marker==\"final-package\" and \"FinalPackageCube\" in bpy.data.objects"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":60497751,\"ok\":true,\"ms\":0,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "exec",
+          "result": {
+            "id": 60497751,
+            "ok": true,
+            "ms": 0,
+            "stdout": "",
+            "stderr": "",
+            "result": null,
+            "error": null,
+            "traceback": null
+          },
+          "error": null,
+          "traceback": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "name": "blender_rt_headless",
+      "args": {
+        "script": "raise ValueError(\"expected-final-package-failure\")",
+        "engine": "none"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"wait\",\"job\":{\"kind\":\"job\",\"id\":\"job-bb93747f-e92e-47db-a321-a7b9c3b82be8\",\"runId\":\"run-92fc78de-57b7-43ee-9d64-0a0a00de379b\",\"status\":\"failed\",\"pid\":57436,\"pidAlive\":false,\"ms\":412,\"timeoutMs\":180000,\"outdir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\",\"outdirWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\",\"logDir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\jobs\\\\job-bb93747f-e92e-47db-a321-a7b9c3b82be8\",\"logDirWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\jobs\\\\job-bb93747f-e92e-47db-a321-a7b9c3b82be8\",\"stdoutLog\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\jobs\\\\job-bb93747f-e92e-47db-a321-a7b9c3b82be8\\\\stdout.log\",\"stderrLog\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\jobs\\\\job-bb93747f-e92e-47db-a321-a7b9c3b82be8\\\\stderr.log\",\"stdoutLogWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\jobs\\\\job-bb93747f-e92e-47db-a321-a7b9c3b82be8\\\\stdout.log\",\"stderrLogWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\jobs\\\\job-bb93747f-e92e-47db-a321-a7b9c3b82be8\\\\stderr.log\",\"exitCode\":1,\"signal\":null,\"engine\":\"none\",\"stage\":{\"name\":\"preload-done\",\"t\":1792714456.686,\"run\":\"run-92fc78de-57b7-43ee-9d64-0a0a00de379b\"},\"stageName\":\"preload-done\",\"stageAt\":1792714456685,\"stageAgoMs\":241,\"lastOutputAt\":1792714456774,\"idleMs\":152,\"lines\":12,\"logBytes\":397,\"resultJson\":null,\"result\":null,\"resultParseError\":null,\"resultPath\":null,\"resultPathWsl\":null,\"resultBytes\":0,\"resultTruncated\":false,\"stdoutTail\":\"DSH_STAGE {\\\"name\\\": \\\"boot\\\", \\\"t\\\": 1792714456.686, \\\"run\\\": \\\"run-92fc78de-57b7-43ee-9d64-0a0a00de379b\\\"}\\r\\nDSH_STAGE {\\\"name\\\": \\\"engine-prelude\\\", \\\"t\\\": 1792714456.686, \\\"run\\\": \\\"run-92fc78de-57b7-43ee-9d64-0a0a00de379b\\\"}\\r\\nDSH_STAGE {\\\"name\\\": \\\"preload-done\\\", \\\"t\\\": 1792714456.686, \\\"run\\\": \\\"run-92fc78de-57b7-43ee-9d64-0a0a00de379b\\\"}\\r\\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\\n\\nBlender quit\\n\",\"stderrTail\":\"Traceback (most recent call last):\\r\\n  File \\\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\dsh_headless_mvk7wfg6.py\\\", line 1449, in <module>\\r\\n    raise ValueError(\\\"expected-final-package-failure\\\")\\r\\nValueError: expected-final-package-failure\\r\\n\\nError: script failed, file: 'E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\dsh_headless_mvk7wfg6.py', exiting.\\n\",\"pathWarnings\":[],\"warnings\":[],\"shots\":null,\"progress\":null,\"progressAt\":null,\"progressAgeMs\":null,\"heartbeat\":null,\"progressHistory\":[],\"scriptStaging\":{\"requested\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\",\"requestedShared\":true,\"requestedWhy\":\"windows\",\"used\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\",\"usedWin\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\dsh_headless_mvk7wfg6.py\",\"usedShared\":true,\"usedWhy\":\"windows\",\"label\":\"workDir\",\"substituted\":false,\"note\":\"workDir 共享性检查通过（windows）\"},\"inputFile\":null,\"scriptFile\":null,\"lastException\":\"Error: script failed, file: 'E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-package-smoke\\\\runtime\\\\dsh_headless_mvk7wfg6.py', exiting.\",\"artifacts\":[{\"name\":\"dsh_headless_mvk7wfg6.py\",\"bytes\":69347,\"mtimeMs\":1792714456375.6084},{\"name\":\"dsh_see_53452_1.png\",\"bytes\":31919,\"mtimeMs\":1792714456230.6223}],\"waitedMs\":508,\"waitTimedOut\":false},\"jobId\":\"job-bb93747f-e92e-47db-a321-a7b9c3b82be8\"}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "wait",
+          "job": {
+            "kind": "job",
+            "id": "job-bb93747f-e92e-47db-a321-a7b9c3b82be8",
+            "runId": "run-92fc78de-57b7-43ee-9d64-0a0a00de379b",
+            "status": "failed",
+            "pid": 57436,
+            "pidAlive": false,
+            "ms": 412,
+            "timeoutMs": 180000,
+            "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime",
+            "outdirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime",
+            "logDir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\jobs\\job-bb93747f-e92e-47db-a321-a7b9c3b82be8",
+            "logDirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\jobs\\job-bb93747f-e92e-47db-a321-a7b9c3b82be8",
+            "stdoutLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\jobs\\job-bb93747f-e92e-47db-a321-a7b9c3b82be8\\stdout.log",
+            "stderrLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\jobs\\job-bb93747f-e92e-47db-a321-a7b9c3b82be8\\stderr.log",
+            "stdoutLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\jobs\\job-bb93747f-e92e-47db-a321-a7b9c3b82be8\\stdout.log",
+            "stderrLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\jobs\\job-bb93747f-e92e-47db-a321-a7b9c3b82be8\\stderr.log",
+            "exitCode": 1,
+            "signal": null,
+            "engine": "none",
+            "stage": {
+              "name": "preload-done",
+              "t": 1792714456.686,
+              "run": "run-92fc78de-57b7-43ee-9d64-0a0a00de379b"
+            },
+            "stageName": "preload-done",
+            "stageAt": 1792714456685,
+            "stageAgoMs": 241,
+            "lastOutputAt": 1792714456774,
+            "idleMs": 152,
+            "lines": 12,
+            "logBytes": 397,
+            "resultJson": null,
+            "result": null,
+            "resultParseError": null,
+            "resultPath": null,
+            "resultPathWsl": null,
+            "resultBytes": 0,
+            "resultTruncated": false,
+            "stdoutTail": "DSH_STAGE {\"name\": \"boot\", \"t\": 1792714456.686, \"run\": \"run-92fc78de-57b7-43ee-9d64-0a0a00de379b\"}\r\nDSH_STAGE {\"name\": \"engine-prelude\", \"t\": 1792714456.686, \"run\": \"run-92fc78de-57b7-43ee-9d64-0a0a00de379b\"}\r\nDSH_STAGE {\"name\": \"preload-done\", \"t\": 1792714456.686, \"run\": \"run-92fc78de-57b7-43ee-9d64-0a0a00de379b\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\n\nBlender quit\n",
+            "stderrTail": "Traceback (most recent call last):\r\n  File \"E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\dsh_headless_mvk7wfg6.py\", line 1449, in <module>\r\n    raise ValueError(\"expected-final-package-failure\")\r\nValueError: expected-final-package-failure\r\n\nError: script failed, file: 'E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\dsh_headless_mvk7wfg6.py', exiting.\n",
+            "pathWarnings": [],
+            "warnings": [],
+            "shots": null,
+            "progress": null,
+            "progressAt": null,
+            "progressAgeMs": null,
+            "heartbeat": null,
+            "progressHistory": [],
+            "scriptStaging": {
+              "requested": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime",
+              "requestedShared": true,
+              "requestedWhy": "windows",
+              "used": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime",
+              "usedWin": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\dsh_headless_mvk7wfg6.py",
+              "usedShared": true,
+              "usedWhy": "windows",
+              "label": "workDir",
+              "substituted": false,
+              "note": "workDir 共享性检查通过（windows）"
+            },
+            "inputFile": null,
+            "scriptFile": null,
+            "lastException": "Error: script failed, file: 'E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\dsh_headless_mvk7wfg6.py', exiting.",
+            "artifacts": [
+              {
+                "name": "dsh_headless_mvk7wfg6.py",
+                "bytes": 69347,
+                "mtimeMs": 1792714456375.6084
+              },
+              {
+                "name": "dsh_see_53452_1.png",
+                "bytes": 31919,
+                "mtimeMs": 1792714456230.6223
+              }
+            ],
+            "waitedMs": 508,
+            "waitTimedOut": false
+          },
+          "jobId": "job-bb93747f-e92e-47db-a321-a7b9c3b82be8"
+        },
+        "isError": true
+      }
+    }
+  ],
+  "cleanup": {
+    "backendExited": true,
+    "workerExited": true,
+    "portReleased": true
+  }
+}

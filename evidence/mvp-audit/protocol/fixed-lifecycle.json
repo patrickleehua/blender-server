@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "pid": 51052,
+  "port": 56854,
+  "concurrent_start_same_pid": true,
+  "incremental_preload_preserves_scene": true,
+  "ttl_checked": false,
+  "owned_worker_stopped": true
+}

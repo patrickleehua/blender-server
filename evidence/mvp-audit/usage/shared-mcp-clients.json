@@ -1,0 +1,227 @@
+{
+  "args": [
+    "E:\\workplace\\blender-server\\packages\\blender-agent\\dist\\cli.js",
+    "mcp",
+    "--port",
+    "43877",
+    "--addon-port",
+    "43876",
+    "--worker-port",
+    "43879",
+    "--workdir",
+    "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\shared-mcp",
+    "--blender",
+    "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe"
+  ],
+  "trace": [
+    {
+      "step": "A creates scene",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":52599198,\"ok\":true,\"ms\":0,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "exec",
+          "result": {
+            "id": 52599198,
+            "ok": true,
+            "ms": 0,
+            "stdout": "",
+            "stderr": "",
+            "result": null,
+            "error": null,
+            "traceback": null
+          },
+          "error": null,
+          "traceback": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "step": "Backend owned by A",
+      "state": {
+        "pid": 45436,
+        "instance": "ec1e97de-d6f4-4f12-9371-04d30cba7eec",
+        "fingerprint": "4c0226b037cc80f64a06019cafea5b77ee85ef8e36f3baf80669c642b104f3dc",
+        "port": 43877,
+        "startedAt": "2026-10-22T19:21:08.761Z",
+        "workdir": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\shared-mcp",
+        "blender": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+        "addonPort": 43876,
+        "workerPort": 43879,
+        "persistent": false
+      }
+    },
+    {
+      "step": "B creates unsaved scene on attached backend",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":756734988,\"ok\":true,\"ms\":0,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "exec",
+          "result": {
+            "id": 756734988,
+            "ok": true,
+            "ms": 0,
+            "stdout": "",
+            "stderr": "",
+            "result": null,
+            "error": null,
+            "traceback": null
+          },
+          "error": null,
+          "traceback": null
+        },
+        "isError": false
+      },
+      "state": {
+        "pid": 45436,
+        "instance": "ec1e97de-d6f4-4f12-9371-04d30cba7eec",
+        "fingerprint": "4c0226b037cc80f64a06019cafea5b77ee85ef8e36f3baf80669c642b104f3dc",
+        "port": 43877,
+        "startedAt": "2026-10-22T19:21:08.761Z",
+        "workdir": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\shared-mcp",
+        "blender": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+        "addonPort": 43876,
+        "workerPort": 43879,
+        "persistent": false
+      }
+    },
+    {
+      "step": "B status before A closes",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"status\",\"result\":{\"name\":\"client-b\",\"alive\":true,\"ready\":true,\"pid\":58432,\"port\":43880,\"uptimeMs\":1103,\"idleMs\":0,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 43880, \\\"pid\\\": 58432, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE_NEXT\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"4.5.15 LTS\\\"}\\r\\n\",\"status\":{\"ok\":true,\"version\":2,\"pid\":58432,\"uptime_s\":0,\"calls\":1,\"errors\":0,\"objects\":4,\"file\":null,\"kernel_modules\":[],\"boot\":{\"ok\":true,\"skipped\":true},\"frame_dir\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-usage-audit\\\\shared-mcp\",\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false}}}}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "status",
+          "result": {
+            "name": "client-b",
+            "alive": true,
+            "ready": true,
+            "pid": 58432,
+            "port": 43880,
+            "uptimeMs": 1103,
+            "idleMs": 0,
+            "inflight": 0,
+            "gpu": {
+              "engine_mode": "workbench",
+              "gpu_mode": "auto",
+              "backend": "n/a: GPU functions for drawing are not available in background mo",
+              "before": {
+                "engine": "BLENDER_EEVEE_NEXT"
+              },
+              "ok": true,
+              "skipped": false,
+              "configured": "workbench",
+              "after": {
+                "engine": "BLENDER_WORKBENCH"
+              },
+              "fell_back_to_cpu": false
+            },
+            "boot": {
+              "ok": true,
+              "skipped": true
+            },
+            "lastError": null,
+            "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 43880, \"pid\": 58432, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+            "status": {
+              "ok": true,
+              "version": 2,
+              "pid": 58432,
+              "uptime_s": 0,
+              "calls": 1,
+              "errors": 0,
+              "objects": 4,
+              "file": null,
+              "kernel_modules": [],
+              "boot": {
+                "ok": true,
+                "skipped": true
+              },
+              "frame_dir": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\shared-mcp",
+              "gpu": {
+                "engine_mode": "workbench",
+                "gpu_mode": "auto",
+                "backend": "n/a: GPU functions for drawing are not available in background mo",
+                "before": {
+                  "engine": "BLENDER_EEVEE_NEXT"
+                },
+                "ok": true,
+                "skipped": false,
+                "configured": "workbench",
+                "after": {
+                  "engine": "BLENDER_WORKBENCH"
+                },
+                "fell_back_to_cpu": false
+              }
+            }
+          }
+        },
+        "isError": false
+      }
+    },
+    {
+      "step": "After A closes",
+      "backendPid": 45436,
+      "backendAlive": false,
+      "workerPid": 58432,
+      "workerAlive": false,
+      "stateFileExists": false
+    },
+    {
+      "step": "B tries its ongoing scene",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":false,\"op\":\"exec\",\"result\":{\"id\":102927436,\"ok\":false,\"ms\":0,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":\"AttributeError: module 'dsh_rt_kernel' has no attribute 'usage_client'\",\"traceback\":\"Traceback (most recent call last):\\n  File \\\"E:\\\\workplace\\\\blender-server\\\\packages\\\\blender-agent\\\\assets\\\\runtime\\\\worker.py\\\", line 485, in _exec\\n    exec(compile(code, \\\"<dsh_worker>\\\", \\\"exec\\\"), ns)\\n  File \\\"<dsh_worker>\\\", line 1, in <module>\\nAttributeError: module 'dsh_rt_kernel' has no attribute 'usage_client'\\n\"},\"error\":\"AttributeError: module 'dsh_rt_kernel' has no attribute 'usage_client'\",\"traceback\":\"Traceback (most recent call last):\\n  File \\\"E:\\\\workplace\\\\blender-server\\\\packages\\\\blender-agent\\\\assets\\\\runtime\\\\worker.py\\\", line 485, in _exec\\n    exec(compile(code, \\\"<dsh_worker>\\\", \\\"exec\\\"), ns)\\n  File \\\"<dsh_worker>\\\", line 1, in <module>\\nAttributeError: module 'dsh_rt_kernel' has no attribute 'usage_client'\\n\"}"
+          }
+        ],
+        "structuredContent": {
+          "ok": false,
+          "op": "exec",
+          "result": {
+            "id": 102927436,
+            "ok": false,
+            "ms": 0,
+            "stdout": "",
+            "stderr": "",
+            "result": null,
+            "error": "AttributeError: module 'dsh_rt_kernel' has no attribute 'usage_client'",
+            "traceback": "Traceback (most recent call last):\n  File \"E:\\workplace\\blender-server\\packages\\blender-agent\\assets\\runtime\\worker.py\", line 485, in _exec\n    exec(compile(code, \"<dsh_worker>\", \"exec\"), ns)\n  File \"<dsh_worker>\", line 1, in <module>\nAttributeError: module 'dsh_rt_kernel' has no attribute 'usage_client'\n"
+          },
+          "error": "AttributeError: module 'dsh_rt_kernel' has no attribute 'usage_client'",
+          "traceback": "Traceback (most recent call last):\n  File \"E:\\workplace\\blender-server\\packages\\blender-agent\\assets\\runtime\\worker.py\", line 485, in _exec\n    exec(compile(code, \"<dsh_worker>\", \"exec\"), ns)\n  File \"<dsh_worker>\", line 1, in <module>\nAttributeError: module 'dsh_rt_kernel' has no attribute 'usage_client'\n"
+        },
+        "isError": true
+      },
+      "newState": {
+        "pid": 48400,
+        "instance": "94eb8dfe-ca08-4571-ab06-227018b2f4af",
+        "fingerprint": "4c0226b037cc80f64a06019cafea5b77ee85ef8e36f3baf80669c642b104f3dc",
+        "port": 43877,
+        "startedAt": "2026-10-22T19:21:10.767Z",
+        "workdir": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\shared-mcp",
+        "blender": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+        "addonPort": 43876,
+        "workerPort": 43879,
+        "persistent": false
+      }
+    }
+  ]
+}

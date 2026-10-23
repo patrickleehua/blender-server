@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-23T00:15:02.565Z",
+  "sourceCommit": "792017712e587ebee196fb000bf29e79c43c3f12",
+  "checks": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "name": "contracts-and-startup",
+        "chunk_id": "bf51a5",
+        "wall_time_seconds": 6.4564997,
+        "exit_code": 0,
+        "original_token_count": 340,
+        "output": "✔ simultaneous Backend instances adopt one verified service (584.8911ms)\n✔ independent hosts starting together attach to the same service (1299.1533ms)\n✔ CLI backend start promotes the current service past last-client reaping (2694.8887ms)\n✔ registration rejection releases the launched-child handle so its host exits (1538.095ms)\n✔ 15 standard JSON schemas; specific plan prefixes win before general prefixes (1.3111ms)\n✔ an unrelated open port is refused without sending a tool operation or killing it (25.8609ms)\n✔ timeout covers streaming response body; cancellation and disconnect never replay a write (119.0644ms)\n✔ official MCP client receives native image content and nested execution failure (346.5777ms)\n✔ real isolated engine catalog survives Unicode paths; owned backend and state clean up (1066.1713ms)\n✔ GUI see changes route only after a definite unreachable diagnosis (399.0173ms)\n✔ command/frame errors stay failures; a successful mutation is identified and never replayed (247.1252ms)\n✔ normalized worker watch, safe argv arrays, headless timeout and image references match their contracts (152.2248ms)\n✔ staging removes stale generated skill and preserves unrelated asset directories (226.2335ms)\nℹ tests 13\nℹ suites 0\nℹ pass 13\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 6194.6072\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "name": "typecheck",
+        "chunk_id": "830a4d",
+        "wall_time_seconds": 1.8349793,
+        "exit_code": 0,
+        "original_token_count": 39,
+        "output": "\n> blender-agent-workspace@1.0.0 typecheck\n> npm --prefix packages/blender-agent run typecheck\n\n\n> @blender-agent/bridge@1.0.0 typecheck\n> tsc --noEmit\n\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "name": "installer",
+        "chunk_id": "dddc50",
+        "wall_time_seconds": 3.3647588,
+        "exit_code": 0,
+        "original_token_count": 230,
+        "output": "PASS dry-run does not create any project files\nPASS install produces both host configs and supports repeat install\nPASS existing host configuration is byte-for-byte preserved\nPASS three explicit isolated ports survive configuration generation\nPASS skill conflicts block before writing any new files\nPASS uninstall keeps modified files and runtime outputs\nPASS pre-existing identical skill is not claimed for uninstall\nPASS upgrade replaces only unchanged managed files and refreshes uninstall hashes\nPASS upgrade conflict preserves user skill edits and writes nothing\nPASS upgrade preserves other servers and settings added to installer-owned host configs\nPASS standalone package layout locates bundled skill and CLI\nPASS manifest traversal is rejected without touching outside files\nPASS symlink or junction destinations are rejected\n13 installer checks passed. Blender and host acceptance were not run by this script.\n"
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "name": "skill-format",
+        "chunk_id": "e2915c",
+        "wall_time_seconds": 0.3758761,
+        "exit_code": 0,
+        "original_token_count": 19,
+        "output": "WARN `--no-project` was provided, but no project was found\nSkill is valid!\r\n"
+      }
+    }
+  ]
+}

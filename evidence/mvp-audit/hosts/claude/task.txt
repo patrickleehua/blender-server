@@ -1,0 +1,11 @@
+Use the blender-agent Skill installed in this project's .claude/skills/blender-agent/SKILL.md.
+This is an isolated real acceptance test. Use only this project's blender-agent MCP server for Blender work. No other MCP servers, agents or external services. Do not change source code or global settings. No questions are needed; all Blender mutations below are authorized in this new isolated test worker.
+Read the Skill. Query the real tool catalog. Use an explicit worker/session named claude-stool. There is no GUI addon in this test: a GUI doctor result of unreachable is expected; do not try to launch GUI. You may clear factory default objects only inside this test worker.
+Build a small round stool using meters internally with scale_length=1. The following are final mandatory world dimensions and positions:
+ClaudeTop: round cylinder radius 0.45m, depth 0.08m, centered at (0,0,0.79).
+ClaudeLegA: box 0.08m x 0.08m x 0.75m, centered (-0.28,-0.22,0.375).
+ClaudeLegB: same box centered (0.28,-0.22,0.375).
+ClaudeLegC: same box centered (0,0.28,0.375).
+First create the top with radius 0.40m and three legs. Retrieve and actually inspect a native MCP image, then enlarge only the top to the final radius 0.45m and give it a red material with brown legs. Retrieve and inspect a fresh native MCP image after the change. For a useful close view, set the camera from (2,-2,1.6) looking at (0,0,0.4). Avoid relying on text that rendering succeeded.
+Check object names, world bounding dimensions and positions against the mandatory values. Save an editable E:/workplace/blender-server/tmp/host-mvp-20261023/claude 中文 空格/outputs/stool.blend and a GLB E:/workplace/blender-server/tmp/host-mvp-20261023/claude 中文 空格/outputs/stool.glb. Export just the four stool meshes using Blender's bundled glTF exporter. If you need a file-level snapshot, use the worker's txn preload / K.dsh_txn_api or query the catalog for the right session route; do not accidentally mutate a different scene.
+Report which actual images you saw, file paths, dimension evidence, and any real failure. Stop the worker after saving. Do not claim overall acceptance; a separate Blender process will independently reopen your blend and GLB.

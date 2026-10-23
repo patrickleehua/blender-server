@@ -1,0 +1,141 @@
+{
+  "host": "claude",
+  "requestedModel": "claude-opus-5-5",
+  "effort": "medium",
+  "package": "1.0.0",
+  "toolContractSha256": "414f9c9537c0245b4e49e7a7afb2fad6ae53fc345f6e8db889fc527fca7c2e0f",
+  "skillSha256": "1a9d7791f33bc6611877b66f690739153c4f431a66d96f76f70297962d650d00",
+  "cliSha256": "af797f3023a35008429e839200f47546b1e6f1632d54fa71bcefa19c3be04bd2",
+  "assetFingerprint": "be8bc90e415187fcf7b85b798608c9004eb4a6e8c08feb193dd0674a7d70f78d",
+  "project": "E:\\workplace\\blender-server\\tmp\\host-mvp-20261023\\claude 中文 空格",
+  "run": {
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "durationMs": 85314
+  },
+  "independentRun": {
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "durationMs": 633
+  },
+  "independent": {
+    "ok": true,
+    "root": "E:\\workplace\\blender-server\\tmp\\host-mvp-20261023\\claude 中文 空格",
+    "blend": {
+      "ClaudeTop": {
+        "size_m": [
+          0.9000000357627869,
+          0.9000000357627869,
+          0.08000004291534424
+        ],
+        "center_m": [
+          0,
+          0,
+          0.7900000214576721
+        ],
+        "vertices": 128
+      },
+      "ClaudeLegA": {
+        "size_m": [
+          0.07999998331069946,
+          0.07999998331069946,
+          0.75
+        ],
+        "center_m": [
+          -0.2800000011920929,
+          -0.2199999988079071,
+          0.375
+        ],
+        "vertices": 8
+      },
+      "ClaudeLegB": {
+        "size_m": [
+          0.07999998331069946,
+          0.07999998331069946,
+          0.75
+        ],
+        "center_m": [
+          0.2800000011920929,
+          -0.2199999988079071,
+          0.375
+        ],
+        "vertices": 8
+      },
+      "ClaudeLegC": {
+        "size_m": [
+          0.07999999821186066,
+          0.07999998331069946,
+          0.75
+        ],
+        "center_m": [
+          0,
+          0.2800000011920929,
+          0.375
+        ],
+        "vertices": 8
+      }
+    },
+    "glb": {
+      "ClaudeTop": {
+        "size_m": [
+          0.9000000357627869,
+          0.9000000357627869,
+          0.08000004291534424
+        ],
+        "center_m": [
+          0,
+          0,
+          0.7900000214576721
+        ],
+        "vertices": 384
+      },
+      "ClaudeLegA": {
+        "size_m": [
+          0.07999998331069946,
+          0.07999998331069946,
+          0.75
+        ],
+        "center_m": [
+          -0.2800000011920929,
+          -0.2199999988079071,
+          0.375
+        ],
+        "vertices": 24
+      },
+      "ClaudeLegB": {
+        "size_m": [
+          0.07999998331069946,
+          0.07999998331069946,
+          0.75
+        ],
+        "center_m": [
+          0.2800000011920929,
+          -0.2199999988079071,
+          0.375
+        ],
+        "vertices": 24
+      },
+      "ClaudeLegC": {
+        "size_m": [
+          0.07999999821186066,
+          0.07999998331069946,
+          0.75
+        ],
+        "center_m": [
+          0,
+          0.2800000011920929,
+          0.375
+        ],
+        "vertices": 24
+      }
+    },
+    "files": {
+      "stool.blend": 468670,
+      "stool.glb": 15648
+    },
+    "blender_version": "4.5.15 LTS"
+  },
+  "transcriptSha256": "b1c80e43cd471eb6a75388b33b1fa0eb51ca7594a3e01ef6af71e51cdf91398a"
+}

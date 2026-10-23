@@ -1,0 +1,141 @@
+{
+  "host": "codex",
+  "requestedModel": "gpt-6.1-sol",
+  "effort": "medium",
+  "package": "1.0.0",
+  "toolContractSha256": "414f9c9537c0245b4e49e7a7afb2fad6ae53fc345f6e8db889fc527fca7c2e0f",
+  "skillSha256": "1a9d7791f33bc6611877b66f690739153c4f431a66d96f76f70297962d650d00",
+  "cliSha256": "af797f3023a35008429e839200f47546b1e6f1632d54fa71bcefa19c3be04bd2",
+  "assetFingerprint": "be8bc90e415187fcf7b85b798608c9004eb4a6e8c08feb193dd0674a7d70f78d",
+  "project": "E:\\workplace\\blender-server\\tmp\\host-mvp-20261023\\codex 中文 空格",
+  "run": {
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "durationMs": 114549
+  },
+  "independentRun": {
+    "exitCode": 0,
+    "signal": null,
+    "timedOut": false,
+    "durationMs": 523
+  },
+  "independent": {
+    "ok": true,
+    "root": "E:\\workplace\\blender-server\\tmp\\host-mvp-20261023\\codex 中文 空格",
+    "blend": {
+      "CodexTop": {
+        "size_m": [
+          0.9000000357627869,
+          0.9000000357627869,
+          0.08000004291534424
+        ],
+        "center_m": [
+          0,
+          0,
+          0.7900000214576721
+        ],
+        "vertices": 48
+      },
+      "CodexLegA": {
+        "size_m": [
+          0.07999998331069946,
+          0.07999998331069946,
+          0.75
+        ],
+        "center_m": [
+          -0.2800000011920929,
+          -0.2199999988079071,
+          0.375
+        ],
+        "vertices": 8
+      },
+      "CodexLegB": {
+        "size_m": [
+          0.07999998331069946,
+          0.07999998331069946,
+          0.75
+        ],
+        "center_m": [
+          0.2800000309944153,
+          -0.2199999988079071,
+          0.375
+        ],
+        "vertices": 8
+      },
+      "CodexLegC": {
+        "size_m": [
+          0.07999999821186066,
+          0.07999998331069946,
+          0.75
+        ],
+        "center_m": [
+          0,
+          0.2800000011920929,
+          0.375
+        ],
+        "vertices": 8
+      }
+    },
+    "glb": {
+      "CodexTop": {
+        "size_m": [
+          0.9000000357627869,
+          0.9000000357627869,
+          0.08000004291534424
+        ],
+        "center_m": [
+          0,
+          0,
+          0.7900000214576721
+        ],
+        "vertices": 144
+      },
+      "CodexLegA": {
+        "size_m": [
+          0.07999998331069946,
+          0.07999998331069946,
+          0.75
+        ],
+        "center_m": [
+          -0.2800000011920929,
+          -0.2199999988079071,
+          0.375
+        ],
+        "vertices": 24
+      },
+      "CodexLegB": {
+        "size_m": [
+          0.07999998331069946,
+          0.07999998331069946,
+          0.75
+        ],
+        "center_m": [
+          0.2800000309944153,
+          -0.2199999988079071,
+          0.375
+        ],
+        "vertices": 24
+      },
+      "CodexLegC": {
+        "size_m": [
+          0.07999999821186066,
+          0.07999998331069946,
+          0.75
+        ],
+        "center_m": [
+          0,
+          0.2800000011920929,
+          0.375
+        ],
+        "vertices": 24
+      }
+    },
+    "files": {
+      "stool.blend": 493746,
+      "stool.glb": 8968
+    },
+    "blender_version": "4.5.15 LTS"
+  },
+  "transcriptSha256": "1ce24d0b12bce32cbac7dabc585f46dd30bffb4e61e5fd638e2837220bdda1a8"
+}

@@ -1,0 +1,5 @@
+{
+  "session": "implicit",
+  "code": "assert K.implicit_cli==\"retained\"\nprint(\"SCENE_RETAINED\")",
+  "see": false
+}

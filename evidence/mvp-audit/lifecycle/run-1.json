@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-10-23T03:29:42.9909849+08:00",
+  "node": "v24.20.0",
+  "blender": "5.0.1",
+  "blenderHash": "a3db93c5b259",
+  "assetsFingerprint": "9dcb840637e8f20683d568a2d2b7fc1ee396460225c05366089c1046d39611b0",
+  "result": "pass",
+  "tests": 3,
+  "failed": 0,
+  "distHashes": [
+    {
+      "file": "cli.js",
+      "sha256": "af797f3023a35008429e839200f47546b1e6f1632d54fa71bcefa19c3be04bd2"
+    },
+    {
+      "file": "backend.js",
+      "sha256": "c20bb53717bf9c8d63dcc297c1e37243d96829c706035bf75cd26d168fc7d9bd"
+    },
+    {
+      "file": "backend-service.js",
+      "sha256": "169391964866c4e2f7d94a6efda6fbb253182a4e84a601ef0220f2cccfcd4c6e"
+    },
+    {
+      "file": "core.js",
+      "sha256": "75d570bce233cd91282b4f3d22854cf42c239601fbefa233d28ee70bbc25627a"
+    }
+  ]
+}

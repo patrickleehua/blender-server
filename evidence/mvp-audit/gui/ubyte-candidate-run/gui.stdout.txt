@@ -1,0 +1,4 @@
+DSH Blender Bridge addon registered
+Server thread started
+DSH Blender Bridge server started on localhost:45876
+GUI_BOOT {"background": false, "port": 45876, "config": "E:\\workplace\\blender-server\\tmp\\mvp-gui\\config", "addon": "E:\\workplace\\blender-server\\packages\\blender-agent\\assets\\addon\\dsh_blender_bridge.py"}

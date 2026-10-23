@@ -23,3 +23,8 @@ tmp/
 dsh-blender.config.json
 evidence/hosts/raw/
 release/*.tgz
+# Generated expanded Python inputs are reproducible from the maintained tests.
+# Keep raw run results/artifacts, without committing copied runtime source again.
+evidence/**/dsh_headless_*.py
+evidence/**/worker_boot_*.py
+evidence/**/gpu-prelude.py

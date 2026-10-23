@@ -1,0 +1,26 @@
+{
+ "id": "job-345d23c4-88a2-425e-91fc-74fb55d9ba77",
+ "kind": "job",
+ "status": "done",
+ "exitCode": 0,
+ "signal": null,
+ "startedAt": 1792714143234,
+ "finishedAt": 1792714143640,
+ "ms": 406,
+ "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+ "script": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7pptt.py",
+ "engine": "none",
+ "runId": "run-35608f9c-90c6-44dd-b6ce-a4aebc803375",
+ "stage": "done",
+ "artifacts": [
+  "dsh_headless_mvk7pptt.py(69250B)",
+  "dsh_headless_mvk7ppp6.py(69245B)",
+  "dsh_headless_2026-10-23T00-09-02-663Z.stdout.log(395B)",
+  "dsh_headless_2026-10-23T00-09-02-663Z.stderr.log(389B)",
+  "dsh_headless_mvk7ppdz.py(69256B)",
+  "dsh_headless_mvk7pozc.py(69247B)"
+ ],
+ "resultSummary": "{\"ok\":true,\"answer\":42}",
+ "lastException": null,
+ "pluginVersion": "1.0.0"
+}

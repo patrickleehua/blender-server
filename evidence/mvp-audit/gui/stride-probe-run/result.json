@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "calls": 46,
+  "blender": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+  "guiPid": 16028,
+  "port": 45877,
+  "addonPort": 45876,
+  "workerPort": 45879,
+  "node": "v24.20.0",
+  "startedAt": "2026-10-23T00:02:45.256Z",
+  "assetsFingerprint": "71b6e663d6e519a19338c1438624738aa355d2ebc00a5665109e0c4d273cd48c",
+  "cliSha256": "af797f3023a35008429e839200f47546b1e6f1632d54fa71bcefa19c3be04bd2",
+  "guiDoctor": "ok",
+  "nativeImages": true,
+  "joinFaceCountPreserved": true,
+  "txnRestore": true,
+  "presetPreviewReadOnly": true,
+  "pausedNoFallback": true
+}

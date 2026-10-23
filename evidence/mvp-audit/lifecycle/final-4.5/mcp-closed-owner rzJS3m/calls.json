@@ -1,0 +1,33 @@
+[
+  {
+    "label": "mcp-connect",
+    "name": "A",
+    "pid": 57336
+  },
+  {
+    "label": "A-create",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "owner",
+      "see": false,
+      "code": "import bpy\nbpy.ops.mesh.primitive_cube_add()\nbpy.context.object.name=\"OwnerCube\"\nK.owner_marker=\"owner\""
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":false,\"code\":\"BACKEND_START_FAILED\",\"error\":\"Backend exited during startup; inspect E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\lifecycle\\\\final-4.5\\\\mcp-closed-owner rzJS3m\\\\work 中文 空格\\\\.blender-agent\\\\backend-59576.log\",\"details\":{\"exitCode\":1}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": false,
+        "code": "BACKEND_START_FAILED",
+        "error": "Backend exited during startup; inspect E:\\workplace\\blender-server\\evidence\\mvp-audit\\lifecycle\\final-4.5\\mcp-closed-owner rzJS3m\\work 中文 空格\\.blender-agent\\backend-59576.log",
+        "details": {
+          "exitCode": 1
+        }
+      },
+      "isError": true
+    }
+  }
+]

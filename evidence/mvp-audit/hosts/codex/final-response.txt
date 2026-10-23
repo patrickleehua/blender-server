@@ -1,0 +1,20 @@
+Saved files; `codex-stool` worker stopped.
+
+- [Editable stool.blend](<E:/workplace/blender-server/tmp/host-mvp-20261023/codex 中文 空格/outputs/stool.blend>) — 493,746 bytes.
+- [stool.glb](<E:/workplace/blender-server/tmp/host-mvp-20261023/codex 中文 空格/outputs/stool.glb>) — 8,968 bytes; bundled glTF exporter, selection restricted to four stool meshes.
+- [Dimension evidence](<E:/workplace/blender-server/tmp/host-mvp-20261023/codex 中文 空格/outputs/stool-dimensions.json>).
+
+World measurements in meters, with `scale_length=1`:
+
+| Object | Dimensions | Center |
+|---|---|---|
+| CodexTop | 0.90 × 0.90 × 0.08 | (0, 0, 0.79) |
+| CodexLegA | 0.08 × 0.08 × 0.75 | (-0.28, -0.22, 0.375) |
+| CodexLegB | 0.08 × 0.08 × 0.75 | (0.28, -0.22, 0.375) |
+| CodexLegC | 0.08 × 0.08 × 0.75 | (0, 0.28, 0.375) |
+
+Catalog measurement and independent world-vertex calculation agreed; maximum error was `4.3×10⁻⁸ m`.
+
+Actually inspected native MCP images in `.blender-agent/runtime/`: `dsh_see_56556_1.png` (factory cube), `_2.png` (0.40 m radius stool), `_3.png` (enlarged, gray viewport), and `_4.png` (red top, brown legs). Stool views used the requested camera position and target.
+
+GUI unreachable was expected. A final optional evidence-copy/GLB-header check failed with `NameError: pathlib`; saved deliverables were unaffected. Independent reopening remains pending; no overall acceptance claimed.

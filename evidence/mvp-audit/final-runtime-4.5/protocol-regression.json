@@ -1,0 +1,989 @@
+{
+  "blender": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+  "calls": [
+    {
+      "route": "/lease",
+      "body": {
+        "holder": "owner-a"
+      },
+      "status": 200,
+      "result": {
+        "ok": true,
+        "lease": {
+          "active": true,
+          "holder": "owner-a",
+          "expiresInMs": 600000,
+          "ttlMs": 600000,
+          "since": 1792714141147,
+          "renewals": 0,
+          "holderAlive": null,
+          "scope": null,
+          "staleReclaimed": 0
+        },
+        "renewed": false
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-a",
+        "op": "start",
+        "name": "shared",
+        "engine": "workbench",
+        "warmup": false
+      },
+      "status": 200,
+      "result": {
+        "ok": true,
+        "op": "start",
+        "result": {
+          "name": "shared",
+          "holder": "owner-a",
+          "alive": true,
+          "ready": true,
+          "pid": 57960,
+          "port": 42879,
+          "uptimeMs": 282,
+          "idleMs": 0,
+          "inflight": 0,
+          "gpu": {
+            "engine_mode": "workbench",
+            "gpu_mode": "auto",
+            "backend": "n/a: GPU functions for drawing are not available in background mo",
+            "before": {
+              "engine": "BLENDER_EEVEE_NEXT"
+            },
+            "ok": true,
+            "skipped": false,
+            "configured": "workbench",
+            "after": {
+              "engine": "BLENDER_WORKBENCH"
+            },
+            "fell_back_to_cpu": false
+          },
+          "boot": {
+            "ok": true,
+            "skipped": true
+          },
+          "lastError": null,
+          "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 42879, \"pid\": 57960, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+          "hello": {
+            "ready": true,
+            "port": 42879,
+            "pid": 57960,
+            "version": 2,
+            "gpu": {
+              "engine_mode": "workbench",
+              "gpu_mode": "auto",
+              "backend": "n/a: GPU functions for drawing are not available in background mo",
+              "before": {
+                "engine": "BLENDER_EEVEE_NEXT"
+              },
+              "ok": true,
+              "skipped": false,
+              "configured": "workbench",
+              "after": {
+                "engine": "BLENDER_WORKBENCH"
+              },
+              "fell_back_to_cpu": false
+            },
+            "boot": {
+              "ok": true,
+              "skipped": true
+            },
+            "blender": "4.5.15 LTS"
+          },
+          "warmup": null
+        }
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-a",
+        "op": "exec",
+        "name": "shared",
+        "code": "bpy.ops.wm.read_factory_settings(use_empty=True)\nbpy.ops.mesh.primitive_cube_add(size=3)\nbpy.context.object.name=\"OwnedCube\"\nK.owner=\"A\""
+      },
+      "status": 200,
+      "result": {
+        "ok": true,
+        "op": "exec",
+        "result": {
+          "id": 836703019,
+          "ok": true,
+          "ms": 50,
+          "stdout": "",
+          "stderr": "",
+          "result": null,
+          "error": null,
+          "traceback": null
+        },
+        "error": null,
+        "traceback": null
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-b",
+        "op": "start",
+        "name": "SHARED",
+        "code": "bpy.data.objects.remove(bpy.data.objects[\"OwnedCube\"], do_unlink=True)"
+      },
+      "status": 409,
+      "result": {
+        "ok": false,
+        "code": "WORKER_OWNED",
+        "error": "worker-owned",
+        "name": "shared",
+        "holder": "owner-a",
+        "hint": "This named worker belongs to another holder. Choose a different worker name or wait for its owner to stop it."
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-b",
+        "op": "exec",
+        "name": "SHARED",
+        "code": "bpy.data.objects.remove(bpy.data.objects[\"OwnedCube\"], do_unlink=True)"
+      },
+      "status": 409,
+      "result": {
+        "ok": false,
+        "code": "WORKER_OWNED",
+        "error": "worker-owned",
+        "name": "shared",
+        "holder": "owner-a",
+        "hint": "This named worker belongs to another holder. Choose a different worker name or wait for its owner to stop it."
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-b",
+        "op": "reset",
+        "name": "SHARED",
+        "code": "bpy.data.objects.remove(bpy.data.objects[\"OwnedCube\"], do_unlink=True)"
+      },
+      "status": 409,
+      "result": {
+        "ok": false,
+        "code": "WORKER_OWNED",
+        "error": "worker-owned",
+        "name": "shared",
+        "holder": "owner-a",
+        "hint": "This named worker belongs to another holder. Choose a different worker name or wait for its owner to stop it."
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-b",
+        "op": "stop",
+        "name": "SHARED",
+        "code": "bpy.data.objects.remove(bpy.data.objects[\"OwnedCube\"], do_unlink=True)"
+      },
+      "status": 409,
+      "result": {
+        "ok": false,
+        "code": "WORKER_OWNED",
+        "error": "worker-owned",
+        "name": "shared",
+        "holder": "owner-a",
+        "hint": "This named worker belongs to another holder. Choose a different worker name or wait for its owner to stop it."
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-b",
+        "op": "restart",
+        "name": "SHARED",
+        "code": "bpy.data.objects.remove(bpy.data.objects[\"OwnedCube\"], do_unlink=True)"
+      },
+      "status": 409,
+      "result": {
+        "ok": false,
+        "code": "WORKER_OWNED",
+        "error": "worker-owned",
+        "name": "shared",
+        "holder": "owner-a",
+        "hint": "This named worker belongs to another holder. Choose a different worker name or wait for its owner to stop it."
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-b",
+        "op": "see",
+        "name": "SHARED",
+        "code": "bpy.data.objects.remove(bpy.data.objects[\"OwnedCube\"], do_unlink=True)"
+      },
+      "status": 409,
+      "result": {
+        "ok": false,
+        "code": "WORKER_OWNED",
+        "error": "worker-owned",
+        "name": "shared",
+        "holder": "owner-a",
+        "hint": "This named worker belongs to another holder. Choose a different worker name or wait for its owner to stop it."
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-b",
+        "op": "watch",
+        "name": "SHARED",
+        "code": "bpy.data.objects.remove(bpy.data.objects[\"OwnedCube\"], do_unlink=True)"
+      },
+      "status": 409,
+      "result": {
+        "ok": false,
+        "code": "WORKER_OWNED",
+        "error": "worker-owned",
+        "name": "shared",
+        "holder": "owner-a",
+        "hint": "This named worker belongs to another holder. Choose a different worker name or wait for its owner to stop it."
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-b",
+        "op": "status",
+        "name": "shared"
+      },
+      "status": 200,
+      "result": {
+        "ok": true,
+        "op": "status",
+        "result": {
+          "name": "shared",
+          "holder": "owner-a",
+          "alive": true,
+          "ready": true,
+          "pid": 57960,
+          "port": 42879,
+          "uptimeMs": 494,
+          "idleMs": 0,
+          "inflight": 0,
+          "gpu": {
+            "engine_mode": "workbench",
+            "gpu_mode": "auto",
+            "backend": "n/a: GPU functions for drawing are not available in background mo",
+            "before": {
+              "engine": "BLENDER_EEVEE_NEXT"
+            },
+            "ok": true,
+            "skipped": false,
+            "configured": "workbench",
+            "after": {
+              "engine": "BLENDER_WORKBENCH"
+            },
+            "fell_back_to_cpu": false
+          },
+          "boot": {
+            "ok": true,
+            "skipped": true
+          },
+          "lastError": null,
+          "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 42879, \"pid\": 57960, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+          "status": {
+            "ok": true,
+            "version": 2,
+            "pid": 57960,
+            "uptime_s": 0,
+            "calls": 1,
+            "errors": 0,
+            "objects": 1,
+            "file": null,
+            "kernel_modules": [],
+            "boot": {
+              "ok": true,
+              "skipped": true
+            },
+            "frame_dir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+            "gpu": {
+              "engine_mode": "workbench",
+              "gpu_mode": "auto",
+              "backend": "n/a: GPU functions for drawing are not available in background mo",
+              "before": {
+                "engine": "BLENDER_EEVEE_NEXT"
+              },
+              "ok": true,
+              "skipped": false,
+              "configured": "workbench",
+              "after": {
+                "engine": "BLENDER_WORKBENCH"
+              },
+              "fell_back_to_cpu": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-b",
+        "op": "list",
+        "name": "shared"
+      },
+      "status": 200,
+      "result": {
+        "ok": true,
+        "op": "list",
+        "result": {
+          "ok": true,
+          "workers": [
+            {
+              "name": "shared",
+              "holder": "owner-a",
+              "alive": true,
+              "ready": true,
+              "pid": 57960,
+              "port": 42879,
+              "uptimeMs": 496,
+              "idleMs": 2,
+              "inflight": 0,
+              "gpu": {
+                "engine_mode": "workbench",
+                "gpu_mode": "auto",
+                "backend": "n/a: GPU functions for drawing are not available in background mo",
+                "before": {
+                  "engine": "BLENDER_EEVEE_NEXT"
+                },
+                "ok": true,
+                "skipped": false,
+                "configured": "workbench",
+                "after": {
+                  "engine": "BLENDER_WORKBENCH"
+                },
+                "fell_back_to_cpu": false
+              },
+              "boot": {
+                "ok": true,
+                "skipped": true
+              },
+              "lastError": null,
+              "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 42879, \"pid\": 57960, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-b",
+        "op": "start",
+        "name": "independent",
+        "engine": "workbench",
+        "warmup": false
+      },
+      "status": 200,
+      "result": {
+        "ok": true,
+        "op": "start",
+        "result": {
+          "name": "independent",
+          "holder": "owner-b",
+          "alive": true,
+          "ready": true,
+          "pid": 58496,
+          "port": 42880,
+          "uptimeMs": 288,
+          "idleMs": 0,
+          "inflight": 0,
+          "gpu": {
+            "engine_mode": "workbench",
+            "gpu_mode": "auto",
+            "backend": "n/a: GPU functions for drawing are not available in background mo",
+            "before": {
+              "engine": "BLENDER_EEVEE_NEXT"
+            },
+            "ok": true,
+            "skipped": false,
+            "configured": "workbench",
+            "after": {
+              "engine": "BLENDER_WORKBENCH"
+            },
+            "fell_back_to_cpu": false
+          },
+          "boot": {
+            "ok": true,
+            "skipped": true
+          },
+          "lastError": null,
+          "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 42880, \"pid\": 58496, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+          "hello": {
+            "ready": true,
+            "port": 42880,
+            "pid": 58496,
+            "version": 2,
+            "gpu": {
+              "engine_mode": "workbench",
+              "gpu_mode": "auto",
+              "backend": "n/a: GPU functions for drawing are not available in background mo",
+              "before": {
+                "engine": "BLENDER_EEVEE_NEXT"
+              },
+              "ok": true,
+              "skipped": false,
+              "configured": "workbench",
+              "after": {
+                "engine": "BLENDER_WORKBENCH"
+              },
+              "fell_back_to_cpu": false
+            },
+            "boot": {
+              "ok": true,
+              "skipped": true
+            },
+            "blender": "4.5.15 LTS"
+          },
+          "warmup": null
+        }
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-a",
+        "op": "exec",
+        "name": "shared",
+        "code": "assert K.owner==\"A\"\nassert \"OwnedCube\" in bpy.data.objects\nassert bpy.data.objects[\"OwnedCube\"].dimensions.x==3"
+      },
+      "status": 200,
+      "result": {
+        "ok": true,
+        "op": "exec",
+        "result": {
+          "id": 738505545,
+          "ok": true,
+          "ms": 0,
+          "stdout": "",
+          "stderr": "",
+          "result": null,
+          "error": null,
+          "traceback": null
+        },
+        "error": null,
+        "traceback": null
+      }
+    },
+    {
+      "route": "/worker",
+      "body": {
+        "isolated": true,
+        "holder": "owner-a",
+        "op": "exec",
+        "name": "shared",
+        "code": "bpy.ops.mesh.primitive_cube_add(size=1, location=(5,0,0))\nbpy.context.object.name=\"OtherCube\""
+      },
+      "status": 200,
+      "result": {
+        "ok": true,
+        "op": "exec",
+        "result": {
+          "id": 373460538,
+          "ok": true,
+          "ms": 0,
+          "stdout": "",
+          "stderr": "",
+          "result": null,
+          "error": null,
+          "traceback": null
+        },
+        "error": null,
+        "traceback": null
+      }
+    }
+  ],
+  "opt": {
+    "analyzed": {
+      "ok": true,
+      "objects": 2,
+      "groups": 1,
+      "joinable": 2,
+      "objects_after": 1,
+      "est_sync_save_s": 0.001,
+      "top_groups": [
+        [
+          2,
+          "Scene Collection",
+          "",
+          "OwnedCube"
+        ]
+      ]
+    },
+    "dry": {
+      "ok": true,
+      "dry_run": true,
+      "objects_before": 2,
+      "groups": 1,
+      "joinable": 2
+    },
+    "joined": {
+      "ok": true,
+      "dry_run": false,
+      "saved_before": null,
+      "objects": [
+        2,
+        1
+      ],
+      "faces": [
+        12,
+        12
+      ],
+      "verts": [
+        16,
+        16
+      ],
+      "materials": [
+        0,
+        0
+      ],
+      "groups_joined": 1,
+      "failures": [],
+      "sample": [
+        [
+          "OwnedCube_MERGED_nom",
+          2
+        ]
+      ]
+    }
+  },
+  "failedJob": {
+    "kind": "job",
+    "id": "job-1dfd30c3-ef5f-4459-aa5b-2984d7dfff9c",
+    "runId": "run-ef866120-15f4-42f6-bc01-29ab0d6d0524",
+    "status": "failed",
+    "pid": 38372,
+    "pidAlive": false,
+    "ms": 400,
+    "timeoutMs": 3600000,
+    "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+    "outdirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+    "logDir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-1dfd30c3-ef5f-4459-aa5b-2984d7dfff9c",
+    "logDirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-1dfd30c3-ef5f-4459-aa5b-2984d7dfff9c",
+    "stdoutLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-1dfd30c3-ef5f-4459-aa5b-2984d7dfff9c\\stdout.log",
+    "stderrLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-1dfd30c3-ef5f-4459-aa5b-2984d7dfff9c\\stderr.log",
+    "stdoutLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-1dfd30c3-ef5f-4459-aa5b-2984d7dfff9c\\stdout.log",
+    "stderrLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-1dfd30c3-ef5f-4459-aa5b-2984d7dfff9c\\stderr.log",
+    "exitCode": 1,
+    "signal": null,
+    "engine": "none",
+    "stage": {
+      "name": "preload-done",
+      "t": 1792714142.438,
+      "run": "run-ef866120-15f4-42f6-bc01-29ab0d6d0524"
+    },
+    "stageName": "preload-done",
+    "stageAt": 1792714142438,
+    "stageAgoMs": 223,
+    "lastOutputAt": 1792714142523,
+    "idleMs": 138,
+    "lines": 12,
+    "logBytes": 397,
+    "resultJson": null,
+    "result": null,
+    "resultParseError": null,
+    "resultPath": null,
+    "resultPathWsl": null,
+    "resultBytes": 0,
+    "resultTruncated": false,
+    "stdoutTail": "DSH_STAGE {\"name\": \"boot\", \"t\": 1792714142.438, \"run\": \"run-ef866120-15f4-42f6-bc01-29ab0d6d0524\"}\r\nDSH_STAGE {\"name\": \"engine-prelude\", \"t\": 1792714142.438, \"run\": \"run-ef866120-15f4-42f6-bc01-29ab0d6d0524\"}\r\nDSH_STAGE {\"name\": \"preload-done\", \"t\": 1792714142.438, \"run\": \"run-ef866120-15f4-42f6-bc01-29ab0d6d0524\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\n\nBlender quit\n",
+    "stderrTail": "Traceback (most recent call last):\r\n  File \"E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7pozc.py\", line 1449, in <module>\r\n    raise ValueError(\"PROTOCOL_JOB_EXCEPTION\")\r\nValueError: PROTOCOL_JOB_EXCEPTION\r\n\nError: script failed, file: 'E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7pozc.py', exiting.\n",
+    "pathWarnings": [],
+    "warnings": [],
+    "shots": null,
+    "progress": null,
+    "progressAt": null,
+    "progressAgeMs": null,
+    "heartbeat": null,
+    "progressHistory": [],
+    "scriptStaging": {
+      "requested": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+      "requestedShared": true,
+      "requestedWhy": "windows",
+      "used": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+      "usedWin": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7pozc.py",
+      "usedShared": true,
+      "usedWhy": "windows",
+      "label": "workDir",
+      "substituted": false,
+      "note": "workDir 共享性检查通过（windows）"
+    },
+    "inputFile": null,
+    "scriptFile": null,
+    "lastException": "Error: script failed, file: 'E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7pozc.py', exiting.",
+    "artifacts": [
+      {
+        "name": "dsh_headless_mvk7pozc.py",
+        "bytes": 69247,
+        "mtimeMs": 1792714142137.4797
+      }
+    ],
+    "waitedMs": 517,
+    "waitTimedOut": false
+  },
+  "failedHeadless": {
+    "ok": false,
+    "kind": "headless",
+    "runId": "run-91364dc3-efc0-445a-b02d-25dad4d29246",
+    "pluginVersion": "1.0.0",
+    "expect": null,
+    "warnings": [],
+    "progress": null,
+    "progressAt": null,
+    "heartbeat": null,
+    "progressHistory": [],
+    "stdoutTruncated": false,
+    "status": "blender_error",
+    "resumable": true,
+    "session": "plugin-pid-36596",
+    "failure_hint": "Blender 进程退出码非 0（崩溃/参数错）—— 看 stderr 尾巴与日志路径",
+    "how_to_recover": "客户端超时/断连不代表失败：这是独立子进程。用 blender_rt_job(op=\"status\"|\"collect\"|\"wait\", id=\"run-91364dc3-efc0-445a-b02d-25dad4d29246\") 按 runId 回收结果与产物（台账：E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\index.jsonl）",
+    "scriptFile": null,
+    "inputFile": null,
+    "outJson": null,
+    "outJsonWsl": null,
+    "resultBytes": 0,
+    "resultPath": null,
+    "resultPathWsl": null,
+    "resultTruncated": false,
+    "resultJson": null,
+    "resultParseError": null,
+    "stdoutTail": "DSH_STAGE {\"name\": \"boot\", \"t\": 1792714142.959, \"run\": \"run-91364dc3-efc0-445a-b02d-25dad4d29246\"}\r\nDSH_STAGE {\"name\": \"engine-prelude\", \"t\": 1792714142.96, \"run\": \"run-91364dc3-efc0-445a-b02d-25dad4d29246\"}\r\nDSH_STAGE {\"name\": \"preload-done\", \"t\": 1792714142.96, \"run\": \"run-91364dc3-efc0-445a-b02d-25dad4d29246\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\n\nBlender quit\n",
+    "stderrTail": "Traceback (most recent call last):\r\n  File \"E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7ppdz.py\", line 1449, in <module>\r\n    raise RuntimeError(\"PROTOCOL_HEADLESS_EXCEPTION\")\r\nRuntimeError: PROTOCOL_HEADLESS_EXCEPTION\r\n\nError: script failed, file: 'E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7ppdz.py', exiting.\n",
+    "stage": {
+      "name": "preload-done",
+      "t": 1792714142.96,
+      "run": "run-91364dc3-efc0-445a-b02d-25dad4d29246"
+    },
+    "stageName": "preload-done",
+    "stageAt": 1792714142959,
+    "lastOutputAt": 1792714143052,
+    "lines": 12,
+    "shots": null,
+    "pathWarnings": [],
+    "outdir": {
+      "win": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+      "wsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5"
+    },
+    "childEnvKeys": [
+      "DSH_BLENDER_ADDON_PORT",
+      "DSH_BLENDER_EXE",
+      "DSH_BLENDER_WORKDIR",
+      "DSH_BLENDER_WORKER_PORT",
+      "DSH_RUN_ID",
+      "DSH_OUTDIR",
+      "DSH_ARGS",
+      "DSH_SESSION",
+      "DSH_PLUGIN_VERSION"
+    ],
+    "exitCode": 1,
+    "signal": null,
+    "timedOut": false,
+    "ms": 401,
+    "timeoutMs": 180000,
+    "blender": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+    "script": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7ppdz.py",
+    "args": [
+      "-b",
+      "--python-exit-code",
+      "1",
+      "--factory-startup",
+      "--python",
+      "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7ppdz.py",
+      "--",
+      "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5"
+    ],
+    "scriptStaging": {
+      "requested": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+      "requestedShared": true,
+      "requestedWhy": "windows",
+      "used": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+      "usedWin": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7ppdz.py",
+      "usedShared": true,
+      "usedWhy": "windows",
+      "label": "workDir",
+      "substituted": false,
+      "note": "workDir 共享性检查通过（windows）"
+    },
+    "gpu": null,
+    "engine": null,
+    "engineMode": null,
+    "useUserConfig": false,
+    "logs": {
+      "stdout": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_2026-10-23T00-09-02-663Z.stdout.log",
+      "stderr": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_2026-10-23T00-09-02-663Z.stderr.log",
+      "stdoutWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_2026-10-23T00-09-02-663Z.stdout.log",
+      "stderrWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_2026-10-23T00-09-02-663Z.stderr.log"
+    },
+    "lastException": "Error: script failed, file: 'E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7ppdz.py', exiting.",
+    "traceback": "Traceback (most recent call last):\r\n  File \"E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7ppdz.py\", line 1449, in <module>\r\n    raise RuntimeError(\"PROTOCOL_HEADLESS_EXCEPTION\")\r\nRuntimeError: PROTOCOL_HEADLESS_EXCEPTION\r\n\nError: script failed, file: 'E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7ppdz.py', exiting.\n",
+    "hint": null,
+    "noiseFiltered": 0,
+    "reason": "exit code 1",
+    "result": null,
+    "stdout": "DSH_STAGE {\"name\": \"boot\", \"t\": 1792714142.959, \"run\": \"run-91364dc3-efc0-445a-b02d-25dad4d29246\"}\r\nDSH_STAGE {\"name\": \"engine-prelude\", \"t\": 1792714142.96, \"run\": \"run-91364dc3-efc0-445a-b02d-25dad4d29246\"}\r\nDSH_STAGE {\"name\": \"preload-done\", \"t\": 1792714142.96, \"run\": \"run-91364dc3-efc0-445a-b02d-25dad4d29246\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\n\nBlender quit\n",
+    "stderr": "Traceback (most recent call last):\r\n  File \"E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7ppdz.py\", line 1449, in <module>\r\n    raise RuntimeError(\"PROTOCOL_HEADLESS_EXCEPTION\")\r\nRuntimeError: PROTOCOL_HEADLESS_EXCEPTION\r\n\nError: script failed, file: 'E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7ppdz.py', exiting.\n",
+    "artifacts": [
+      {
+        "name": "dsh_headless_2026-10-23T00-09-02-663Z.stdout.log",
+        "bytes": 395,
+        "mtimeMs": 1792714143051.8118,
+        "fresh": true
+      },
+      {
+        "name": "dsh_headless_2026-10-23T00-09-02-663Z.stderr.log",
+        "bytes": 389,
+        "mtimeMs": 1792714142960.1643,
+        "fresh": true
+      },
+      {
+        "name": "dsh_headless_mvk7ppdz.py",
+        "bytes": 69256,
+        "mtimeMs": 1792714142663.9697,
+        "fresh": true
+      },
+      {
+        "name": "dsh_headless_mvk7pozc.py",
+        "bytes": 69247,
+        "mtimeMs": 1792714142137.4797,
+        "fresh": true
+      }
+    ]
+  },
+  "killedAlias": {
+    "kind": "job",
+    "id": "job-f348e3f9-386a-40e2-97cb-78057d60f5e7",
+    "runId": "run-owned-1792714143065",
+    "status": "killed",
+    "pid": 51652,
+    "pidAlive": false,
+    "ms": 10,
+    "timeoutMs": 3600000,
+    "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+    "outdirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+    "logDir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-f348e3f9-386a-40e2-97cb-78057d60f5e7",
+    "logDirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-f348e3f9-386a-40e2-97cb-78057d60f5e7",
+    "stdoutLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-f348e3f9-386a-40e2-97cb-78057d60f5e7\\stdout.log",
+    "stderrLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-f348e3f9-386a-40e2-97cb-78057d60f5e7\\stderr.log",
+    "stdoutLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-f348e3f9-386a-40e2-97cb-78057d60f5e7\\stdout.log",
+    "stderrLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-f348e3f9-386a-40e2-97cb-78057d60f5e7\\stderr.log",
+    "exitCode": null,
+    "signal": null,
+    "engine": "none",
+    "stage": null,
+    "stageName": null,
+    "stageAt": null,
+    "stageAgoMs": null,
+    "lastOutputAt": 1792714143066,
+    "idleMs": 10,
+    "lines": 0,
+    "logBytes": 0,
+    "resultJson": null,
+    "result": null,
+    "resultParseError": null,
+    "resultPath": null,
+    "resultPathWsl": null,
+    "resultBytes": 0,
+    "resultTruncated": false,
+    "stdoutTail": null,
+    "stderrTail": null,
+    "pathWarnings": [],
+    "warnings": [],
+    "shots": null,
+    "progress": null,
+    "progressAt": null,
+    "progressAgeMs": null,
+    "heartbeat": null,
+    "progressHistory": [],
+    "scriptStaging": {
+      "requested": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+      "requestedShared": true,
+      "requestedWhy": "windows",
+      "used": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+      "usedWin": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7ppp6.py",
+      "usedShared": true,
+      "usedWhy": "windows",
+      "label": "workDir",
+      "substituted": false,
+      "note": "workDir 共享性检查通过（windows）"
+    },
+    "inputFile": null,
+    "scriptFile": null,
+    "lastException": null,
+    "artifacts": [
+      {
+        "name": "dsh_headless_mvk7ppp6.py",
+        "bytes": 69245,
+        "mtimeMs": 1792714143066.1914
+      },
+      {
+        "name": "dsh_headless_2026-10-23T00-09-02-663Z.stdout.log",
+        "bytes": 395,
+        "mtimeMs": 1792714143051.8118
+      },
+      {
+        "name": "dsh_headless_2026-10-23T00-09-02-663Z.stderr.log",
+        "bytes": 389,
+        "mtimeMs": 1792714142960.1643
+      },
+      {
+        "name": "dsh_headless_mvk7ppdz.py",
+        "bytes": 69256,
+        "mtimeMs": 1792714142663.9697
+      },
+      {
+        "name": "dsh_headless_mvk7pozc.py",
+        "bytes": 69247,
+        "mtimeMs": 1792714142137.4797
+      }
+    ]
+  },
+  "promoted": {
+    "kind": "job",
+    "id": "job-1eb399e4-d00e-4e91-9f68-4349de9ae26b",
+    "runId": "run-f7effcf1-1941-4ff9-a8d3-5b7cc8f48e8b",
+    "status": "done",
+    "pid": 57604,
+    "pidAlive": false,
+    "ms": 398,
+    "timeoutMs": 3600000,
+    "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+    "outdirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+    "logDir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-1eb399e4-d00e-4e91-9f68-4349de9ae26b",
+    "logDirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-1eb399e4-d00e-4e91-9f68-4349de9ae26b",
+    "stdoutLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-1eb399e4-d00e-4e91-9f68-4349de9ae26b\\stdout.log",
+    "stderrLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-1eb399e4-d00e-4e91-9f68-4349de9ae26b\\stderr.log",
+    "stdoutLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-1eb399e4-d00e-4e91-9f68-4349de9ae26b\\stdout.log",
+    "stderrLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\jobs\\job-1eb399e4-d00e-4e91-9f68-4349de9ae26b\\stderr.log",
+    "exitCode": 0,
+    "signal": null,
+    "engine": "none",
+    "stage": {
+      "name": "done",
+      "t": 1792714144.047,
+      "run": "run-f7effcf1-1941-4ff9-a8d3-5b7cc8f48e8b"
+    },
+    "stageName": "done",
+    "stageAt": 1792714144047,
+    "stageAgoMs": 223,
+    "lastOutputAt": 1792714144133,
+    "idleMs": 137,
+    "lines": 9,
+    "logBytes": 641,
+    "resultJson": {
+      "ok": true,
+      "promoted": true
+    },
+    "result": {
+      "ok": true,
+      "promoted": true
+    },
+    "resultParseError": null,
+    "resultPath": null,
+    "resultPathWsl": null,
+    "resultBytes": 27,
+    "resultTruncated": false,
+    "stdoutTail": "DSH_STAGE {\"name\": \"boot\", \"t\": 1792714144.047, \"run\": \"run-f7effcf1-1941-4ff9-a8d3-5b7cc8f48e8b\"}\r\nDSH_STAGE {\"name\": \"engine-prelude\", \"t\": 1792714144.047, \"run\": \"run-f7effcf1-1941-4ff9-a8d3-5b7cc8f48e8b\"}\r\nDSH_STAGE {\"name\": \"preload-done\", \"t\": 1792714144.047, \"run\": \"run-f7effcf1-1941-4ff9-a8d3-5b7cc8f48e8b\"}\r\nHEADLESS {\"ok\":true,\"promoted\":true}\r\nDSH_STAGE {\"name\": \"script-end\", \"t\": 1792714144.047, \"run\": \"run-f7effcf1-1941-4ff9-a8d3-5b7cc8f48e8b\"}\r\nDSH_STAGE {\"name\": \"done\", \"t\": 1792714144.047, \"run\": \"run-f7effcf1-1941-4ff9-a8d3-5b7cc8f48e8b\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\n\nBlender quit\n",
+    "stderrTail": null,
+    "pathWarnings": [],
+    "warnings": [],
+    "shots": null,
+    "progress": null,
+    "progressAt": null,
+    "progressAgeMs": null,
+    "heartbeat": null,
+    "progressHistory": [],
+    "scriptStaging": {
+      "requested": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+      "requestedShared": true,
+      "requestedWhy": "windows",
+      "used": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5",
+      "usedWin": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-runtime-4.5\\dsh_headless_mvk7pq86.py",
+      "usedShared": true,
+      "usedWhy": "windows",
+      "label": "workDir",
+      "substituted": false,
+      "note": "workDir 共享性检查通过（windows）"
+    },
+    "inputFile": null,
+    "scriptFile": null,
+    "lastException": null,
+    "artifacts": [
+      {
+        "name": "dsh_headless_2026-10-23T00-09-03-748Z.stderr.log",
+        "bytes": 0,
+        "mtimeMs": 1792714143758.955
+      },
+      {
+        "name": "dsh_headless_2026-10-23T00-09-03-748Z.stdout.log",
+        "bytes": 0,
+        "mtimeMs": 1792714143757.9514
+      },
+      {
+        "name": "dsh_headless_mvk7pq86.py",
+        "bytes": 69254,
+        "mtimeMs": 1792714143750.5737
+      },
+      {
+        "name": "dsh_headless_mvk7pq84.py",
+        "bytes": 69256,
+        "mtimeMs": 1792714143749.357
+      },
+      {
+        "name": "dsh_headless_mvk7pptt.py",
+        "bytes": 69250,
+        "mtimeMs": 1792714143234.6262
+      },
+      {
+        "name": "dsh_headless_mvk7ppp6.py",
+        "bytes": 69245,
+        "mtimeMs": 1792714143066.1914
+      },
+      {
+        "name": "dsh_headless_2026-10-23T00-09-02-663Z.stdout.log",
+        "bytes": 395,
+        "mtimeMs": 1792714143051.8118
+      },
+      {
+        "name": "dsh_headless_2026-10-23T00-09-02-663Z.stderr.log",
+        "bytes": 389,
+        "mtimeMs": 1792714142960.1643
+      },
+      {
+        "name": "dsh_headless_mvk7ppdz.py",
+        "bytes": 69256,
+        "mtimeMs": 1792714142663.9697
+      },
+      {
+        "name": "dsh_headless_mvk7pozc.py",
+        "bytes": 69247,
+        "mtimeMs": 1792714142137.4797
+      }
+    ],
+    "stale": false
+  },
+  "ok": true
+}

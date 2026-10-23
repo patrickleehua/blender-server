@@ -2,13 +2,13 @@
   "name": "@blender-agent/bridge",
   "version": "1.0.0",
   "filename": "blender-agent-bridge-1.0.0.tgz",
-  "sha256": "8051116a63779d2b2b05701b51658b36113f84d54feb1bc805b89ffe8c3dce7e",
-  "size": 904289,
-  "unpackedSize": 3020787,
-  "entryCount": 95,
-  "sourceCommit": "5d9fd1925279ce3907438f64e3376cbc7851acb1",
+  "sha256": "4fc5cecf3172224577015252ef7e355e9b4e1965fca470aa09fe59ce650ac8ef",
+  "size": 908511,
+  "unpackedSize": 3019747,
+  "entryCount": 87,
+  "sourceCommit": "792017712e587ebee196fb000bf29e79c43c3f12",
   "sourceDirty": false,
-  "assetFingerprint": "4c0226b037cc80f64a06019cafea5b77ee85ef8e36f3baf80669c642b104f3dc",
+  "assetFingerprint": "bbc1ac1d3c1b1aa78226ba226256591c58e42d9b1fe2809f1f8e436ad412b2eb",
   "files": [
     {
       "path": "LICENSE",
@@ -16,11 +16,11 @@
     },
     {
       "path": "README.md",
-      "size": 5896
+      "size": 7655
     },
     {
       "path": "assets/addon/dsh_blender_bridge.py",
-      "size": 323112
+      "size": 323391
     },
     {
       "path": "assets/addon/README.md",
@@ -28,7 +28,7 @@
     },
     {
       "path": "assets/manifest.json",
-      "size": 5876
+      "size": 6541
     },
     {
       "path": "assets/package.json",
@@ -100,7 +100,7 @@
     },
     {
       "path": "assets/runtime/engine.mjs",
-      "size": 208414
+      "size": 210458
     },
     {
       "path": "assets/runtime/evalharness.py",
@@ -172,7 +172,7 @@
     },
     {
       "path": "assets/runtime/perf.py",
-      "size": 19431
+      "size": 20640
     },
     {
       "path": "assets/runtime/pipeline.py",
@@ -224,7 +224,7 @@
     },
     {
       "path": "assets/runtime/server.mjs",
-      "size": 48661
+      "size": 48858
     },
     {
       "path": "assets/runtime/shapegen.py",
@@ -256,7 +256,7 @@
     },
     {
       "path": "assets/runtime/view.py",
-      "size": 46478
+      "size": 47043
     },
     {
       "path": "assets/runtime/visualreport.py",
@@ -284,11 +284,11 @@
     },
     {
       "path": "assets/skill/references/safety.md",
-      "size": 3662
+      "size": 4205
     },
     {
       "path": "assets/skill/references/tools.md",
-      "size": 3667
+      "size": 4263
     },
     {
       "path": "assets/skill/references/workflows.md",
@@ -296,43 +296,11 @@
     },
     {
       "path": "assets/skill/SKILL.md",
-      "size": 4626
-    },
-    {
-      "path": "assets/skills/blender-agent/agents/openai.yaml",
-      "size": 298
-    },
-    {
-      "path": "assets/skills/blender-agent/LICENSE",
-      "size": 1412
-    },
-    {
-      "path": "assets/skills/blender-agent/NOTICE.md",
-      "size": 668
-    },
-    {
-      "path": "assets/skills/blender-agent/references/acceptance.md",
-      "size": 2899
-    },
-    {
-      "path": "assets/skills/blender-agent/references/safety.md",
-      "size": 2893
-    },
-    {
-      "path": "assets/skills/blender-agent/references/tools.md",
-      "size": 3422
-    },
-    {
-      "path": "assets/skills/blender-agent/references/workflows.md",
-      "size": 3706
-    },
-    {
-      "path": "assets/skills/blender-agent/SKILL.md",
-      "size": 4314
+      "size": 4659
     },
     {
       "path": "assets/tools.json",
-      "size": 34848
+      "size": 35407
     },
     {
       "path": "dist/backend-service.d.ts",
@@ -340,15 +308,15 @@
     },
     {
       "path": "dist/backend-service.js",
-      "size": 4813
+      "size": 8503
     },
     {
       "path": "dist/backend.d.ts",
-      "size": 1099
+      "size": 1225
     },
     {
       "path": "dist/backend.js",
-      "size": 8575
+      "size": 11836
     },
     {
       "path": "dist/cli.d.ts",
@@ -356,7 +324,7 @@
     },
     {
       "path": "dist/cli.js",
-      "size": 7801
+      "size": 8719
     },
     {
       "path": "dist/config.d.ts",
@@ -372,7 +340,7 @@
     },
     {
       "path": "dist/core.js",
-      "size": 22980
+      "size": 24025
     },
     {
       "path": "dist/mcp.d.ts",
@@ -384,11 +352,11 @@
     },
     {
       "path": "package.json",
-      "size": 921
+      "size": 945
     },
     {
       "path": "scripts/portable-setup.mjs",
-      "size": 9358
+      "size": 10417
     }
   ]
 }

@@ -1,0 +1,7 @@
+03:23:45 | INFO: Data are loaded, start creating Blender stuff
+03:23:45 | INFO: Blender create Mesh node Cube
+03:23:45 | INFO: glTF import finished in 0.00s
+INDEPENDENT {"ok": true, "blender": "5.0.1", "type": "glb", "object": "Blender5Proof", "bounds": [[0.0, 2.0], [0.0, 4.0], [0.0, 3.0]], "vertices": 24}
+Blender 5.0.1 (hash a3db93c5b259 built 2025-12-16 01:32:30)
+
+Blender quit

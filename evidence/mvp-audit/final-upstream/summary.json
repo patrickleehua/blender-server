@@ -1,0 +1,41 @@
+{
+  "ok": true,
+  "summary": [
+    {
+      "name": "contract",
+      "jobId": "job-a0fde96e-20f4-4a61-8430-899fef125cba",
+      "status": "done",
+      "result": {
+        "ok": true,
+        "passed": 28,
+        "failed": 0,
+        "failures": [],
+        "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\contract"
+      }
+    },
+    {
+      "name": "plan",
+      "jobId": "job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e",
+      "status": "done",
+      "result": {
+        "ok": true,
+        "passed": 18,
+        "failed": 0,
+        "failures": [],
+        "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\plan"
+      }
+    },
+    {
+      "name": "upstream_integration",
+      "jobId": "job-f22aedf2-5d09-4b47-bd50-2f7f0cbbcdca",
+      "status": "done",
+      "result": {
+        "pass": 128,
+        "fail": 0,
+        "fails": [],
+        "skipped": [],
+        "objects_left": []
+      }
+    }
+  ]
+}

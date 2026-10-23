@@ -1,0 +1,552 @@
+[
+  {
+    "label": "mcp-connect",
+    "name": "A",
+    "pid": 56612
+  },
+  {
+    "label": "A-create",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "owner",
+      "see": false,
+      "code": "import bpy\nbpy.ops.mesh.primitive_cube_add()\nbpy.context.object.name=\"OwnerCube\"\nK.owner_marker=\"owner\""
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":79892994,\"ok\":true,\"ms\":1,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "exec",
+        "result": {
+          "id": 79892994,
+          "ok": true,
+          "ms": 1,
+          "stdout": "",
+          "stderr": "",
+          "result": null,
+          "error": null,
+          "traceback": null
+        },
+        "error": null,
+        "traceback": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "worker-status",
+    "name": "blender_rt_worker",
+    "args": {
+      "op": "status",
+      "name": "owner"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"status\",\"result\":{\"name\":\"owner\",\"holder\":\"blender-agent-56612\",\"alive\":true,\"ready\":true,\"pid\":58424,\"port\":40491,\"uptimeMs\":413,\"idleMs\":0,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 40491, \\\"pid\\\": 58424, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE_NEXT\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"4.5.15 LTS\\\"}\\r\\n\",\"status\":{\"ok\":true,\"version\":2,\"pid\":58424,\"uptime_s\":0,\"calls\":1,\"errors\":0,\"objects\":4,\"file\":null,\"kernel_modules\":[],\"boot\":{\"ok\":true,\"skipped\":true},\"frame_dir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\lifecycle\\\\final-4.5-listeners\\\\mcp-killed-owner WFpwlp\\\\work 中文 空格\",\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false}}}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "status",
+        "result": {
+          "name": "owner",
+          "holder": "blender-agent-56612",
+          "alive": true,
+          "ready": true,
+          "pid": 58424,
+          "port": 40491,
+          "uptimeMs": 413,
+          "idleMs": 0,
+          "inflight": 0,
+          "gpu": {
+            "engine_mode": "workbench",
+            "gpu_mode": "auto",
+            "backend": "n/a: GPU functions for drawing are not available in background mo",
+            "before": {
+              "engine": "BLENDER_EEVEE_NEXT"
+            },
+            "ok": true,
+            "skipped": false,
+            "configured": "workbench",
+            "after": {
+              "engine": "BLENDER_WORKBENCH"
+            },
+            "fell_back_to_cpu": false
+          },
+          "boot": {
+            "ok": true,
+            "skipped": true
+          },
+          "lastError": null,
+          "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 40491, \"pid\": 58424, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+          "status": {
+            "ok": true,
+            "version": 2,
+            "pid": 58424,
+            "uptime_s": 0,
+            "calls": 1,
+            "errors": 0,
+            "objects": 4,
+            "file": null,
+            "kernel_modules": [],
+            "boot": {
+              "ok": true,
+              "skipped": true
+            },
+            "frame_dir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\lifecycle\\final-4.5-listeners\\mcp-killed-owner WFpwlp\\work 中文 空格",
+            "gpu": {
+              "engine_mode": "workbench",
+              "gpu_mode": "auto",
+              "backend": "n/a: GPU functions for drawing are not available in background mo",
+              "before": {
+                "engine": "BLENDER_EEVEE_NEXT"
+              },
+              "ok": true,
+              "skipped": false,
+              "configured": "workbench",
+              "after": {
+                "engine": "BLENDER_WORKBENCH"
+              },
+              "fell_back_to_cpu": false
+            }
+          }
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "mcp-connect",
+    "name": "B",
+    "pid": 55956
+  },
+  {
+    "label": "B-create",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "survivor",
+      "see": false,
+      "code": "import bpy\nbpy.ops.mesh.primitive_cube_add()\nbpy.context.object.name=\"SurvivorCube\"\nK.marker=\"must-survive-owner\""
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":249550314,\"ok\":true,\"ms\":1,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "exec",
+        "result": {
+          "id": 249550314,
+          "ok": true,
+          "ms": 1,
+          "stdout": "",
+          "stderr": "",
+          "result": null,
+          "error": null,
+          "traceback": null
+        },
+        "error": null,
+        "traceback": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "worker-status",
+    "name": "blender_rt_worker",
+    "args": {
+      "op": "status",
+      "name": "survivor"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"status\",\"result\":{\"name\":\"survivor\",\"holder\":\"blender-agent-55956\",\"alive\":true,\"ready\":true,\"pid\":54540,\"port\":40492,\"uptimeMs\":415,\"idleMs\":0,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 40492, \\\"pid\\\": 54540, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE_NEXT\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"4.5.15 LTS\\\"}\\r\\n\",\"status\":{\"ok\":true,\"version\":2,\"pid\":54540,\"uptime_s\":0,\"calls\":1,\"errors\":0,\"objects\":4,\"file\":null,\"kernel_modules\":[],\"boot\":{\"ok\":true,\"skipped\":true},\"frame_dir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\lifecycle\\\\final-4.5-listeners\\\\mcp-killed-owner WFpwlp\\\\work 中文 空格\",\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false}}}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "status",
+        "result": {
+          "name": "survivor",
+          "holder": "blender-agent-55956",
+          "alive": true,
+          "ready": true,
+          "pid": 54540,
+          "port": 40492,
+          "uptimeMs": 415,
+          "idleMs": 0,
+          "inflight": 0,
+          "gpu": {
+            "engine_mode": "workbench",
+            "gpu_mode": "auto",
+            "backend": "n/a: GPU functions for drawing are not available in background mo",
+            "before": {
+              "engine": "BLENDER_EEVEE_NEXT"
+            },
+            "ok": true,
+            "skipped": false,
+            "configured": "workbench",
+            "after": {
+              "engine": "BLENDER_WORKBENCH"
+            },
+            "fell_back_to_cpu": false
+          },
+          "boot": {
+            "ok": true,
+            "skipped": true
+          },
+          "lastError": null,
+          "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 40492, \"pid\": 54540, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+          "status": {
+            "ok": true,
+            "version": 2,
+            "pid": 54540,
+            "uptime_s": 0,
+            "calls": 1,
+            "errors": 0,
+            "objects": 4,
+            "file": null,
+            "kernel_modules": [],
+            "boot": {
+              "ok": true,
+              "skipped": true
+            },
+            "frame_dir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\lifecycle\\final-4.5-listeners\\mcp-killed-owner WFpwlp\\work 中文 空格",
+            "gpu": {
+              "engine_mode": "workbench",
+              "gpu_mode": "auto",
+              "backend": "n/a: GPU functions for drawing are not available in background mo",
+              "before": {
+                "engine": "BLENDER_EEVEE_NEXT"
+              },
+              "ok": true,
+              "skipped": false,
+              "configured": "workbench",
+              "after": {
+                "engine": "BLENDER_WORKBENCH"
+              },
+              "fell_back_to_cpu": false
+            }
+          }
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "cli",
+    "args": [
+      "backend",
+      "stop"
+    ],
+    "status": 1,
+    "stdout": "{\"content\":[{\"type\":\"text\",\"text\":\"{\\\"ok\\\":false,\\\"code\\\":\\\"BACKEND_IN_USE\\\",\\\"error\\\":\\\"Other clients are using this backend; close them before stopping it\\\",\\\"details\\\":{\\\"ok\\\":false,\\\"error\\\":\\\"backend-in-use\\\",\\\"otherClients\\\":2}}\"}],\"structuredContent\":{\"ok\":false,\"code\":\"BACKEND_IN_USE\",\"error\":\"Other clients are using this backend; close them before stopping it\",\"details\":{\"ok\":false,\"error\":\"backend-in-use\",\"otherClients\":2}},\"isError\":true}\n",
+    "stderr": "[blender-agent] Other clients are using this backend; close them before stopping it\n"
+  },
+  {
+    "label": "worker-status",
+    "name": "blender_rt_worker",
+    "args": {
+      "op": "status",
+      "name": "survivor"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"status\",\"result\":{\"name\":\"survivor\",\"holder\":\"blender-agent-55956\",\"alive\":true,\"ready\":true,\"pid\":54540,\"port\":40492,\"uptimeMs\":2021,\"idleMs\":0,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 40492, \\\"pid\\\": 54540, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE_NEXT\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"4.5.15 LTS\\\"}\\r\\n\",\"status\":{\"ok\":true,\"version\":2,\"pid\":54540,\"uptime_s\":1,\"calls\":1,\"errors\":0,\"objects\":4,\"file\":null,\"kernel_modules\":[],\"boot\":{\"ok\":true,\"skipped\":true},\"frame_dir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\lifecycle\\\\final-4.5-listeners\\\\mcp-killed-owner WFpwlp\\\\work 中文 空格\",\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false}}}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "status",
+        "result": {
+          "name": "survivor",
+          "holder": "blender-agent-55956",
+          "alive": true,
+          "ready": true,
+          "pid": 54540,
+          "port": 40492,
+          "uptimeMs": 2021,
+          "idleMs": 0,
+          "inflight": 0,
+          "gpu": {
+            "engine_mode": "workbench",
+            "gpu_mode": "auto",
+            "backend": "n/a: GPU functions for drawing are not available in background mo",
+            "before": {
+              "engine": "BLENDER_EEVEE_NEXT"
+            },
+            "ok": true,
+            "skipped": false,
+            "configured": "workbench",
+            "after": {
+              "engine": "BLENDER_WORKBENCH"
+            },
+            "fell_back_to_cpu": false
+          },
+          "boot": {
+            "ok": true,
+            "skipped": true
+          },
+          "lastError": null,
+          "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 40492, \"pid\": 54540, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+          "status": {
+            "ok": true,
+            "version": 2,
+            "pid": 54540,
+            "uptime_s": 1,
+            "calls": 1,
+            "errors": 0,
+            "objects": 4,
+            "file": null,
+            "kernel_modules": [],
+            "boot": {
+              "ok": true,
+              "skipped": true
+            },
+            "frame_dir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\lifecycle\\final-4.5-listeners\\mcp-killed-owner WFpwlp\\work 中文 空格",
+            "gpu": {
+              "engine_mode": "workbench",
+              "gpu_mode": "auto",
+              "backend": "n/a: GPU functions for drawing are not available in background mo",
+              "before": {
+                "engine": "BLENDER_EEVEE_NEXT"
+              },
+              "ok": true,
+              "skipped": false,
+              "configured": "workbench",
+              "after": {
+                "engine": "BLENDER_WORKBENCH"
+              },
+              "fell_back_to_cpu": false
+            }
+          }
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "B-state-after-A-exit",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "survivor",
+      "see": false,
+      "code": "assert K.marker==\"must-survive-owner\"\nassert \"SurvivorCube\" in bpy.data.objects"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":26667944,\"ok\":true,\"ms\":1,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "exec",
+        "result": {
+          "id": 26667944,
+          "ok": true,
+          "ms": 1,
+          "stdout": "",
+          "stderr": "",
+          "result": null,
+          "error": null,
+          "traceback": null
+        },
+        "error": null,
+        "traceback": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "B-error-not-success",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "survivor",
+      "see": false,
+      "code": "raise RuntimeError(\"expected-lifecycle-failure\")"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":false,\"op\":\"exec\",\"result\":{\"id\":673233345,\"ok\":false,\"ms\":1,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":\"RuntimeError: expected-lifecycle-failure\",\"traceback\":\"Traceback (most recent call last):\\n  File \\\"E:\\\\workplace\\\\blender-server\\\\packages\\\\blender-agent\\\\assets\\\\runtime\\\\worker.py\\\", line 485, in _exec\\n    exec(compile(code, \\\"<dsh_worker>\\\", \\\"exec\\\"), ns)\\n  File \\\"<dsh_worker>\\\", line 1, in <module>\\nRuntimeError: expected-lifecycle-failure\\n\"},\"error\":\"RuntimeError: expected-lifecycle-failure\",\"traceback\":\"Traceback (most recent call last):\\n  File \\\"E:\\\\workplace\\\\blender-server\\\\packages\\\\blender-agent\\\\assets\\\\runtime\\\\worker.py\\\", line 485, in _exec\\n    exec(compile(code, \\\"<dsh_worker>\\\", \\\"exec\\\"), ns)\\n  File \\\"<dsh_worker>\\\", line 1, in <module>\\nRuntimeError: expected-lifecycle-failure\\n\"}"
+        }
+      ],
+      "structuredContent": {
+        "ok": false,
+        "op": "exec",
+        "result": {
+          "id": 673233345,
+          "ok": false,
+          "ms": 1,
+          "stdout": "",
+          "stderr": "",
+          "result": null,
+          "error": "RuntimeError: expected-lifecycle-failure",
+          "traceback": "Traceback (most recent call last):\n  File \"E:\\workplace\\blender-server\\packages\\blender-agent\\assets\\runtime\\worker.py\", line 485, in _exec\n    exec(compile(code, \"<dsh_worker>\", \"exec\"), ns)\n  File \"<dsh_worker>\", line 1, in <module>\nRuntimeError: expected-lifecycle-failure\n"
+        },
+        "error": "RuntimeError: expected-lifecycle-failure",
+        "traceback": "Traceback (most recent call last):\n  File \"E:\\workplace\\blender-server\\packages\\blender-agent\\assets\\runtime\\worker.py\", line 485, in _exec\n    exec(compile(code, \"<dsh_worker>\", \"exec\"), ns)\n  File \"<dsh_worker>\", line 1, in <module>\nRuntimeError: expected-lifecycle-failure\n"
+      },
+      "isError": true
+    }
+  },
+  {
+    "label": "worker-status",
+    "name": "blender_rt_worker",
+    "args": {
+      "op": "status",
+      "name": "survivor"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"status\",\"result\":{\"name\":\"survivor\",\"holder\":\"blender-agent-55956\",\"alive\":true,\"ready\":true,\"pid\":54540,\"port\":40492,\"uptimeMs\":2255,\"idleMs\":0,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 40492, \\\"pid\\\": 54540, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE_NEXT\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"4.5.15 LTS\\\"}\\r\\n\",\"status\":{\"ok\":true,\"version\":2,\"pid\":54540,\"uptime_s\":1,\"calls\":3,\"errors\":1,\"objects\":4,\"file\":null,\"kernel_modules\":[],\"boot\":{\"ok\":true,\"skipped\":true},\"frame_dir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\lifecycle\\\\final-4.5-listeners\\\\mcp-killed-owner WFpwlp\\\\work 中文 空格\",\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false}}}}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "status",
+        "result": {
+          "name": "survivor",
+          "holder": "blender-agent-55956",
+          "alive": true,
+          "ready": true,
+          "pid": 54540,
+          "port": 40492,
+          "uptimeMs": 2255,
+          "idleMs": 0,
+          "inflight": 0,
+          "gpu": {
+            "engine_mode": "workbench",
+            "gpu_mode": "auto",
+            "backend": "n/a: GPU functions for drawing are not available in background mo",
+            "before": {
+              "engine": "BLENDER_EEVEE_NEXT"
+            },
+            "ok": true,
+            "skipped": false,
+            "configured": "workbench",
+            "after": {
+              "engine": "BLENDER_WORKBENCH"
+            },
+            "fell_back_to_cpu": false
+          },
+          "boot": {
+            "ok": true,
+            "skipped": true
+          },
+          "lastError": null,
+          "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 40492, \"pid\": 54540, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+          "status": {
+            "ok": true,
+            "version": 2,
+            "pid": 54540,
+            "uptime_s": 1,
+            "calls": 3,
+            "errors": 1,
+            "objects": 4,
+            "file": null,
+            "kernel_modules": [],
+            "boot": {
+              "ok": true,
+              "skipped": true
+            },
+            "frame_dir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\lifecycle\\final-4.5-listeners\\mcp-killed-owner WFpwlp\\work 中文 空格",
+            "gpu": {
+              "engine_mode": "workbench",
+              "gpu_mode": "auto",
+              "backend": "n/a: GPU functions for drawing are not available in background mo",
+              "before": {
+                "engine": "BLENDER_EEVEE_NEXT"
+              },
+              "ok": true,
+              "skipped": false,
+              "configured": "workbench",
+              "after": {
+                "engine": "BLENDER_WORKBENCH"
+              },
+              "fell_back_to_cpu": false
+            }
+          }
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "B-error-retains-state",
+    "name": "blender_rt_do",
+    "args": {
+      "session": "survivor",
+      "see": false,
+      "code": "assert K.marker==\"must-survive-owner\" and \"SurvivorCube\" in bpy.data.objects"
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":742845289,\"ok\":true,\"ms\":0,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "op": "exec",
+        "result": {
+          "id": 742845289,
+          "ok": true,
+          "ms": 0,
+          "stdout": "",
+          "stderr": "",
+          "result": null,
+          "error": null,
+          "traceback": null
+        },
+        "error": null,
+        "traceback": null
+      },
+      "isError": false
+    }
+  },
+  {
+    "label": "cleanup",
+    "ok": true,
+    "ports": {
+      "http": 49709,
+      "addon": 49710,
+      "worker": 40491
+    },
+    "exitedPids": [
+      56612,
+      38796,
+      58424,
+      55956,
+      54540
+    ]
+  },
+  {
+    "label": "result",
+    "ok": true,
+    "abrupt": true,
+    "sharedBackendPid": 38796,
+    "survivorWorkerPid": 54540,
+    "ownerWorkerPid": 58424
+  }
+]

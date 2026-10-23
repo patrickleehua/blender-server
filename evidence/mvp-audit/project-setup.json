@@ -1,0 +1,89 @@
+{
+  "mode": "applied",
+  "operation": "install",
+  "project": "E:\\workplace\\blender-server",
+  "plan": [
+    {
+      "path": ".agents/skills/blender-agent/agents/openai.yaml",
+      "action": "unchanged"
+    },
+    {
+      "path": ".agents/skills/blender-agent/LICENSE",
+      "action": "unchanged"
+    },
+    {
+      "path": ".agents/skills/blender-agent/NOTICE.md",
+      "action": "unchanged"
+    },
+    {
+      "path": ".agents/skills/blender-agent/references/acceptance.md",
+      "action": "unchanged"
+    },
+    {
+      "path": ".agents/skills/blender-agent/references/safety.md",
+      "action": "update"
+    },
+    {
+      "path": ".agents/skills/blender-agent/references/tools.md",
+      "action": "update"
+    },
+    {
+      "path": ".agents/skills/blender-agent/references/workflows.md",
+      "action": "unchanged"
+    },
+    {
+      "path": ".agents/skills/blender-agent/SKILL.md",
+      "action": "update"
+    },
+    {
+      "path": ".blender-agent/config-candidates/codex.toml",
+      "action": "unchanged"
+    },
+    {
+      "path": ".codex/config.toml",
+      "action": "unchanged"
+    },
+    {
+      "path": ".claude/skills/blender-agent/agents/openai.yaml",
+      "action": "unchanged"
+    },
+    {
+      "path": ".claude/skills/blender-agent/LICENSE",
+      "action": "unchanged"
+    },
+    {
+      "path": ".claude/skills/blender-agent/NOTICE.md",
+      "action": "unchanged"
+    },
+    {
+      "path": ".claude/skills/blender-agent/references/acceptance.md",
+      "action": "unchanged"
+    },
+    {
+      "path": ".claude/skills/blender-agent/references/safety.md",
+      "action": "update"
+    },
+    {
+      "path": ".claude/skills/blender-agent/references/tools.md",
+      "action": "update"
+    },
+    {
+      "path": ".claude/skills/blender-agent/references/workflows.md",
+      "action": "unchanged"
+    },
+    {
+      "path": ".claude/skills/blender-agent/SKILL.md",
+      "action": "update"
+    },
+    {
+      "path": ".blender-agent/config-candidates/claude.json",
+      "action": "unchanged"
+    },
+    {
+      "path": ".mcp.json",
+      "action": "unchanged"
+    }
+  ],
+  "cli": "E:/workplace/blender-server/packages/blender-agent/dist/cli.js",
+  "note": "Project-local files only. Existing host configs require manual review/merge. Restart/reload the host, then run real acceptance."
+}

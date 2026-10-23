@@ -1,0 +1,7 @@
+{
+  "fingerprint": "bbc1ac1d3c1b1aa78226ba226256591c58e42d9b1fe2809f1f8e436ad412b2eb",
+  "ok": true,
+  "exit": 0,
+  "stdout": "DISPOSED\n",
+  "fault": "HTTP 503 injected only at registration; real service/identity"
+}

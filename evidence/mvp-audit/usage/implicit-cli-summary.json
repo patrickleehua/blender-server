@@ -1,0 +1,78 @@
+{
+  "flags": [
+    "--port",
+    "43877",
+    "--addon-port",
+    "43876",
+    "--worker-port",
+    "43879",
+    "--workdir",
+    "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\implicit-cli",
+    "--blender",
+    "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe"
+  ],
+  "trace": [
+    {
+      "label": "create",
+      "exit": 0,
+      "stderr": "",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":674392430,\"ok\":true,\"ms\":0,\"stdout\":\"SCENE_CREATED\\n\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "exec",
+          "result": {
+            "id": 674392430,
+            "ok": true,
+            "ms": 0,
+            "stdout": "SCENE_CREATED\n",
+            "stderr": "",
+            "result": null,
+            "error": null,
+            "traceback": null
+          },
+          "error": null,
+          "traceback": null
+        },
+        "isError": false
+      },
+      "stateFileExistsAfterExit": false
+    },
+    {
+      "label": "continue",
+      "exit": 1,
+      "stderr": "",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":false,\"op\":\"exec\",\"result\":{\"id\":192347451,\"ok\":false,\"ms\":0,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":\"AttributeError: module 'dsh_rt_kernel' has no attribute 'implicit_cli'\",\"traceback\":\"Traceback (most recent call last):\\n  File \\\"E:\\\\workplace\\\\blender-server\\\\packages\\\\blender-agent\\\\assets\\\\runtime\\\\worker.py\\\", line 485, in _exec\\n    exec(compile(code, \\\"<dsh_worker>\\\", \\\"exec\\\"), ns)\\n  File \\\"<dsh_worker>\\\", line 1, in <module>\\nAttributeError: module 'dsh_rt_kernel' has no attribute 'implicit_cli'\\n\"},\"error\":\"AttributeError: module 'dsh_rt_kernel' has no attribute 'implicit_cli'\",\"traceback\":\"Traceback (most recent call last):\\n  File \\\"E:\\\\workplace\\\\blender-server\\\\packages\\\\blender-agent\\\\assets\\\\runtime\\\\worker.py\\\", line 485, in _exec\\n    exec(compile(code, \\\"<dsh_worker>\\\", \\\"exec\\\"), ns)\\n  File \\\"<dsh_worker>\\\", line 1, in <module>\\nAttributeError: module 'dsh_rt_kernel' has no attribute 'implicit_cli'\\n\"}"
+          }
+        ],
+        "structuredContent": {
+          "ok": false,
+          "op": "exec",
+          "result": {
+            "id": 192347451,
+            "ok": false,
+            "ms": 0,
+            "stdout": "",
+            "stderr": "",
+            "result": null,
+            "error": "AttributeError: module 'dsh_rt_kernel' has no attribute 'implicit_cli'",
+            "traceback": "Traceback (most recent call last):\n  File \"E:\\workplace\\blender-server\\packages\\blender-agent\\assets\\runtime\\worker.py\", line 485, in _exec\n    exec(compile(code, \"<dsh_worker>\", \"exec\"), ns)\n  File \"<dsh_worker>\", line 1, in <module>\nAttributeError: module 'dsh_rt_kernel' has no attribute 'implicit_cli'\n"
+          },
+          "error": "AttributeError: module 'dsh_rt_kernel' has no attribute 'implicit_cli'",
+          "traceback": "Traceback (most recent call last):\n  File \"E:\\workplace\\blender-server\\packages\\blender-agent\\assets\\runtime\\worker.py\", line 485, in _exec\n    exec(compile(code, \"<dsh_worker>\", \"exec\"), ns)\n  File \"<dsh_worker>\", line 1, in <module>\nAttributeError: module 'dsh_rt_kernel' has no attribute 'implicit_cli'\n"
+        },
+        "isError": true
+      },
+      "stateFileExistsAfterExit": false
+    }
+  ]
+}

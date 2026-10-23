@@ -1,0 +1,21 @@
+{
+ "id": "job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e",
+ "kind": "job",
+ "status": "done",
+ "exitCode": 0,
+ "signal": null,
+ "startedAt": 1792714613099,
+ "finishedAt": 1792714613545,
+ "ms": 446,
+ "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\plan",
+ "script": "E:\\workplace\\blender-server\\tmp\\mvp-upstream-final\\dsh_headless_mvk7zsdl.py",
+ "engine": "none",
+ "runId": "run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c",
+ "stage": "done",
+ "artifacts": [
+  "plan_graph.mmd(216B)"
+ ],
+ "resultSummary": "{\"ok\":true,\"passed\":18,\"failed\":0,\"failures\":[],\"outdir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\plan\"}",
+ "lastException": null,
+ "pluginVersion": "1.0.0"
+}

@@ -1,0 +1,100 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"ok\":true,\"op\":\"wait\",\"job\":{\"kind\":\"job\",\"id\":\"job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e\",\"runId\":\"run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c\",\"status\":\"done\",\"pid\":28712,\"pidAlive\":false,\"ms\":446,\"timeoutMs\":300000,\"outdir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\plan\",\"outdirWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\plan\",\"logDir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\plan\\\\jobs\\\\job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e\",\"logDirWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\plan\\\\jobs\\\\job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e\",\"stdoutLog\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\plan\\\\jobs\\\\job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e\\\\stdout.log\",\"stderrLog\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\plan\\\\jobs\\\\job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e\\\\stderr.log\",\"stdoutLogWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\plan\\\\jobs\\\\job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e\\\\stdout.log\",\"stderrLogWsl\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\plan\\\\jobs\\\\job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e\\\\stderr.log\",\"exitCode\":0,\"signal\":null,\"engine\":\"none\",\"stage\":{\"name\":\"done\",\"t\":1792714613.439,\"run\":\"run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c\"},\"stageName\":\"done\",\"stageAt\":1792714613439,\"stageAgoMs\":227,\"lastOutputAt\":1792714613529,\"idleMs\":137,\"lines\":28,\"logBytes\":1495,\"resultJson\":{\"ok\":true,\"passed\":18,\"failed\":0,\"failures\":[],\"outdir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\plan\"},\"result\":{\"ok\":true,\"passed\":18,\"failed\":0,\"failures\":[],\"outdir\":\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\plan\"},\"resultParseError\":null,\"resultPath\":null,\"resultPathWsl\":null,\"resultBytes\":132,\"resultTruncated\":false,\"stdoutTail\":\"DSH_STAGE {\\\"name\\\": \\\"boot\\\", \\\"t\\\": 1792714613.415, \\\"run\\\": \\\"run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c\\\"}\\r\\nDSH_STAGE {\\\"name\\\": \\\"engine-prelude\\\", \\\"t\\\": 1792714613.416, \\\"run\\\": \\\"run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c\\\"}\\r\\nDSH_STAGE {\\\"name\\\": \\\"preload-done\\\", \\\"t\\\": 1792714613.428, \\\"run\\\": \\\"run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c\\\"}\\r\\nPLAN_SELFTEST version=1\\r\\n  ok   load 成功并出诊断\\r\\n  ok   未判别连接 → UnresolvedConnection\\r\\n  ok   status 汇总正常\\r\\n  ok   拓扑顺序：组件 → 连接 → 特征\\r\\n  ok   没有阻塞节点\\r\\n  ok   dry_run 只出计划\\r\\n  ok   编译出组件对象\\r\\n  ok   hidden_when(insert) → 榫存在\\r\\n  ok   特征展开 2 个\\r\\n  ok   连接偏移已应用（backrest y +0.01）\\r\\n  ok   连接判为 supported 后不再有 UnresolvedConnection\\r\\n  ok   hidden_when(attach) → 榫不生成\\r\\n  ok   超区间 → ParamOutOfRange\\r\\n  ok   硬错误会拦编译\\r\\n  ok   依赖成环 → Cycle\\r\\n  ok   mermaid 图包含连接与特征\\r\\n  ok   dot 图包含节点\\r\\n  ok   编译时按 plan.envelope 建包络（与契约层联动）\\r\\nHEADLESS {\\\"ok\\\": true, \\\"passed\\\": 18, \\\"failed\\\": 0, \\\"failures\\\": [], \\\"outdir\\\": \\\"E:\\\\\\\\workplace\\\\\\\\blender-server\\\\\\\\evidence\\\\\\\\mvp-audit\\\\\\\\final-upstream\\\\\\\\plan\\\"}\\r\\nDSH_STAGE {\\\"name\\\": \\\"script-end\\\", \\\"t\\\": 1792714613.439, \\\"run\\\": \\\"run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c\\\"}\\r\\nDSH_STAGE {\\\"name\\\": \\\"done\\\", \\\"t\\\": 1792714613.439, \\\"run\\\": \\\"run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c\\\"}\\r\\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\\n\\nBlender quit\\n\",\"stderrTail\":\"\",\"pathWarnings\":[],\"warnings\":[],\"shots\":null,\"progress\":null,\"progressAt\":null,\"progressAgeMs\":null,\"heartbeat\":null,\"progressHistory\":[],\"scriptStaging\":{\"requested\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-upstream-final\",\"requestedShared\":true,\"requestedWhy\":\"windows\",\"used\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-upstream-final\",\"usedWin\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\mvp-upstream-final\\\\dsh_headless_mvk7zsdl.py\",\"usedShared\":true,\"usedWhy\":\"windows\",\"label\":\"workDir\",\"substituted\":false,\"note\":\"workDir 共享性检查通过（windows）\"},\"inputFile\":null,\"scriptFile\":null,\"lastException\":null,\"artifacts\":[{\"name\":\"plan_graph.mmd\",\"bytes\":216,\"mtimeMs\":1792714613437.0117}],\"waitedMs\":511,\"waitTimedOut\":false},\"jobId\":\"job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e\"}"
+    }
+  ],
+  "structuredContent": {
+    "ok": true,
+    "op": "wait",
+    "job": {
+      "kind": "job",
+      "id": "job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e",
+      "runId": "run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c",
+      "status": "done",
+      "pid": 28712,
+      "pidAlive": false,
+      "ms": 446,
+      "timeoutMs": 300000,
+      "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\plan",
+      "outdirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\plan",
+      "logDir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\plan\\jobs\\job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e",
+      "logDirWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\plan\\jobs\\job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e",
+      "stdoutLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\plan\\jobs\\job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e\\stdout.log",
+      "stderrLog": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\plan\\jobs\\job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e\\stderr.log",
+      "stdoutLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\plan\\jobs\\job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e\\stdout.log",
+      "stderrLogWsl": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\plan\\jobs\\job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e\\stderr.log",
+      "exitCode": 0,
+      "signal": null,
+      "engine": "none",
+      "stage": {
+        "name": "done",
+        "t": 1792714613.439,
+        "run": "run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c"
+      },
+      "stageName": "done",
+      "stageAt": 1792714613439,
+      "stageAgoMs": 227,
+      "lastOutputAt": 1792714613529,
+      "idleMs": 137,
+      "lines": 28,
+      "logBytes": 1495,
+      "resultJson": {
+        "ok": true,
+        "passed": 18,
+        "failed": 0,
+        "failures": [],
+        "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\plan"
+      },
+      "result": {
+        "ok": true,
+        "passed": 18,
+        "failed": 0,
+        "failures": [],
+        "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-upstream\\plan"
+      },
+      "resultParseError": null,
+      "resultPath": null,
+      "resultPathWsl": null,
+      "resultBytes": 132,
+      "resultTruncated": false,
+      "stdoutTail": "DSH_STAGE {\"name\": \"boot\", \"t\": 1792714613.415, \"run\": \"run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c\"}\r\nDSH_STAGE {\"name\": \"engine-prelude\", \"t\": 1792714613.416, \"run\": \"run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c\"}\r\nDSH_STAGE {\"name\": \"preload-done\", \"t\": 1792714613.428, \"run\": \"run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c\"}\r\nPLAN_SELFTEST version=1\r\n  ok   load 成功并出诊断\r\n  ok   未判别连接 → UnresolvedConnection\r\n  ok   status 汇总正常\r\n  ok   拓扑顺序：组件 → 连接 → 特征\r\n  ok   没有阻塞节点\r\n  ok   dry_run 只出计划\r\n  ok   编译出组件对象\r\n  ok   hidden_when(insert) → 榫存在\r\n  ok   特征展开 2 个\r\n  ok   连接偏移已应用（backrest y +0.01）\r\n  ok   连接判为 supported 后不再有 UnresolvedConnection\r\n  ok   hidden_when(attach) → 榫不生成\r\n  ok   超区间 → ParamOutOfRange\r\n  ok   硬错误会拦编译\r\n  ok   依赖成环 → Cycle\r\n  ok   mermaid 图包含连接与特征\r\n  ok   dot 图包含节点\r\n  ok   编译时按 plan.envelope 建包络（与契约层联动）\r\nHEADLESS {\"ok\": true, \"passed\": 18, \"failed\": 0, \"failures\": [], \"outdir\": \"E:\\\\workplace\\\\blender-server\\\\evidence\\\\mvp-audit\\\\final-upstream\\\\plan\"}\r\nDSH_STAGE {\"name\": \"script-end\", \"t\": 1792714613.439, \"run\": \"run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c\"}\r\nDSH_STAGE {\"name\": \"done\", \"t\": 1792714613.439, \"run\": \"run-f0b520aa-a7a9-43d2-8c93-1d8718bd980c\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\n\nBlender quit\n",
+      "stderrTail": "",
+      "pathWarnings": [],
+      "warnings": [],
+      "shots": null,
+      "progress": null,
+      "progressAt": null,
+      "progressAgeMs": null,
+      "heartbeat": null,
+      "progressHistory": [],
+      "scriptStaging": {
+        "requested": "E:\\workplace\\blender-server\\tmp\\mvp-upstream-final",
+        "requestedShared": true,
+        "requestedWhy": "windows",
+        "used": "E:\\workplace\\blender-server\\tmp\\mvp-upstream-final",
+        "usedWin": "E:\\workplace\\blender-server\\tmp\\mvp-upstream-final\\dsh_headless_mvk7zsdl.py",
+        "usedShared": true,
+        "usedWhy": "windows",
+        "label": "workDir",
+        "substituted": false,
+        "note": "workDir 共享性检查通过（windows）"
+      },
+      "inputFile": null,
+      "scriptFile": null,
+      "lastException": null,
+      "artifacts": [
+        {
+          "name": "plan_graph.mmd",
+          "bytes": 216,
+          "mtimeMs": 1792714613437.0117
+        }
+      ],
+      "waitedMs": 511,
+      "waitTimedOut": false
+    },
+    "jobId": "job-2bd8ee74-d3ae-4209-88fa-3536ea285c7e"
+  },
+  "isError": false
+}

@@ -1,0 +1,22 @@
+{
+ "id": "job-bb93747f-e92e-47db-a321-a7b9c3b82be8",
+ "kind": "job",
+ "status": "failed",
+ "exitCode": 1,
+ "signal": null,
+ "startedAt": 1792714456375,
+ "finishedAt": 1792714456788,
+ "ms": 413,
+ "outdir": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime",
+ "script": "E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\dsh_headless_mvk7wfg6.py",
+ "engine": "none",
+ "runId": "run-92fc78de-57b7-43ee-9d64-0a0a00de379b",
+ "stage": "preload-done",
+ "artifacts": [
+  "dsh_headless_mvk7wfg6.py(69347B)",
+  "dsh_see_53452_1.png(31919B)"
+ ],
+ "resultSummary": null,
+ "lastException": "Error: script failed, file: 'E:\\workplace\\blender-server\\evidence\\mvp-audit\\final-package-smoke\\runtime\\dsh_headless_mvk7wfg6.py', exiting.",
+ "pluginVersion": "1.0.0"
+}

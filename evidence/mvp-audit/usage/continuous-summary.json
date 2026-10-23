@@ -1,0 +1,397 @@
+{
+  "source": "fe3bc3ef3c9422a53a62596bb27c6d464fe6806f",
+  "blender": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+  "work": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\连续 CLI 中文 空格",
+  "flags": [
+    "--port",
+    "43877",
+    "--addon-port",
+    "43876",
+    "--worker-port",
+    "43879",
+    "--workdir",
+    "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\连续 CLI 中文 空格",
+    "--blender",
+    "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe"
+  ],
+  "records": [
+    {
+      "label": "01-backend-start",
+      "args": [
+        "backend",
+        "start"
+      ],
+      "exit": 0,
+      "structuredContent": {
+        "ok": true,
+        "pid": 56356,
+        "instance": "4aa98bd9-105b-489c-a141-aacfc2d4b404",
+        "fingerprint": "4c0226b037cc80f64a06019cafea5b77ee85ef8e36f3baf80669c642b104f3dc",
+        "port": 43877,
+        "startedAt": "2026-10-22T19:20:04.138Z",
+        "workdir": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\连续 CLI 中文 空格",
+        "blender": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+        "addonPort": 43876,
+        "workerPort": 43879,
+        "persistent": true
+      }
+    },
+    {
+      "label": "02-doctor",
+      "exit": 1,
+      "result": {
+        "ok": false,
+        "addon": {
+          "kind": "blender-unreachable",
+          "tcp": false,
+          "ping": null,
+          "summary": "9876 端口没人监听 —— Blender 没在跑，或 addon 没连上",
+          "fix": "**agent 走这条路：blender_viewport(op=\"launch\") 一键拉起 GUI Blender 并自动 Connect addon**（v0.9.4 起，不必有人点面板）；人工流程是：启动 Blender → 3D 视图按 N → 「DSH Blender Bridge」面板 → Connect（服务监听 127.0.0.1:43876）",
+          "hint": "TCP 127.0.0.1:43876 不通：Blender 没在运行，或 addon 面板没连上。一键修：blender_viewport(op=\"launch\")（GUI + 自动 Connect，幂等）；人工修：N → 「DSH Blender Bridge」面板 → Connect"
+        },
+        "metrics": {
+          "calls": 0,
+          "errors": 0,
+          "timeouts": 0,
+          "inflight": 0,
+          "lastCmd": null,
+          "lastCmdAt": null,
+          "lastOkAt": null,
+          "lastError": null,
+          "lastDiagnosis": {
+            "kind": "blender-unreachable",
+            "tcp": false,
+            "ping": null,
+            "summary": "9876 端口没人监听 —— Blender 没在跑，或 addon 没连上",
+            "fix": "**agent 走这条路：blender_viewport(op=\"launch\") 一键拉起 GUI Blender 并自动 Connect addon**（v0.9.4 起，不必有人点面板）；人工流程是：启动 Blender → 3D 视图按 N → 「DSH Blender Bridge」面板 → Connect（服务监听 127.0.0.1:43876）",
+            "hint": "TCP 127.0.0.1:43876 不通：Blender 没在运行，或 addon 面板没连上。一键修：blender_viewport(op=\"launch\")（GUI + 自动 Connect，幂等）；人工修：N → 「DSH Blender Bridge」面板 → Connect"
+          },
+          "views": 0,
+          "headlessRuns": 0,
+          "lastHeadlessMs": null,
+          "workerStarts": 0,
+          "workerExecs": 0,
+          "lastCmdAgeMs": null
+        },
+        "config": {
+          "platform": "win32",
+          "distro": null,
+          "addon": "127.0.0.1:43876",
+          "http": "127.0.0.1:43877",
+          "workDir": {
+            "win": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\连续 CLI 中文 空格",
+            "wsl": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\连续 CLI 中文 空格",
+            "from": "config",
+            "fallback": null,
+            "shared": {
+              "shared": true,
+              "why": "windows"
+            }
+          },
+          "blenderExe": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+          "blenderFrom": "config",
+          "blenderUserConfig": null,
+          "blenderUserScripts": null,
+          "workerPort": 43879,
+          "configFile": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\连续 CLI 中文 空格\\.blender-agent\\config-43877-4aa98bd9-105b-489c-a141-aacfc2d4b404.json",
+          "holder": "plugin-pid-56356",
+          "leaseTtlMs": 600000,
+          "env": {
+            "DSH_BLENDER_WORKDIR": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\连续 CLI 中文 空格",
+            "DSH_BLENDER_EXE": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+            "DSH_BLENDER_HTTP_PORT": "43877",
+            "DSH_BLENDER_ADDON_PROTOCOL": null,
+            "DSH_BLENDER_CONFIG": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\连续 CLI 中文 空格\\.blender-agent\\config-43877-4aa98bd9-105b-489c-a141-aacfc2d4b404.json"
+          }
+        },
+        "stats": {
+          "frames": 0,
+          "acts": 0,
+          "cmds": 0,
+          "loops": 0,
+          "views": 0,
+          "headless": 0,
+          "plan": 0,
+          "worker": 0,
+          "txn": 0,
+          "preset": 0,
+          "job": 0,
+          "selections": 0,
+          "lastSelectionMs": null,
+          "lastPlanMs": null,
+          "lastViewMs": null,
+          "lastHeadlessMs": null,
+          "lastFrameMs": null,
+          "lastActMs": null,
+          "lastError": null,
+          "startedAt": 1792696804161
+        },
+        "kind": "blender-unreachable"
+      }
+    },
+    {
+      "label": "03-worker-start",
+      "args": [
+        "call",
+        "blender_rt_worker",
+        "--file",
+        "E:\\workplace\\blender-server\\evidence\\mvp-audit\\usage\\03-worker-start.input.json"
+      ],
+      "exit": 0,
+      "structuredContent": {
+        "ok": true,
+        "op": "start",
+        "result": {
+          "name": "usage",
+          "alive": true,
+          "ready": true,
+          "pid": 35560,
+          "port": 43879,
+          "uptimeMs": 309,
+          "idleMs": 0,
+          "inflight": 0,
+          "gpu": {
+            "engine_mode": "workbench",
+            "gpu_mode": "auto",
+            "backend": "n/a: GPU functions for drawing are not available in background mo",
+            "before": {
+              "engine": "BLENDER_EEVEE_NEXT"
+            },
+            "ok": true,
+            "skipped": false,
+            "configured": "workbench",
+            "after": {
+              "engine": "BLENDER_WORKBENCH"
+            },
+            "fell_back_to_cpu": false
+          },
+          "boot": {
+            "ok": true,
+            "skipped": true
+          },
+          "lastError": null,
+          "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 43879, \"pid\": 35560, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+          "hello": {
+            "ready": true,
+            "port": 43879,
+            "pid": 35560,
+            "version": 2,
+            "gpu": {
+              "engine_mode": "workbench",
+              "gpu_mode": "auto",
+              "backend": "n/a: GPU functions for drawing are not available in background mo",
+              "before": {
+                "engine": "BLENDER_EEVEE_NEXT"
+              },
+              "ok": true,
+              "skipped": false,
+              "configured": "workbench",
+              "after": {
+                "engine": "BLENDER_WORKBENCH"
+              },
+              "fell_back_to_cpu": false
+            },
+            "boot": {
+              "ok": true,
+              "skipped": true
+            },
+            "blender": "4.5.15 LTS"
+          },
+          "warmup": null
+        }
+      }
+    },
+    {
+      "label": "04-first-write",
+      "args": [
+        "call",
+        "blender_rt_do",
+        "--file",
+        "E:\\workplace\\blender-server\\evidence\\mvp-audit\\usage\\04-first-write.input.json"
+      ],
+      "exit": 0,
+      "structuredContent": {
+        "ok": true,
+        "op": "exec",
+        "result": {
+          "id": 401080327,
+          "ok": true,
+          "ms": 51,
+          "stdout": "FIRST (2.0, 2.0, 2.0)\n",
+          "stderr": "",
+          "result": null,
+          "error": null,
+          "traceback": null
+        },
+        "error": null,
+        "traceback": null
+      }
+    },
+    {
+      "label": "05-second-write",
+      "args": [
+        "call",
+        "blender_rt_do",
+        "--file",
+        "E:\\workplace\\blender-server\\evidence\\mvp-audit\\usage\\05-second-write.input.json"
+      ],
+      "exit": 0,
+      "structuredContent": {
+        "ok": true,
+        "op": "exec",
+        "result": {
+          "id": 119037724,
+          "ok": true,
+          "ms": 0,
+          "stdout": "SECOND (3.0, 0.0, 0.0)\n",
+          "stderr": "",
+          "result": null,
+          "error": null,
+          "traceback": null
+        },
+        "error": null,
+        "traceback": null
+      }
+    },
+    {
+      "label": "06-see",
+      "args": [
+        "call",
+        "blender_rt_see",
+        "--file",
+        "E:\\workplace\\blender-server\\evidence\\mvp-audit\\usage\\06-see.input.json"
+      ],
+      "exit": 0,
+      "structuredContent": {
+        "ok": true,
+        "op": "see",
+        "result": {
+          "id": 759557691,
+          "ok": true,
+          "mode": "workbench-offscreen",
+          "path": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\连续 CLI 中文 空格\\dsh_see_35560_1.png",
+          "image": {
+            "mimeType": "image/png",
+            "contentIndex": 1
+          },
+          "width": 320,
+          "height": 180,
+          "bytes": 26905,
+          "coverage_estimate": 0.1419,
+          "pixel_hash": "64bb5c95440c",
+          "ms": 815,
+          "t": {
+            "render_ms": 808,
+            "read_ms": 7,
+            "total_ms": 815
+          },
+          "engine": "BLENDER_WORKBENCH"
+        },
+        "error": null
+      }
+    },
+    {
+      "label": "07-check-state-after-see",
+      "args": [
+        "call",
+        "blender_rt_do",
+        "--file",
+        "E:\\workplace\\blender-server\\evidence\\mvp-audit\\usage\\07-check-state-after-see.input.json"
+      ],
+      "exit": 0,
+      "structuredContent": {
+        "ok": true,
+        "op": "exec",
+        "result": {
+          "id": 632713018,
+          "ok": true,
+          "ms": 0,
+          "stdout": "PERSISTENCE_CONFIRMED\n",
+          "stderr": "",
+          "result": null,
+          "error": null,
+          "traceback": null
+        },
+        "error": null,
+        "traceback": null
+      }
+    },
+    {
+      "label": "08-worker-status",
+      "args": [
+        "call",
+        "blender_rt_worker",
+        "--file",
+        "E:\\workplace\\blender-server\\evidence\\mvp-audit\\usage\\08-worker-status.input.json"
+      ],
+      "exit": 0,
+      "structuredContent": {
+        "ok": true,
+        "op": "status",
+        "result": {
+          "name": "usage",
+          "alive": true,
+          "ready": true,
+          "pid": 35560,
+          "port": 43879,
+          "uptimeMs": 2587,
+          "idleMs": 0,
+          "inflight": 0,
+          "gpu": {
+            "engine_mode": "workbench",
+            "gpu_mode": "auto",
+            "backend": "n/a: GPU functions for drawing are not available in background mo",
+            "before": {
+              "engine": "BLENDER_EEVEE_NEXT"
+            },
+            "ok": true,
+            "skipped": false,
+            "configured": "workbench",
+            "after": {
+              "engine": "BLENDER_WORKBENCH"
+            },
+            "fell_back_to_cpu": false
+          },
+          "boot": {
+            "ok": true,
+            "skipped": true
+          },
+          "lastError": null,
+          "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 43879, \"pid\": 35560, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\nSaved: 'E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\连续 CLI 中文 空格\\dsh_see_35560_1.png'\nTime: 00:00.80 (Saving: 00:00.06)\n\n",
+          "status": {
+            "ok": true,
+            "version": 2,
+            "pid": 35560,
+            "uptime_s": 2,
+            "calls": 3,
+            "errors": 0,
+            "objects": 1,
+            "file": null,
+            "kernel_modules": [],
+            "boot": {
+              "ok": true,
+              "skipped": true
+            },
+            "frame_dir": "E:\\workplace\\blender-server\\tmp\\mvp-usage-audit\\连续 CLI 中文 空格",
+            "gpu": {
+              "engine_mode": "workbench",
+              "gpu_mode": "auto",
+              "backend": "n/a: GPU functions for drawing are not available in background mo",
+              "before": {
+                "engine": "BLENDER_EEVEE_NEXT"
+              },
+              "ok": true,
+              "skipped": false,
+              "configured": "workbench",
+              "after": {
+                "engine": "BLENDER_WORKBENCH"
+              },
+              "fell_back_to_cpu": false
+            }
+          }
+        }
+      }
+    }
+  ],
+  "stopExit": 0
+}
