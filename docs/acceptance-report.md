@@ -8,14 +8,16 @@
 
 | 内容 | 位置 |
 | --- | --- |
-| 独立 npm 包，908,511 字节 | [blender-agent-bridge-1.0.0.tgz](../release/blender-agent-bridge-1.0.0.tgz) |
-| SHA256、提交与 87 个实际发行文件 | [release/manifest.json](../release/manifest.json) |
+| 本轮历史 npm 包，908,511 字节 | 本地 `release/archive/blender-agent-bridge-1.0.0-7920177.tgz`（未随 Git 推送） |
+| 本轮历史 SHA256、提交与 87 个实际发行文件 | [manifest-7920177.json](../release/archive/manifest-7920177.json) |
 | 安装、接入、CLI、GUI、升级与卸载 | [使用指南](portable/使用指南.md) |
 | 通用 Skill | [SKILL.md](../skills/blender-agent/SKILL.md) |
 | 职责边界与行为判据 | [设计](adapter-design.md)、[场景](acceptance-scenarios.md) |
 | 本轮原始结果与修复记录 | [evidence/mvp-audit](../evidence/mvp-audit/) |
 
 包 SHA256：`4fc5cecf3172224577015252ef7e355e9b4e1965fca470aa09fe59ce650ac8ef`。
+
+后续 CLI 安装入口与 README 交付另见 [分发验证](distribution-verification.md)；本报告固定记录上述产品提交与包，不将历史宿主验收冒充后续包的重新实测。tarball 是本地制品，不随 Git 推送；归档清单和原始实测证据随仓库保留。
 
 最终运行指纹：`bbc1ac1d3c1b1aa78226ba226256591c58e42d9b1fe2809f1f8e436ad412b2eb`。
 
