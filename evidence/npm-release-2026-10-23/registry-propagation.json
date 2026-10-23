@@ -1,0 +1,62 @@
+{
+  "version": {
+    "status": 200,
+    "headers": {
+      "Date": "Fri, 23 Oct 2026 03:14:54 GMT",
+      "CF-Cache-Status": "DYNAMIC"
+    },
+    "metadata": {
+      "name": "@patricklee2001/blender-agent",
+      "version": "1.0.0",
+      "dist-tags": null,
+      "time": null,
+      "dist": {
+        "shasum": "67e02ee680344e0eff9d00baab11a1310222ed9e",
+        "tarball": "https://registry.npmjs.org/@patricklee2001/blender-agent/-/blender-agent-1.0.0.tgz",
+        "fileCount": 87,
+        "integrity": "sha512-n6N+ojDcTgIjgPel1WRnQQQuz+Y8Mo6QwlLncidpf8uKYjQmzJ0plo4qO1zlQAdv4dRRdvdqzsINdaf19xNabw==",
+        "signatures": [
+          {
+            "sig": "MEQCIEEomyC9WYnq2R0MI7T7FL6BwsC617Nu//I2WZBMZI1nAiAyyfOkb3WSi5yxpz/4/b/x+7pD2683s1jrygjUrTEasw==",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "sig": "MEUCIGVXJKsrG8OZK/Mx4FVRZTtVwjYod75xUQ9NwVw0JL+KAiEAppya0HpnTB+PzuWuHM4Wb9sLpoelmSSIIzswLbtNwq4=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "unpackedSize": 3024525
+      },
+      "stub": null,
+      "error": null
+    }
+  },
+  "freshMetadata": {
+    "status": 200,
+    "headers": {
+      "Date": "Fri, 23 Oct 2026 03:14:57 GMT",
+      "CF-Cache-Status": "DYNAMIC",
+      "Cache-Control": "public, max-age=300"
+    },
+    "metadata": {
+      "name": "@patricklee2001/blender-agent",
+      "version": null,
+      "dist-tags": {
+        "latest": "1.0.0"
+      },
+      "time": {
+        "created": "2026-10-23T03:11:51.872Z",
+        "modified": "2026-10-23T03:14:31.791Z",
+        "0.0.0-stage": "2026-10-23T03:11:51.872Z",
+        "1.0.0": "2026-10-23T03:14:31.637Z"
+      },
+      "dist": null,
+      "stub": null,
+      "error": null
+    },
+    "versions": [
+      "0.0.0-stage",
+      "1.0.0"
+    ]
+  }
+}

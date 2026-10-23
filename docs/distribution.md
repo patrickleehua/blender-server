@@ -88,7 +88,9 @@ npm run pack
 
 以下为维护者发布新版本的流程；需具备发布授权与包写权限。GitHub 仓库私有与 npm 是否公开是两项独立设置；`--access public` 会公开 npm 包内代码和资产。
 
-本包位于个人 scope `@patricklee2001`，使用所有者账号或获授权限的账号发布，无需创建 npm 组织。早期准备包名 `@blender-agent/bridge` 没有发布，不能用于在线安装。按 npm 当前要求完成邮箱、双因素认证或可交互发布认证；密码和验证码在本人终端/网页输入，不写入仓库或日志。
+本包位于个人 scope `@patricklee2001`，使用所有者账号或获授权限的账号发布，无需创建 npm 组织。早期准备包名 `@blender-agent/bridge` 没有发布，不能用于在线安装。普通交互发布需要真正完成 2FA 安全密钥注册；CLI profile 的 `auth-and-writes` 标志不能替代网页注册状态与实际发布验证。密码和验证码在本人终端/网页输入，不写入仓库或日志。
+
+本次首发改用 7 天 granular token：Packages and scopes 为 **Read and write (publish and stage)**，只选 `@patricklee2001` scope，勾选 **Bypass two-factor authentication**；Organizations 保持 No access。Token 由本人生成并在本机隐藏输入，使用完清理进程环境与临时配置。它用于发布，普通用户安装和使用公开包均不需要 Token。npm 当前页面注明，直接发布的 bypass Token 将于 2027 年 1 月停止支持；后续发布应按届时政策使用完成 2FA 的交互发布或相应受支持流程。
 
 ```sh
 npm config get registry

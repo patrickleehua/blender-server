@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-23",
+  "package": "@patricklee2001/blender-agent@1.0.0",
+  "account": "patricklee2001",
+  "publishAttempts": [
+    {
+      "logTimestampUtc": "2026-10-23T02:46:22.917Z",
+      "exitCode": 1,
+      "errorCode": "E403"
+    },
+    {
+      "logTimestampUtc": "2026-10-23T02:54:30.718Z",
+      "exitCode": 1,
+      "errorCode": "E403"
+    },
+    {
+      "logTimestampUtc": "2026-10-23T02:56:24.978Z",
+      "exitCode": 1,
+      "errorCode": "E403"
+    }
+  ],
+  "cliTfaField": {
+    "pending": null,
+    "mode": "auth-and-writes"
+  },
+  "cliFlagDoesNotProveSecurityKeyEnrollment": true,
+  "websiteAccountSecuritySection": "Enable 2FA",
+  "websiteSecuritySetupStep": "Add your security key",
+  "freshCliLoginSucceeded": true,
+  "registryMessage": "Two-factor authentication or granular access token with bypass 2fa enabled is required to publish packages.",
+  "status": "resolved-with-owner-generated-short-lived-granular-token",
+  "published": true,
+  "credentialsOrRecoveryCodesRecorded": false,
+  "resolution": {
+    "bypass2FA": true,
+    "packagePermissions": "read-write-publish-and-stage",
+    "scope": "@patricklee2001",
+    "organizationPermissions": "no-access",
+    "expiresInDays": 7,
+    "tokenValueRecorded": false,
+    "publishExitCode": 0,
+    "registryInstallVerified": true
+  }
+}

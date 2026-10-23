@@ -1,0 +1,377 @@
+{
+  "ok": true,
+  "mode": "candidate",
+  "tarballSha256": "60cd4bbf1ada6df3e2cb16d517a80d176c48ec1b4504920c8ca0b1c121a71386",
+  "base": "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP",
+  "commands": [
+    {
+      "command": "E:\\nodejs\\node.exe",
+      "args": [
+        "E:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+        "install",
+        "--global",
+        "--prefix",
+        "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\工具 安装",
+        "--userconfig",
+        "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\empty.npmrc",
+        "--cache",
+        "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\npm-cache",
+        "--registry",
+        "https://registry.npmjs.org/",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund",
+        "E:\\workplace\\blender-server\\release\\patricklee2001-blender-agent-1.0.0.tgz"
+      ],
+      "status": 0,
+      "stdout": "\nadded 96 packages in 35s\n",
+      "stderr": "npm notice\nnpm notice New major version of npm available! 11.19.0 -> 12.2.1\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1\nnpm notice To update run: npm install -g npm@12.2.1\nnpm notice\n"
+    },
+    {
+      "command": "E:\\nodejs\\node.exe",
+      "args": [
+        "E:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+        "publish",
+        "E:\\workplace\\blender-server\\release\\patricklee2001-blender-agent-1.0.0.tgz",
+        "--access",
+        "public",
+        "--dry-run",
+        "--json"
+      ],
+      "status": 0,
+      "stdout": "{\n  \"@patricklee2001/blender-agent\": {\n    \"id\": \"@patricklee2001/blender-agent@1.0.0\",\n    \"name\": \"@patricklee2001/blender-agent\",\n    \"version\": \"1.0.0\",\n    \"size\": 909687,\n    \"unpackedSize\": 3024525,\n    \"shasum\": \"67e02ee680344e0eff9d00baab11a1310222ed9e\",\n    \"integrity\": \"sha512-n6N+ojDcTgIjgPel1WRnQQQuz+Y8Mo6QwlLncidpf8uKYjQmzJ0plo4qO1zlQAdv4dRRdvdqzsINdaf19xNabw==\",\n    \"filename\": \"patricklee2001-blender-agent-1.0.0.tgz\",\n    \"files\": [\n      {\n        \"path\": \"LICENSE\",\n        \"size\": 1549,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"README.md\",\n        \"size\": 8390,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/addon/dsh_blender_bridge.py\",\n        \"size\": 323391,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/addon/README.md\",\n        \"size\": 3704,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/manifest.json\",\n        \"size\": 6541,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/package.json\",\n        \"size\": 59,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/plan-routing.mjs\",\n        \"size\": 2625,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/_probe_tools.mjs\",\n        \"size\": 1483,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/addon-protocol.mjs\",\n        \"size\": 3018,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/assembly_features.json\",\n        \"size\": 16359,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/assembly.py\",\n        \"size\": 229486,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/audit.py\",\n        \"size\": 180890,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/backend_probe.d.mts\",\n        \"size\": 431,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/backend_probe.mjs\",\n        \"size\": 2471,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/blockout.py\",\n        \"size\": 116837,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/calib.py\",\n        \"size\": 24431,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/catalog.mjs\",\n        \"size\": 49608,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/classes.mjs\",\n        \"size\": 12028,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/clearance.py\",\n        \"size\": 8524,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/config.mjs\",\n        \"size\": 20318,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/contract.py\",\n        \"size\": 102682,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/deliver.py\",\n        \"size\": 52710,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/engine.mjs\",\n        \"size\": 210458,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/evalharness.py\",\n        \"size\": 43532,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/ext/gltf_validate_runner.mjs\",\n        \"size\": 824,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/ext/open3d_check.py\",\n        \"size\": 1554,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/faceeval.py\",\n        \"size\": 8757,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/gate.py\",\n        \"size\": 70348,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/generator.py\",\n        \"size\": 30713,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/geo.py\",\n        \"size\": 36783,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/human.py\",\n        \"size\": 26993,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/imgtools.py\",\n        \"size\": 121064,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/kit.py\",\n        \"size\": 15443,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/launch.mjs\",\n        \"size\": 16888,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/material.py\",\n        \"size\": 32078,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/mesh_fix.py\",\n        \"size\": 15274,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/montage.py\",\n        \"size\": 13156,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/motion.py\",\n        \"size\": 136509,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/offline_bootstrap.py\",\n        \"size\": 4483,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/paths.mjs\",\n        \"size\": 24950,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/perf.py\",\n        \"size\": 20640,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/pipeline.py\",\n        \"size\": 11170,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/planner.py\",\n        \"size\": 22297,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/presets.py\",\n        \"size\": 21716,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/printcheck.py\",\n        \"size\": 46448,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/proc_env.mjs\",\n        \"size\": 2801,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/qc_render.py\",\n        \"size\": 209879,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/qc.py\",\n        \"size\": 53899,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/recover.mjs\",\n        \"size\": 9044,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/render_guard.py\",\n        \"size\": 10326,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/runner.py\",\n        \"size\": 26156,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/sculpt.py\",\n        \"size\": 37625,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/selectionstore.mjs\",\n        \"size\": 12090,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/server.mjs\",\n        \"size\": 48858,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/shapegen.py\",\n        \"size\": 42403,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/shapesolve.py\",\n        \"size\": 43013,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/staging.mjs\",\n        \"size\": 3779,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/sweep.py\",\n        \"size\": 16076,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/txn.py\",\n        \"size\": 41850,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/uv_tools.py\",\n        \"size\": 17840,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/vehicle.py\",\n        \"size\": 81397,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/view.py\",\n        \"size\": 47043,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/visualreport.py\",\n        \"size\": 60997,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/runtime/worker.py\",\n        \"size\": 25878,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/skill/agents/openai.yaml\",\n        \"size\": 298,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/skill/LICENSE\",\n        \"size\": 1412,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/skill/NOTICE.md\",\n        \"size\": 878,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/skill/references/acceptance.md\",\n        \"size\": 2899,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/skill/references/safety.md\",\n        \"size\": 4205,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/skill/references/tools.md\",\n        \"size\": 4263,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/skill/references/workflows.md\",\n        \"size\": 3706,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/skill/SKILL.md\",\n        \"size\": 4730,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"assets/tools.json\",\n        \"size\": 35407,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/backend-service.d.ts\",\n        \"size\": 57,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/backend-service.js\",\n        \"size\": 8503,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/backend.d.ts\",\n        \"size\": 1225,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/backend.js\",\n        \"size\": 11836,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/cli.d.ts\",\n        \"size\": 31,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/cli.js\",\n        \"size\": 12200,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/config.d.ts\",\n        \"size\": 1242,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/config.js\",\n        \"size\": 2749,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/core.d.ts\",\n        \"size\": 1209,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/core.js\",\n        \"size\": 24025,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/mcp.d.ts\",\n        \"size\": 101,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"dist/mcp.js\",\n        \"size\": 1129,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"package.json\",\n        \"size\": 1436,\n        \"mode\": 420\n      },\n      {\n        \"path\": \"scripts/portable-setup.mjs\",\n        \"size\": 10417,\n        \"mode\": 420\n      }\n    ],\n    \"entryCount\": 87,\n    \"bundled\": []\n  }\n}\n",
+      "stderr": "npm notice Publishing to https://registry.npmjs.org/ with tag latest and public access (dry-run)\n"
+    },
+    {
+      "command": "pwsh.exe",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\工具 安装\\blender-agent.ps1",
+        "help"
+      ],
+      "status": 0,
+      "stdout": "blender-agent 1.0.0\n  help [install|uninstall]              Show usage\n  install [--project <dir>] [--apply]   Connect project Skill and MCP (default: dry-run)\n  uninstall [--project <dir>] [--apply] Remove unchanged installer-owned files\n  mcp                                  MCP stdio server\n  doctor                               GUI health check (kind=ok required)\n  tools                                List 15 tool contracts\n  catalog [--family audit] [--full]      Discover plan operations\n  call <tool> --json '{...}'             Call a tool\n  call <tool> --file <args.json>         Avoid shell quoting for multiline/Unicode arguments\n  call <tool> --stdin                   Read tool arguments as JSON from stdin\n  backend start|status|stop             Explicit persistent lifecycle\n  config --host claude|codex            Print host config; never write global settings\nGlobal: --port 9877 --addon-port 9876 --worker-port 9879 --workdir <path>\n        --blender <executable> --holder <session-id> --timeout-ms 180000 --no-auto-start\nCLI-created temporary backends are cleaned on exit. Run backend start first for\nworker/job state across separate CLI calls; use the same ports and workdir.\nScene calls (do/see/watch/plan and workers) require backend start first.\nUse --holder <session-id> consistently for worker scenes across CLI calls.\nJSON results go to stdout; diagnostics go to backend log/stderr.\n",
+      "stderr": ""
+    },
+    {
+      "command": "pwsh.exe",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\工具 安装\\blender-agent.ps1",
+        "help",
+        "install"
+      ],
+      "status": 0,
+      "stdout": "blender-agent install [options]\n  --project <dir>     Existing project directory (default: current directory)\n  --dry-run           Preview only; write nothing (default)\n  --apply             Apply the previewed changes\n  --host <host>       both (default), claude or codex\n  --blender <exe>     Absolute Blender executable path\n  --port <n>          Backend port (default: 9877)\n  --addon-port <n>    GUI addon port (default: 9876)\n  --worker-port <n>   Headless worker base port (default: 9879)\n  --workdir <dir>     Runtime directory (default: <project>/.blender-agent/runtime)\n  -h, --help          Show this help\nProject-local only; global host configuration is never changed.\nExisting host configs are preserved; merge the generated config-candidates entry.\nOnly unchanged installer-owned files can be upgraded. Conflicts block all writes.\nReload the host after applying. Keep the installed package at a stable location.\n",
+      "stderr": ""
+    },
+    {
+      "command": "pwsh.exe",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\工具 安装\\blender-agent.ps1",
+        "install",
+        "--help"
+      ],
+      "status": 0,
+      "stdout": "blender-agent install [options]\n  --project <dir>     Existing project directory (default: current directory)\n  --dry-run           Preview only; write nothing (default)\n  --apply             Apply the previewed changes\n  --host <host>       both (default), claude or codex\n  --blender <exe>     Absolute Blender executable path\n  --port <n>          Backend port (default: 9877)\n  --addon-port <n>    GUI addon port (default: 9876)\n  --worker-port <n>   Headless worker base port (default: 9879)\n  --workdir <dir>     Runtime directory (default: <project>/.blender-agent/runtime)\n  -h, --help          Show this help\nProject-local only; global host configuration is never changed.\nExisting host configs are preserved; merge the generated config-candidates entry.\nOnly unchanged installer-owned files can be upgraded. Conflicts block all writes.\nReload the host after applying. Keep the installed package at a stable location.\n",
+      "stderr": ""
+    },
+    {
+      "command": "pwsh.exe",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\工具 安装\\blender-agent.ps1",
+        "--version"
+      ],
+      "status": 0,
+      "stdout": "1.0.0\n",
+      "stderr": ""
+    },
+    {
+      "command": "pwsh.exe",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\工具 安装\\blender-agent.ps1",
+        "install"
+      ],
+      "status": 0,
+      "stdout": "{\n  \"mode\": \"dry-run\",\n  \"operation\": \"install\",\n  \"project\": \"E:\\\\workplace\\\\blender-server\\\\tmp\\\\npm 分发 验证 QvB6mP\\\\模型 项目\",\n  \"plan\": [\n    {\n      \"path\": \".agents/skills/blender-agent/agents/openai.yaml\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/LICENSE\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/NOTICE.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/acceptance.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/safety.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/tools.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/workflows.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/SKILL.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".blender-agent/config-candidates/codex.toml\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".codex/config.toml\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/agents/openai.yaml\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/LICENSE\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/NOTICE.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/acceptance.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/safety.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/tools.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/workflows.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/SKILL.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".blender-agent/config-candidates/claude.json\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".mcp.json\",\n      \"action\": \"create\"\n    }\n  ],\n  \"cli\": \"E:/workplace/blender-server/tmp/npm 分发 验证 QvB6mP/工具 安装/node_modules/@patricklee2001/blender-agent/dist/cli.js\",\n  \"note\": \"Project-local files only. Existing host configs require manual review/merge. Restart/reload the host, then run real acceptance.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "pwsh.exe",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\工具 安装\\blender-agent.ps1",
+        "install",
+        "--blender",
+        "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+        "--port",
+        "28877",
+        "--addon-port",
+        "28876",
+        "--worker-port",
+        "28879",
+        "--apply"
+      ],
+      "status": 0,
+      "stdout": "{\n  \"mode\": \"applied\",\n  \"operation\": \"install\",\n  \"project\": \"E:\\\\workplace\\\\blender-server\\\\tmp\\\\npm 分发 验证 QvB6mP\\\\模型 项目\",\n  \"plan\": [\n    {\n      \"path\": \".agents/skills/blender-agent/agents/openai.yaml\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/LICENSE\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/NOTICE.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/acceptance.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/safety.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/tools.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/workflows.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/SKILL.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".blender-agent/config-candidates/codex.toml\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".codex/config.toml\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/agents/openai.yaml\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/LICENSE\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/NOTICE.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/acceptance.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/safety.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/tools.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/workflows.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/SKILL.md\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".blender-agent/config-candidates/claude.json\",\n      \"action\": \"create\"\n    },\n    {\n      \"path\": \".mcp.json\",\n      \"action\": \"create\"\n    }\n  ],\n  \"cli\": \"E:/workplace/blender-server/tmp/npm 分发 验证 QvB6mP/工具 安装/node_modules/@patricklee2001/blender-agent/dist/cli.js\",\n  \"note\": \"Project-local files only. Existing host configs require manual review/merge. Restart/reload the host, then run real acceptance.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "E:\\workplace\\blender-server\\.local\\blender-4.5.15-windows-x64\\blender.exe",
+      "args": [
+        "--background",
+        "--factory-startup",
+        "E:\\workplace\\blender-server\\evidence\\npm-release-2026-10-23\\candidate\\npm-smoke.blend",
+        "--python-exit-code",
+        "2",
+        "--python-expr",
+        "import bpy; obj=bpy.data.objects[\"NpmDistributionProof\"]; assert tuple(round(v,6) for v in obj.dimensions)==(2.0,2.0,2.0); print(\"NPM_BLEND_REOPEN_OK\")"
+      ],
+      "status": 0,
+      "stdout": "NPM_BLEND_REOPEN_OK\r\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\nRead blend: \"E:\\workplace\\blender-server\\evidence\\npm-release-2026-10-23\\candidate\\npm-smoke.blend\"\n\nBlender quit\n",
+      "stderr": ""
+    },
+    {
+      "command": "pwsh.exe",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\工具 安装\\blender-agent.ps1",
+        "uninstall"
+      ],
+      "status": 0,
+      "stdout": "{\n  \"mode\": \"dry-run\",\n  \"operation\": \"uninstall\",\n  \"project\": \"E:\\\\workplace\\\\blender-server\\\\tmp\\\\npm 分发 验证 QvB6mP\\\\模型 项目\",\n  \"plan\": [\n    {\n      \"path\": \".agents/skills/blender-agent/agents/openai.yaml\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/LICENSE\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/NOTICE.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/acceptance.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/safety.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/tools.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/workflows.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/SKILL.md\",\n      \"action\": \"preserve-modified\"\n    },\n    {\n      \"path\": \".blender-agent/config-candidates/codex.toml\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".codex/config.toml\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/agents/openai.yaml\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/LICENSE\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/NOTICE.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/acceptance.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/safety.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/tools.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/workflows.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/SKILL.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".blender-agent/config-candidates/claude.json\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".mcp.json\",\n      \"action\": \"remove\"\n    }\n  ],\n  \"note\": \"Only unchanged installer-owned files are removed. Directories and runtime/output files remain.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": "pwsh.exe",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\工具 安装\\blender-agent.ps1",
+        "uninstall",
+        "--apply"
+      ],
+      "status": 0,
+      "stdout": "{\n  \"mode\": \"applied\",\n  \"operation\": \"uninstall\",\n  \"project\": \"E:\\\\workplace\\\\blender-server\\\\tmp\\\\npm 分发 验证 QvB6mP\\\\模型 项目\",\n  \"plan\": [\n    {\n      \"path\": \".agents/skills/blender-agent/agents/openai.yaml\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/LICENSE\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/NOTICE.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/acceptance.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/safety.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/tools.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/references/workflows.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".agents/skills/blender-agent/SKILL.md\",\n      \"action\": \"preserve-modified\"\n    },\n    {\n      \"path\": \".blender-agent/config-candidates/codex.toml\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".codex/config.toml\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/agents/openai.yaml\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/LICENSE\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/NOTICE.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/acceptance.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/safety.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/tools.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/references/workflows.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".claude/skills/blender-agent/SKILL.md\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".blender-agent/config-candidates/claude.json\",\n      \"action\": \"remove\"\n    },\n    {\n      \"path\": \".mcp.json\",\n      \"action\": \"remove\"\n    }\n  ],\n  \"note\": \"Only unchanged installer-owned files are removed. Directories and runtime/output files remain.\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "calls": [
+    {
+      "name": "blender_rt_do",
+      "args": {
+        "session": "npm-proof",
+        "see": false,
+        "code": "import bpy\nbpy.ops.wm.read_factory_settings(use_empty=True)\nbpy.ops.mesh.primitive_cube_add(size=2)\nbpy.context.object.name=\"NpmDistributionProof\""
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":129855396,\"ok\":true,\"ms\":56,\"stdout\":\"\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "exec",
+          "result": {
+            "id": 129855396,
+            "ok": true,
+            "ms": 56,
+            "stdout": "",
+            "stderr": "",
+            "result": null,
+            "error": null,
+            "traceback": null
+          },
+          "error": null,
+          "traceback": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "name": "blender_rt_worker",
+      "args": {
+        "op": "status",
+        "name": "npm-proof"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"status\",\"result\":{\"name\":\"npm-proof\",\"holder\":\"blender-agent-21368\",\"alive\":true,\"ready\":true,\"pid\":57964,\"port\":28879,\"uptimeMs\":722,\"idleMs\":0,\"inflight\":0,\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false},\"boot\":{\"ok\":true,\"skipped\":true},\"lastError\":null,\"stdoutTail\":\"DSH_WORKER {\\\"ready\\\": true, \\\"port\\\": 28879, \\\"pid\\\": 57964, \\\"version\\\": 2, \\\"gpu\\\": {\\\"engine_mode\\\": \\\"workbench\\\", \\\"gpu_mode\\\": \\\"auto\\\", \\\"backend\\\": \\\"n/a: GPU functions for drawing are not available in background mo\\\", \\\"before\\\": {\\\"engine\\\": \\\"BLENDER_EEVEE_NEXT\\\"}, \\\"ok\\\": true, \\\"skipped\\\": false, \\\"configured\\\": \\\"workbench\\\", \\\"after\\\": {\\\"engine\\\": \\\"BLENDER_WORKBENCH\\\"}, \\\"fell_back_to_cpu\\\": false}, \\\"boot\\\": {\\\"ok\\\": true, \\\"skipped\\\": true}, \\\"blender\\\": \\\"4.5.15 LTS\\\"}\\r\\n\",\"status\":{\"ok\":true,\"version\":2,\"pid\":57964,\"uptime_s\":0,\"calls\":1,\"errors\":0,\"objects\":1,\"file\":null,\"kernel_modules\":[],\"boot\":{\"ok\":true,\"skipped\":true},\"frame_dir\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\npm 分发 验证 QvB6mP\\\\模型 项目\\\\.blender-agent\\\\runtime\",\"gpu\":{\"engine_mode\":\"workbench\",\"gpu_mode\":\"auto\",\"backend\":\"n/a: GPU functions for drawing are not available in background mo\",\"before\":{\"engine\":\"BLENDER_EEVEE_NEXT\"},\"ok\":true,\"skipped\":false,\"configured\":\"workbench\",\"after\":{\"engine\":\"BLENDER_WORKBENCH\"},\"fell_back_to_cpu\":false}}}}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "status",
+          "result": {
+            "name": "npm-proof",
+            "holder": "blender-agent-21368",
+            "alive": true,
+            "ready": true,
+            "pid": 57964,
+            "port": 28879,
+            "uptimeMs": 722,
+            "idleMs": 0,
+            "inflight": 0,
+            "gpu": {
+              "engine_mode": "workbench",
+              "gpu_mode": "auto",
+              "backend": "n/a: GPU functions for drawing are not available in background mo",
+              "before": {
+                "engine": "BLENDER_EEVEE_NEXT"
+              },
+              "ok": true,
+              "skipped": false,
+              "configured": "workbench",
+              "after": {
+                "engine": "BLENDER_WORKBENCH"
+              },
+              "fell_back_to_cpu": false
+            },
+            "boot": {
+              "ok": true,
+              "skipped": true
+            },
+            "lastError": null,
+            "stdoutTail": "DSH_WORKER {\"ready\": true, \"port\": 28879, \"pid\": 57964, \"version\": 2, \"gpu\": {\"engine_mode\": \"workbench\", \"gpu_mode\": \"auto\", \"backend\": \"n/a: GPU functions for drawing are not available in background mo\", \"before\": {\"engine\": \"BLENDER_EEVEE_NEXT\"}, \"ok\": true, \"skipped\": false, \"configured\": \"workbench\", \"after\": {\"engine\": \"BLENDER_WORKBENCH\"}, \"fell_back_to_cpu\": false}, \"boot\": {\"ok\": true, \"skipped\": true}, \"blender\": \"4.5.15 LTS\"}\r\n",
+            "status": {
+              "ok": true,
+              "version": 2,
+              "pid": 57964,
+              "uptime_s": 0,
+              "calls": 1,
+              "errors": 0,
+              "objects": 1,
+              "file": null,
+              "kernel_modules": [],
+              "boot": {
+                "ok": true,
+                "skipped": true
+              },
+              "frame_dir": "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\模型 项目\\.blender-agent\\runtime",
+              "gpu": {
+                "engine_mode": "workbench",
+                "gpu_mode": "auto",
+                "backend": "n/a: GPU functions for drawing are not available in background mo",
+                "before": {
+                  "engine": "BLENDER_EEVEE_NEXT"
+                },
+                "ok": true,
+                "skipped": false,
+                "configured": "workbench",
+                "after": {
+                  "engine": "BLENDER_WORKBENCH"
+                },
+                "fell_back_to_cpu": false
+              }
+            }
+          }
+        },
+        "isError": false
+      }
+    },
+    {
+      "name": "blender_rt_see",
+      "args": {
+        "session": "npm-proof",
+        "view_size": "320x180"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"see\",\"result\":{\"id\":483541884,\"ok\":true,\"mode\":\"workbench-offscreen\",\"path\":\"E:\\\\workplace\\\\blender-server\\\\tmp\\\\npm 分发 验证 QvB6mP\\\\模型 项目\\\\.blender-agent\\\\runtime\\\\dsh_see_57964_1.png\",\"image\":{\"mimeType\":\"image/png\",\"contentIndex\":1},\"width\":320,\"height\":180,\"bytes\":31851,\"coverage_estimate\":0.1866,\"pixel_hash\":\"4032ad654e78\",\"ms\":667,\"t\":{\"render_ms\":659,\"read_ms\":6,\"total_ms\":667},\"engine\":\"BLENDER_WORKBENCH\"},\"error\":null}"
+          },
+          {
+            "type": "image",
+            "mimeType": "image/png",
+            "bytes": 31851,
+            "sha256": "847db70b069701386d5e9d4bfaf8fd7656ecadcf7189c88e87e1dc5ebdc5a08f"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "see",
+          "result": {
+            "id": 483541884,
+            "ok": true,
+            "mode": "workbench-offscreen",
+            "path": "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\模型 项目\\.blender-agent\\runtime\\dsh_see_57964_1.png",
+            "image": {
+              "mimeType": "image/png",
+              "contentIndex": 1
+            },
+            "width": 320,
+            "height": 180,
+            "bytes": 31851,
+            "coverage_estimate": 0.1866,
+            "pixel_hash": "4032ad654e78",
+            "ms": 667,
+            "t": {
+              "render_ms": 659,
+              "read_ms": 6,
+              "total_ms": 667
+            },
+            "engine": "BLENDER_WORKBENCH"
+          },
+          "error": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "name": "blender_rt_do",
+      "args": {
+        "session": "npm-proof",
+        "see": false,
+        "code": "bpy.ops.wm.save_as_mainfile(filepath=\"E:\\\\workplace\\\\blender-server\\\\evidence\\\\npm-release-2026-10-23\\\\candidate\\\\npm-smoke.blend\")"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"ok\":true,\"op\":\"exec\",\"result\":{\"id\":376119026,\"ok\":true,\"ms\":1,\"stdout\":\"Info: Saved as \\\"npm-smoke.blend\\\"\\n\",\"stderr\":\"\",\"result\":null,\"error\":null,\"traceback\":null},\"error\":null,\"traceback\":null}"
+          }
+        ],
+        "structuredContent": {
+          "ok": true,
+          "op": "exec",
+          "result": {
+            "id": 376119026,
+            "ok": true,
+            "ms": 1,
+            "stdout": "Info: Saved as \"npm-smoke.blend\"\n",
+            "stderr": "",
+            "result": null,
+            "error": null,
+            "traceback": null
+          },
+          "error": null,
+          "traceback": null
+        },
+        "isError": false
+      }
+    }
+  ],
+  "node": "v24.20.0",
+  "installedPackage": "E:\\workplace\\blender-server\\tmp\\npm 分发 验证 QvB6mP\\工具 安装\\node_modules\\@patricklee2001\\blender-agent",
+  "assetFingerprint": "642f3086feb714bfcf91587f1ce77f81407c68019b7976c002ff4bd650676e2e",
+  "assetFilesVerified": 59,
+  "publishDryRun": true,
+  "toolCount": 15,
+  "cleanupVerified": true,
+  "mcpDiagnostics": ""
+}

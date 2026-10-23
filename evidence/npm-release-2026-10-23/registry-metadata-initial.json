@@ -1,0 +1,33 @@
+{
+  "name": "@patricklee2001/blender-agent",
+  "dist-tags": {
+    "latest": "0.0.0-stage"
+  },
+  "versions": {
+    "0.0.0-stage": {
+      "name": "@patricklee2001/blender-agent",
+      "version": "0.0.0-stage",
+      "dist": {
+        "integrity": "sha512-FTV2Gj/vStXoQd5wo91Y1vpaqMavn9hbFpiDYOKB7yXWURzH4eeXNN/3nwDD5liq4P2+VIW9HA5QLhj5MYLYoA==",
+        "shasum": "e8e30b51bcaec9c6aff464ed59160c645f9ec498",
+        "tarball": "https://registry.npmjs.org/@patricklee2001/blender-agent/-/blender-agent-0.0.0-stage.tgz",
+        "fileCount": 2,
+        "unpackedSize": 351,
+        "signatures": [
+          {
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+            "sig": "MEQCIGo13E5ICK5UFNI1HNUu1eHFbtzYsvAxRJP0rq8a2h0kAiBKeIHW3WjLqSBVt6N9RnpOPaSWsReo4D/IXIcQid2XfQ=="
+          }
+        ]
+      },
+      "deprecated": null
+    }
+  },
+  "time": {
+    "created": "2026-10-23T03:11:51.872Z",
+    "0.0.0-stage": "2026-10-23T03:11:51.872Z",
+    "modified": "2026-10-23T03:11:51.931Z"
+  },
+  "error": null,
+  "message": null
+}

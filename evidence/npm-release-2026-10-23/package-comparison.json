@@ -1,0 +1,11 @@
+{
+  "sameFiles": 84,
+  "changedFiles": [
+    "package/package.json",
+    "package/README.md",
+    "package/assets/skill/SKILL.md"
+  ],
+  "sha256": "60cd4bbf1ada6df3e2cb16d517a80d176c48ec1b4504920c8ca0b1c121a71386",
+  "sourceCommit": "6328b330e44214af96d8f4e67cd4a835b3ed7c5e",
+  "noInstallScripts": true
+}

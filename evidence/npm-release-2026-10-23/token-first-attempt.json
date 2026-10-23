@@ -1,0 +1,8 @@
+{
+  "tarballSha256": "60cd4bbf1ada6df3e2cb16d517a80d176c48ec1b4504920c8ca0b1c121a71386",
+  "credentialsWritten": false,
+  "finishedAt": "2026-10-23T03:07:03.7053299+00:00",
+  "package": "@patricklee2001/blender-agent@1.0.0",
+  "log": "npm error code E403\nnpm error 403 403 Forbidden - PUT https://registry.npmjs.org/@patricklee2001%2fblender-agent - Two-factor authentication or granular access token with bypass 2fa enabled is required to publish packages.\nnpm error 403 In most cases, you or one of your dependencies are requesting a package version that is forbidden by your security policy, or on a server you do not have access to.\nnpm error A complete log of this run can be found in: C:\\Users\\libinghua\\AppData\\Local\\npm-cache\\_logs\\2026-10-23T03_06_57_260Z-debug-0.log",
+  "exitCode": 1
+}

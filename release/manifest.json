@@ -1,12 +1,12 @@
 {
-  "name": "@blender-agent/bridge",
+  "name": "@patricklee2001/blender-agent",
   "version": "1.0.0",
-  "filename": "blender-agent-bridge-1.0.0.tgz",
-  "sha256": "cbaddc9d2fb2cc5a9348024606002c3ac15a0d4dcafc9f7098b200663203d582",
-  "size": 909677,
-  "unpackedSize": 3024414,
+  "filename": "patricklee2001-blender-agent-1.0.0.tgz",
+  "sha256": "60cd4bbf1ada6df3e2cb16d517a80d176c48ec1b4504920c8ca0b1c121a71386",
+  "size": 909687,
+  "unpackedSize": 3024525,
   "entryCount": 87,
-  "sourceCommit": "baeb14c674a08e533f86782bc99e29829e34ca06",
+  "sourceCommit": "6328b330e44214af96d8f4e67cd4a835b3ed7c5e",
   "sourceDirty": false,
   "assetFingerprint": "642f3086feb714bfcf91587f1ce77f81407c68019b7976c002ff4bd650676e2e",
   "files": [
@@ -16,7 +16,7 @@
     },
     {
       "path": "README.md",
-      "size": 8358
+      "size": 8390
     },
     {
       "path": "assets/addon/dsh_blender_bridge.py",
@@ -296,7 +296,7 @@
     },
     {
       "path": "assets/skill/SKILL.md",
-      "size": 4659
+      "size": 4730
     },
     {
       "path": "assets/tools.json",
@@ -352,7 +352,7 @@
     },
     {
       "path": "package.json",
-      "size": 1428
+      "size": 1436
     },
     {
       "path": "scripts/portable-setup.mjs",

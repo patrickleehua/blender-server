@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-23",
+  "registry": "https://registry.npmjs.org/",
+  "package": "@patricklee2001/blender-agent@1.0.0",
+  "tarballSha256": "60cd4bbf1ada6df3e2cb16d517a80d176c48ec1b4504920c8ca0b1c121a71386",
+  "command": "npm publish ./release/patricklee2001-blender-agent-1.0.0.tgz --access public --registry=https://registry.npmjs.org --browser=false --loglevel=warn",
+  "exitCode": 1,
+  "errorCode": "E403",
+  "registryMessage": "Two-factor authentication or granular access token with bypass 2fa enabled is required to publish packages.",
+  "account": "patricklee2001",
+  "emailVerified": true,
+  "twoFactorEnabled": false,
+  "published": false
+}
