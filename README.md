@@ -11,9 +11,9 @@
 
 [快速开始](#快速开始) · [使用指南](docs/portable/使用指南.md) · [本地分发](docs/distribution.md) · [验收记录](docs/acceptance-report.md)
 
-<img src="evidence/mvp-audit/hosts/claude/seen-04.png" alt="Claude 在真实 Blender 中制作的三腿圆凳，红色圆形顶面与棕色凳腿" width="560">
+<img src="docs/assets/olive-tank-orbit.gif" alt="橄榄绿坦克的环绕渲染动图，展示炮塔、车体和履带细节" width="640">
 
-*真实宿主验收截图：建模 → 看图 → 修改 → 保存 `.blend` → 导出 GLB。*
+*橄榄绿坦克 · 环绕渲染预览。*
 
 </div>
 
