@@ -1,0 +1,362 @@
+{
+  "name": "@blender-agent/bridge",
+  "version": "1.0.0",
+  "filename": "blender-agent-bridge-1.0.0.tgz",
+  "sha256": "cbaddc9d2fb2cc5a9348024606002c3ac15a0d4dcafc9f7098b200663203d582",
+  "size": 909677,
+  "unpackedSize": 3024414,
+  "entryCount": 87,
+  "sourceCommit": "baeb14c674a08e533f86782bc99e29829e34ca06",
+  "sourceDirty": false,
+  "assetFingerprint": "642f3086feb714bfcf91587f1ce77f81407c68019b7976c002ff4bd650676e2e",
+  "files": [
+    {
+      "path": "LICENSE",
+      "size": 1549
+    },
+    {
+      "path": "README.md",
+      "size": 8358
+    },
+    {
+      "path": "assets/addon/dsh_blender_bridge.py",
+      "size": 323391
+    },
+    {
+      "path": "assets/addon/README.md",
+      "size": 3704
+    },
+    {
+      "path": "assets/manifest.json",
+      "size": 6541
+    },
+    {
+      "path": "assets/package.json",
+      "size": 59
+    },
+    {
+      "path": "assets/plan-routing.mjs",
+      "size": 2625
+    },
+    {
+      "path": "assets/runtime/_probe_tools.mjs",
+      "size": 1483
+    },
+    {
+      "path": "assets/runtime/addon-protocol.mjs",
+      "size": 3018
+    },
+    {
+      "path": "assets/runtime/assembly_features.json",
+      "size": 16359
+    },
+    {
+      "path": "assets/runtime/assembly.py",
+      "size": 229486
+    },
+    {
+      "path": "assets/runtime/audit.py",
+      "size": 180890
+    },
+    {
+      "path": "assets/runtime/backend_probe.d.mts",
+      "size": 431
+    },
+    {
+      "path": "assets/runtime/backend_probe.mjs",
+      "size": 2471
+    },
+    {
+      "path": "assets/runtime/blockout.py",
+      "size": 116837
+    },
+    {
+      "path": "assets/runtime/calib.py",
+      "size": 24431
+    },
+    {
+      "path": "assets/runtime/catalog.mjs",
+      "size": 49608
+    },
+    {
+      "path": "assets/runtime/classes.mjs",
+      "size": 12028
+    },
+    {
+      "path": "assets/runtime/clearance.py",
+      "size": 8524
+    },
+    {
+      "path": "assets/runtime/config.mjs",
+      "size": 20318
+    },
+    {
+      "path": "assets/runtime/contract.py",
+      "size": 102682
+    },
+    {
+      "path": "assets/runtime/deliver.py",
+      "size": 52710
+    },
+    {
+      "path": "assets/runtime/engine.mjs",
+      "size": 210458
+    },
+    {
+      "path": "assets/runtime/evalharness.py",
+      "size": 43532
+    },
+    {
+      "path": "assets/runtime/ext/gltf_validate_runner.mjs",
+      "size": 824
+    },
+    {
+      "path": "assets/runtime/ext/open3d_check.py",
+      "size": 1554
+    },
+    {
+      "path": "assets/runtime/faceeval.py",
+      "size": 8757
+    },
+    {
+      "path": "assets/runtime/gate.py",
+      "size": 70348
+    },
+    {
+      "path": "assets/runtime/generator.py",
+      "size": 30713
+    },
+    {
+      "path": "assets/runtime/geo.py",
+      "size": 36783
+    },
+    {
+      "path": "assets/runtime/human.py",
+      "size": 26993
+    },
+    {
+      "path": "assets/runtime/imgtools.py",
+      "size": 121064
+    },
+    {
+      "path": "assets/runtime/kit.py",
+      "size": 15443
+    },
+    {
+      "path": "assets/runtime/launch.mjs",
+      "size": 16888
+    },
+    {
+      "path": "assets/runtime/material.py",
+      "size": 32078
+    },
+    {
+      "path": "assets/runtime/mesh_fix.py",
+      "size": 15274
+    },
+    {
+      "path": "assets/runtime/montage.py",
+      "size": 13156
+    },
+    {
+      "path": "assets/runtime/motion.py",
+      "size": 136509
+    },
+    {
+      "path": "assets/runtime/offline_bootstrap.py",
+      "size": 4483
+    },
+    {
+      "path": "assets/runtime/paths.mjs",
+      "size": 24950
+    },
+    {
+      "path": "assets/runtime/perf.py",
+      "size": 20640
+    },
+    {
+      "path": "assets/runtime/pipeline.py",
+      "size": 11170
+    },
+    {
+      "path": "assets/runtime/planner.py",
+      "size": 22297
+    },
+    {
+      "path": "assets/runtime/presets.py",
+      "size": 21716
+    },
+    {
+      "path": "assets/runtime/printcheck.py",
+      "size": 46448
+    },
+    {
+      "path": "assets/runtime/proc_env.mjs",
+      "size": 2801
+    },
+    {
+      "path": "assets/runtime/qc_render.py",
+      "size": 209879
+    },
+    {
+      "path": "assets/runtime/qc.py",
+      "size": 53899
+    },
+    {
+      "path": "assets/runtime/recover.mjs",
+      "size": 9044
+    },
+    {
+      "path": "assets/runtime/render_guard.py",
+      "size": 10326
+    },
+    {
+      "path": "assets/runtime/runner.py",
+      "size": 26156
+    },
+    {
+      "path": "assets/runtime/sculpt.py",
+      "size": 37625
+    },
+    {
+      "path": "assets/runtime/selectionstore.mjs",
+      "size": 12090
+    },
+    {
+      "path": "assets/runtime/server.mjs",
+      "size": 48858
+    },
+    {
+      "path": "assets/runtime/shapegen.py",
+      "size": 42403
+    },
+    {
+      "path": "assets/runtime/shapesolve.py",
+      "size": 43013
+    },
+    {
+      "path": "assets/runtime/staging.mjs",
+      "size": 3779
+    },
+    {
+      "path": "assets/runtime/sweep.py",
+      "size": 16076
+    },
+    {
+      "path": "assets/runtime/txn.py",
+      "size": 41850
+    },
+    {
+      "path": "assets/runtime/uv_tools.py",
+      "size": 17840
+    },
+    {
+      "path": "assets/runtime/vehicle.py",
+      "size": 81397
+    },
+    {
+      "path": "assets/runtime/view.py",
+      "size": 47043
+    },
+    {
+      "path": "assets/runtime/visualreport.py",
+      "size": 60997
+    },
+    {
+      "path": "assets/runtime/worker.py",
+      "size": 25878
+    },
+    {
+      "path": "assets/skill/agents/openai.yaml",
+      "size": 298
+    },
+    {
+      "path": "assets/skill/LICENSE",
+      "size": 1412
+    },
+    {
+      "path": "assets/skill/NOTICE.md",
+      "size": 878
+    },
+    {
+      "path": "assets/skill/references/acceptance.md",
+      "size": 2899
+    },
+    {
+      "path": "assets/skill/references/safety.md",
+      "size": 4205
+    },
+    {
+      "path": "assets/skill/references/tools.md",
+      "size": 4263
+    },
+    {
+      "path": "assets/skill/references/workflows.md",
+      "size": 3706
+    },
+    {
+      "path": "assets/skill/SKILL.md",
+      "size": 4659
+    },
+    {
+      "path": "assets/tools.json",
+      "size": 35407
+    },
+    {
+      "path": "dist/backend-service.d.ts",
+      "size": 57
+    },
+    {
+      "path": "dist/backend-service.js",
+      "size": 8503
+    },
+    {
+      "path": "dist/backend.d.ts",
+      "size": 1225
+    },
+    {
+      "path": "dist/backend.js",
+      "size": 11836
+    },
+    {
+      "path": "dist/cli.d.ts",
+      "size": 31
+    },
+    {
+      "path": "dist/cli.js",
+      "size": 12200
+    },
+    {
+      "path": "dist/config.d.ts",
+      "size": 1242
+    },
+    {
+      "path": "dist/config.js",
+      "size": 2749
+    },
+    {
+      "path": "dist/core.d.ts",
+      "size": 1209
+    },
+    {
+      "path": "dist/core.js",
+      "size": 24025
+    },
+    {
+      "path": "dist/mcp.d.ts",
+      "size": 101
+    },
+    {
+      "path": "dist/mcp.js",
+      "size": 1129
+    },
+    {
+      "path": "package.json",
+      "size": 1428
+    },
+    {
+      "path": "scripts/portable-setup.mjs",
+      "size": 10417
+    }
+  ]
+}

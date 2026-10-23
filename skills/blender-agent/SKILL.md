@@ -10,7 +10,7 @@ license: MIT
 
 ## 工具依赖
 
-需要 **`@blender-agent/bridge` 独立工具包**及其配套 Blender runtime（本 Skill 对应 1.x 的 15 工具合同）；Skill 本身不带 Blender 引擎。MCP 暴露 `blender_rt_*` 和 `blender_viewport`，宿主可能加服务器前缀；CLI 为 `blender-agent`。优先使用已连接的 MCP，CLI 调用同一实现。没有工具时先完成项目安装与诊断，不伪造执行结果。
+需要 **`@patricklee2001/blender-agent` 独立工具包**及其配套 Blender runtime（本 Skill 对应 1.x 的 15 工具合同）；可用 `npm install -g @patricklee2001/blender-agent` 安装。Skill 本身不带 Blender 引擎。MCP 暴露 `blender_rt_*` 和 `blender_viewport`，宿主可能加服务器前缀；CLI 为 `blender-agent`。优先使用已连接的 MCP，CLI 调用同一实现。没有工具时先完成项目安装与诊断，不伪造执行结果。
 
 CLI 等价入口：`blender-agent call <工具名> --file <参数.json>`。场景操作先 `blender-agent backend start`，保持相同端口、workdir、Blender路径及稳定 `--holder <本次会话id>`（或 `BLENDER_AGENT_HOLDER`）。同一 worker/session 复用相同 holder；并行写者用不同 holder 与 worker 名。具体要求见[能力路由](references/tools.md)。MCP 使用服务进程身份，无需固定 holder；共享自动后端在最后活跃客户端离开后清理。
 

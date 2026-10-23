@@ -1,8 +1,21 @@
 # Blender Agent 安装与本地分发
 
-当前可交付的是**源码构建和独立 npm tarball**。npm 包名为 `@blender-agent/bridge`，版本 `1.0.0`；本轮核对 npm registry 返回 404，本机 `npm whoami` 返回 `ENEEDAUTH`，尚未公开发布。仓库当前为私有，访问需要 GitHub 权限。
+推荐通过公开 npm 包 **`@patricklee2001/blender-agent`** 安装；也提供源码构建和独立 npm tarball。CLI 命令始终为 `blender-agent`。GitHub 仓库当前为私有，npm 使用者无需仓库权限。
 
-日常使用先按下方两条路径安装；维护者完成 npm 登录、scope 归属与发布权限后，才能向 registry 发布。整个本地流程不依赖 CI 配额。本轮新入口和独立包的实际检查另记于[分发验证](distribution-verification.md)。
+整个构建、打包和发布流程不依赖 CI 配额。首发前独立包检查见[分发验证](distribution-verification.md)，正式包及在线安装记录见[npm 首发验证](npm-release.md)。
+
+## 使用者：npm 安装（推荐）
+
+需要 Node.js 22+、npm 和另行安装的 Blender。安装已编译的工具包，再接入已存在的项目：
+
+```sh
+npm install -g @patricklee2001/blender-agent
+blender-agent help
+blender-agent install --project "C:/my project" --host both --dry-run
+blender-agent install --project "C:/my project" --host both --apply
+```
+
+无法自动找到 Blender 时，加 `--blender <可执行文件绝对路径>`。重新加载宿主后使用 `/blender-agent`（Claude）或 `$blender-agent`（Codex）。包不包含 Blender、Node 或模型额度。命令会生成项目 Skill 和 MCP 配置；已有配置保留并提供候选供合并。
 
 ## 为什么使用 npm
 
@@ -34,7 +47,7 @@ node packages/blender-agent/dist/cli.js install --project "C:/my project" --appl
 从维护者获得 `.tgz` 后，安装到稳定位置：
 
 ```sh
-npm install -g ./blender-agent-bridge-1.0.0.tgz
+npm install -g ./patricklee2001-blender-agent-1.0.0.tgz
 blender-agent help
 blender-agent install --help
 blender-agent install --project "C:/my project" --host both --dry-run
@@ -45,7 +58,7 @@ blender-agent install --project "C:/my project" --host both --apply
 
 安装器默认预览，`--apply` 写入项目配置与 Skill。已有配置生成候选供合并，用户修改触发冲突保护。完成后重新加载宿主，并执行实际 Blender 验证；安装成功不能代替 GUI `doctor.kind=ok` 或无头出图检查。
 
-长期 MCP 配置应引用稳定安装位置。将来 registry 发布后，`npx` 可用于一次性查看帮助；不要用临时缓存目录进行项目安装，缓存失效会让 MCP 路径断开。当前未发布时直接使用本地包或源码入口。
+长期 MCP 配置应引用稳定安装位置。`npx --package @patricklee2001/blender-agent blender-agent help` 可用于一次性查看帮助；不要用临时缓存目录进行项目安装，缓存失效会让 MCP 路径断开。
 
 ## 维护者：构建与本地发行
 
@@ -62,7 +75,7 @@ npm run pack
 
 | 产物 | 内容 |
 | --- | --- |
-| `release/blender-agent-bridge-1.0.0.tgz` | 可独立安装的 npm 包 |
+| `release/patricklee2001-blender-agent-1.0.0.tgz` | 可独立安装的 npm 包 |
 | `release/manifest.json` | 实际发行文件、SHA256、版本、源提交、源码是否有未提交修改与资产指纹 |
 
 脚本检查必需资产，并拒绝把 `.upstream`、`node_modules`、个人虚拟环境等带入包。重新打包会更新同版本 tarball 和 manifest；历史验收报告的哈希只对应历史包，不能套用到新包。保留需追溯的旧包与清单，用新证据目录记录新验证。
@@ -71,11 +84,11 @@ npm run pack
 
 本地 tarball 可以直接交付，不需要先推送源码、触发 CI 或发布 npm。
 
-## 维护者：将来发布到 npm
+## 维护者：发布到 npm
 
-以下是**另行授权发布时**的手工流程，当前无需执行。GitHub 仓库私有与 npm 是否公开是两项独立设置；`--access public` 会公开 npm 包内代码和资产。
+以下为维护者发布新版本的流程；需具备发布授权与包写权限。GitHub 仓库私有与 npm 是否公开是两项独立设置；`--access public` 会公开 npm 包内代码和资产。
 
-先明确 `@blender-agent` scope 的归属：若属于组织，需要组织存在并授予当前账号相应包的发布权限；若属于个人账号，该账号需拥有此 scope。仅能登录 npm 不代表拥有该 scope。按 npm 当前要求完成账号验证、双因素认证或可交互发布认证。
+本包位于个人 scope `@patricklee2001`，使用所有者账号或获授权限的账号发布，无需创建 npm 组织。早期准备包名 `@blender-agent/bridge` 没有发布，不能用于在线安装。按 npm 当前要求完成邮箱、双因素认证或可交互发布认证；密码和验证码在本人终端/网页输入，不写入仓库或日志。
 
 ```sh
 npm config get registry
@@ -86,17 +99,17 @@ npm whoami
 本项目面向 npm 官方 registry 的发布地址为 `https://registry.npmjs.org/`。若显示其他地址，先确认目标 registry 与权限，不要为了本项目随意修改全局配置。登录完成后核对账号、scope 与目标版本，再检查**同一份已验收 tarball**：
 
 ```sh
-npm publish ./release/blender-agent-bridge-1.0.0.tgz --access public --dry-run
+npm publish ./release/patricklee2001-blender-agent-1.0.0.tgz --access public --dry-run
 ```
 
 dry-run 用于预览包内容与发布参数，不实际发布，也不能证明 registry 的登录、scope 权限或最终发布一定成功。获得发布授权且上述前提满足后，才执行：
 
 ```sh
-npm publish ./release/blender-agent-bridge-1.0.0.tgz --access public
-npm view @blender-agent/bridge@1.0.0 version dist.integrity
+npm publish ./release/patricklee2001-blender-agent-1.0.0.tgz --access public
+npm view @patricklee2001/blender-agent@1.0.0 version dist.integrity
 ```
 
-使用 tarball 发布可保持待发布内容与本地验收内容一致。npm 同一包名和版本不能被覆盖；后续代码变更发布需更新版本、重建、重新验证。发布后再更新 README 中的状态，并在独立安装位置验证 registry 消费路径；届时才可把 `npm install -g @blender-agent/bridge@1.0.0` 作为公开安装命令。
+使用 tarball 发布可保持待发布内容与本地验收内容一致。npm 同一包名和版本不能被覆盖；后续代码变更发布需更新版本、重建、重新验证。示例固定为首发 `1.0.0`，发布后续版本时需换成对应版本的 tarball；不要反复执行首发命令。发布后在新安装目录执行 `npm install -g @patricklee2001/blender-agent@1.0.0` 验证 registry 消费路径，核对远端完整性与本地制品 hash。
 
 不需要为此改成公开 GitHub 仓库或等待 CI，也不自动要求推送、打 tag 或修改宿主全局配置。
 
@@ -115,7 +128,7 @@ npm tarball 是分发格式，不是隐藏实现的手段。公开发布后，�
 ```sh
 blender-agent uninstall --project "C:/my project" --dry-run
 blender-agent uninstall --project "C:/my project" --apply
-npm uninstall -g @blender-agent/bridge
+npm uninstall -g @patricklee2001/blender-agent
 ```
 
 项目卸载只清理未修改的安装器自管文件；手工合入已有 MCP 配置的条目由使用者移除。用户修改、工作目录和模型产物保留。先清理所有引用该包的项目，再删除工具包，避免留下失效的 MCP 路径。

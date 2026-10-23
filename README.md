@@ -5,6 +5,7 @@
 **让 Claude Code、Codex 与 MCP 宿主在真实 Blender 中建模、看图和交付。**
 
 [![Node.js 22+](https://img.shields.io/badge/Node.js-22%2B-417E38)](https://nodejs.org/)
+[![npm](https://img.shields.io/npm/v/%40patricklee2001%2Fblender-agent)](https://www.npmjs.com/package/@patricklee2001/blender-agent)
 [![MCP](https://img.shields.io/badge/MCP-stdio-24292F)](https://modelcontextprotocol.io/)
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue)](LICENSE)
 
@@ -34,7 +35,17 @@ Blender Agent 把 **15 个工具、33 类 / 217 个目录操作**交给现有 Ag
 
 需要 **Node.js 22+、npm 和 Blender 4.x / 5.x**。Blender 自带所需 Python，无需另装系统 Python、uv 或 pip。
 
-> 当前版本为 `1.0.0`，npm 包 `@blender-agent/bridge` **尚未公开发布**。现在可从有权限的源码仓库构建，或安装维护者提供的本地 `.tgz`；无需等待 CI。
+### npm 安装（推荐）
+
+```sh
+npm install -g @patricklee2001/blender-agent
+blender-agent help
+blender-agent help install
+blender-agent install --project "C:/my project" --host both --dry-run
+blender-agent install --project "C:/my project" --host both --apply
+```
+
+项目目录须已存在。首次使用无法自动找到 Blender 时，在两条 `install` 命令后加 `--blender "你的 Blender 可执行文件绝对路径"`。安装后重新加载宿主，详见下方说明。包已编译，不依赖 CI 配额，也不用访问 GitHub 源码仓库。
 
 ### 从源码使用
 
@@ -64,14 +75,14 @@ node packages/blender-agent/dist/cli.js install --project "C:/my project" --host
 
 ```sh
 npm run pack
-npm install -g ./release/blender-agent-bridge-1.0.0.tgz
+npm install -g ./release/patricklee2001-blender-agent-1.0.0.tgz
 blender-agent help
 blender-agent install --help
 blender-agent install --project "C:/my project" --dry-run
 blender-agent install --project "C:/my project" --apply
 ```
 
-已收到 `.tgz` 的使用者从 `npm install -g <包路径>` 开始即可，**不用编译，也不用保留源码仓库**。仍需 Node、Blender，以及 npm 安装依赖所需的网络或缓存。分发与将来发布 npm 的步骤见 [本地分发说明](docs/distribution.md)。
+已收到 `.tgz` 的使用者从 `npm install -g <包路径>` 开始即可，**不用编译，也不用保留源码仓库**。仍需 Node、Blender，以及 npm 安装依赖所需的网络或缓存。分发与 npm 发布步骤见 [分发说明](docs/distribution.md)。
 
 ### 重新加载宿主，开始任务
 
@@ -85,7 +96,7 @@ GUI 路线以 **`doctor.kind=ok`** 为就绪证据；无 GUI 则使用持久 wor
 
 [历史 MVP 验收](docs/acceptance-report.md)覆盖 Windows 上 Blender **4.5.15 / 5.0.1 无头**与 **4.5.15 GUI**；Claude **Opus 5.5 medium**、Codex **gpt-6.1-sol medium** 完成真实建模、原生图像查看和交付，产物由独立 Blender 进程重开检查。
 
-该报告的哈希和结果只对应其中记录的旧制品；当前帮助、安装入口与独立包验证见[本轮分发验证](docs/distribution-verification.md)。Linux/macOS 尚无本项目真实机器验收记录；217 个操作也未穷举全部参数。`degraded` 不算通过。
+该报告的哈希和结果只对应其中记录的旧制品；帮助、安装入口与独立包验证见[分发验证](docs/distribution-verification.md)，公开包与在线安装记录见[npm 首发验证](docs/npm-release.md)。Linux/macOS 尚无本项目真实机器验收记录；217 个操作也未穷举全部参数。`degraded` 不算通过。
 
 ## 常用命令
 
@@ -107,7 +118,7 @@ GUI 路线以 **`doctor.kind=ok`** 为就绪证据；无 GUI 则使用持久 wor
 
 **npm 安装为什么返回 404？**
 
-当前 `@blender-agent/bridge` 尚未公开发布。先使用源码或本地 `.tgz` 安装；维护者的 npm 登录、scope 权限与发布流程见[分发说明](docs/distribution.md)。
+请使用完整包名 `@patricklee2001/blender-agent`，registry 为 `https://registry.npmjs.org/`。旧的准备包名 `@blender-agent/bridge` 未发布。无法访问官方 registry 时，可使用维护者提供的 `.tgz` 或源码；详见[分发说明](docs/distribution.md)。
 
 **装完后找不到 `blender-agent` 命令？**
 

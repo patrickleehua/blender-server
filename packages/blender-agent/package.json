@@ -1,5 +1,5 @@
 {
-  "name": "@blender-agent/bridge",
+  "name": "@patricklee2001/blender-agent",
   "version": "1.0.0",
   "description": "Portable Blender CLI and MCP stdio bridge for Codex, Claude and other agents",
   "type": "module",

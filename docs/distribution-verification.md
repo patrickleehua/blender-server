@@ -1,6 +1,6 @@
 # 安装命令与 npm 本地分发验证
 
-**本轮新增的 CLI 入口和独立 tarball 已通过本地验证。** 用户可以使用 `blender-agent help`、`install`、`uninstall`，无需定位内部安装脚本；消费端不需要 TypeScript 编译或 CI。npm registry 尚未发布，当前交付方式是源码或本地 tarball。
+**本轮新增的 CLI 入口和独立 tarball 已通过本地验证。** 用户可以使用 `blender-agent help`、`install`、`uninstall`，无需定位内部安装脚本；消费端不需要 TypeScript 编译或 CI。本报告固定记录首发前准备包 `@blender-agent/bridge`；后续个人包名与 registry 交付见 [npm 首发验证](npm-release.md)。
 
 日期：2026-10-23。源码提交：`baeb14c674a08e533f86782bc99e29829e34ca06`。Windows、Node.js 24.20.0、npm 11.19.0；真实 Blender 4.5.15 LTS 无头会话。CI 按本轮要求未调整、未执行。
 
@@ -12,7 +12,7 @@
 | 本地 tarball | `release/blender-agent-bridge-1.0.0.tgz`，909,677 字节，87 个文件 |
 | SHA256 | `cbaddc9d2fb2cc5a9348024606002c3ac15a0d4dcafc9f7098b200663203d582` |
 | 引擎/适配器指纹 | `642f3086feb714bfcf91587f1ce77f81407c68019b7976c002ff4bd650676e2e` |
-| 发行清单 | [release/manifest.json](../release/manifest.json)，`sourceDirty=false` |
+| 发行清单 | [manifest-baeb14c.json](../release/archive/manifest-baeb14c.json)，`sourceDirty=false` |
 | 原始命令与 MCP 回执 | [result.json](../evidence/distribution-2026-10-23/result.json) |
 | 当次独立包验证脚本 | [verify.mjs](../evidence/distribution-2026-10-23/verify.mjs)，保留本机路径，需从仓库根目录运行 |
 | Blender 产物 | [PNG](../evidence/distribution-2026-10-23/npm-smoke.png)、[blend](../evidence/distribution-2026-10-23/npm-smoke.blend) |

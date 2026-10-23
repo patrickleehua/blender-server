@@ -6,16 +6,16 @@
 
 ## 安装工具包
 
-`@blender-agent/bridge` 当前版本 `1.0.0` **尚未公开发布到 npm**，请安装维护者提供或自己从源码生成的 `.tgz`：
+安装公开 npm 包，使用固定安装位置接入项目：
 
 ```sh
-npm install -g ./blender-agent-bridge-1.0.0.tgz
+npm install -g @patricklee2001/blender-agent
 blender-agent help
 blender-agent help install
 blender-agent install --help
 ```
 
-`.tgz` 已含编译结果，使用者不用执行构建；npm 仍需安装运行依赖。全局安装提供稳定 CLI 路径，适合项目 MCP 长期引用。不要用临时 `npx` 缓存路径生成项目配置。
+包已含编译结果，使用者不用执行构建；npm 仍需安装运行依赖。也可用 `npm install -g ./patricklee2001-blender-agent-1.0.0.tgz` 安装维护者提供的同一制品。全局安装提供稳定 CLI 路径，适合项目 MCP 长期引用。不要用临时 `npx` 缓存路径生成项目配置。
 
 有源码权限时，也可在仓库根目录构建运行：
 
@@ -98,7 +98,7 @@ CLI 在 stdout 输出 JSON，MCP 用原生 `image` 内容块返回图片；日�
 ```sh
 blender-agent uninstall --project "C:/my project" --dry-run
 blender-agent uninstall --project "C:/my project" --apply
-npm uninstall -g @blender-agent/bridge
+npm uninstall -g @patricklee2001/blender-agent
 ```
 
 卸载只删除 manifest 记录且 hash 未变的文件，保留用户修改、工作目录与产物。手工合入既有 MCP 配置的条目需手工移除；空目录保留。原脚本的 `--uninstall` 入口继续可用。
