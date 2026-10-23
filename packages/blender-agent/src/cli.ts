@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { parseArgs } from 'node:util';
 import { Bridge, errorResult, tools } from './core.js';
 import { BridgeError, options, PACKAGE_ROOT, publicState, VERSION, type Options } from './config.js';
 import { serveMcp } from './mcp.js';
 
 const HELP = `blender-agent ${VERSION}
+  help [install|uninstall]              Show usage
+  install [--project <dir>] [--apply]   Connect project Skill and MCP (default: dry-run)
+  uninstall [--project <dir>] [--apply] Remove unchanged installer-owned files
   mcp                                  MCP stdio server
   doctor                               GUI health check (kind=ok required)
   tools                                List 15 tool contracts
@@ -24,9 +28,57 @@ Scene calls (do/see/watch/plan and workers) require backend start first.
 Use --holder <session-id> consistently for worker scenes across CLI calls.
 JSON results go to stdout; diagnostics go to backend log/stderr.
 `;
+function setupHelp(command: 'install' | 'uninstall'): string {
+  return `blender-agent ${command} [options]
+  --project <dir>     Existing project directory (default: current directory)
+  --dry-run           Preview only; write nothing (default)
+  --apply             Apply the previewed changes
+${command === 'install' ? `  --host <host>       both (default), claude or codex
+  --blender <exe>     Absolute Blender executable path
+  --port <n>          Backend port (default: 9877)
+  --addon-port <n>    GUI addon port (default: 9876)
+  --worker-port <n>   Headless worker base port (default: 9879)
+  --workdir <dir>     Runtime directory (default: <project>/.blender-agent/runtime)
+` : ''}  -h, --help          Show this help
+Project-local only; global host configuration is never changed.
+${command === 'install' ? `Existing host configs are preserved; merge the generated config-candidates entry.
+Only unchanged installer-owned files can be upgraded. Conflicts block all writes.
+Reload the host after applying. Keep the installed package at a stable location.
+` : `Only unchanged installer-owned files are removed. User edits and model outputs stay.
+Stop your backend first; manually merged host entries need manual removal.
+`}`;
+}
+function setupProject(command: 'install' | 'uninstall', argv: string[]): void {
+  const { values } = parseArgs({ args: argv, options: {
+    project: { type: 'string' }, apply: { type: 'boolean' }, 'dry-run': { type: 'boolean' }, help: { type: 'boolean', short: 'h' },
+    ...(command === 'install' ? {
+      host: { type: 'string' as const }, blender: { type: 'string' as const }, workdir: { type: 'string' as const },
+      port: { type: 'string' as const }, 'addon-port': { type: 'string' as const }, 'worker-port': { type: 'string' as const },
+    } : {}),
+  } });
+  if (values.help) { process.stdout.write(setupHelp(command)); return; }
+  const args = [path.join(PACKAGE_ROOT, 'scripts/portable-setup.mjs'), '--project', values.project ?? process.cwd()];
+  if (command === 'uninstall') args.push('--uninstall');
+  for (const [key, value] of Object.entries(values)) {
+    if (key === 'project' || key === 'help' || value === undefined || value === false) continue;
+    args.push(`--${key}`);
+    if (typeof value === 'string') args.push(value);
+  }
+  // Reuse the bundled installer and its filesystem protections without a shell.
+  const result = spawnSync(process.execPath, args, { stdio: 'inherit', windowsHide: true, timeout: 60_000 });
+  if (result.error) throw new BridgeError('INSTALLER_FAILED', result.error.message);
+  process.exitCode = result.status ?? 1;
+}
 async function main(): Promise<void> {
   if (process.argv[2] === '__backend-service') {
     const { backendService } = await import('./backend-service.js'); await backendService(); return;
+  }
+  const [command, ...argv] = process.argv.slice(2);
+  if (command === 'install' || command === 'uninstall') { setupProject(command, argv); return; }
+  if (command === 'help') {
+    if (argv.length > 1 || argv[0] && !['install', 'uninstall', 'mcp', 'doctor', 'tools', 'catalog', 'call', 'backend', 'config'].includes(argv[0])) throw new BridgeError('INVALID_ARGUMENTS', 'Usage: blender-agent help [install|uninstall]');
+    process.stdout.write(argv[0] === 'install' || argv[0] === 'uninstall' ? setupHelp(argv[0]) : HELP);
+    return;
   }
   const { values, positionals } = parseArgs({ allowPositionals: true, options: {
     port: { type: 'string' }, 'addon-port': { type: 'string' }, 'worker-port': { type: 'string' }, workdir: { type: 'string' }, blender: { type: 'string' }, holder: { type: 'string' }, 'timeout-ms': { type: 'string' },
