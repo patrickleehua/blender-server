@@ -14,6 +14,7 @@ test('staging removes stale generated skill and preserves unrelated asset direct
   try {
     put('packages/blender-agent/scripts/stage.mjs', fs.readFileSync(source));
     put('bridge/runtime/server.mjs', '// fixture engine');
+    put('bridge/runtime/.npmignore', '# npm excludes this control file itself');
     put('bridge/addon/addon.py', '# fixture addon');
     put('bridge/package.json', JSON.stringify({ name: 'fixture-engine', version: '1.0.0', license: 'BSD-3-Clause' }));
     put('skills/blender-agent/SKILL.md', 'current skill');
@@ -26,6 +27,7 @@ test('staging removes stale generated skill and preserves unrelated asset direct
     const result = spawnSync(process.execPath, [path.join(pkg, 'scripts/stage.mjs')], { encoding: 'utf8', windowsHide: true });
     assert.equal(result.status, 0, result.stderr);
     assert.equal(fs.existsSync(path.join(pkg, 'assets/skills/blender-agent')), false);
+    assert.equal(fs.existsSync(path.join(pkg, 'assets/runtime/.npmignore')), false, 'Manifest must not claim npm-omitted control files as installed runtime assets');
     assert.equal(fs.readFileSync(path.join(pkg, 'assets/skill/SKILL.md'), 'utf8'), 'current skill');
     assert.equal(fs.readFileSync(path.join(pkg, 'assets/skills/user-other/keep.txt'), 'utf8'), 'unrelated user directory');
     assert.equal(fs.readFileSync(path.join(pkg, 'assets/user-data/keep.txt'), 'utf8'), 'unrelated asset');

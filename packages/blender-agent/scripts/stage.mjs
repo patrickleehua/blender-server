@@ -23,7 +23,7 @@ for (const dir of ['runtime', 'addon']) {
   const target = path.join(assets, dir);
   if (path.dirname(target) !== assets) throw new Error('Invalid staging path');
   fs.rmSync(target, { recursive: true, force: true });
-  fs.cpSync(path.join(repo, 'bridge', dir), target, { recursive: true, filter: (p) => !/(?:^|[\\/])(?:venv|node_modules|__pycache__|\.git)(?:[\\/]|$)|\.pyc$|\.tgz$|\.bak-|\.v1-/.test(p) });
+  fs.cpSync(path.join(repo, 'bridge', dir), target, { recursive: true, filter: (p) => path.basename(p) !== '.npmignore' && !/(?:^|[\\/])(?:venv|node_modules|__pycache__|\.git)(?:[\\/]|$)|\.pyc$|\.tgz$|\.bak-|\.v1-/.test(p) });
 }
 for (const name of ['LICENSE', 'NOTICE.md']) if (fs.existsSync(path.join(repo, 'bridge', name))) fs.copyFileSync(path.join(repo, 'bridge', name), path.join(assets, name));
 if (fs.existsSync(path.join(repo, 'LICENSE'))) fs.copyFileSync(path.join(repo, 'LICENSE'), path.join(pkg, 'LICENSE'));
