@@ -49,6 +49,10 @@ def _snap(sc):
         "filepath": r.filepath,
         "engine": r.engine,
         "device": c.device,
+        "eevee": {name: getattr(sc.eevee, name) for name in (
+            "use_raytracing", "ray_tracing_method", "taa_render_samples",
+            "use_shadows", "shadow_ray_count", "shadow_step_count")
+            if hasattr(getattr(sc, "eevee", None), name)},
     }
 
 
@@ -162,7 +166,21 @@ def dsh_perf_revert():
     c.use_denoising = saved["use_denoising"]
     r.resolution_percentage = saved["resolution_percentage"]
     r.filepath = saved["filepath"]
+    r.engine = saved["engine"]
+    c.device = saved["device"]
+    restore_errors = []
+    for name, value in saved.get("eevee", {}).items():
+        try:
+            setattr(sc.eevee, name, value)
+        except Exception as e:
+            restore_errors.append("%s: %s" % (name, e))
+    if restore_errors:
+        return _j({"ok": False, "err": "Some render settings could not be restored",
+                   "restore_errors": restore_errors})
     K.dsh_perf_applied = False
+    # A later apply starts a new reversible transaction from the user's then
+    # current values, rather than restoring the first-ever preset forever.
+    K.dsh_perf_saved = None
     out = json.loads(dsh_perf_status())
     out["ok"] = True
     out["reverted"] = True
@@ -390,6 +408,11 @@ def _dsh_perf_apply_eevee(args=None):
     ee = getattr(sc, "eevee", None)
     if ee is None:
         return None
+    K = _kernel()
+    if K is None:
+        return _j({"ok": False, "err": "需要持久内核 K（走 blender_rt_* 通道）"})
+    if getattr(K, "dsh_perf_saved", None) is None:
+        K.dsh_perf_saved = _snap(sc)
     before = {"engine": sc.render.engine, "rt": getattr(ee, "use_raytracing", None),
               "samples": getattr(ee, "taa_render_samples", None)}
     applied = []
@@ -427,7 +450,9 @@ def _dsh_perf_apply_eevee(args=None):
              "ray_tracing_method": str(getattr(ee, "ray_tracing_method", "")),
              "samples": getattr(ee, "taa_render_samples", None),
              "use_shadows": getattr(ee, "use_shadows", None)}
+    K.dsh_perf_applied = True
     return _json.dumps({"ok": True, "preset": "eevee-rt", "engine": sc.render.engine,
+                        "preset_applied": True,
                         "before": before, "after": after, "applied": applied,
                         "skipped_cycles_only": ["persistent_data", "denoising_use_gpu(OptiX)",
                                                 "auto_tile off", "samples cap"],

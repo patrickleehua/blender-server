@@ -700,7 +700,10 @@ const server = http.createServer(async (req, res) => {
       try { payload = JSON.parse(raw); } catch (e) { payload = {}; }
       const op = String(payload.op || 'status');
       // P0：worker 是**独立无头进程**，不碰 live GUI 场景 ⇒ 显式 isolated:true 时不占全局写租约，
-      // 否则多会话并行建模会互相 409（C 组调研的 P0 阻塞项）。同一 worker 仍由自身串行。
+      // Different workers remain independent; the same named scene has one owner.
+      const ownership = engine.worker.authorize(op, payload.name, payload.holder || payload.lease);
+      if (ownership) { json(res, 409, ownership); return; }
+      // Global GUI lease remains separate from named-worker ownership.
       const gate = (payload.isolated || isReadOnly('/worker', op)) ? null : leaseGate(payload);
       if (gate) { json(res, 409, gate); return; }
       stats.worker = (stats.worker || 0) + 1;

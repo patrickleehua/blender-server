@@ -2825,11 +2825,14 @@ class DSHBlenderBridgeServer:
 
                 offscreen = gpu.types.GPUOffScreen(width, height)
                 try:
-                    offscreen.draw_view3d(
-                        bpy.context.scene, bpy.context.view_layer, space, region,
-                        r3d.view_matrix, r3d.window_matrix, do_color_management=True,
-                    )
-                    buf = offscreen.texture_color.read()
+                    with offscreen.bind():
+                        offscreen.draw_view3d(
+                            bpy.context.scene, bpy.context.view_layer, space, region,
+                            r3d.view_matrix, r3d.window_matrix, do_color_management=True,
+                        )
+                        # Read explicitly as bytes. GPUTexture.read() may return
+                        # float pixels, which cannot be divided by 255 as RGBA8.
+                        buf = gpu.state.active_framebuffer_get().read_color(0, 0, width, height, 4, 0, 'UBYTE')
                 finally:
                     offscreen.free()
 

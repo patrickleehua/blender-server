@@ -52,8 +52,9 @@ function view(args: Args) {
 }
 function failed(value: any): boolean {
   if (!value || typeof value !== 'object') return false;
-  return value.ok === false || ['failed', 'killed', 'timeout'].includes(value.status)
-    || ['result', 'job', 'execution'].some(key => failed(value[key]));
+  return value.ok === false || ['error', 'failed', 'killed', 'timeout'].includes(value.status)
+    || ['result', 'job', 'execution', 'frame'].some(key => failed(value[key]))
+    || Array.isArray(value.frames) && value.frames.some(failed);
 }
 function image(bytes: Buffer): Content {
   let mimeType: string;
@@ -96,20 +97,21 @@ export class Bridge {
   }
   private async see(args: Args, signal?: AbortSignal): Promise<any> {
     if (args.session) {
+      if (args.full) throw new BridgeError('GUI_REQUIRED', 'A full UI screenshot requires the GUI; sessions provide a 3D scene image');
       const name = args.session === 'auto' ? 'interactive' : args.session;
       await this.startWorker(name, args.preload, signal);
       return this.worker({ op: 'see', name, spec: view(args) }, signal);
+    }
+    if (args.auto !== false && !await this.guiAvailable(signal)) {
+      if (args.full) throw new BridgeError('GUI_REQUIRED', 'A full UI screenshot requires the GUI; use a session for a 3D scene image');
+      await this.startWorker('interactive', undefined, signal);
+      return this.worker({ op: 'see', name: 'interactive', spec: view(args) }, signal);
     }
     const custom = ['from', 'look_at', 'lens', 'ortho', 'ortho_scale', 'view_size', 'shading', 'overlays', 'view_mode'].some(k => args[k] !== undefined);
     const route = custom ? '/view' : `/frame.png?size=${Math.max(120, Math.min(1600, args.max_size || 560))}&full=${args.full ? 1 : 0}&area=${args.area || 0}`;
     const { response, bytes } = await this.backend.request(route, custom ? view(args) : undefined, signal);
     if (!response.ok) {
       const result = parseResponse(bytes.toString('utf8'));
-      if (args.auto !== false) {
-        // A frame is read-only. Retrying code after a transport error is forbidden.
-        const name = 'interactive'; await this.startWorker(name, undefined, signal);
-        return this.worker({ op: 'see', name, spec: view(args) }, signal);
-      }
       return { ...result, ok: false, httpStatus: response.status };
     }
     return { ok: true, mode: custom ? 'view' : 'viewport', hash: createHash('sha256').update(bytes).digest('hex'), png_b64: bytes.toString('base64'),
@@ -148,7 +150,7 @@ export class Bridge {
     if (name === 'blender_rt_worker') {
       const body: Args = { ...args, timeoutMs: args.timeout_ms, purgePrefix: args.purge_prefix };
       if (args.op === 'see') body.spec = view(args);
-      if (args.op === 'watch') body.spec = args;
+      if (args.op === 'watch') body.spec = { ...view(args), seconds: args.seconds, fps: args.fps };
       return this.worker(body, signal);
     }
     if (name === 'blender_rt_plan') {
@@ -177,8 +179,11 @@ export class Bridge {
       } else result = await this.request('/act', { code: args.code || '', file: args.file }, signal);
       if (failed(result) || args.see === false) return result;
       // Image failure must not hide a successful mutation or cause its replay.
-      try { return { ok: true, execution: result, frame: await this.see({ ...args, session, auto: false }, signal) }; }
-      catch (e) { return { ok: true, execution: result, frame: { ok: false, error: e instanceof Error ? e.message : String(e) }, warning: 'Execution completed; image failed. Do not repeat code.' }; }
+      try {
+        const frame = await this.see({ ...args, session, auto: false }, signal);
+        return { ok: !failed(frame), executionCompleted: true, execution: result, frame,
+          ...(failed(frame) ? { warning: 'Execution completed; image failed. Do not repeat code. Retry only the image request.' } : {}) };
+      } catch (e) { return { ok: false, executionCompleted: true, execution: result, frame: { ok: false, error: e instanceof Error ? e.message : String(e) }, warning: 'Execution completed; image failed. Do not repeat code. Retry only the image request.' }; }
     }
     if (name === 'blender_rt_watch') {
       let session = args.session;
@@ -197,10 +202,11 @@ export class Bridge {
         frames.push({ atMs: Date.now() - start, ...await this.see({ ...args, auto: false }, signal) });
         if (i < count - 1) await delay(seconds * 1000 / count, undefined, { signal });
       }
-      return { ok: true, frames };
+      return { ok: !frames.some(failed), frames };
     }
     if (name === 'blender_rt_headless') {
       const body = this.headlessBody(args);
+      if (body.timeoutMs === undefined) body.timeoutMs = 180000;
       // Long tasks always obtain a server-side job handle before any waiting.
       const runId = 'run-' + randomUUID();
       const start = await this.request('/job', { ...body, runId, op: 'start' }, signal);
@@ -244,7 +250,7 @@ export class Bridge {
       // Never include credentials in a tool result, even when start returns state.
       if (raw?.token) { const { token: _, ...rest } = raw; raw = rest; }
       const images: Content[] = [], warnings: string[] = [];
-      const seen = new Set<string>();
+      const seen = new Map<string, number>();
       const collect = (value: any): any => {
         if (Array.isArray(value)) return value.map(collect);
         if (!value || typeof value !== 'object') return value;
@@ -252,8 +258,13 @@ export class Bridge {
         for (const [key, val] of Object.entries(value)) {
           if (key === 'png_b64' && typeof val === 'string') {
             const hash = createHash('sha256').update(val).digest('hex');
-            if (!seen.has(hash) && images.length < 6) { images.push(image(Buffer.from(val, 'base64'))); seen.add(hash); }
-            out.image = { mimeType: 'image/png', contentIndex: images.length };
+            let contentIndex = seen.get(hash);
+            if (contentIndex === undefined && images.length < 6) {
+              const block = image(Buffer.from(val, 'base64')); images.push(block);
+              contentIndex = images.length; seen.set(hash, contentIndex);
+            }
+            out.image = contentIndex === undefined ? { omitted: true, reason: 'Six-image response limit' }
+              : { mimeType: (images[contentIndex - 1] as { mimeType: string }).mimeType, contentIndex };
           } else out[key] = collect(val);
         }
         return out;

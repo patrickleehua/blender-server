@@ -93,12 +93,23 @@ def make_proj_matrix(w, h, lens=50.0, sensor=36.0, clip_start=0.1, clip_end=1000
 
 # ---------------------------------------------------------------- PNG 直写
 
+def _read_rgba8(framebuffer, w, h):
+    """Read RGBA8 with a flat buffer; Blender's multidimensional exporter can
+    expose strides that reorder pixels even when its logical indices are right.
+    """
+    buf = framebuffer.read_color(0, 0, w, h, 4, 0, 'UBYTE')
+    buf.dimensions = w * h * 4
+    return bytes(memoryview(buf))
+
+
 def write_png(path, w, h, rgba, flip=True):
     """rgba: 顶层→底层顺序的 RGBA8 字节流（len = w*h*4）。
 
     直接写 PNG（不经过 bpy.data.images）的原因：GPU 帧缓冲读回来的是**已经 sRGB 编码**的 8bit 值，
     走 image.pixels（线性语义）再保存会被二次 gamma 编码。直写字节 = 所见即所得，且省掉一次色彩空间猜测。
     """
+    if len(rgba) != w * h * 4:
+        raise ValueError("RGBA8 byte length mismatch: expected %d, received %d" % (w * h * 4, len(rgba)))
     raw = bytearray()
     stride = w * 4
     rng = range(h - 1, -1, -1) if flip else range(h)
@@ -243,8 +254,9 @@ def _capture_viewport(s):
                 off.draw_view3d(scene, vl, space, reg, vm, pm,
                                 do_color_management=bool(s["color_management"]),
                                 draw_background=bool(s["background"]))
-                buf = off.texture_color.read()
-                rgba = bytes(memoryview(buf))
+                # Read the bound render target explicitly as RGBA8. The texture
+                # read path produced corrupt viewport pixels on a real GUI run.
+                rgba = _read_rgba8(fb, s["width"], s["height"])
         finally:
             try:
                 off.free()
@@ -583,7 +595,7 @@ def host_capture(spec_json):
             # 画的就是用户视口的样子（do_color_management=True → write_png 直写字节，不做二次 gamma）
             off.draw_view3d(bpy.context.scene, bpy.context.view_layer, space, reg, vm, pm,
                             do_color_management=True, draw_background=True)
-            rgba = bytes(memoryview(off.texture_color.read()))
+            rgba = _read_rgba8(fb, w, h)
     finally:
         try:
             off.free()
@@ -828,7 +840,7 @@ def selftest():
         with off.bind():
             fb = gpu.state.active_framebuffer_get()
             fb.clear(color=(25 / 255.0, 153 / 255.0, 51 / 255.0, 1.0), depth=1.0)
-            rgba = bytes(memoryview(off.texture_color.read()))
+            rgba = _read_rgba8(fb, W, H)
     finally:
         off.free()
     p = os.path.join(os.path.dirname(WIN_DEFAULT), "dsh_view_selftest.png")

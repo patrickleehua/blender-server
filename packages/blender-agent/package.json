@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit",
     "prepack": "npm run build",
     "test": "npm run build && node --test test/*.test.mjs",
-    "test:live": "node --test test/live.mjs",
+    "test:live": "node --test test/live.mjs test/lifecycle-live.mjs",
     "start": "node dist/cli.js"
   },
   "dependencies": { "@modelcontextprotocol/sdk": "1.32.1", "ajv": "8.20.0" },

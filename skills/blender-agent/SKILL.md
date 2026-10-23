@@ -12,12 +12,12 @@ license: MIT
 
 需要 **`@blender-agent/bridge` 独立工具包**及其配套 Blender runtime（本 Skill 对应 1.x 的 15 工具合同）；Skill 本身不带 Blender 引擎。MCP 暴露 `blender_rt_*` 和 `blender_viewport`，宿主可能加服务器前缀；CLI 为 `blender-agent`。优先使用已连接的 MCP，CLI 调用同一实现。没有工具时先完成项目安装与诊断，不伪造执行结果。
 
-CLI 等价入口：`blender-agent call <工具名> --file <参数.json>`。worker start、job start、headless 或跨 CLI 保留状态前，先显式 `blender-agent backend start`；每次复用相同端口、workdir 和 Blender 路径。CLI 的 lease、写入、release 使用同一个显式 `--holder <本次会话id>`（或 `BLENDER_AGENT_HOLDER`）；并行写者分别用不同 id。没有显式 holder 的 CLI lease/release 会拒绝，不能用强抢绕过。MCP 默认在单个服务进程内保留自己的 holder，无需给多个宿主配置同一个固定身份。单次 CLI 自动启动的后端会随进程清理。
+CLI 等价入口：`blender-agent call <工具名> --file <参数.json>`。场景操作先 `blender-agent backend start`，保持相同端口、workdir、Blender路径及稳定 `--holder <本次会话id>`（或 `BLENDER_AGENT_HOLDER`）。同一 worker/session 复用相同 holder；并行写者用不同 holder 与 worker 名。具体要求见[能力路由](references/tools.md)。MCP 使用服务进程身份，无需固定 holder；共享自动后端在最后活跃客户端离开后清理。
 
 ## 开始前
 
 1. 查 `blender_viewport(op="doctor")`，用 `blender_rt_plan(op="catalog")` 查能力、参数和限制。未知 op 先查 family/help，按 `did_you_mean` 修正，别猜名字。
-2. **GUI 优先、无头备用**。GUI 使用随包 `DSH Blender Bridge` addon v1.10+ / protocol 11，并 Connect；GUI 验收要 doctor 的 `kind=ok`。无 GUI、批处理或长任务使用独立 worker，先 start 再 see 出图；这条路线 doctor 的 GUI 往返不可达属预期。
+2. **GUI 优先、无头备用**。GUI 使用随包 addon v1.10+ / protocol 11，验收要 doctor `kind=ok`。只有明确不可达才自动走 worker；忙碌、暂停或状态不明时不换场景。完整 UI 截图必须用 GUI。无 GUI、批处理或长任务使用独立 worker，先 start 再 see；GUI doctor 不可达属预期。
 3. 读取当前文件、对象/集合、单位和选择，取一张真实画面。确认任务作用域、比例/尺寸、保留对象和输出位置；已有事实与未确认假设分开记录。
 4. 多会话或共享 GUI 写入前查看 `who`，申请自己的 lease。遇到 `409 leased` 查持有者并停止冲突写入，不强抢。不要清空用户场景来开始任务。
 
@@ -37,6 +37,7 @@ CLI 等价入口：`blender-agent call <工具名> --file <参数.json>`。worke
 - 对照具体目标指出哪里正确、哪里仍错，随后修正。搜索内环的最佳分数不能自证交付；关键尺寸换一种计算方式复核。
 - 拓扑、UV 或应用修改器前做文件级 `blender_rt_txn snapshot`；对象级 mark 不覆盖这些变更。保存 `.blend` 与导出交换文件是不同动作，都核对实际文件。
 - 长活用 job/headless 作业句柄回收。**超时或失联后的写入结果未知时，先查状态与产物，不自动重放写入。**
+- do 回执 `executionCompleted=true` 但取图失败时仍为 `isError=true`；只重试 see，禁止重放 code。
 
 ## 完成标准
 

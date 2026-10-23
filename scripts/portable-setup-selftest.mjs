@@ -21,6 +21,20 @@ function run(target, args = [], script = setup) {
   return { status: output.status, json };
 }
 function check(name, test) { test(); passed++; console.log(`PASS ${name}`); }
+function packageFixture(name) {
+  const pkg = join(base, name);
+  mkdirSync(join(pkg, 'scripts'), { recursive: true });
+  cpSync(setup, join(pkg, 'scripts/portable-setup.mjs'));
+  cpSync(skill, join(pkg, 'assets/skill'), { recursive: true });
+  return { script: join(pkg, 'scripts/portable-setup.mjs'), skill: join(pkg, 'assets/skill/SKILL.md') };
+}
+function snapshot(directory, prefix = '') {
+  return Object.fromEntries(readdirSync(directory, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name)).flatMap(entry => {
+    const name = prefix ? `${prefix}/${entry.name}` : entry.name;
+    const path = join(directory, entry.name);
+    return entry.isDirectory() ? Object.entries(snapshot(path, name)) : [[name, readFileSync(path).toString('base64')]];
+  }));
+}
 try {
   check('dry-run does not create any project files', () => {
     const target = project('preview');
@@ -100,6 +114,58 @@ try {
     assert.equal(run(target, ['--host', 'codex', '--apply']).status, 0);
     assert.equal(run(target, ['--uninstall', '--apply']).status, 0);
     assert(existsSync(join(destination, 'SKILL.md')));
+  });
+  check('upgrade replaces only unchanged managed files and refreshes uninstall hashes', () => {
+    const pkg = packageFixture('upgrade-package');
+    const target = project('upgrade-unchanged');
+    assert.equal(run(target, ['--apply'], pkg.script).status, 0);
+    const upgraded = readFileSync(pkg.skill, 'utf8') + '\n<!-- next package version -->\n';
+    writeFileSync(pkg.skill, upgraded);
+    const before = snapshot(target);
+    const preview = run(target, ['--port', '23877', '--dry-run'], pkg.script);
+    assert.equal(preview.status, 0);
+    assert(preview.json.plan.some(item => item.action === 'update'));
+    assert.deepEqual(snapshot(target), before);
+    const applied = run(target, ['--port', '23877', '--apply'], pkg.script);
+    assert.equal(applied.status, 0);
+    for (const host of ['.agents', '.claude']) assert.equal(readFileSync(join(target, host, 'skills/blender-agent/SKILL.md'), 'utf8'), upgraded);
+    assert(JSON.parse(readFileSync(join(target, '.mcp.json'), 'utf8')).mcpServers['blender-agent'].args.includes('23877'));
+    assert(readFileSync(join(target, '.codex/config.toml'), 'utf8').includes('23877'));
+    assert.equal(run(target, ['--port', '23877', '--apply'], pkg.script).status, 0);
+    assert.equal(run(target, ['--uninstall', '--apply'], pkg.script).status, 0);
+    assert(!existsSync(join(target, '.agents/skills/blender-agent/SKILL.md')));
+    assert(!existsSync(join(target, '.mcp.json')));
+  });
+  check('upgrade conflict preserves user skill edits and writes nothing', () => {
+    const pkg = packageFixture('edited-upgrade-package');
+    const target = project('upgrade-edited');
+    assert.equal(run(target, ['--apply'], pkg.script).status, 0);
+    writeFileSync(pkg.skill, readFileSync(pkg.skill, 'utf8') + '\nnew package revision\n');
+    writeFileSync(join(target, '.agents/skills/blender-agent/SKILL.md'), 'user-customized skill\n');
+    const before = snapshot(target);
+    const result = run(target, ['--port', '24877', '--apply'], pkg.script);
+    assert.equal(result.status, 1);
+    assert.equal(result.json.mode, 'blocked');
+    assert.deepEqual(snapshot(target), before);
+  });
+  check('upgrade preserves other servers and settings added to installer-owned host configs', () => {
+    const target = project('upgrade-host-settings');
+    assert.equal(run(target, ['--apply']).status, 0);
+    const claude = join(target, '.mcp.json');
+    const config = JSON.parse(readFileSync(claude, 'utf8'));
+    config.mcpServers.other = { command: 'keep-user-server' };
+    writeFileSync(claude, JSON.stringify(config, null, 2));
+    const codex = join(target, '.codex/config.toml');
+    writeFileSync(codex, readFileSync(codex, 'utf8') + '\n[mcp_servers.other]\ncommand = "keep-other"\n');
+    const before = snapshot(target);
+    const result = run(target, ['--port', '25877', '--apply']);
+    assert.equal(result.status, 1);
+    assert(result.json.plan.some(item => item.path === '.mcp.json' && item.action === 'conflict'));
+    assert(result.json.plan.some(item => item.path === '.codex/config.toml' && item.action === 'conflict'));
+    assert.deepEqual(snapshot(target), before);
+    assert.equal(run(target, ['--uninstall', '--apply']).status, 0);
+    assert.equal(readFileSync(claude, 'utf8'), Buffer.from(before['.mcp.json'], 'base64').toString());
+    assert.equal(readFileSync(codex, 'utf8'), Buffer.from(before['.codex/config.toml'], 'base64').toString());
   });
   check('standalone package layout locates bundled skill and CLI', () => {
     const pkg = join(base, 'standalone');

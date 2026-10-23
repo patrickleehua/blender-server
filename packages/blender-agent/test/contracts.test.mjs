@@ -30,6 +30,7 @@ async function fixture(handler) {
   const server = http.createServer((req, res) => {
     if (req.url === '/_adapter/identity') { const { token, ...identity } = state; res.end(JSON.stringify({ ok: true, adapter: 'blender-agent', ...identity })); return; }
     assert.equal(req.headers['x-blender-agent-token'], state.token);
+    if (req.url === '/_adapter/clients') { res.end(JSON.stringify({ ok: true, clients: 1, stopping: false })); return; }
     handler(req, res);
   });
   await new Promise(resolve => server.listen(port, '127.0.0.1', resolve));
@@ -125,4 +126,77 @@ test('real isolated engine catalog survives Unicode paths; owned backend and sta
     assert.equal(await portOccupied(opts.port), false); assert.equal(fs.existsSync(statePath(opts)), false);
     fs.rmSync(workdir, { recursive: true, force: true });
   }
+});
+
+test('GUI see changes route only after a definite unreachable diagnosis', async () => {
+  for (const kind of ['main-thread-busy', 'ok', 'blender-unreachable']) {
+    const routes = [];
+    const f = await fixture(async (req, res) => {
+      routes.push(req.url);
+      if (req.url === '/doctor') res.end(JSON.stringify({ kind, ok: kind === 'ok' }));
+      else if (req.url === '/worker') {
+        let body = ''; for await (const part of req) body += part;
+        const args = JSON.parse(body);
+        res.end(JSON.stringify(args.op === 'see' ? { ok: true, result: { ok: true, png_b64: png } } : { ok: true }));
+      } else { res.writeHead(503); res.end('{"ok":false,"error":"main-thread-busy"}'); }
+    });
+    const bridge = new Bridge(f.opts);
+    try {
+      const result = await bridge.call('blender_rt_see', {});
+      assert.equal(result.isError, kind !== 'blender-unreachable');
+      assert.equal(routes.filter(x => x === '/worker').length, kind === 'blender-unreachable' ? 2 : 0);
+      assert.equal(routes.some(x => x.startsWith('/frame.png')), kind === 'ok');
+      if (kind === 'main-thread-busy') assert.equal(result.structuredContent.code, 'GUI_NOT_READY');
+      if (kind === 'ok') assert.equal(result.structuredContent.httpStatus, 503);
+      if (kind === 'blender-unreachable') {
+        assert.ok(result.content.some(x => x.type === 'image'));
+        routes.length = 0;
+        const full = await bridge.call('blender_rt_see', { full: true });
+        assert.equal(full.structuredContent.code, 'GUI_REQUIRED'); assert.deepEqual(routes, ['/doctor']);
+      }
+    } finally { await bridge.dispose(); await f.close(); }
+  }
+});
+
+test('command/frame errors stay failures; a successful mutation is identified and never replayed', async () => {
+  let writes = 0;
+  const f = await fixture((req, res) => {
+    if (req.url === '/doctor') res.end('{"ok":true,"kind":"ok"}');
+    else if (req.url === '/cmd') res.end('{"ok":true,"result":{"status":"error","error":"use corrected command"}}');
+    else if (req.url === '/act') { writes++; res.end('{"ok":true,"result":{"ok":true}}'); }
+    else { res.writeHead(503); res.end('{"ok":false,"error":"frame failed"}'); }
+  });
+  const bridge = new Bridge(f.opts);
+  try {
+    assert.equal((await bridge.call('blender_rt_cmd', { name: 'qc_render_catalog' })).isError, true);
+    const partial = await bridge.call('blender_rt_do', { code: 'one mutation' });
+    assert.equal(partial.isError, true); assert.equal(partial.structuredContent.executionCompleted, true);
+    assert.match(partial.structuredContent.warning, /Do not repeat code/); assert.equal(writes, 1);
+    const watch = await bridge.call('blender_rt_watch', { seconds: 0.2, fps: 0.5 });
+    assert.equal(watch.isError, true); assert.equal(writes, 1);
+  } finally { await bridge.dispose(); await f.close(); }
+});
+
+test('normalized worker watch, safe argv arrays, headless timeout and image references match their contracts', async () => {
+  const requests = [];
+  const other = Buffer.concat([Buffer.from(png, 'base64'), Buffer.from('different')]).toString('base64');
+  const f = await fixture(async (req, res) => {
+    let text = ''; for await (const part of req) text += part;
+    const body = JSON.parse(text); requests.push({ route: req.url, body });
+    if (req.url === '/job') res.end(JSON.stringify(body.op === 'start' ? { ok: true, job: { id: 'fixture-job' } } : { ok: true, job: { status: 'done' } }));
+    else res.end(JSON.stringify({ ok: true, result: { ok: true, frames: [png, other, png].map(png_b64 => ({ ok: true, png_b64 })) } }));
+  });
+  const bridge = new Bridge(f.opts);
+  try {
+    const watched = await bridge.call('blender_rt_worker', { op: 'watch', name: 'test', view_size: '120x80', seconds: 1, fps: 2 });
+    assert.equal(watched.isError, false);
+    assert.equal(requests[0].body.spec.width, 120); assert.equal(requests[0].body.spec.height, 80);
+    assert.equal(requests[0].body.spec.seconds, 1); assert.equal(requests[0].body.spec.fps, 2);
+    assert.deepEqual(watched.structuredContent.result.frames.map(x => x.image.contentIndex), [1, 2, 1]);
+    assert.equal(watched.content.filter(x => x.type === 'image').length, 2);
+    const headless = await bridge.call('blender_rt_headless', { script: 'pass', args: ['Unicode 中文', 'space path', '"literal"'] });
+    assert.equal(headless.isError, false);
+    const started = requests.find(x => x.route === '/job' && x.body.op === 'start').body;
+    assert.equal(started.timeoutMs, 180000); assert.deepEqual(started.args, ['Unicode 中文', 'space path', '"literal"']);
+  } finally { await bridge.dispose(); await f.close(); }
 });

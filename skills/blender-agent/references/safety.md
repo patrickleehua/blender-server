@@ -6,18 +6,23 @@
 
 共享 GUI 写入前 `who` → `lease`，记录 holder 与作用域；结束释放自己的 lease。适配器会识别后端归属，已有 DSH 后端不是可随意接管的服务；端口冲突换一组配置，不 stop 别人的进程。并行任务优先独立 worker/输出目录。
 
-CLI 每次命令都是新进程：显式 `--holder <本次工作会话id>` 或在该命令环境设置 `BLENDER_AGENT_HOLDER`，lease、后续受租约保护的写入及 release 都复用同一个值。不要只在 lease 的 JSON 里填 holder，却让后续写入使用默认 PID。并行 agent 必须使用不同值；不要在团队项目 MCP 配置里给所有宿主硬编码一个共用 holder。MCP 默认使用自身服务进程的身份。
+CLI 每次命令都是新进程：场景操作先启动 persistent backend，显式 `--holder <本次工作会话id>` 或 `BLENDER_AGENT_HOLDER`，跨调用保持相同 holder 与 worker名；lease、写入及 release 同样复用该值。不要只在 lease JSON 填 holder。并行 agent 使用不同 holder 与 worker名；MCP使用自身进程身份，不硬编码共用holder。
+
+共享自动 backend 按活跃 MCP 客户端计数，其他客户端仍在时场景保留，最后客户端离开后清理；persistent backend 无客户端也保留。显式 stop 收到 `BACKEND_IN_USE` 时先关闭其他客户端，不终止其进程。
 
 ## 故障表
 
 | 回执/现象 | 下一步 |
 |---|---|
 | `blender-unreachable` | GUI 是否启动、随包 addon 是否启用并 Connect；需要 GUI 时 launch。确无 GUI 才走 worker，并 start+see 验证 |
-| `main-thread-busy` | 等渲染/模态操作结束；独立批处理可用 headless，不能假定它会读到 GUI 未保存内容 |
+| `main-thread-busy` / paused / GUI状态不明 | 等渲染/模态操作结束或处理暂停，不自动改走另一场景；full UI截图必须等GUI恢复 |
 | 后端不可达/端口被占 | 核对当前 adapter 的 port/workdir/backend status，先确认进程归属，别结束未知进程 |
 | `409 leased` | `who` 查 holder/剩余时间；停止冲突写入，不 force |
-| `EXPLICIT_HOLDER_REQUIRED` | CLI lease/release 没有显式会话身份；给本轮 lease、写入和 release 都加同一 `--holder` 或 `BLENDER_AGENT_HOLDER` |
-| `PERSISTENT_BACKEND_REQUIRED` | 先用同端口/workdir执行 `backend start`，再启动worker/job/headless；不能用临时后端维持后台作业 |
+| `EXPLICIT_HOLDER_REQUIRED` | CLI场景调用或lease/release缺身份；给本轮操作都加稳定 `--holder` 或 `BLENDER_AGENT_HOLDER`，范围见能力路由 |
+| `PERSISTENT_BACKEND_REQUIRED` | 先用同端口/workdir执行 `backend start`，再操作场景；不能用临时后端维持worker/job |
+| `WORKER_OWNED` / worker HTTP 409 | worker属于其他holder；查list/status，使用独立worker名，不强抢 |
+| `BACKEND_IN_USE` | 其他MCP客户端仍连接；关闭其他客户端，再停止自己的backend |
+| `isError=true` 且 `executionCompleted=true` | 修改已经完成、图片失败；仅重试see，禁止重放code |
 | 缺 Blender 可执行文件 | 配项目 `--blender` 或 `DSH_BLENDER_EXE`，核对文件存在与可执行 |
 | 未知 op / 参数 | 查 catalog/help，按 did_you_mean 修改；没有开始写入的参数错误可修正后再调用 |
 | 超时 / `fetch failed` / lost connection | 结果可能已执行；查 job/status/日志、场景与落盘文件；未确认失败前不重复 write/start |

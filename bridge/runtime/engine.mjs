@@ -21,7 +21,7 @@ import net from 'node:net';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
-import { createHash } from 'node:crypto';
+import { createHash, randomUUID } from 'node:crypto';
 import { spawn, execFileSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { CFG, PATHS, winToWsl, wslToWin, describeConfig, IS_WIN, IS_MAC, IS_WSL, PKG_ROOT, wslPathShared } from './config.mjs';
@@ -1659,6 +1659,21 @@ export function createEngine(opts = {}) {
   // ---------------------------------------------------------------- 作业层（v0.8.5）
   // 长任务后台化：start 立刻返回 job id（不占客户端连接）；status/collect/kill 轮询；日志与产物落在 outdir/jobs/<id>/。
   const jobs = new Map();
+  const allocatedRunIds = new Set();
+  let ledgerIdsLoaded = false;
+  function reserveRunId(requested) {
+    if (!ledgerIdsLoaded) {
+      for (const rec of ledgerList(Number.MAX_SAFE_INTEGER)) {
+        allocatedRunIds.add(rec.id);
+        if (rec.runId) allocatedRunIds.add(rec.runId);
+      }
+      ledgerIdsLoaded = true;
+    }
+    const id = /^[A-Za-z0-9_-]{1,64}$/.test(String(requested || '')) ? String(requested) : 'run-' + randomUUID();
+    if (allocatedRunIds.has(id)) throw Object.assign(new Error('runId already exists: ' + id + '; inspect status/collect instead of replaying'), { code: 'RUN_ID_CONFLICT' });
+    allocatedRunIds.add(id);
+    return id;
+  }
   function jobDir(id, outdir) {
     const base = outdir ? winToWsl(String(outdir)) : winToWsl(WIN_TMP);
     const d = path.join(base, 'jobs', id);
@@ -1715,16 +1730,16 @@ export function createEngine(opts = {}) {
    *   workdir / include_noise 都收（旧版只认 script，靠 DSH_ARGS 取参的 preview.py 无法复用）。
    * v0.9.3（D5）：env 前导 + PYTHONUNBUFFERED + stage 心跳扫描（stdout.log 运行期就有增量）。
    */
-  function jobStart(opts = {}) {
-    const id = 'job-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5);
+  function jobStart(opts = {}, promotedRun = null) {
+    const id = 'job-' + randomUUID();
     const outdirArg = opts.outdir ? slipFixPath(String(opts.outdir), null) : null;
     const outdirWsl = outdirArg ? winToWsl(outdirArg) : winToWsl(WIN_TMP);
     const outdirWin = outdirArg ? wslToWin(outdirArg) : WIN_TMP;
     const dir = jobDir(id, outdirWsl);
     const outPath = path.join(dir, 'stdout.log'), errPath = path.join(dir, 'stderr.log');
     const engineMode = String(opts.engine === undefined || opts.engine === null ? 'eevee' : opts.engine).toLowerCase();
-    const runId = /^[A-Za-z0-9_-]{1,64}$/.test(String(opts.runId || '')) ? String(opts.runId)
-      : ('run-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5));
+    const runId = promotedRun && runs.get(promotedRun.id) === promotedRun && promotedRun.id === opts.runId
+      ? promotedRun.id : reserveRunId(opts.runId);
     // ---- script_file（与 headless 同一套语义：显式收 .py；file= 传 .py 自动改当脚本）
     let scriptFileInfo = null;
     let script = opts.script ? String(opts.script) : '';
@@ -1743,7 +1758,7 @@ export function createEngine(opts = {}) {
     }
     const inputFileInfo = (opts.file && !fileLooksPython)
       ? fileFingerprint(wslToWin(String(opts.file)), winToWsl(String(opts.file))) : null;
-    const args = ['-b'];
+    const args = ['-b', '--python-exit-code', '1'];
     if (opts.file && !fileLooksPython) args.push(wslToWin(String(opts.file)));
     if (opts.factoryStartup !== false) args.push('--factory-startup');
     const envPairs = { DSH_RUN_ID: runId, DSH_OUTDIR: outdirWin, DSH_SESSION: SESSION_NAME,
@@ -1975,12 +1990,12 @@ export function createEngine(opts = {}) {
     return reconcileLedgerFromDisk(rec, { winToWsl: winToWsl, wslToWin: wslToWin }, pidAlive);
   }
   function jobStatus(id) {
-    const key = String(id);
+    const key = resolveJobId(id);
     const j = jobs.get(key);
     if (j) { const s = jobSnapshot(j); s.stale = false; return s; }
     const r = runs.get(key);
     if (r) { const s = runSnapshot(r); s.stale = false; return s; }
-    const led = ledgerList(200).find((x) => x.id === key);
+    const led = ledgerList(Number.MAX_SAFE_INTEGER).find((x) => x.id === key);
     return led ? Object.assign({ kind: led.kind || 'ledger', fromLedger: true }, reconcileLedger(led))
                : { id: key, status: 'unknown', ok: false, hint: '没有这个 id 的记录（内存台账 + 磁盘台账都查过了）' };
   }
@@ -1989,7 +2004,7 @@ export function createEngine(opts = {}) {
     try { return fs.readFileSync(p, 'utf8').slice(-tail); } catch (e) { return null; }
   }
   function jobCollect(id, tail = 4000) {
-    const key = String(id);
+    const key = resolveJobId(id);
     const j = jobs.get(key);
     if (j) {
       const snap = jobSnapshot(j);
@@ -2010,7 +2025,7 @@ export function createEngine(opts = {}) {
       snap.hint = 'run 与 job 同一 id 空间；本条目来自 blender_rt_headless 的同步执行';
       return snap;
     }
-    const led = ledgerList(200).find((x) => x.id === key);
+    const led = ledgerList(Number.MAX_SAFE_INTEGER).find((x) => x.id === key);
     if (!led) return { id: key, status: 'unknown', ok: false, hint: '没有这个 id 的记录；op=list 看全部' };
     const rec = reconcileLedger(led);
     if (rec.status === 'running' || rec.status === 'stale') {
@@ -2025,7 +2040,7 @@ export function createEngine(opts = {}) {
    * 语义：等到终态或 timeout_ms 到点（默认 120s，上限 600s/次，可反复调）。
    */
   async function jobWait(id, timeoutMs = 120000) {
-    const key = String(id);
+    const key = resolveJobId(id);
     const budget = Math.max(1000, Math.min(600000, Number(timeoutMs) || 120000));
     const t0 = Date.now();
     let waited = 0;
@@ -2043,7 +2058,7 @@ export function createEngine(opts = {}) {
     return Object.assign(jobCollect(key), { waitedMs: Date.now() - t0, waitTimedOut: true });
   }
   function jobKill(id) {
-    const key = String(id);
+    const key = resolveJobId(id);
     const j = jobs.get(key);
     if (j) {
       if (j.status === 'running') { j.status = 'killed'; try { j.child.kill('SIGKILL'); } catch (e) { /* 可能已退出 */ } }
@@ -2058,7 +2073,7 @@ export function createEngine(opts = {}) {
       }
       return runSnapshot(r);
     }
-    const led = ledgerList(200).find((x) => x.id === key);
+    const led = ledgerList(Number.MAX_SAFE_INTEGER).find((x) => x.id === key);
     const rec = led ? reconcileLedger(led) : null;
     // v0.9.3（D6.4）：未知 id **不抛错** —— 旧版回 unknown 让调用方流程中断
     return { id: key, ok: true, status: (rec && rec.status) || 'unknown', alreadyFinished: !(rec && rec.status === 'running'),
@@ -2071,6 +2086,15 @@ export function createEngine(opts = {}) {
     const ids = new Set(mem.map((x) => x.id));
     const disk = ledgerList(60).filter((x) => !ids.has(x.id)).map((x) => Object.assign({ kind: x.kind || 'ledger', fromLedger: true }, reconcileLedger(x)));
     return mem.concat(disk);
+  }
+  function resolveJobId(id) {
+    const key = String(id);
+    if (jobs.has(key)) return key;
+    for (const j of jobs.values()) if (j.runId === key) return j.id;
+    // Persisted job aliases take precedence over the abandoned headless record
+    // when a synchronous run was promoted to a background job.
+    const recorded = ledgerList(Number.MAX_SAFE_INTEGER).find(rec => rec.kind === 'job' && rec.runId === key);
+    return recorded ? recorded.id : key;
   }
   /** v0.8.7：场景世代号（对象数/网格数/材质数/名字哈希）—— 用于发现「别人的重建把我的装配清掉了」 */
   async function sceneEpoch() {
@@ -2113,13 +2137,26 @@ export function createEngine(opts = {}) {
   }
   function workerAlive(w) { return !!(w && w.child && w.child.exitCode === null && !w.child.signalCode); }
   function workerSnapshot(w) {
-    return { name: w.name, alive: workerAlive(w), ready: w.ready, pid: w.pid, port: w.port,
+    return { name: w.name, holder: w.holder || null, alive: workerAlive(w), ready: w.ready, pid: w.pid, port: w.port,
              uptimeMs: w.startedAt ? Date.now() - w.startedAt : null,
              idleMs: w.lastUsed ? Date.now() - w.lastUsed : null, inflight: w.inflight || 0,
              gpu: w.gpu, boot: w.boot || null,
              lastError: w.lastError, stdoutTail: w.stdoutTail ? w.stdoutTail.slice(-1200) : null };
   }
   function workerList() { return Array.from(WORKERS.values()).map(workerSnapshot); }
+  // Isolated workers do not take the GUI lease, but one named scene still has
+  // one writer. Keep the owner on the worker itself, using its normalized name.
+  function workerAuthorize(op, name, holder) {
+    if (['list', 'status', 'ping'].includes(String(op))) return null;
+    const w = workerState(name);
+    const h = String(holder || 'anonymous');
+    if (w.holder && w.holder !== h && (workerAlive(w) || w.starting || w.inflight > 0)) {
+      return { ok: false, code: 'WORKER_OWNED', error: 'worker-owned', name: w.name, holder: w.holder,
+        hint: 'This named worker belongs to another holder. Choose a different worker name or wait for its owner to stop it.' };
+    }
+    w.holder = h;
+    return null;
+  }
   async function workerStart(opts = {}, nameArg) {
     const w = workerState(nameArg !== undefined ? nameArg : opts.name);
     if (w.starting) { await w.starting; return workerStart(opts, nameArg); }
@@ -2421,7 +2458,7 @@ export function createEngine(opts = {}) {
     preset: (op, payload) => presetCall(op, payload),
     worker: { start: workerStart, exec: workerExec, see: workerSee, watch: workerWatch, reset: workerReset,
               status: workerStatus, stop: workerStop, restart: workerRestart,
-              list: workerList, snapshot: workerSnapshot, state: workerState },
+              list: workerList, snapshot: workerSnapshot, state: workerState, authorize: workerAuthorize },
     job: { start: jobStart, status: jobStatus, collect: jobCollect, kill: jobKill, list: jobList, wait: jobWait },
     /** v0.9.4：拉起 GUI Blender + 自动 Connect addon（server.mjs /launch 路由用） */
     launchBlender: (opts) => launchBlender(opts || {}),
@@ -2619,7 +2656,9 @@ export function createEngine(opts = {}) {
     /** 渲染性能：status / apply / revert / analyze / help */
     async perf(op, payload) { return perfCall(op, payload); },
     /** 对象精简：opt_analyze / opt_join */
-    async opt(op, payload) { return perfCall(op, payload); },
+    async opt(op, payload) {
+      return perfCall(({ analyze: 'opt_analyze', join: 'opt_join' })[op] || op, payload);
+    },
     /** 取一帧视口 PNG（覆盖写固定文件） */
     async frame(maxSize = 560) {
       const res = await addon.send('get_viewport_screenshot', { max_size: maxSize, filepath: LIVE_PNG_WIN, format: 'png' });
@@ -2725,8 +2764,7 @@ export function createEngine(opts = {}) {
       // 而 WSL→Windows 的 env 跨界不可靠（实测 DSH_* 会被吃掉）→ 直接在脚本里 setdefault 一遍。
       // v0.9.3（D1）：**runId 先定**（客户端可以自带一个 id）—— 客户端等待窗口到点时要能立刻报出
       // "用这个 id 去 collect"，所以 id 必须在发请求前就存在，不能等服务端生成完再回传。
-      const runId = /^[A-Za-z0-9_-]{1,64}$/.test(String(opts.runId || '')) ? String(opts.runId)
-        : ('run-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5));
+      const runId = reserveRunId(opts.runId);
       const envPairs = {
         DSH_RUN_ID: runId, DSH_OUTDIR: outdirWin, DSH_SESSION: SESSION_NAME,
         DSH_PLUGIN_VERSION: PLUGIN_VERSION,
@@ -2769,7 +2807,7 @@ export function createEngine(opts = {}) {
           + (expectPost ? expectPost : '')
           + NL + '_dsh_stage_emit("done")' + NL
         : '';
-      const args = ['-b'];
+      const args = ['-b', '--python-exit-code', '1'];
       if (opts.file && !fileLooksPython) args.push(wslToWin(String(opts.file)));
       if (opts.factoryStartup !== false) args.push('--factory-startup');
       let sp = null;
@@ -2810,8 +2848,11 @@ export function createEngine(opts = {}) {
       // 用法：as_job=true 强制转；或给 auto_job_ms（如 120000）表示预计超过它就走作业。
       const autoJobMs = Number(opts.autoJobMs) || 0;
       if (opts.asJob || (autoJobMs > 0 && timeoutMs >= autoJobMs)) {
-        runs.delete(runId);                       // 转作业后这次 run 不存在了，别留一个假 running
-        const j = jobStart(Object.assign({}, opts, { timeoutMs: Math.max(timeoutMs, 3600000), runId: runId }));
+        const j = jobStart(Object.assign({}, opts, { timeoutMs: Math.max(timeoutMs, 3600000), runId: runId }), runRec);
+        runs.delete(runId);                       // The job now owns this runId.
+        stopRunHb();
+        if (soStream) soStream.end();
+        if (seStream) seStream.end();
         return { ok: true, mode: 'job', kind: 'job', ms: Date.now() - t0, jobId: j.id, runId: runId, job: j,
                  logs: { stdout: j.stdoutLog, stderr: j.stderrLog },
                  reason: null,

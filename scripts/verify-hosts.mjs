@@ -12,13 +12,14 @@ const { values } = parseArgs({ options: {
   package: { type: 'string' }, blender: { type: 'string' }, host: { type: 'string', default: 'both' },
   'claude-exe': { type: 'string' }, 'codex-entry': { type: 'string' },
   'run-root': { type: 'string', default: path.join(repo, 'tmp', 'host-acceptance') },
+  'evidence-root': { type: 'string', default: path.join(repo, 'evidence', 'hosts') },
 } });
 if (!values.package || !values.blender || !['both', 'claude', 'codex'].includes(values.host)) {
   throw new Error('Required: --package <installed-package-directory> --blender <executable> [--host both|claude|codex]');
 }
 const pkg = path.resolve(values.package), blender = path.resolve(values.blender);
 const cli = path.join(pkg, 'dist', 'cli.js'), setup = path.join(pkg, 'scripts', 'portable-setup.mjs');
-const evidence = path.join(repo, 'evidence', 'hosts');
+const evidence = path.resolve(values['evidence-root']);
 fs.mkdirSync(evidence, { recursive: true });
 
 async function run(command, args, cwd, basename, timeout = 900000) {

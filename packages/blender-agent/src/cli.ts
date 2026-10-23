@@ -20,6 +20,8 @@ Global: --port 9877 --addon-port 9876 --worker-port 9879 --workdir <path>
         --blender <executable> --holder <session-id> --timeout-ms 180000 --no-auto-start
 CLI-created temporary backends are cleaned on exit. Run backend start first for
 worker/job state across separate CLI calls; use the same ports and workdir.
+Scene calls (do/see/watch/plan and workers) require backend start first.
+Use --holder <session-id> consistently for worker scenes across CLI calls.
 JSON results go to stdout; diagnostics go to backend log/stderr.
 `;
 async function main(): Promise<void> {
@@ -78,8 +80,16 @@ async function main(): Promise<void> {
       const text = values.file ? fs.readFileSync(path.resolve(values.file), 'utf8') : values.stdin ? fs.readFileSync(0, 'utf8') : values.json || '{}';
       let args: unknown; try { args = JSON.parse(text.replace(/^\uFEFF/, '')); } catch { throw new BridgeError('INVALID_ARGUMENTS', 'Tool input is not valid JSON'); }
       if (positionals[1] === 'blender_viewport' && ['lease', 'release'].includes((args as any)?.op) && !opts.holder && !(args as any)?.holder) throw new BridgeError('EXPLICIT_HOLDER_REQUIRED', 'Cross-CLI leases require --holder <session-id> (or BLENDER_AGENT_HOLDER). Use the same holder for writes and release; parallel agents use different holders.');
-      const durable = positionals[1] === 'blender_rt_headless' || positionals[1] === 'blender_rt_job' && (args as any)?.op === 'start' || positionals[1] === 'blender_rt_worker' && ['start', 'restart'].includes((args as any)?.op);
+      const tool = positionals[1], input = args as any;
+      const workerState = ['blender_rt_do', 'blender_rt_see', 'blender_rt_watch'].includes(tool)
+        || tool === 'blender_rt_worker' && !['list', 'status'].includes(input?.op)
+        || tool === 'blender_rt_plan' && !!input?.session && input?.op !== 'catalog'
+        || tool === 'blender_rt_loop' && input?.target === 'session';
+      const durable = workerState || tool === 'blender_rt_plan' && input?.op !== 'catalog'
+        || tool === 'blender_rt_headless' || tool === 'blender_rt_job' && input?.op === 'start'
+        || tool === 'blender_viewport' && ['start', 'restart'].includes(input?.op);
       if (durable && !(await bridge.backend.identity())?.persistent) throw new BridgeError('PERSISTENT_BACKEND_REQUIRED', 'Run backend start with the same ports/workdir first. Worker/job state must survive separate CLI calls.');
+      if (workerState && !opts.holder) throw new BridgeError('EXPLICIT_HOLDER_REQUIRED', 'Use --holder <session-id> (or BLENDER_AGENT_HOLDER) consistently for scene calls across CLI processes. Different agents use different holders and worker names.');
       result = await bridge.call(positionals[1], args as any, cancel.signal);
       if (result.isError) process.exitCode = 1;
     } else throw new BridgeError('INVALID_ARGUMENTS', `Unknown command ${positionals[0]}`);

@@ -7,6 +7,7 @@ import net from 'node:net';
 import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
+import { randomInt } from 'node:crypto';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
 import { portOccupied } from '../dist/backend.js';
@@ -14,7 +15,19 @@ import { portOccupied } from '../dist/backend.js';
 const blender = process.env.BLENDER_AGENT_TEST_EXE;
 if (!blender || !fs.existsSync(blender)) throw new Error('Set BLENDER_AGENT_TEST_EXE to a real Blender executable');
 const cli = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../dist/cli.js');
-async function port() { const s = net.createServer(); await new Promise(r => s.listen(0, '127.0.0.1', r)); const p = s.address().port; await new Promise(r => s.close(r)); return p; }
+const assigned = new Set();
+async function port() {
+  for (let i = 0; i < 30; i++) {
+    const candidate = randomInt(20000, 45000); if (assigned.has(candidate)) continue;
+    const s = net.createServer();
+    try {
+      await new Promise((resolve, reject) => { s.once('error', reject); s.listen(candidate, '127.0.0.1', resolve); });
+      assigned.add(candidate); return candidate;
+    } catch (e) { if (!['EADDRINUSE', 'EACCES'].includes(e.code)) throw e; }
+    finally { await new Promise(r => s.close(r)); }
+  }
+  throw new Error('Could not allocate a non-ephemeral listener port');
+}
 
 test('real MCP maintains one scene across capabilities, resolves blend-relative files, returns real PNG and cleans background children', { timeout: 120000 }, async () => {
   const workdir = fs.mkdtempSync(path.join(os.tmpdir(), 'blender MCP 中文 '));

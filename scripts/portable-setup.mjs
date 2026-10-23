@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Project-local install only. No host/global configuration is changed.
-import { createHash } from 'node:crypto';
-import { existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, unlinkSync, writeFileSync } from 'node:fs';
+import { createHash, randomUUID } from 'node:crypto';
+import { existsSync, lstatSync, mkdirSync, readFileSync, readdirSync, realpathSync, renameSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, isAbsolute, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -108,8 +108,14 @@ function setup(options) {
     const buffer = Buffer.isBuffer(bytes) ? bytes : Buffer.from(bytes);
     const hash = sha256(buffer);
     if (existsSync(path)) {
-      if (!lstatSync(path).isFile() || sha256(readFileSync(path)) !== hash) plan.push({ path: name, action: 'conflict' });
-      else plan.push({ path: name, action: 'unchanged' });
+      const current = lstatSync(path).isFile() ? sha256(readFileSync(path)) : null;
+      if (current === hash) plan.push({ path: name, action: 'unchanged' });
+      else if (current && previous.files[name] === current) {
+        // Only the exact bytes last installed by us may be replaced.
+        plan.push({ path: name, action: 'update' });
+        pending.push({ path, buffer, expected: current });
+        managed[name] = hash;
+      } else plan.push({ path: name, action: 'conflict' });
     } else {
       plan.push({ path: name, action: 'create' });
       pending.push({ path, buffer });
@@ -129,11 +135,22 @@ function setup(options) {
   }
   const conflicts = plan.filter((item) => item.action === 'conflict');
   if (conflicts.length) return { mode: 'blocked', operation: 'install', project, plan, error: 'Existing files differ; nothing written. Preserve or move them deliberately before reinstalling.' };
-  // Preflight is complete before the first write. Never overwrite a pre-existing file.
+  // Preflight is complete before the first write. User-owned/modified bytes stay intact.
   if (options.apply) {
-    for (const { path, buffer } of pending) {
+    for (const { path, expected } of pending) {
+      if (expected && (!existsSync(path) || !lstatSync(path).isFile() || sha256(readFileSync(path)) !== expected)) throw new Error(`Managed file changed during preflight: ${path}`);
+    }
+    for (const { path, buffer, expected } of pending) {
       mkdirSync(dirname(path), { recursive: true });
-      writeFileSync(path, buffer, { flag: 'wx' });
+      if (!expected) writeFileSync(path, buffer, { flag: 'wx' });
+      else {
+        const temporary = `${path}.blender-agent-${randomUUID()}.tmp`;
+        try {
+          writeFileSync(temporary, buffer, { flag: 'wx' });
+          if (!lstatSync(path).isFile() || sha256(readFileSync(path)) !== expected) throw new Error(`Managed file changed before update: ${path}`);
+          renameSync(temporary, path);
+        } finally { if (existsSync(temporary)) unlinkSync(temporary); }
+      }
     }
     const manifest = projectPath(project, manifestName);
     mkdirSync(dirname(manifest), { recursive: true });
@@ -144,7 +161,7 @@ function setup(options) {
 
 try {
   const options = parseArgs(process.argv.slice(2));
-  if (options.help) console.log('portable-setup --project <dir> [--host both|codex|claude] [--port 9877] [--addon-port 9876] [--worker-port 9879] [--workdir <dir>] [--blender <exe>] [--cli <cli.js>] [--dry-run|--apply] [--uninstall]\nDefault: dry-run. Project-local only; never overwrites existing content or modifies global host configuration.');
+  if (options.help) console.log('portable-setup --project <dir> [--host both|codex|claude] [--port 9877] [--addon-port 9876] [--worker-port 9879] [--workdir <dir>] [--blender <exe>] [--cli <cli.js>] [--dry-run|--apply] [--uninstall]\nDefault: dry-run. Project-local only; upgrades unchanged installer-owned files, preserves user changes, never modifies global host configuration.');
   else {
     const result = setup(options);
     console.log(JSON.stringify(result, null, 2));

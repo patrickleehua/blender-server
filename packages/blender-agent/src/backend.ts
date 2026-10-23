@@ -19,6 +19,9 @@ export class Backend {
   private child?: ChildProcess;
   private state?: State;
   private starting?: Promise<State>;
+  private attachedInstance?: string;
+  private disposing?: Promise<void>;
+  private readonly clientId = randomUUID();
   private readonly fingerprint = manifest().fingerprint;
   constructor(readonly opts: Options) {}
   async identity(allowStale = false): Promise<State | null> {
@@ -43,7 +46,7 @@ export class Backend {
   }
   private async start(persistent: boolean): Promise<State> {
     const existing = await this.identity();
-    if (existing) return existing;
+    if (existing) { await this.attach(existing, persistent); return existing; }
     if (!this.opts.autoStart) throw new BridgeError('BACKEND_UNAVAILABLE', 'Backend is not running; use backend start');
     fs.mkdirSync(path.dirname(statePath(this.opts)), { recursive: true });
     const logPath = path.join(path.dirname(statePath(this.opts)), `backend-${this.opts.port}.log`);
@@ -52,32 +55,51 @@ export class Backend {
       BLENDER_AGENT_INSTANCE: randomUUID(), BLENDER_AGENT_PERSISTENT: persistent ? '1' : '0', BLENDER_AGENT_OWNER_PID: String(process.pid) };
     for (const key of Object.keys(env)) if (key.startsWith('DSH_BLENDER_') || key.startsWith('BLENDER_USER_')) delete (env as Record<string, unknown>)[key];
     const child = spawn(process.execPath, [path.join(PACKAGE_ROOT, 'dist/cli.js'), '__backend-service'], {
-      env, cwd: this.opts.workdir, detached: persistent, windowsHide: true, stdio: ['ignore', log, log],
+      env, cwd: this.opts.workdir, detached: true, windowsHide: true, stdio: ['ignore', log, log],
     });
     fs.closeSync(log);
     this.child = child;
     let launchError: Error | undefined;
+    let otherStartupUntil = 0;
     child.once('error', e => { launchError = e; });
     const deadline = Date.now() + 30000;
     while (Date.now() < deadline) {
-      if (launchError || child.exitCode !== null) throw new BridgeError('BACKEND_START_FAILED', `Backend exited during startup; inspect ${logPath}`, { cause: launchError?.message, exitCode: child.exitCode });
       if (await portOccupied(this.opts.port)) {
-        // listen() can complete just before the service writes its identity file.
-        // Wait for our own instance marker instead of misclassifying that gap.
-        let ready = false;
-        try { const marker = JSON.parse(fs.readFileSync(statePath(this.opts), 'utf8')); ready = marker.instance === env.BLENDER_AGENT_INSTANCE && marker.pid === child.pid; } catch {}
-        if (ready) {
-          const state = await this.identity();
-          if (state) {
-            if (persistent) { child.unref(); this.child = undefined; }
-            return state;
-          }
+        // Two hosts can both observe an empty port before either one listens.
+        // Once one service wins, validate it and attach; no Blender request has
+        // been dispatched yet. Never restart or replay a user operation here.
+        let state: State | null = null;
+        try { state = await this.identity(); } catch {}
+        if (state) {
+          if (state.pid !== child.pid && child.exitCode === null) child.kill();
+          child.unref(); this.child = undefined;
+          await this.attach(state, persistent);
+          return state;
         }
+      }
+      if (launchError || child.exitCode !== null) {
+        // The winner may be listening just before its identity file is written.
+        // Give that startup transition a bounded chance to finish.
+        if (!otherStartupUntil) otherStartupUntil = Date.now() + 2000;
+        if (Date.now() < otherStartupUntil && await portOccupied(this.opts.port)) { await delay(75); continue; }
+        this.child = undefined;
+        throw new BridgeError('BACKEND_START_FAILED', `Backend exited during startup; inspect ${logPath}`, { cause: launchError?.message, exitCode: child.exitCode });
       }
       await delay(100);
     }
     child.kill(); this.child = undefined;
     throw new BridgeError('BACKEND_START_TIMEOUT', `Backend did not become ready; inspect ${logPath}`);
+  }
+  private async attach(state: State, persistent = false): Promise<void> {
+    if (this.attachedInstance === state.instance && (!persistent || state.persistent)) return;
+    const response = await fetch(`http://127.0.0.1:${this.opts.port}/_adapter/clients`, {
+      method: 'POST', headers: { 'content-type': 'application/json', 'x-blender-agent-token': state.token },
+      body: JSON.stringify({ op: 'attach', id: this.clientId, pid: process.pid, persistent }), signal: AbortSignal.timeout(3000),
+    });
+    if (!response.ok) throw new BridgeError('BACKEND_ATTACH_FAILED', 'Backend is stopping or cannot register this client; no tool operation was sent');
+    const result: any = await response.json();
+    state.persistent = result.persistent === true;
+    this.attachedInstance = state.instance;
   }
   async request(route: string, body?: unknown, signal?: AbortSignal, timeoutMs = this.opts.timeoutMs): Promise<{ response: Response; bytes: Buffer }> {
     if (signal?.aborted) throw new BridgeError('CANCELLED', 'Request cancelled before dispatch');
@@ -104,7 +126,8 @@ export class Backend {
   async stop(): Promise<void> {
     const state = await this.identity(true);
     if (!state) return;
-    await fetch(`http://127.0.0.1:${this.opts.port}/_adapter/shutdown`, { method: 'POST', headers: { 'x-blender-agent-token': state.token }, signal: AbortSignal.timeout(3000) });
+    const response = await fetch(`http://127.0.0.1:${this.opts.port}/_adapter/shutdown`, { method: 'POST', headers: { 'x-blender-agent-token': state.token, 'x-blender-agent-client': this.clientId }, signal: AbortSignal.timeout(3000) });
+    if (!response.ok) throw new BridgeError('BACKEND_IN_USE', 'Other clients are using this backend; close them before stopping it', await response.json());
     const until = Date.now() + 5000;
     while (Date.now() < until && await portOccupied(this.opts.port)) await delay(75);
     if (await portOccupied(this.opts.port)) throw new BridgeError('BACKEND_STOP_TIMEOUT', 'Backend did not stop; no unrelated process was killed');
@@ -113,11 +136,34 @@ export class Backend {
       try { process.kill(state.pid, 0); } catch { break; }
       await delay(50);
     }
-    this.child = undefined; this.state = undefined;
+    this.child = undefined; this.state = undefined; this.attachedInstance = undefined;
   }
   async dispose(): Promise<void> {
-    if (!this.child) return;
-    try { await this.stop(); }
-    finally { if (this.child && this.child.exitCode === null) this.child.kill('SIGKILL'); this.child = undefined; }
+    if (this.disposing) return this.disposing;
+    this.disposing = this.detach();
+    return this.disposing;
+  }
+  private async detach(): Promise<void> {
+    if (this.starting) { try { await this.starting; } catch {} }
+    if (!this.attachedInstance) return;
+    try {
+      const state = await this.identity(true);
+      if (!state || state.instance !== this.attachedInstance) return;
+      const response = await fetch(`http://127.0.0.1:${this.opts.port}/_adapter/clients`, {
+        method: 'POST', headers: { 'content-type': 'application/json', 'x-blender-agent-token': state.token },
+        body: JSON.stringify({ op: 'detach', id: this.clientId }), signal: AbortSignal.timeout(3000),
+      });
+      const result: any = await response.json();
+      if (!response.ok) throw new BridgeError('BACKEND_DETACH_FAILED', 'Backend could not release this client');
+      if (result.stopping) {
+        const until = Date.now() + 5000;
+        while (Date.now() < until) {
+          let alive = true; try { process.kill(state.pid, 0); } catch { alive = false; }
+          if (!alive && !await portOccupied(this.opts.port)) return;
+          await delay(50);
+        }
+        throw new BridgeError('BACKEND_STOP_TIMEOUT', 'Last-client cleanup did not finish; no unrelated process was killed');
+      }
+    } finally { this.attachedInstance = undefined; this.child = undefined; this.state = undefined; }
   }
 }

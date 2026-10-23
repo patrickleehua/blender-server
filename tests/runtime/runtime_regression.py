@@ -61,8 +61,40 @@ bpy.ops.wm.read_factory_settings(use_empty=False)
 engine_info = w._engine_setup('auto', 'eevee')
 assert engine_info['ok'] and 'EEVEE' in engine_info['after']['engine'], engine_info
 offline_bootstrap.boot(['perf'])
+sc = bpy.context.scene
+ee = sc.eevee
+if hasattr(ee, 'use_raytracing'):
+    ee.use_raytracing = False
+if hasattr(ee, 'taa_render_samples'):
+    ee.taa_render_samples = 16
+perf_before = K.dsh_perf_api('status', {})
 perf = K.dsh_perf_api('apply', {})
 assert perf['ok'] and 'EEVEE' in perf['engine'], perf
+assert K.dsh_perf_api('status', {})['preset_applied'] is True
+reverted = K.dsh_perf_api('revert', {})
+assert reverted['ok'] and reverted['reverted'], reverted
+perf_after = K.dsh_perf_api('status', {})
+assert perf_before['eevee'] == perf_after['eevee'], (perf_before, perf_after)
+assert perf_before['engine'] == perf_after['engine']
+assert perf_after['preset_applied'] is False and perf_after['saved_snapshot'] is None
+# A second transaction restores new user settings, not the previous baseline.
+if hasattr(ee, 'taa_render_samples'):
+    ee.taa_render_samples = 24
+perf_second = K.dsh_perf_api('status', {})
+assert K.dsh_perf_api('apply', {})['ok']
+assert K.dsh_perf_api('revert', {})['ok']
+assert K.dsh_perf_api('status', {})['eevee'] == perf_second['eevee']
+# Existing Cycles presets retain their reversible behavior after EEVEE use.
+sc.render.engine = 'CYCLES'
+sc.cycles.samples = 37
+cycles_before = K.dsh_perf_api('status', {})
+assert K.dsh_perf_api('apply', {'samples': 64})['ok']
+assert sc.cycles.samples == 64
+assert K.dsh_perf_api('revert', {})['ok']
+cycles_after = K.dsh_perf_api('status', {})
+for key in ['engine', 'device', 'samples', 'adaptive', 'persistent_data', 'denoiser', 'auto_tile', 'resolution']:
+    assert cycles_before[key] == cycles_after[key], (key, cycles_before, cycles_after)
+sc.render.engine = engine_info.get('engine', perf['engine'])
 import contextlib
 import io
 captured = io.StringIO()
@@ -89,6 +121,7 @@ result = {'ok': True, 'blender': bpy.app.version_string, 'camera_count_before': 
           'camera_count_after': camera_after, 'static_distinct': watch['distinct'],
           'animated_distinct': animated['distinct'], 'watch_code_failure': failed['error'],
           'preset_object_and_scene_dry_run_read_only': True,
+          'perf_eevee_and_cycles_apply_revert': True,
           'eevee': {'worker': engine_info, 'perf': perf, 'headless_prelude': prelude,
                     'png': str(out / 'eevee.png'), 'width': 128, 'height': 72}}
 (out / 'regression.json').write_text(json.dumps(result, indent=2), encoding='utf-8')

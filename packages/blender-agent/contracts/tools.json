@@ -1,7 +1,7 @@
 [
   {
     "name": "blender_rt_see",
-    "description": "【看视口】约 55–160 ms 出一帧：改一步看一眼就用它。GUI 不在或传 session 时自动走持久 worker 的 Workbench 离屏（无头也能同步看）。给 from/look_at（可配 lens / ortho / ortho_scale / view_size / shading / overlays / view_mode）走**自定义视角**：自建矩阵离屏绘制，不建相机、不改 scene.camera、不动用户视口。full=true + area=N 走整窗口截图（要看 Blender UI 时用）。回执带 coverage_estimate 与 frame_looks_empty 自诊断；同画面默认不重复附图（省视觉 token），要重发传 force=true。参数细节见 blender_rt_plan(op=\"catalog\", args={tool:\"rt_see\"})。",
+    "description": "【看视口】约 55–160 ms 出一帧：改一步看一眼就用它。GUI 不在或传 session 时自动走持久 worker 的 Workbench 离屏（无头也能同步看）。给 from/look_at（可配 lens / ortho / ortho_scale / view_size / shading / overlays / view_mode）走**自定义视角**：自建矩阵离屏绘制，不建相机、不改 scene.camera、不动用户视口。full=true + area=N 走整窗口截图（要看 Blender UI 时用）。回执带 coverage_estimate 与 frame_looks_empty 自诊断；每次请求返回当前真实图像；GUI 忙碌或状态不明时明确失败，不切换场景。参数细节见 blender_rt_plan(op=\"catalog\", args={tool:\"rt_see\"})。",
     "inputSchema": {
       "type": "object",
       "properties": {
@@ -67,7 +67,7 @@
         },
         "force": {
           "type": "boolean",
-          "description": "上一帧与本帧 hash 完全相同时默认**不重复附图**（省模型侧 token）；传 true 强制重发这张图"
+          "description": "兼容参数；当前适配器每次请求均返回实际图像"
         }
       },
       "required": [],
@@ -98,7 +98,7 @@
         },
         "force": {
           "type": "boolean",
-          "description": "回帧与上一帧 hash 完全相同时默认**不重复附图**；传 true 强制重发"
+          "description": "兼容参数；当前适配器每次请求均返回实际图像"
         },
         "session": {
           "type": "string",
@@ -368,8 +368,18 @@
           "description": "子进程环境变量 {KEY:\"VALUE\"}"
         },
         "args": {
-          "type": "string",
-          "description": "追加到 -- 之后的命令行参数（脚本里读 sys.argv / K.args）"
+          "description": "追加到 -- 之后的参数；优先使用字符串数组保留空格、中文和引号；兼容旧字符串",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
         },
         "workdir": {
           "type": "string",
@@ -437,7 +447,7 @@
   },
   {
     "name": "blender_rt_worker",
-    "description": "【交互式无头热会话】常驻 blender -b 进程：start 拉起 / exec 跑代码 / see 离屏出一帧（Workbench）/ watch 逐帧采样 / reset 清场景 / status / stop / restart / list。start 可带 preload（把 imgtools/assembly/blockout/visualreport/shapesolve 等模块注入 K）与 warmup；see 在无 GUI 时就是 AI 的视口，每步 50–100 ms。同一 session 的场景与 K 跨调用保留；空闲 TTL 默认 15 min（agent host_WORKER_TTL_MS 可调）。串行、无窗口：依赖 GUI 的 bpy.ops 可能失败；参数细节见 blender_rt_plan(op=\"catalog\", args={tool:\"rt_worker\"})。",
+    "description": "持久无头 Blender 会话：start、exec、see、watch、reset、status、stop、restart、list。场景和 K 跨调用保留；preload 可增量加载能力模块。同一名称由创建 holder 独占，其他 holder 使用不同名称；status/list 可查询。CLI 需先 backend start，并在各次调用使用相同 --holder。MCP 最后客户端退出会清理自动后端；需跨宿主重启保留时先启动持久后端。无 GUI 的 bpy.ops 可能受上下文限制。",
     "inputSchema": {
       "type": "object",
       "properties": {
@@ -494,7 +504,7 @@
         },
         "view_size": {
           "type": "string",
-          "description": "op=see 分辨率 \"宽x高\""
+          "description": "op=see/watch 分辨率：宽x高"
         },
         "gpu": {
           "type": "string",
@@ -507,6 +517,14 @@
         "purge_prefix": {
           "type": "string",
           "description": "op=exec 前清掉的模块前缀（逗号分隔）—— 改了用户模块必须清，否则 import 命中旧代码"
+        },
+        "seconds": {
+          "type": "number",
+          "description": "op=watch 采样时长，默认2秒，上限20秒"
+        },
+        "fps": {
+          "type": "number",
+          "description": "op=watch 采样帧率，默认4，上限8；每次最多返回6帧"
         }
       },
       "required": [
@@ -661,8 +679,18 @@
           "description": "直接跑 .py 文件（Windows/WSL 路径都收）"
         },
         "args": {
-          "type": "string",
-          "description": "命令行参数（空格分隔或数组）；脚本里读 sys.argv / K.args"
+          "description": "追加到 -- 之后的参数；优先使用字符串数组保留空格、中文和引号；兼容旧字符串",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
         },
         "env": {
           "description": "额外环境变量 {KEY:\"VALUE\"}"

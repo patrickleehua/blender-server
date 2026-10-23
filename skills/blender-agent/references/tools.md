@@ -5,9 +5,9 @@
 | 工作 | 工具 | 要点 |
 |---|---|---|
 | 诊断、启动 GUI、共享场景协调 | `blender_viewport` | doctor / status / launch / who / lease / release。后端启动用 portable CLI `backend start`；不要占用旧 DSH 后端端口 |
-| 读图 | `blender_rt_see` | GUI 视口或自定义视角；无 GUI 先明确 worker/session，确认回执实际路线 |
+| 读图 | `blender_rt_see` | GUI 视口或自定义视角；只有明确不可达才自动走worker，busy/paused/状态不明不切场景；full UI截图不可无头替代 |
 | 执行 Python | `blender_rt_do` | 持久内核 K；修改前读状态；无头所有调用保持同一 session |
-| 动态画面检查 | `blender_rt_watch` | 最多六帧与 hash；相同画面不重复读取 |
+| 动态画面检查 | `blender_rt_watch` | 最多六帧与 hash；相同画面不重复读取；worker watch/see均支持view_size |
 | 持久无头交互 | `blender_rt_worker` | start → exec/see/watch → status → stop；默认空闲 TTL 15 分钟，失效后不要假设场景仍在 |
 | 能力查找与结构化操作 | `blender_rt_plan` | catalog；单族 `args={family:"audit"}`；具体 op 的 help。支持的 family 可用 `session="auto"` 走无头 |
 | 参数搜索 | `blender_rt_loop` | 无头用 target=session；收敛后独立量测/渲染验收 |
@@ -36,4 +36,8 @@ blender-agent catalog --family audit
 blender-agent call blender_rt_plan --file request.json
 ```
 
-`request.json` 示例：`{"op":"catalog","args":{"family":"audit"}}`。端口/workdir/blender 使用项目安装生成的同一组参数。CLI 的 worker start、job start 和 headless 先显式 backend start；lease、受保护写入及 release 另加同一个 `--holder <本次会话id>`，或在当前工作会话设置 `BLENDER_AGENT_HOLDER`。不同写者不用相同 holder。CLI JSON 中图片可能带 base64，避免把整段图片数据再贴进上下文；读取回执提供的真实图片文件。
+`request.json` 示例：`{"op":"catalog","args":{"family":"audit"}}`。这是查询，可独立运行。端口/workdir/blender 使用项目安装生成的同一组参数。
+
+CLI do/see/watch、plan 非 catalog、worker 除 list/status、loop target=session、headless、job start、viewport start/restart 均先显式 `backend start`。其中 do/see/watch、worker 非 list/status、plan 带 session 的非 catalog 操作、loop target=session 还须稳定 `--holder <本次会话id>` 或 `BLENDER_AGENT_HOLDER`；lease/release 同样要求显式身份。同一 holder + worker名跨CLI保留状态；其他 holder 遇 `WORKER_OWNED` / 409 应另起名字，list/status可查。MCP使用自身进程身份，不硬编码共用holder。
+
+headless/job 的 `args` 可用字符串数组，逐项保留含空格/中文的参数。CLI JSON 中图片可能带 base64，避免整段贴进上下文；读取回执提供的真实图片文件。do 执行成功而图片失败时看 `executionCompleted=true`，只重试 see。

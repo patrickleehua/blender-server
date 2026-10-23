@@ -12,6 +12,13 @@ if (!fs.existsSync(path.join(repo, 'bridge/runtime/server.mjs'))) {
   process.exit(0);
 }
 fs.mkdirSync(assets, { recursive: true });
+// This old generated Skill location used to survive subsequent builds and ship a
+// second, stale contract. Remove only our known legacy subtree, not other assets.
+const legacySkill = path.join(assets, 'skills', 'blender-agent');
+for (const parent of [assets, path.dirname(legacySkill)]) {
+  if (fs.existsSync(parent) && fs.lstatSync(parent).isSymbolicLink()) throw new Error(`Refusing symlink in generated assets: ${parent}`);
+}
+fs.rmSync(legacySkill, { recursive: true, force: true });
 for (const dir of ['runtime', 'addon']) {
   const target = path.join(assets, dir);
   if (path.dirname(target) !== assets) throw new Error('Invalid staging path');
@@ -41,6 +48,12 @@ function hashTree(dir) {
   }
 }
 hashTree(path.join(assets, 'runtime')); hashTree(path.join(assets, 'addon'));
-const fingerprint = createHash('sha256').update(JSON.stringify(files)).digest('hex');
-fs.writeFileSync(path.join(assets, 'manifest.json'), JSON.stringify({ compatibilityVersion: '2.6.0', fingerprint, files }, null, 2) + '\n');
+// The HTTP service also contains adapter code. A service from an older adapter
+// must not be reused just because its Blender Python modules are unchanged.
+const adapterInputs = {};
+for (const name of ['contracts/tools.json', 'contracts/plan-routing.mjs', ...(
+  fs.existsSync(path.join(pkg, 'src')) ? fs.readdirSync(path.join(pkg, 'src')).filter(n => n.endsWith('.ts')).sort().map(n => 'src/' + n) : []
+)]) adapterInputs[name] = createHash('sha256').update(fs.readFileSync(path.join(pkg, name))).digest('hex');
+const fingerprint = createHash('sha256').update(JSON.stringify({ files, adapterInputs })).digest('hex');
+fs.writeFileSync(path.join(assets, 'manifest.json'), JSON.stringify({ compatibilityVersion: '2.6.0', fingerprint, files, adapterInputs }, null, 2) + '\n');
 console.error(`Staged ${Object.keys(files).length} engine/addon files, 15 tool schemas, fingerprint ${fingerprint.slice(0, 12)}`);
